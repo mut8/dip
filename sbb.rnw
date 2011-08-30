@@ -264,7 +264,7 @@ More lignin is decomposed when nitrogen availability is low, and high nitrogen a
 <<init.stoech, echo=F, fig=F, results=hide>>=
   cond <- alldata$Harvest=="I"
 
-sstoech.init <-
+stoech.init <-
   data.frame (
               paste( formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], mean), digits=2, format="f") , " (", formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
               paste( formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], mean), digits=3, format="f") , " (", formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], stderr), digits=3, format="f"), ")", sep=""),
@@ -275,11 +275,15 @@ sstoech.init <-
 
 names(stoech.init) <- c("C (% d.w.)", "N (%d.w.)", "P (%d.w.)", "C:N (w/w)", "C:P(w/w)", "N:P(w/w)")
 rownames(stoech.init) <- typlev
+stoech.init
 @
 <<init_stoech_table, results=tex, echo=F>>=
-  print(xtable(stoech.init, caption="Litter stoichiometry measured after 14 days incubation. Error bars indicate standard errors (n=5).",
-               label="initstoech",table.placement = "tbp", caption.placement = "top" , size = "small" ))
+  print(
+        xtable(stoech.init, caption="Litter stoichiometry measured after 14 days incubation. Error bars indicate standard errors (n=5).",
+               label="initstoech",table.placement = "tbp", caption.placement = "top" , size = "small" )
+        )
 @
+
 
 %\input(initstoech)
 
@@ -366,11 +370,12 @@ Fe content were more than twice as high for OS (approx. 450 ppm) than for other 
 Soluble organic carbon content decreased between the first three harvests (14 to 181 days), to strongly increase after 375 days. Contents ranged between 0.1 and 0.7 mg/g d.w. after 14, 97 and 181 days, and increased to amounts between 1.5 and 4 mg/g after 375 days. After 14 and 97 days, the highest C content was found in SW litter followed by AK (see fig. \ref{fig:doc}. DOC content was loosely correlated to litter N content after 14 (R=0.69, p=***) and 97 days (R = 0.65, p =**), they were strictly correlated after 181 days (R = 0.85, p=***) and 375 days (R=0.9, p=***).
 
 \subsection{Decomposition Processes}
+
 \subsubsection{Litter mass loss and respiration}
 
 Litter mass loss was not significant after 2 weeks and 3 month, significant for 2 litter types after 6 month. After 15 month, litter mass loss was significant for all litter types, and strongly correlated to litter N content (R=0.794, p=***). Detailed results were reported by \citep{Mooshammer2011}. After 15 month, between 5 and 12\% of the initial dry mass was lost. This is less than reported in litter decomposition studies on other species, but in a similar range as recently reported for beech litter from an in-situ litterbag-study \citep{Kalbitz2006} .
 
-Highest respiration rates were measured after 14 days incubation (150-350 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C), dropped to rates between                                                                                                                                             
+Highest respiration rates were measured after 14 days incubation (150-350 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C), dropped to rates between
 
 between 75 and 100 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C after 97 days. After 181 and 375 days, respiration rates for AK and OS further decreased, while SW and KL show a second maximal respiration after 181 days. [make graph!] Respiration was correlated to litter N content after 2 weeks, 6 and 15 month(R\textgreater 0.70 in all cases, all p=***), but not after 3 month. All harvests combined were weakly correlated to litter N content (R=0.416, p=***).
 
@@ -381,44 +386,38 @@ Accumulated respiration was correlated to litter mass loss for all harvest with 
 \begin{figure*}[t]
 \vspace*{2mm}
 \begin{center}
-
 \setkeys{Gin}{width=\textwidth}
-
 <<mb, fig=T, echo=F, results=hide, width=12, height=7>>=
-par ( mfrow=c(3,3), mar=c(2.1,4.1,0.1,0.1), tck=0.01)
-
+par(mfrow=c(3,3), mar=c(2.1,4.1,0.1,0.1), tck=0.01)
 data <- alldata$C_mic
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale,
-           ylab="microbial carbon (mg C g-1 d.w.)", endsig=T, xaxt="n")
+type="o", pch=pch, col=colscale,
+ylab="microbial carbon (mg C g-1 d.w.)", endsig=T, xaxt="n")
 axis(4, labels=F)
 axis(3, labels=F)
 axis(1, labels=F)
-
 data <- alldata$N_.mic
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale, endsig=T,
-           ylab="microbial nitrogen (mg N g-1 d.w.)", xaxt="n")
-axis(4, labels=F)
-axis(3, labels=F)
-axis(1, labels=F) 
-
-data <- alldata$P_mic/1000
-cond <- is.na(data)!=T
-timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale,
-           ylab="microbial phosphorus (mg P g-1 d.w.)", xaxt="n", endsig=T)
+type="o", pch=pch, col=colscale, endsig=T,
+ylab="microbial nitrogen (mg N g-1 d.w.)", xaxt="n")
 axis(4, labels=F)
 axis(3, labels=F)
 axis(1, labels=F)
-
+data <- alldata$P_mic/1000
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, col=colscale,
+ylab="microbial phosphorus (mg P g-1 d.w.)", xaxt="n", endsig=T)
+axis(4, labels=F)
+axis(3, labels=F)
+axis(1, labels=F)
 data <- alldata$C.N_mic
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale, endsig=T,
-           ylab="microbial C:N ratio (w/w)", xaxt="n")
+type="o", pch=pch, col=colscale, endsig=T,
+ylab="microbial C:N ratio (w/w)", xaxt="n")
 axis(4, labels=F)
 axis(3, labels=F)
 axis(1, labels=F)
@@ -426,45 +425,40 @@ axis(1, labels=F)
 data <- alldata$C.Pmic
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale,  endsig=T,  ylab="microbial C:Pg ratio (w/w)", xaxt="n")
+type="o", pch=pch, col=colscale,  endsig=T,  ylab="microbial C:Pg ratio (w/w)", xaxt="n")
 axis(4, labels=F)
 axis(3, labels=F)
 axis(1, labels=F)
-
-
 
 data <- alldata$N.Pmic
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale,  endsig=T, ylab="microbial N:P ratio (w/w)", xaxt="n")
+type="o", pch=pch, col=colscale,  endsig=T, ylab="microbial N:P ratio (w/w)", xaxt="n")
 axis(4, labels=F)
 axis(3, labels=F)
 axis(1, labels=F)
 
-
 data <- alldata$CN_inbal
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale, endsig=T,
-           xlab="Litter incubation (days)", ylab="C:N inbalance")
+type="o", pch=pch, col=colscale, endsig=T,
+xlab="Litter incubation (days)", ylab="C:N inbalance")
 axis(4, labels=F)
 axis(3, labels=F)
-
-
 
 data <- alldata$CP_inbal
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale, endsig=T,
-           xlab="Litter incubation (days)", ylab="C:P inbalance")
+type="o", pch=pch, col=colscale, endsig=T,
+xlab="Litter incubation (days)", ylab="C:P inbalance")
 axis(4, labels=F)
 axis(3, labels=F)
 
 data <- alldata$NP_inbal
 cond <- is.na(data)!=T
 timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
-           type="o", pch=pch, col=colscale, endsig=T,
-           xlab="litter incubation (days)", ylab="N:P inbalance")
+type="o", pch=pch, col=colscale, endsig=T,
+xlab="litter incubation (days)", ylab="N:P inbalance")
 axis(4, labels=F)
 axis(3, labels=F)
 @
@@ -476,9 +470,9 @@ axis(3, labels=F)
 
 \subsubsection{Microbial biomass abundance and stoichiometry}
 
-Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 to 3.5 mg P per g litter (d.w.). In KL and OS biomass buildup reaches a plateau after 3 month, AK and SW show further growth reaching a maximum of microbial C and N contents after 6 month (AK also for P). Microbial C:N ratios measured range between 1:6 and 1:18, C:P ratios between 1:8 abd 1:35, and N:P ratios between 1:0.5 and 1:3.5. Microbial C:N ratios (Fig. \ref{fig:mb}).  
+Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 to 3.5 mg P per g litter (d.w.). In KL and OS biomass buildup reaches a plateau after 3 month, AK and SW show further growth reaching a maximum of microbial C and N contents after 6 month (AK also for P). Microbial C:N ratios measured range between 1:6 and 1:18, C:P ratios between 1:8 abd 1:35, and N:P ratios between 1:0.5 and 1:3.5. Microbial C:N ratios (Fig. \ref{fig:mb}).
 
-Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry), but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, p < 0.016). Litter C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, especially after 3 month incubation (Fig. \ref{fig:mb}). 
+Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry), but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, p < 0.016). Litter C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, especially after 3 month incubation (Fig. \ref{fig:mb}).
 
 % \subsubsection{Fungi and Bacteria contribution}
 % \begin{figure*}[t]
@@ -486,16 +480,14 @@ Litter microbial biomass is homeostatic during the first 6 month (no or marginal
 % \begin{center}
 %  <<f2b, fig=T, echo=F, results=hide>>=
 %  cond <- is.na(alldata$f2b_qpcr)==F
-%  timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], type="o",pch=pch, col=colscale, log="y", ylab=”Fungi to bacteria ratio )
+%  timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], 
 % @
 % \end{center}
 % \caption{Fungi to Bacteria ratio (qPCR). Error bars indicate standard errors (n=5)}
 % \label{fig:f2b}
 % \end{figure*}
 
-
 \subsubsection{Potential enzyme activities}
-
 \begin{figure*}[t]
 \vspace*{2mm}
 \begin{center}
@@ -510,38 +502,57 @@ col=colscale, log="y", endsig=T)
 timeseries(alldata$Phenoloxidase, alldata$days, alldata$Litter,
 type="o", pch=pch, col=colscale, log="y", endsig=T)
 timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter, type="o", pch=pch, col=colscale, log="y", endsig=T)
-
 @
+
 \end{center}
 \caption{Potential eco-enzyme activities}
 \label{fig:enz}
 \end{figure*}
-
-Absolute potential enzyme activities were generally correlated to litter N, respiration and other other decomposition processes [stat[. For all enzymes and at all time points, SW showed the highest and AK the lowest activity. After 14 days, only minimal activities could be detected. Cellulases activity is highest after 3 month and decreases between 97 and 181 days. Peroxidase and Peroxidase activities reach their maximum after 181 days and were highly correlated to each other (fig. \ref{fig:enz}).. After between 6 and 15 month, cellulase activity strongly increased. After 375 days, the activity of oxidative enzymes was below the detection limit [data not shown]
+                                                                                            Absolute potential enzyme activities were generally correlated to litter N, respiration and other other decomposition processes [stat[. For all enzymes and at all time points, SW showed the highest and AK the lowest activity. After 14 days, only minimal activities could be detected. Cellulases activity is highest after 3 month and decreases between 97 and 181 days. Peroxidase and Peroxidase activities reach their maximum after 181 days and were highly correlated to each other (fig. \ref{fig:enz}).. After between 6 and 15 month, cellulase activity strongly increased. After 375 days, the activity of oxidative enzymes was below the detection limit [data not shown]
 
 The ratio between the potential activities of cellulases and oxidative enzymes was lowest for AK at all time points. Microbial communities in AK litter invest more energy and nitrogen into degrading lignin and less into degrading carbohydrates than other litter types. (fig. \ref{fig:enz})
 
 % \subsubsection{Glucan depolymerization and Respiration}
-% Results are presented in fig. \ref{fig:resp_depoly}. Complete data is available only for H2 and H3.  After 97 days, the ratio between respiration and glucose depolymerization is highest in AK and lowest in SW, while after 181 days, it is correlated [stat!] to litter N content, i.e. highest for SW and lowest for AK and OS.
+                                                                                            % Results are presented in fig. \ref{fig:resp_depoly}. Complete data is available only for H2 and H3.  After 97 days, the ratio between respiration and glucose depolymerization is highest in AK and lowest in SW, while after 181 days, it is correlated [stat!] to litter N content, i.e. highest for SW and lowest for AK and OS.
 
-\subsection{Lignin and carbohydrate content}
+\subsection{Pyrolysis-GC/MS and Lignin content}
+
+<<pca1, fig=T, echo=F, results=hide>>=
+ord.plot(rda(rsim, scale=T), harvest, type,scale=T, col=colscale,
+         pch=pch, spe.labels=peaks$origin, spe.mult=2)
+ord.plot(rda(orig_cTIC, scale=T), harvest, type, pch=pch, col=colscale, spe.labels=colnames(orig_cTIC))
+
+@ 
+
+<<pca2, fig=T, echo=F, results=hide>>=
+ord.plot(rda((rsim-initials.rsim)/initials.rsim, scale=T), harvest, type,scale=T, col=colscale, pch=pch, spe.labels=peaks$origin, spe.mult=3)
+@
+
+<<pca3, fig=T, echo=F, results=hide>>=
+ord.plot(rda((closs.corr.rsim-initials.rsim)/initials.rsim, scale=T), harvest, type,scale=T, col=colscale, pch=pch, spe.labels=peaks$origin, spe.mult=2)
+@
+
+
+\begin{figure*}[t]
+\vspace*{2mm}
+\begin{center}
+\includegraphics[width=10cm]{sbb-pca1}
+\end{center}
+\caption{TEXT}
+\end{figure*}
+
 
 % <<lignin>>=
 % cond <- is.na(              samples$lignin             )!=T
 % timeseries(samples$lignin[cond], days[cond], type[cond], pch=pch)
-
 % timeseries(orig_cTIC$Ph, days, type, pch=pch)
 % timeseries(orig_cTIC$L, days, type, pch=pch)
-
 % timeseries(orig_cTIC$L-initials.orig_cTIC$L, days,
 %            type, pch=pch, endsig=T)
-
-% timeseries(closs.corr.orig_cTIC$Ph+closs.corr.orig_cTIC$L-initials.orig_cTIC$Ph-initials.orig_cTIC$L, days, type, pch=pch)
-
-
+%timeseries(closs.corr.orig_cTIC$Ph+closs.corr.orig_cTIC$L-initials.orig_cTIC$Ph-initials.orig_cTIC$L, days, type, pch=pch)
 % cor.test(samples$lignin[days==181], orig_cTIC$Ph[days==181])
 % head(samples)
-% @ 
+% @
 
 Lignin ratios determined by ADF extraction show initial lignin contents between 15 and 21 \% d.w.. After 3 month, lignin contents rise to levels above 30\% d.w. in two sites, an increase that can not be explained by litter mass loss.
 
@@ -559,14 +570,15 @@ Among the lignin derived pyrolysis products, while most other peaks are tightly 
 
 % In a PCA, factor 1 explains differences between different litter types, but is not correlated to decomposition trends or inter-replicate variance. Factor 2 and 3 represent variance between replicas. Only for KL and SW, a decomposition trend can be demonstrated.
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \subsubsection{Decomposition trends}
+\subsubsection{Decomposition trends}
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               To balance for initial differences in litter composition, for each peak in each sample, we substrate the mean of the relative peak area of the respective peak in initial litter of the litter type. A PCA calculated with the results allows us to demonstrate shifts between pyrolysis products during litter decomposition (fig. \ref{fig:pca.dif}). The first to principal components represent ~45\% of the total variance. Initial litter samples cluster cluster in the bottom right corner of the graph with positive loadings on PCA 1 and negative loadings on PCA2. Decomposed samples are shifted versus fresh litter along different axis: While decomposed SW samples are in the bottom left quadrant of the samples, shifted along PCA 1 toward more negative values and indifferent along PCA2, decomposed AK samples are shifted along PCA2 towards more positive values and do not shift along PCA1. KL and OS show intermediate decomposition trends. Their decomposed samples are placed in the top left corner, combining both decomposition trends.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Pyrolysis products that are positioned in the bottom-right quadrant  are depleted in all litter types, while products in the top left quadrant are accumulated in all litter types. Substances in the bottom left quadrant are depleted in AK and accumulated in SW, substances in the top-right quadrant show the opposite trend.
+To balance for initial differences in litter composition, for each peak in each sample, we substrate the mean of the relative peak area of the respective peak in initial litter of the litter type. A PCA calculated with the results allows us to demonstrate shifts between pyrolysis products during litter decomposition (fig. \ref{fig:pca.dif}). The first to principal components represent ~45\% of the total variance. Initial litter samples cluster cluster in the bottom right corner of the graph with positive loadings on PCA 1 and negative loadings on PCA2. Decomposed samples are shifted versus fresh litter along different axis: While decomposed SW samples are in the bottom left quadrant of the samples, shifted along PCA 1 toward more negative values and indifferent along PCA2, decomposed AK samples are shifted along PCA2 towards more positive values and do not shift along PCA1. KL and OS show intermediate decomposition trends. Their decomposed samples are placed in the top left corner, combining both decomposition trends.
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Most lignin markers have negative loadings on PCA1 and PCA2, indicating accumulation in SW and depletion in AK.
+Pyrolysis products that are positioned in the bottom-right quadrant  are depleted in all litter types, while products in the top left quadrant are accumulated in all litter types. Substances in the bottom left quadrant are depleted in AK and accumulated in SW, substances in the top-right quadrant show the opposite trend.
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Figure \ref{fig:timeseries} shows shifts in pyrolysis products relative to incubation time and accumulated respiration. Lignin contents were rising and carbohydrate contents decreasing for all litter types except AK. The two litter types with the highest lignin content show a (non-significant) decrease between 6 an 15 month harvests. Non-lignin phenolic pyrolysis products increase for all litter types, with SW's phenols showing increasing less then other litter.
+Most lignin markers have negative loadings on PCA1 and PCA2, indicating accumulation in SW and depletion in AK.
+
+Figure \ref{fig:timeseries} shows shifts in pyrolysis products relative to incubation time and accumulated respiration. Lignin contents were rising and carbohydrate contents decreasing for all litter types except AK. The two litter types with the highest lignin content show a (non-significant) decrease between 6 an 15 month harvests. Non-lignin phenolic pyrolysis products increase for all litter types, with SW's phenols showing increasing less then other litter.
 
 While KL, OS and SW all accumulate lignin at a similar rate relative to dry mass loss/accumulate respiration, AK show no sign of lignin accumulation during early litter decomposition. A lignin maximum was found after 6 month, with relative depletion of lignin (not significant) between 6 and 15 month harvests in two litter types and no further increase of lignin content in the other two sites.
 
