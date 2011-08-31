@@ -582,7 +582,7 @@ timeseries(orig_cTIC$L/(orig_cTIC$L + orig_cTIC$C), days, type, pch=pch, letters
 # head(samples)
 @
 
-\subsection{Litter chemistry}
+\subsection{Changes in Litter chemistry}
 
 Litter pyrolysis products and different sites are reported in detail elsewhere (Kohl, in preparation). Generally, we found only minor changes in pyrograms during decomposition. A PCA performed on relative peak areas of 128 peaks shows that samples cluster according to litter types, with no constistent seperation between different harvests. \ref{fig:pca1}. %118 (94.5\%) [!check nr!] of the peaks integrated show significant differences in relative peak areas between different litter types before incubation. 
 
@@ -605,6 +605,31 @@ Pyrolysis products that are positioned in the bottom-right quadrant are depleted
 
 21 of 28 lignin markers cluster with negative loadings on PCA1 and PCA2, demonstrating differences in lignin accumulation with the high redundancy (fig.\ref{fig:pca2}. \footnote{i really don't like this sentence.}. Carbohydrate products show diverging trends, with both accumulated and depleted compounds, representing the polymorphy of this compounds class in plant litter. 
 
+<<chembalance, fig=T, results=hide, echo=false>>=
+
+barp<-function(data, cond1, cond2, ylim=c(-3,3), ...)
+{  
+height<-  tapply(data[cond1], type[cond1], mean)- tapply(data[cond2], type[cond2], mean)
+error<-sqrt(tapply(data[cond1], type[cond1], stderr)^2 + tapply(data[cond1], type[cond1], stderr)^2)
+barplot.def(height, error)
+}
+
+par(mfrow=c(2,3))
+#barp(orig_cTIC$L, days==97, days==0)
+#barp(orig_cTIC$Ph, days==97, days==0)
+#barp(orig_cTIC$C, days==97, days==0)
+
+barp(orig_cTIC$L, days==181, days==0)
+#barp(orig_cTIC$Ph, days==181, days==97)
+barp(orig_cTIC$C, days==181, days==0)
+barp(orig_cTIC$L/orig_cTIC$C, days==181, days==0)
+
+barp(orig_cTIC$L, days==475, days==181)
+#barp(orig_cTIC$Ph, days==475, days==181)
+barp(orig_cTIC$C, days==475, days==181)
+barp(orig_cTIC$L/orig_cTIC$C, days==475, days==181)
+
+@
 
 %While the other three sites had a similar increases in lignin:(lignin+carbohydrate) ratio (relative to the respiration rate), no increase in lignin (absolute or relative to carbohydrates was observed). Fig. \ref{fig:lci} (left)
 
