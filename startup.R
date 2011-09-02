@@ -203,7 +203,7 @@ for (i in 1:nrow(alldata.stat))
     stderr(alldata[alldata$Litter==alldata.stat$type[i] & alldata$Harvest==alldata.stat$harvest[i], k])
 }
 
-colscale<-c(grey(0), grey(.3), grey(.5), grey(.7))
+colscale<-c(grey(0), grey(.2), grey(.4), grey(.6))
 pch<-c(1,16,2,17)
 
 initials.rsim<-rsim
