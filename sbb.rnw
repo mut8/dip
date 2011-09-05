@@ -374,7 +374,7 @@ Soluble organic carbon content decreased between the first three harvests (14 to
 \vspace*{2mm}
 \begin{center}
 \setkeys{Gin}{width=0.5\textwidth}
-<<doc, echo=F, results=hide, fig=T, height=4, width=4>>=
+<<doc, echo=F, results=hide, fig=T, height=7, width=7>>=
 timeseries(alldata$DOC/1000, alldata$days, alldata$Litter, pch=pch, col=colscale,  xlab="Incubation (days)", ylab="mg C g-1 d.w.", main="Extractable carbon", lwd=2)
 legend("bottomright", col=colscale, pch=pch, typlev, lty=1, lwd=2)
 @
@@ -498,10 +498,23 @@ Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 t
  % \begin{figure*}[t]
  % \vspace*{2mm}
  % \begin{center}
- %<<f2b, fig=T, echo=F, results=hide>>=
- % cond <- is.na(alldata$f2b_qpcr)==F
- % timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond],
- %@
+<<f2b, fig=T, echo=F, results=hide>>=
+colnames(alldata)
+
+f2b<-read.csv("raw_data/f2b.csv", header=T)
+plot(tapply(hmw.proc$LCI, type[h3], mean) , f2b$f2b_prot_h2, pch=pch)
+cond<-alldata$days==97
+plot(tapply(hmw.proc$LCI, type[h3], mean), tapply(alldata$f2b_qpcr[cond], alldata$Litter[cond], mean), pch=pch     )
+
+cor.test(
+alldata$f2b_qpcr[alldata$days=="181"]
+, hmw.proc$L_C_dec, pch=pch.h3 )
+
+
+
+cond <- is.na(alldata$f2b_qpcr)==F
+timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, col=colscale, lwd=2)
+@
  % \end{center}
  % \caption{Fungi to Bacteria ratio (qPCR). Error bars indicate standard errors (n=5)}
  % \label{fig:f2b}
@@ -753,7 +766,6 @@ mtext("LCI difference\n181-475 days", side=4, padj=3, las=0)
 
 <<lci, fig=T, echo=F, results=hide, width=14>>=
   par( mfrow=c(1,2), mar=c(4.1,4.1,2.1,.1), tck=0.01)
-?par()
 timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type,
  type="o", pch=pch, col=colscale, endsig=T, ylab="Lignin/(Lignin+Carbohydrates)", xlab="Litter incubation (days)", lwd=2)
 axis(4, labels=F)
