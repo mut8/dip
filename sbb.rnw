@@ -78,7 +78,7 @@
 
 \usepackage{textcomp, fixltx2e}
 \usepackage{fullpage, lscape}
-\def\Tiny{ \font\Tinyfont = cmr10 at 6pt \relax  \Tinyfont}
+\def\Tiny{ \font\Tinyfont = cmr10 at 4pt \relax  \Tinyfont}
 
 <<startup, echo=F, fig=F, results=hide>>=
 setwd("/home/lluc/dip")
@@ -128,28 +128,31 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 
 \author[1]{Lukas Kohl}
 \author[1]{Wolfgang Wanek}
-% \author[1]{Maria Mooshammer}
-\author[2]{Katharina Keiblinger\fnref1{boku}}
+\author[2]{Katharina Keiblinger\fnref{boku}}
 \author[1]{Sonja Leitner\fnref{boku}}
 \author[1]{Ieda H\"ammerle-N.}
-% \author[1]{Alexander Frank}
 \author[1]{Lucia Fuchslueger}
-% \author[1]{J\"org Schnecker}
-\author[2]{Sophie Zechmeister-Boltenstern\fnref1{boku}}
+\author[1]{Maria Mooshammer}
+\author[1]{Alexander Frank}
+\author[1]{J\"org Schnecker}
+\author[2]{Sophie Zechmeister-Boltenstern\fnref{boku}}
 \author[1]{Andreas Richter}
 %%%>>>>corresponding author?!
 
 \address[1]{Department of Chemical Ecology and Ecosystem Research, University of Vienna, Althanstra\ss e 14, A-1090 Vienna, Austria}
-\address[2]{BFW}
-\fntext[boku]{Current adress: Boku}
+\address[2]{Federal Research and Training Centre for Forests, Natural Hazards and Landscape, Department of Soil Biology, Seckendorff-Gudent-Weg 8, A-1131 Vienna, Austria}
+\fntext[boku]{Current adress: Institute for Soil Science, University of Natural Resources and Life Sciences, Peter Jordan-Straße 82, A-1190, Vienna, Austria}
+
 
 \begin{abstract}
 
 Lignin is considered the most recalcitrant component of plant litter, accumulated during early decomposition and degraded only during late decomposition stages when its concentration limits litter decomposition rates. A recent study based on the more specific (CuO-oxidation) to determine lignin contents reports challenges this concept, reporting highest lignin decomposition rates during early litter decomposition. Until now, no further studies exploring early lignin decomposition were published, and its potential controls remain unknown.
 
-We follow early litter decomposition with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over early lignin decomposition and microbial carbon substrate preferences. We incubated beech litter collected at different sites but an identical initial microbial community at constant climatic conditions to identify the control of litter chemistry on the developing microbial community and its decomposition activity.
+We follow early litter decomposition with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over early lignin decomposition and microbial carbon substrate preferences. Beech litter with different C:N:P stoichiometry but innoculated with identical initial microbial communities was incubated at constant climatic conditions to identify the control of litter chemistry on the developing microbial community and its decomposition activity. We use analytical pyrolysis to quantify lignin and carbohydrate break-down.
 
-Lignin decomposition during the first 6 month shows differences between site. Lignin discrimination in litter decomposition ranges between only marginal amounts of lignin being decomposed and lignin decomposition at the same rate average litter. However, no lignin depletion was found. Neither nitrogen nor labile carbon availability could be identified as a control over lignin decomposition. However, amounts of lignin decomposed were correlated to the buildup of resource to decomposer C:N and C:P inbalances, but not to .
+During the first 6 month fundamental differences in lignin degrading activities were found between sites. Lignin discrimination in litter decomposition ranges between only marginal amounts of lignin being decomposed and lignin decomposition at the same rate average litter, leading to different niveaus of lignin accumulation. Between 6 and 15 month, no lignin discrimination was found, but different lignin contents aquired earlier remined.
+
+Neither nitrogen nor labile carbon availability could be identified as a control over lignin decomposition. However, amounts of lignin decomposed were correlated to the buildup of resource to decomposer C:N and C:P inbalances.
 
 \end{abstract}
 
@@ -271,8 +274,7 @@ rownames(stoech.init) <- typlev
 <<init_stoech_table, results=tex, echo=F>>=
   print(
         xtable(stoech.init, caption="Litter stoichiometry measured after 14 days incubation. Standard errors are stated in brackets (n=5).",
-     label="initstoech",table.placement = "t", caption.placement = "top", allign=), size = "tiny"
-        )
+     label="initstoech", allign="rrrrrrr"), size = "tiny",table.placement = "tb", caption.placement = "top"  )
 @
 
 \subsection{Litter decomposition experiment}
@@ -339,12 +341,12 @@ Relative peak areas are different from weight\%, but allow tracing of accumulati
 To account for carbon loss, relative peak areas were corrected by accumulated respiration:
 
 \begin{equation}
-TIC_{corr} = TIC * frac{Accumulated Respiration}{Initial Carbon}
+TIC_{corr} = TIC * \frac{Accumulated Respiration}{Initial Carbon}
 \end{equation}
 
 To calculate \% of the initial pool degraded, 
 \begin{equation}
-\%_{degr} = frac{TIC_{corr}} {TIC{initial}}
+\%_{degr} = \frac{TIC_{corr}} {TIC{initial}}
 \end{equation}
 
 % check pyridol peak!!
@@ -494,27 +496,49 @@ Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 t
 
  Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry), but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, p < 0.016). Litter C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, especially after 3 month incubation (Fig. \ref{fig:mb}).
 
- % \subsubsection{Fungi and Bacteria contribution}
- % \begin{figure*}[t]
- % \vspace*{2mm}
- % \begin{center}
-<<f2b, fig=T, echo=F, results=hide>>=
-colnames(alldata)
-
-f2b<-read.csv("raw_data/f2b.csv", header=T)
-plot(tapply(hmw.proc$LCI, type[h3], mean) , f2b$f2b_prot_h2, pch=pch)
-cond<-alldata$days==97
-plot(tapply(hmw.proc$LCI, type[h3], mean), tapply(alldata$f2b_qpcr[cond], alldata$Litter[cond], mean), pch=pch     )
-
-cor.test(
-alldata$f2b_qpcr[alldata$days=="181"]
-, hmw.proc$L_C_dec, pch=pch.h3 )
+%\subsubsection{Fungi and Bacteria contribution}
+%\begin{figure*}[t]
+%\vspace*{2mm}
+%\begin{center}
+%<<f2b, fig=T, echo=F, results=hide>>=
+%colnames(alldata)
+%f2b
+%f2b<-read.csv("raw_data/f2b.csv", header=T)
 
 
+%plot(f2b$f2b_prot_h1, tapply(hmw.proc$LCI, type[h3], mean), pch=pch, col=colscale[4],
+%      xlim=c(min(f2b[,c("f2b_prot_h1", "f2b_prot_h2", "f2b_prot_h3")]),
+%              max(f2b[,c("f2b_prot_h1", "f2b_prot_h2", "f2b_prot_h3")])
+%      )
+%    )
+%plot(f2b$f2b_prot_h2, tapply(hmw.proc$LCI, type[h3], mean), pch=pch, col=colscale[3])
+%points(f2b$f2b_prot_h3, tapply(hmw.proc$LCI, type[h3], mean), pch=pch, col=colscale[1])
+%abline(lm(tapply(hmw.proc$LCI, type[h3], mean) ~ f2b$f2b_prot_h1), col=colscale[4])
+%abline(lm(tapply(hmw.proc$LCI, type[h3], mean) ~ f2b$f2b_prot_h2), col=colscale[3])
+%abline(lm(tapply(hmw.proc$LCI, type[h3], mean) ~ f2b$f2b_prot_h3), col=colscale[1])
 
-cond <- is.na(alldata$f2b_qpcr)==F
-timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, col=colscale, lwd=2)
-@
+
+%plot(f2b$f2b_trans_h1, tapply(hmw.proc$LCI, type[h3], mean), pch=pch, col=colscale[4],
+%      xlim=c(min(f2b[,c("f2b_trans_h1", "f2b_trans_h2")]),
+%              max(f2b[,c("f2b_trans_h1", "f2b_trans_h2")])
+%      )
+%    )
+%points(f2b$f2b_trans_h2, tapply(hmw.proc$LCI, type[h3], mean), pch=pch, col=colscale[3])
+%abline(lm(tapply(hmw.proc$LCI, type[h3], mean) ~ f2b$f2b_trans_h1), col=colscale[4])
+%cor.test(f2b$f2b_trans_h1, tapply(hmw.proc$LCI, type[h3], mean))
+%abline(lm(tapply(hmw.proc$LCI, type[h3], mean) ~ f2b$f2b_trans_h2), col=colscale[3])
+%cor.test(f2b$f2b_trans_h2, tapply(hmw.proc$LCI, type[h3], mean))   
+%     
+%cond<-alldata$days==97
+%plot(tapply(hmw.proc$LCI, type[h3], mean), tapply(alldata$f2b_qpcr[cond], aslldata$Litter[cond], mean), pch=pch     )
+%
+%cor.test(
+%alldata$f2b_qpcr[alldata$days=="181"]
+%, hmw.proc$L_C_dec, pch=pch.h3 )
+%
+%cond <- is.na(alldata$f2b_qpcr)==F
+%timeseries(alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, %col=colscale, lwd=2)
+%@
  % \end{center}
  % \caption{Fungi to Bacteria ratio (qPCR). Error bars indicate standard errors (n=5)}
  % \label{fig:f2b}
@@ -567,8 +591,6 @@ Absolute potential enzyme activities were generally correlated to litter N, resp
 
 \subsection{Pyrolysis-GC/MS and Lignin content}
 
-
-
 <<peakcodes, results=hide, echo=F>>=
 #set peak codes for PCA plots
 peakcodes<-alldata$RT
@@ -583,7 +605,6 @@ peakcodes[peaks$origin=="Ph"  ]<-"P"
 peakcodes[peaks$origin=="N"  ]<-"N"
 @
 
-
 % \begin{figure*}[t]
 % \vspace*{2mm}
 % \begin{center}
@@ -596,13 +617,11 @@ peakcodes[peaks$origin=="N"  ]<-"N"
 % \label{pca1}
 % \end{figure*}
 
-
  \begin{figure*}[t]
  \vspace*{2mm}
  \begin{center}
 \setkeys{Gin}{width=0.6\textwidth}
 <<pca2, fig=T, echo=F, results=hide>>=
-
 ord.plot(rda((rsim-initials.rsim)/initials.rsim, scale=T), days, type,scale=T, col=colscale, pch=pch, spe.labels=peakcodes, spe.mult=2.5, sep1.unit="days")
 @
  \end{center}
@@ -832,43 +851,8 @@ barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initia
      )
 axis(4)
 axis(2, labels=F)
-mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0)
+mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, cex=.7)
 abline(h=1, col="black", lty=2)
-
-# par(mar=c(2, 5, 0.6,0))
-# barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), names.arg=typlev, ylab="% of initial pool degraded \n days 181 - 475")
-#  #barp(orig_cTIC$Ph, days==475, days==181)
-# axis(4, labels=F)
-#
-# par(mar=c(2, 0, 0.6,5))
-# barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,25), names.arg=typlev ,yaxt="n")
-# axis(4)
-# axis(2, labels=F)
-# #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
-# #barp((closs.corr.orig_cTIC$L-initials.orig_cTIC$L)/(closs.corr.orig_cTIC$C-initials.orig_cTIC$C), days==475, days==181, ylim=c(-1,1))
-#
-# par(mar=c(2, 5, 0.6,0))
-# barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), names.arg=typlev, ylab="% loss / % carbon loss \n days 181 - 475")
-#  #barp(orig_cTIC$Ph, days==475, days==181)
-# axis(4, labels=F)
-# abline(h=1, col="grey")
-#
-# par(mar=c(2, 0, 0.6,5))
-# barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), names.arg=typlev, yaxt="n")
-# axis(4)
-# axis(2, labels=F)
-# #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
-# #barp((closs.corr.orig_cTIC$L-initials.orig_cTIC$L)/(closs.corr.orig_cTIC$C-initials.orig_cTIC$C), days==475, days==181, ylim=c(-1,1))
-# abline(h=1, col="grey")
-#
-# par(mar=c(2, 0, 0.6,5))
-# barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, names.arg=typlev, yaxt="n", ylim=c(0,2)
-#       #, log="y"
-#       )
-# axis(4)
-# axis(2, labels=F)
-# abline(h=1, col="grey")
-# mtext("Ratio (% of initial pools degraded)\n181-475 days", side=4, padj=2, las=0)
 @
 \end{center}
 \caption{Carbon loss corrected amounts of lignin and carbohydrates degraded. Carbon loss was calculated based on accumulated respiration. Error bars indicate standard errors (n=4-5)}
@@ -890,7 +874,6 @@ Between 6 and 15 month, no further discrimination occurs, lignin and carbohydrat
 %Fatty acids are the most comon origin of aliphatic pyrolysis products. (decarboxylisatio)
 
 \subsection{Correlation between lignin decomposition and other processes}
-
 <<lig6monthcor,results=hide, echo=F>>=
 h3<-harvest==6
 alldata$pyr.excl<-c(rep(T,5), rep(F, 15), rep(T,5), rep(F,4), T, rep(F, 10), rep(T, 5), rep(F, 15), rep(T,5), rep(F, 14),T)
@@ -907,20 +890,17 @@ hmw.proc <-
   (closs.corr.orig_cTIC$L[h3] - initials.orig_cTIC$L[h3]) / (closs.corr.orig_cTIC$C[h3] - initials.orig_cTIC$C[h3]) #,
   #log(closs.corr.orig_cTIC$L[h3] - initials.orig_cTIC$L[h3]) / (closs.corr.orig_cTIC$C[h3] - initials.orig_cTIC$C[h3])
   )
-alldata$cell2phen<-alldata$Cellulase/alldata$Phenoloxidase
-alldata$cell2per<-alldata$Cellulase/alldata$Peroxydase
+alldata$cell2phen<-alldata$Phenoloxidase/alldata$Cellulase
+alldata$cell2per<-alldata$Peroxydase/alldata$Cellulase
 
-colnames(hmw.proc) <- c("L_TIC", "C_TIC", "LCI", "L_dec", "C_dec", "L_resp", "C_resp", "L_C_dec"
-                        #, "log(L:C_dec)"
+colnames(hmw.proc) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp", "LCdec"
+                        #, "log(L:Cdec)"
                         )
-mighty.corr.matrix<-
-corr.ab(
-alldata[days==181&alldata$pyr.excl==F,c(10:16,77:78,18:26, 27, 33:59, 66:68, 71, 73:75)],
-hmw.proc
-)
 
-#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+
 @
+
+
 
 Appendix states correlations found between lignin degradation, litter chemistry, microbial community parameters and decomposition processes after 6 month incubation. Lignin accumulation was correlated to high turnover rates in decomposition processes and high enzymatic activities. 
 
@@ -934,7 +914,7 @@ par(mfrow=c(2,2))
 var1<-alldata$CN_inbal[alldata$days==181]
 var2<-alldata$CP_inbal[alldata$days==181]
 var3<-hmw.proc$LCI
-var4<-hmw.proc$L_C_dec
+var4<-hmw.proc$LCdec
 pch.h3<-c(rep(1,5), rep(16,5), rep(2,5), rep(17,5))
 
 var1lab<-"C:N resource / C:N microbial"
@@ -958,6 +938,7 @@ par(mar=c(5,5,0,0))
 corplot(var1, var4, var1lab, var4lab)
 par(mar=c(5,4,0,1))
 corplot(var2, var4, var2lab, "")
+
 @
 \end{center}
 \caption{Correlations between Lignin accumulation during the first 6 month of litter incubation and stoichiometric resource:consumer inbalances}
@@ -984,13 +965,24 @@ Increases in AUR observed during early decomposition did not result from lignin 
 
 During the first 6 month, lignin accumulation strongly varies between litter from different sites. As the original microbial community was destroyed and replaced with a commun innoculum for all sites, differences found result from differences in litter chemistry. Between 6 and 15 month lignin contents remained constant in all litter types, indicating that lignin is not degraded slower than other litter compounds, but differences in lignin contents aquired during the first 6 month remain.
 
-The absolute amount of lignin and the ratio in which lignin and carbohydrates are degraded during the first 6 month was ranges from marginal amounts (SW: not significant different from 0)  to lignin degraded at same rate as bulk litter. Between 6 and 15 month, lignin degradation rates reach bulk litter carbon mineralization rates in all litter types, differences in lignin contents that developed during the frist 6 month are preserved at least until 15 month of incubation.
+The absolute amount of lignin and the ratio in which lignin and carbohydrates are degraded during the first 6 month was ranges from marginal amounts (SW: not significant different from 0) to lignin degraded at same rate as bulk litter. Between 6 and 15 month, lignin degradation rates reach bulk litter carbon mineralization rates in all litter types, differences in lignin contents that developed during the frist 6 month are preserved at least until 15 month of incubation.
 
-Recent literature \footnote{citations!!} suggests the availability of labile carbon \citep{Klotzbucher2011} or redox-active micronutrients like Mn and Fe \footnot{Lit.!} or low N availability \citep{Craine2007} as key controls for (late) lignin degradation. 
+Recent literature suggests the availability of labile carbon \citep{Klotzbucher2011} or redox-active micronutrients like Mn and Fe \footnote{Lit.!} or low N availability \citep{Craine2007} as key controls for (late) lignin degradation. 
 
-Micronutrient availability availability can limit lignin degradation [lit]. However, in AK, their concentration in lower (Mn, Fe) or equal (Zn) concentrations than in other litter types. Low contents of these Elements would explain inhibited, not enhance lignin decomposition in AK.
+Mn and Fe are important co-factors of oxidative enzymes involved into lignin decomposition. Several authors suggest Mn availability limits lignin degradation and is rate limiting in late litter decomposition stages. Mn and Fe contents strongly vary between the different litter types used. An experiment studying aquatic decomposition of the same litter suggested Mn contents controll decomposition processes like enzyme activties. We can exclude micronutrient availability as a limiting factor for lignin decomposition in our experiment, because Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, table \ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition.
 
-Litter nitrogen content was strictly correlated to most decomposition processes measured [enzymes, N-depoly, Glucose-depoly, ... ] after 6 month and [test!]correlated to respiration at earlier harvest \citep{Mooshammer2011}. Earlier analysis of decomposition processes in the same samples found controls of N content and litter C:N ratios over decomposition processes \citep{Mooshammer2011, Leitner2011}. [The system is N limited, at least after 6 month.] However, N content is similar in AK and OS, so N content as a single factor can not explain the differences observed.
+Most decomposition processes (enzyme activities and depolymerization rates) were correlated to litter nitrogen content and C:N ratio. We find lignin decomposition rates is negatively correlated to these processes, but not to litter N contents. Also, no little lignin decomposition occurs OS litter, which has a N content just as low as AK litter. The correlation found between LCI change and litter N and C:N seems based on an enhanced carbohydrate degradation, but no inhibition in lignin decomposition. 
+
+Availability of extractable carbon was highest in AK and SW litter, two sites which have the highest and the lowest lignin decomposition trends. Therefore, extracable carbon can be excluded as a control over lignin decomposition. 
+
+Most interestingly, lignin degradation activities are tightly correlated to litter/microbe C:N and especially C:P inbalances. These inbalances are not exclusively based in litter chemistry, but are also controled by microbial comunity. C:P inbalance reaches a maximum after 3 month whil C:N inbalances have a maximum after 6 month. Lignin decomposition found (especially changes in LCI) correlate to C:N inbalance. This indicantes that either elevated N demand triggers lignin decomposition or lignin decomposition allows additional N to be incorporated into the microbial community. However, the correlation to C:P inbalances are stricter (R=0.83, p \textless 0.001) and C:P inbalances develop earlier (after 3 month). 
+
+High C:N and C:P inbalances indicate C surpluss. Following the hypothesis, that lignin decomposition is carbon limited, the carbon surplus available to microorganism might be invested into lignin degradation. 
+
+[C use efficiency lowest where most lignin decomposed.]
+
+
+was strictly correlated to most decomposition processes measured [enzymes, N-depoly, Glucose-depoly, ... ] after 6 month and [test!]correlated to respiration at earlier harvest \citep{Mooshammer2011}. Earlier analysis of decomposition processes in the same samples found controls of N content and litter C:N ratios over decomposition processes \citep{Mooshammer2011, Leitner2011}. [The system is N limited, at least after 6 month.] However, N content is similar in AK and OS, so N content as a single factor can not explain the differences observed.
  
 
 %However, no litter carbon mineralization was not coupled to lignin accumulation or carbohydrate depletion in the forth litter type (AK). Comparing changes in litter chemistry to respiration rates (fig. \ref{fig:lci} (B) and \ref{fig:timeseries} (right side)), we can exclude low litter turnover as a reason for the missing shift in litter chemistry in AK . Especially as OS hat only slightly higher accumulated respiration, but a similar rate of lignin accumulation like SW and KL. This indicates, that - in contrast to the other litter types - there is no microbial substrate preference of carbohydrates over lignin in AK litter and that lignin is decomposed during early litter decay in AK. In other sites, lignin is not decomposed or only at a rate relatively slower than carbohydrates.
@@ -1009,13 +1001,7 @@ We found substancial changes in decomposition processes after 6 month\footnote{d
 
 (2) Extractable carbon contents start decreases in most litter types until 6 month incubation and increase in all site afterwards. While initial extractable carbon content seems to be an arbitraty litter treat, after 6 month, exctractable carbon content is correlated to litter N and to decomposition processes, i.e. is actively produced. 
 
-
-
-
 The same applies for litter DOC content: Higher DOC quantity in SW and AK lead to different trends, in SW lignin was most accumulated in AK the least.
-
-
-
 
 We therefore suggest that the ratio between microbially accessible (=dissolved) carbon and litter nitrogen content
 
@@ -1054,16 +1040,35 @@ Thanks to Andreas Bl\"ochl, Clemens Schwarzinger, and Birgit Wild for technical 
 
 \bibliographystyle{model2-names}
 \bibliography{library}
-\section{Appendix}
-\begin{landscape}
-<<corrtable, results=tex, echo=F>>=
- print(xtable(mighty.corr.matrix[,1-10]) , size="Tiny")
+
+<<corrtable, results=tex, echo=F, fig=F>>=
+
+mighty.corr.matrix<-
+corr.ab(
+alldata[days==181&alldata$pyr.excl==F,c(10, 11,15:16,77:78,18:26, 28, 34:56, 67, 71, 73:75)]
+,hmw.proc, tex=T
+)
+
+#rownames cor corraltion table
+rownames(mighty.corr.matrix)<-  c("Massloss", "Cellulase activity", "Phenoloxidase activity", "Peroxidase activity", "Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", "N mineralization", "NH4 immobilization", "Nitrification", "NO3 immobilization", "P mineralization", "P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4","Respiration", "C litter", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter", "K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter", "Cmic", "Nmic", "Pmic", "C:N mic", "C:P mic", "N:P mic", "extractable C", "Fungi/bacteria (plfa 2)", "Fungi/bacteria (qPCR)", "C:N inbalance", "C:P inbalance", "N:P inbalance")
+
+colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+
+#convert table to latex
+
+tab<-
+xtable(
+   mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011, Frank2011}", label="corrtable", align=rep("r",9) ) 
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "!", caption.placement = "top")
+
 @
 
 %<<corrtable2, results=tex, echo=F>>=
-% print(xtable(mighty.corr.matrix[,c(1,11:25)]) , size="Tiny")
+% print(xtable(mighty.corr.matrix[,c(1,11:25)]) , size="Tiny", sanitize.text.function = function(x){x})
 %@
-\end{landscape}
-
 
 \end{document}
