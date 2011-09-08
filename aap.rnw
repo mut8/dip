@@ -228,6 +228,12 @@ Pyridol looses during first three month, then follows general N trend.
 N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 month and remains stable thereafter.
 
 
+% check pyridol peak!!
+
+%All nitrogen containing compounds and their sum were correlated to litter N content (R\textgreater0.49 for all and R\textgreater0.79 for 8 of 11 pyrolysis products and the sum of all N containing compounds. For all correlations, p=***). all peaks were correlated to their sum with .... The cTIC sum correlated to PCA1 with R\textgreater0.8x (p=***=).
+
+%Of the 28 lignin derived molecules were detected, 26 were positivly correlated to their sum (p=** or ***), 18 with R\textgreater0.07 (all p=***). Another the 10 non-lignin phenolic compounds found, of which 9 were positively correlated to the sum of all Phenoles, 7 with R\textgreater0.7.
+
 \subsection{Carbohydrates}
 In total, 42 carbohydrate derived pyrolysis products were identified either by their structure or by comparison to reference material (celluluse, xylran, glucose, ...). Unlike lignin or N compounds, carbohydrate pyrolysis products do not follow a common trend, but - reflecting the differences within this group. About a third of the peaks could not be identified but were assigned to carbohydrates because they are present reference pyrograms of cabrohydrates, but not in other compounds.
 
