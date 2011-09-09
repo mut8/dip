@@ -566,7 +566,7 @@ barpr2<-function(data1, data2, cond1, cond2, ylim=c(-3,3), ...)
 
 <<peakcodes, results=hide, echo=F>>=
                                         #set peak codes for PCA plots
-  peakcodes<-alldata$RT
+peakcodes<-alldata$RT
 peakcodes[peaks$origin=="non"  ]<-"o"
 peakcodes[peaks$origin=="al"]<-"o"
 peakcodes[peaks$origin=="Cut"]<-"o"

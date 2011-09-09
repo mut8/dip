@@ -1,27 +1,9 @@
+<<startup, echo=F, fig=F, results=hide>>=
+  setwd("/home/lluc/dip")
+source("startup.R")
+options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
+@
 
-%% This is file `elsarticle-template-1a-num.tex',
-%%
-%% Copyright 2009 Elsevier Ltd
-%%
-%% This file is part of the 'Elsarticle Bundle'.
-%% ---------------------------------------------
-%%
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%%
-%% The list of all files belonging to the 'Elsarticle Bundle' is
-%% given in the file `manifest.txt'.
-%%
-%% Template article for Elsevier's document class `elsarticle'
-%% with numbered style bibliographic references
-%%
-%% $Id: elsarticle-template-1a-num.tex 151 2009-10-08 05:18:25Z rishi $
-%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1a-num.tex $
-%%
 %%\documentclass[preprint,12pt]{elsarticle}
 
 %% Use the option review to obtain double line spacing
@@ -52,7 +34,7 @@
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers after \end{frontmatter}.
-%% \usepackage{lineno}
+\usepackage{lineno}
 
 %% natbib.sty is loaded by default. However, natbib options can be
 %% provided with \biboptions{...} command. Following options are
@@ -103,7 +85,7 @@
 %% \address{Address\fnref{label3}}
 %% \fntext[label3]{}
 
-\title{Following beech litter decomposition with analytical pyrolysis: Inter-site variance, decomposition trends and stoichiometric controls}
+\title{Following beech litter decomposition with analytical pyrolysis: Inter-site variance and decomposition trends}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{<author name>}
@@ -129,25 +111,19 @@
 
 \end{frontmatter}
 \pagestyle{empty}
-
-%%
-%% Start line numbering here if you want
-%%
-% \linenumbers
-
-%% main text
+\linenumbers
 
 \section{Introduction}
 
-Research on litter decomposition is [en vogue] \cite{Prescott2010}. Insufficient specifity of traditional methods to determine plant fibres is widely accepted \cite{Hatfield2005}. Analytical pyrolysis can provide and fast a cheap method to investigate chemical transformations of plant polymers during decomposition. 
+Understanding plant litter decomposition processes is key to understanding the global carbon cycle, nutrient recycling and soil formation\citep{Prescott2010}. However, little is known about changes in the chemistry of high molecular weight substances during decomposition. The insufficient specifity of traditional methods to determine plant fibres\citep{Hatfield2005} led to misinterpretation of decomposition dynamics. Analytical pyrolysis can provide and fast a cheap method to investigate chemical transformations of plant polymers during decomposition. However, while the use of analytical pyrolysis to quantify lignin and cellulose contents becomes more frequent, the full potential of an high definition interpretation of pyrograms is rarely used.
 
-Analytical pyrolysis was frequently applied to characterize natural organic polymers in soil organic matter [and dissolved organic matter?]. Plant derived compounds make up an important part of pyrolysis products found. The relative abundances of such markers were shown to hold key information on past climates and decomposition conditions \cite{i.e. Kuder1998, Schellekens2009, Schellekens2011}. 
+Analytical pyrolysis is frequently applied to characterize natural organic polymers in soil organic matter [and dissolved organic matter?]. Plant derived compounds make up an important part of pyrolysis products found. The relative abundances of such markers were shown to hold key information on past climates and decomposition conditions \cite{Kuder1998, Schellekens2009, Schellekens2011}. 
 
-Only a handful of Pyr-GC/MS studies tracing changing pyrolysis markers during litter decomposition were published, none of them includes indepth. [To our best knowledge] The only published work directly studying the decay of plant leaf litter is \cite{Franchini2002}. \cite{Snajdr2010} presents basic thermochemolysis data.  Straw was incubated with n. Several studies monitor the decomposition of woody material with Pyr GC/MS [lit.] or litter/soils mixtures[lit.]. None of the studies mentioned above analysis decomposition trends of individual pyrolysis products.
+Only a handful of Pyr-GC/MS studies tracing changing pyrolysis markers during litter decomposition were published, none of them includes indepth. The only published work directly studying the decay of plant leaf litter is \cite{Franchini2002}. \cite{Snajdr2010} presents basic thermochemolysis data.  Straw was incubated with n. Several studies monitor the decomposition of woody material with Pyr GC/MS [lit.] or litter/soils mixtures[lit.]. None of the studies mentioned above analysis decomposition trends of individual pyrolysis products.
 
 While assignment to major compounds classes (like ligin or carbohydrate) based on pyrolysis reaction mechnisms is common, little is known on whether the composition of individual pyrolysis products within this groups yields information. 
 
-This study compares pyrograms of beech litter from different site after up to 15 month of climate chamber decomposition. Beech litter were reported for exceptionally slow decomposition rates (12\% mass losso in the first year) in nature \citep{Klotzbucher2011} and showed similar decomposition rates our climate chamber experiment. Therefore, we do not focus on the accumulation of recalcitrant compounds, but focus on how individual pyrolysis markers accumulate or deplete relative to their compounds of origin which might provide insight into changes in polymer condensation patterns. Additionally, we explore to which extend differences of pyrolysis products remain after incubation.
+This study compares pyrograms of beech litter from different site after up to 15 month of climate chamber decomposition. Beech litter were reported for exceptionally slow decomposition rates (12\% mass losso in the first year) in nature \citep{Klotzbucher2011} and showed similar decomposition rates our climate chamber experiment. Therefore, we do not focus on the accumulation of recalcitrant compounds, but focus on how individual pyrolysis markers accumulate or deplete relative to their compounds of origin which might provide insight into changes in polymer condensation patterns.
 
 \section{Material and Methods}
 
@@ -189,10 +165,30 @@ Accumulated mass loss during the first 181 days ranged between
 
 \subsection{Pyrolysis products}
 
-A total of 128 peaks quantified with 38 phenolic, 11 nitrogen containing compounds and 42 carbohydrate derived compounds. Inter-site differences dominate both initial and incubated litter. 
+<<sigdiffs, echo=F, results=H>>=
+sigdif<-matrix(ncol=length(typlev)+length(harlev), nrow=peaknr)
+  for (i in 1:peaknr)
+    {
+    for (j in 1:length(typlev)) {
+      tmp<-oneway.test(rsim[type==typlev[j],i]~as.factor(days[type==typlev[j]]))
+      sigdif[i,j]<-tmp$p.value
+      }
+    for (j in 1:length(harlev)) {
+      tmp<-oneway.test(rsim[harvest==harlev[j],i]~type[harvest==harlev[j]])
+      sigdif[i,j+length(typlev)]<-tmp$p.value
+      }
+    }
+sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=1)
+#sum(rowSums(sigdif[,1:length(typlev)]<0.05)>3)
+sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)
+sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)
+@
+
+
+A total of \Sexpr{peaknr} peaks quantified including \Sexpr{sum(peaks$origin=="L"|peaks$origin=="P")} phenolic, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds and \Sexpr{sum(peaks$origin=="C")} carbohydrate derived compounds. Inter-site differences dominate both initial and incubated litter: In \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)}  peaks significant differences between litter from different sites was found during one time point, in \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=4)} differences were significant in all 4 harvests. In \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=1)} peaks significant differences between time points were found, but only \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=3)} peaks had significant differences in more than two litter types.
 %Our chromatography system using a carbowax column allows to measure some more hydrophilic compounds (i.e. Pyridol), on the other hand we miss several 
 
-Of this compounds, nn show increase/decrease in nn litter types.
+? Of this compounds, nn show increase/decrease in nn litter types.
 
 \subsection{Lignin}
 Of 38 phenolic pyrolysis products were identified, 15 of which had guaiacol-, 13 syringol-, and 10 non-methoxylated ring systems. Guaiacol/Syringol (G/S) ratios were tightly (all R=0.68-0.94, p<0.001) correlated between the more abundant side chains (-H, -CH$_3$, -CH$_2$CH$_3$, -CH=CH$_2$, -CH$_3$CH=CH$_2$). This correlation is weaker or non-significant for less abundant side chains (-CHO, -CH$_2$CH$_2$CHO), probably due to higher variances in their detection [see fig.,]. 
@@ -300,38 +296,51 @@ From our dataset, we see that (1) alcenes are accumulated
 \bibliographystyle{elsarticle-num}
 \bibliography{library}
 
-%% Authors are advised to submit their bibtex database files. They are
-%% requested to list a bibtex style file in the manuscript if they do
-%% not want to use model1a-num-names.bst.
-
-%% References without bibTeX database:
-
-% \begin{thebibliography}{00}
-
-%% \bibitem must have the following form:
-%%   \bibitem{key}...
-%%
-
-% \bibitem{}
-
-% \end{thebibliography}
 \newpage
 
-\section{Figures}
-\begin{figure}
-  \caption{A comparison of the ratios between 15 pairs of side chains in guaiacol and syringol derived pyrolysis products.}
-  \centering
-    \includegraphics[width=12cm]{sidechainratios_new.pdf}
-  \label{sidechainratios}
-\end{figure}
 
 
 
-\begin{figure}[p!]
-  \caption{G/Sy ratio for 5 pairs of compounds with different side chains.}
-  \centering
-    \includegraphics[width=0.5\textwidth]{G_Sy_ratio.pdf}
-\end{figure}
+
+
+
+\newpage
+\begin{figure*}[h!]
+\begin{center}
+<<pca1, fig=T, echo=F, results=hide>>=
+peakcodes<-alldata$RT
+peakcodes[peaks$origin=="non"  ]<-"o"
+peakcodes[peaks$origin=="al"]<-"a"
+peakcodes[peaks$origin=="Cut"]<-"a"
+peakcodes[peaks$origin=="unk"]<-"a"
+peakcodes[peaks$origin=="lip"]<-"f"
+peakcodes[peaks$origin=="L"  ]<-"L"
+peakcodes[peaks$origin=="C"  ]<-"C"
+peakcodes[peaks$origin=="Ph"  ]<-"P"
+peakcodes[peaks$origin=="N"  ]<-"N"
+  
+ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe.labels=peakcodes, sep1.unit="days")
+@
+\end{center}
+\caption{PCA based on 128 peaks quantified in 74 samples. Error bars indicate standard errors (n=4-5). Letters indicate pyrolysis products:  C - carbohydrates, L - lignin, P - other phenolic compounds, N - N containing compounds,  a - long chained aliphatic compounds (fatty acids, n- alkanes, n-alkenes, phytol}
+\label{fig:pca1}
+\end{figure*}
+
+%\section{Figures}
+%\begin{figure}
+%  \caption{A comparison of the ratios between 15 pairs of side chains in guaiacol and syringol derived pyrolysis products.}
+%  \centering
+%    \includegraphics[width=12cm]{sidechainratios_new.pdf}
+%  \label{sidechainratios}
+%\end{figure}
+
+
+
+%\begin{figure}[p!]
+%  \caption{G/Sy ratio for 5 pairs of compounds with different side chains.}
+%  \centering
+%    \includegraphics[width=0.5\textwidth]{G_Sy_ratio.pdf}
+%\end{figure}
 
 \newpage
 \section{Tables}
@@ -513,6 +522,8 @@ Pyrrole&NA&p&N&1.89\\
 \end{center}
 \label{tab:nprod}
 \end{table*}
+
+
 
 
 \end{document}
