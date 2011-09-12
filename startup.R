@@ -208,14 +208,13 @@ pch<-c(1,16,2,17)
 
 initials.rsim<-rsim
 initials.orig_cTIC <- orig_cTIC
-initials.class_cTIC <- class_cTIC
+initials.class_cTIC<- class_cTIC
 
 for (i in 1:nrow(samples))
 {
-  initials.rsim[i,T] <- colMeans(rsim[harvest==0 & type==type[i], T])
-  initials.orig_cTIC[i,T] <-
-    colMeans(orig_cTIC[harvest==0&type==type[i],T])
-  initials.class_cTIC <- colMeans(class_cTIC[harvest==0&type==type[i],T])
+  initials.rsim[i,T] <-      colMeans(rsim      [harvest==0 & type==type[i], T])
+  initials.orig_cTIC[i,T] <- colMeans(orig_cTIC [harvest==0 & type==type[i], T])
+  initials.class_cTIC[i,T] <-colMeans(class_cTIC[harvest==0 & type==type[i], T])
 }
 
 alldata$CN_inbal <- alldata$C.N_lit/ alldata$C.N_mic

@@ -184,14 +184,16 @@ sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)
 sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)
 @
 
-
-A total of \Sexpr{peaknr} peaks quantified including \Sexpr{sum(peaks$origin=="L"|peaks$origin=="P")} phenolic, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds and \Sexpr{sum(peaks$origin=="C")} carbohydrate derived compounds. Inter-site differences dominate both initial and incubated litter: In \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)}  peaks significant differences between litter from different sites was found during one time point, in \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=4)} differences were significant in all 4 harvests. In \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=1)} peaks significant differences between time points were found, but only \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=3)} peaks had significant differences in more than two litter types.
+A total of \Sexpr{peaknr} peaks quantified including \Sexpr{sum(peaks$origin=="L"|peaks$origin=="P")} phenolic, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds and \Sexpr{sum(peaks$origin=="C")} carbohydrate derived compounds. Inter-site differences dominate both initial and incubated litter: In \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=1)}  peaks significant differences between litter from different sites was found during one time point, in \Sexpr{sum(rowSums(sigdif[,(length(typlev)+1):ncol(sigdif)]<0.05)>=4)} differences were significant in all 4 harvests. In \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=1)} peaks significant differences between time points were found, but only \Sexpr{sum(rowSums(sigdif[,1:length(typlev)]<0.05)>=3)} peaks had significant changes during incubation in more than two litter types.
 %Our chromatography system using a carbowax column allows to measure some more hydrophilic compounds (i.e. Pyridol), on the other hand we miss several 
 
-? Of this compounds, nn show increase/decrease in nn litter types.
 
-\subsection{Lignin}
-Of 38 phenolic pyrolysis products were identified, 15 of which had guaiacol-, 13 syringol-, and 10 non-methoxylated ring systems. Guaiacol/Syringol (G/S) ratios were tightly (all R=0.68-0.94, p<0.001) correlated between the more abundant side chains (-H, -CH$_3$, -CH$_2$CH$_3$, -CH=CH$_2$, -CH$_3$CH=CH$_2$). This correlation is weaker or non-significant for less abundant side chains (-CHO, -CH$_2$CH$_2$CHO), probably due to higher variances in their detection [see fig.,]. 
+
+
+\subsection{Lignin and other phenolic compounds}
+Of \Sexpr{sum(peaks$origin=="L"|peaks$origin=="Ph")} phenolic pyrolysis products were identified, \Sexpr{sum(peaks$class=="g")} of which had guaiacol-, \Sexpr{sum(peaks$class=="sy")} syringol-, and \Sexpr{sum(peaks$origin=="Ph")} non-methoxylated ring systems.
+
+Guaiacol/Syringol (G/S) ratios were tightly (all R=0.68-0.94, p<0.001) correlated between the more abundant side chains (-H, -CH$_3$, -CH$_2$CH$_3$, -CH=CH$_2$, -CH$_3$CH=CH$_2$). This correlation is weaker or non-significant for less abundant side chains (-CHO, -CH$_2$CH$_2$CHO) due to higher variances in their detection. 
 
 Part of non-methoxylated phenols pyrolysis products (side chains -CH$_2$CH$_3$, -CH$_2$CH$_2$CH$_3$ -CH$_3$CH=CH$_2$)show clear structural similarity to pyrolysis products of lignin, suggesting that they are pyrolysis products of p-hydroxypropanylphenol based lignin. Other side chains (-H, -CH$_3$, -CHO) are less specific and are reported for other sources, although in small amounts. Furthermore, some of the phenolic compounds (i.e. hydroxyquinone) are not lignin derived. 
 
@@ -296,12 +298,6 @@ From our dataset, we see that (1) alcenes are accumulated
 \bibliographystyle{elsarticle-num}
 \bibliography{library}
 
-\newpage
-
-
-
-
-
 
 
 \newpage
@@ -324,6 +320,58 @@ ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe
 \end{center}
 \caption{PCA based on 128 peaks quantified in 74 samples. Error bars indicate standard errors (n=4-5). Letters indicate pyrolysis products:  C - carbohydrates, L - lignin, P - other phenolic compounds, N - N containing compounds,  a - long chained aliphatic compounds (fatty acids, n- alkanes, n-alkenes, phytol}
 \label{fig:pca1}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\begin{center}
+<<pcalph, fig=T, echo=F, results=hide, width=7, height=14>>=
+par(mfrow=c(2,1))
+  
+ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
+  
+ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+
+
+colnames(rsim)<-peaks$name  
+fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+
+
+ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]) - initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
+  
+ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+
+
+colnames(rsim)<-peaks$name  
+fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+  
+@
+\end{center}
+\caption{The upper graph shows a PCA of 45 lignin and phenol compounds, relative to their sum. Black arrows indicate fits for \%TIC sum of compound classes (g - guaiacol lignin, sy - syringol lignin ph - other phenols), grey arrows indicate selected individual markers (G1/S0 - guaiacol/syringol, G/S1 - methylguaiacol/-syringol, G3:1/S3:1 - Propenylguaiacol/syringol.) The lower graph shows a PCA based on  differences to initial peak abundance.}
+\label{fig:pcalph}
+\end{figure*}
+
+
+\newpage
+\begin{figure*}[h!]
+\begin{center}
+<<g2syTS, fig=T, echo=F, results=hide, height=14, width=14>>=
+par(mfrow=c(2,2))
+timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics")
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)")
+
+timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics")
+abline(h=0, lty=2)
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)")
+abline(h=0, lty=2)
+
+
+@
+\end{center}
+\caption{}
+\label{fig:gsyph}
 \end{figure*}
 
 %\section{Figures}
