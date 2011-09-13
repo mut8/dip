@@ -37,7 +37,7 @@ addpeaks<-function(source, sep=",") {
 }
 
 samples<-read.csv("raw_data/samples.csv", sep=";", header=TRUE)
-addpeaks(c("raw_data/furane.csv","raw_data/aromates.csv", "raw_data/phenole.csv", "raw_data/carbos_neu.csv", "raw_data/cyclopentenone.csv", "raw_data/n_compounds_neu.csv", "raw_data/alkan_en_cleaned.csv", "raw_data/the_rest.csv", "raw_data/lignin2.csv", "raw_data/keto-alkyl_alcohole.csv", "raw_data/fa.csv"), sep=",")
+addpeaks(c("raw_data/furane.csv","raw_data/aromates.csv", "raw_data/phenole.csv", "raw_data/carbos_neu.csv", "raw_data/cyclopentenone.csv", "raw_data/n_compounds_neu.csv", "raw_data/alkan_en_cleaned.csv", "raw_data/the_rest.csv", "raw_data/lignin2.csv", "raw_data/keto-alkyl_alcohole.csv", "raw_data/fa.csv"), sep=";")
 
 minerals<-read.csv("raw_data/minerals.csv", sep=",", header=TRUE)
 alldata<-read.csv("raw_data/micdif_alldata.csv", sep=";", header=TRUE)

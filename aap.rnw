@@ -332,9 +332,9 @@ ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin
   
 ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
 
-
+peaks$code
 colnames(rsim)<-peaks$name  
-fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
 plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
 
 
@@ -344,7 +344,7 @@ ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$cl
 
 
 colnames(rsim)<-peaks$name  
-fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$name, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
 plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
   
 @
