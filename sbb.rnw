@@ -755,25 +755,6 @@ abline(h=1, col="black", lty=2)
 \begin{figure*}[h!]
 \vspace*{2mm}
 \begin{center}
-\setkeys{Gin}{width=0.6\textwidth}
-
-<<notlignin, width=7, height=7, echo=F, fig=T, results=hide>>=
-  par(mfrow=c(2,2), mar=c(4,4,1,1))
-timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds")
-cond<-c(F,F,rep(T,72))
-timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T)
-timeseries(orig_cTIC$al[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)")
-timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)")
-@
-\end{center}
-\caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
-\label{fig:notlig}
-\end{figure*}
-
-\newpage
-\begin{figure*}[h!]
-\vspace*{2mm}
-\begin{center}
 \setkeys{Gin}{width=0.9\textwidth}
 <<graphcorr, fig=T, echo=F, results=hide, width=10.5, height=7>>=
   par(mfrow=c(2,3))
@@ -895,26 +876,26 @@ var6lab<-"Lignin decomposition (% of initial pool)"
 var7lab<-"Carbohydrates decomposition (% of initial pool)"
 
 par(mar=c(4,5,1,0))
-corplot(var1, var4, "", var4lab)
+corplot(var1, var4, xlab="", ylab=var4lab, pch=pch.h3)
 par(mar=c(4,4,1,1))
-corplot(var2, var4, "", "")
-corplot(var3, var4, "", "")
+corplot(var2, var4, xlab="", ylab="", pch=pch.h3)
+corplot(var3, var4, xlab="", ylab="", pch=pch.h3)
 par(mar=c(4,5,1,0))
-corplot(var1, var5, "", var5lab)
+corplot(var1, var5, xlab="", ylab=var5lab, pch=pch.h3)
 par(mar=c(4,4,1,1))
-corplot(var2, var5, "", "")
-corplot(var3, var5, "", "")
+corplot(var2, var5, xlab="", ylab="", pch=pch.h3)
+corplot(var3, var5, xlab="", ylab="", pch=pch.h3)
 par(mar=c(4,5,1,0))
-corplot(var1, var6, "", var6lab)
+corplot(var1, var6, xlab="", ylab=var6lab, pch=pch.h3)
 par(mar=c(4,4,1,1))
-corplot(var2, var6, "", "")
-corplot(var3, var6, "", "")
+corplot(var2, var6, xlab="", ylab="", pch=pch.h3)
+corplot(var3, var6, xlab="", ylab="", pch=pch.h3)
 par(mar=c(5,5,0,0))
-corplot(var1, var7, var1lab, var7lab)
+corplot(var1, var7, xlab=var1lab, ylab=var7lab, pch=pch.h3)
 par(mar=c(5,4,0,1))
-corplot(var2, var7, var2lab, "")
+corplot(var2, var7, xlab=var2lab, ylab="", pch=pch.h3)
 par(mar=c(5,4,0,1))
-corplot(var3, var7, var3lab, "")
+corplot(var3, var7, xlab=var3lab, ylab="", pch=pch.h3)
 
 @
 \end{center}

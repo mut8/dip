@@ -123,7 +123,7 @@ Only a handful of Pyr-GC/MS studies tracing changing pyrolysis markers during li
 
 While assignment to major compounds classes (like ligin or carbohydrate) based on pyrolysis reaction mechnisms is common, little is known on whether the composition of individual pyrolysis products within this groups yields information. 
 
-This study compares pyrograms of beech litter from different site after up to 15 month of climate chamber decomposition. Beech litter were reported for exceptionally slow decomposition rates (12\% mass losso in the first year) in nature \citep{Klotzbucher2011} and showed similar decomposition rates our climate chamber experiment. Therefore, we do not focus on the accumulation of recalcitrant compounds, but focus on how individual pyrolysis markers accumulate or deplete relative to their compounds of origin which might provide insight into changes in polymer condensation patterns.
+This study compares pyrograms of beech litter from different site after up to 15 month of climate chamber decomposition. Beech litter were reported for exceptionally slow decomposition rates (12\% mass losso in the first year) in nature \citep{Klotzbucher2007} and showed similar decomposition rates our climate chamber experiment. Therefore, we do not focus on the accumulation of recalcitrant compounds, but focus on how individual pyrolysis markers accumulate or deplete relative to their compounds of origin which might provide insight into changes in polymer condensation patterns.
 
 \section{Material and Methods}
 
@@ -133,19 +133,21 @@ Pyrolysis-GC/MS was performed on a Pyroprobe 5250 pyrolysis system (CDS Analytic
 
 Peaks were assignment was based on NiSt 05 MS library and comparison with reference material measured. 133 peaks were selected for integration due to their hiht abundance or diagnostic value. For each peak between one and four mass fragments selected for high abundance and specificity were integrated (i.e. \cite{Schellekens2009}). Peak areas are stated as \% of the sum of all integrated peaks of a sample. 
 
-Pyrolysis products were assigned to their substances of origin by comparison to reference material, structural similarity and in accordance with literature (\cite{Ralph1991a, Schellekens2009, Chiavari1992}[more lit!]). The sum of all peak areas of the pyrolysis products of a class was calculated based on total ion current (TIC) peak areas. TIC peak areas are (1) less specific as areas of specific MS fragments and (2) integration was not possible for all peaks a/o all samples. Therefore a MS response factor Rf was calculated for each detected substance:
+Pyrolysis products were assigned to their substances of origin by comparison to reference material, structural similarity and in accordance with literature (\cite{Ralph1991a, Schellekens2009, Chiavari1992}[more lit!]). We confirmed the identity of two products rarely reported for plant material (Phytol and 3-Hydroxypyridine) by the addition of reference material to the sample and comparison to MS libraries. Both substances were bought from Sigma-Aldrich (St. Louis, MO, USA). 
 
-\begin{equation}
-Rf = median (\frac{TIC peak area}{specific MS fragment peak area})
-\end{equation}
-
-Peak areas were multiplied by Rf before addition to calculate percentages of TIC area without loosing the specifity of integrating single m/z traces \citep{Kuder1998}.
-
+%The sum of all peak areas of the pyrolysis products of a class was calculated based on total ion current (TIC) peak areas. TIC peak areas are (1) less specific as areas of specific MS fragments and (2) integration was not possible for all peaks a/o all samples. Therefore a MS response factor Rf was calculated for each detected substance:
+%
+%\begin{equation}
+%Rf = median (\frac{TIC peak area}{specific MS fragment peak area})
+%\end{equation}
+%
+%Peak areas were multiplied by Rf before addition to calculate percentages of TIC area without loosing the specifity of integrating single m/z traces \citep{Kuder1998}.
+%
 % However, during interpretation, we found little difference between direct sums of the integrated fragments and sums of corrected areas, indicating little sensitivity for exact 
-
-Relative peak areas in both integrations are different from weight\%, but allow tracing of accumulation/depletion of these substance classes during decomposition \citep{Kuder1998}. 
-
-Percent of the initial content lost during decomposition were calculated according to
+%
+%Relative peak areas in both integrations are different from weight\%, but allow tracing of accumulation/depletion of these substance classes during decomposition \citep{Kuder1998}. 
+%
+%Percent of the initial content lost during decomposition were calculated according to
 
 \begin{equation}
 \% lost = \frac {mean()actual \%)} {1-\frac{carbon respired}{initial carbon content}} - \% mean initial content
@@ -203,12 +205,18 @@ Guaiacol to Syringol ratios were constant over decomposition time. The ratios ar
 
 Most important difference between sites were observed in the ratio between Guaiacol
 
-The pattern of abundances of different side chains was the same for guaiacol and syringol derived compounds. Fig \ref{sidechainratios}shows that the ratios between 15 pairs of side chains are highly significant in guaiacol and syringol lignin based pyrolysis products. However, there are some site-specific differences in these patterns: the abundance of -H and -CH$_3$ side chains relative to other side chains is different between the litter types, but consistent between guaiacol and syringol derivatives. 
+The pattern of abundances of different side chains was the same for guaiacol and syringol derived compounds. Fig \ref{fig:sidechainratios} shows that pairwise ratios between 5 different lignin side chains are highly significant in guaiacol and syringol lignin based pyrolysis products. However, there are some site-specific differences in these patterns: the abundance of -H and -CH$_3$ side chains relative to other side chains is different between the litter types, but consistent between guaiacol and syringol derivatives. 
   de chains with oxygen based functional groups were present, but in abundances much lower than the before mentioned. 
+
+
 
 \cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
 
 \subsection{N compounds}
+
+%<<>>=
+%timseries()
+%@
 
 11 nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. Methylindol and indole (R=0.98, p\textless 0.05?0.001?) were highly correlated to each other, as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). These two groups were correlated to each other (R = 0.77-0.87, p\textless 0.05?0.001?), but less strict as within the groups. 
 
@@ -233,11 +241,17 @@ N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 
 %Of the 28 lignin derived molecules were detected, 26 were positivly correlated to their sum (p=** or ***), 18 with R\textgreater0.07 (all p=***). Another the 10 non-lignin phenolic compounds found, of which 9 were positively correlated to the sum of all Phenoles, 7 with R\textgreater0.7.
 
 \subsection{Carbohydrates}
-In total, 42 carbohydrate derived pyrolysis products were identified either by their structure or by comparison to reference material (celluluse, xylran, glucose, ...). Unlike lignin or N compounds, carbohydrate pyrolysis products do not follow a common trend, but - reflecting the differences within this group. About a third of the peaks could not be identified but were assigned to carbohydrates because they are present reference pyrograms of cabrohydrates, but not in other compounds.
+In total, 42 carbohydrate derived pyrolysis products were identified either by their structure or by comparison to reference material %(cellulose, xylan, glucose, ...). 
+Unlike lignin or N compounds, carbohydrate pyrolysis products do not follow a common trend, but - reflecting the differences within this group. About a third of the peaks could not be identified but were assigned to carbohydrates because they are present reference pyrograms of cabrohydrates, but not in other compounds.
 
 Methylated cyclopentenone derivatives show an increase over decomposition, while derivative with keto- or hydroxy- side chains show decreases over decomposition.
 
 Furanmethanol shows an especially high degradation rate, loosing 15 to 30 \% of it's initial contribution to the total peak area over 15 month.
+
+\subsection{Terpenoid compounds}
+ 
+We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_20$ compound  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
+and a second one identified as Limonene by the NiSt data base. 
 
 \subsection{Fatty acids}
 Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
@@ -249,12 +263,7 @@ Fot the three fatty acids found, between 15 and 50 \% were degraded over 15 mont
 
 \subsection{Long chained alkanes and alkenes}
 
-We found C25-C29 alkanes and alkenes in our pyrograms. The two had different decomposition trends: While 
-
-\subsection{Terpenoid compounds}
- 
-We found two compounds with terpenoid structure:
-One identified as Phytol, a C20H40O and a second one identified as Limonene by the NiSt data base. 
+We found C25-C29 alkanes and alkenes in our pyrograms. The two had different decomposition trends: While
 
 \section{Discussion}
 
@@ -325,6 +334,7 @@ ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe
 \newpage
 \begin{figure*}[h!]
 \begin{center}
+\setkeys{Gin}{width=0.5\textwidth}
 <<pcalph, fig=T, echo=F, results=hide, width=7, height=14>>=
 par(mfrow=c(2,1))
   
@@ -357,14 +367,15 @@ plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
 \newpage
 \begin{figure*}[h!]
 \begin{center}
+\setkeys{Gin}{width=\textwidth}
 <<g2syTS, fig=T, echo=F, results=hide, height=14, width=14>>=
 par(mfrow=c(2,2))
-timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics")
-timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)")
+timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 
-timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics")
+timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
 abline(h=0, lty=2)
-timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)")
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 abline(h=0, lty=2)
 
 
@@ -374,13 +385,54 @@ abline(h=0, lty=2)
 \label{fig:gsyph}
 \end{figure*}
 
-%\section{Figures}
-%\begin{figure}
-%  \caption{A comparison of the ratios between 15 pairs of side chains in guaiacol and syringol derived pyrolysis products.}
-%  \centering
-%    \includegraphics[width=12cm]{sidechainratios_new.pdf}
-%  \label{sidechainratios}
-%\end{figure}
+\begin{figure}
+\centering
+\setkeys{Gin}{width=\textwidth}
+<<sidechainratios, echo=F, results=hide, fig=T, height=7, width=10.5>>=
+par(mfrow=c(2,3))
+pch.all<-c(rep(1,19),rep(16,18),rep(2,19),rep(17,18))
+
+corplot(rsim[,peaks$code=="G0"]/ class_cTIC$g, rsim[,peaks$code=="S0"]/ class_cTIC$sy, pch=pch.all, xlab="G0/sum guaiacol", ylab="S0/sum syringolol")
+corplot(rsim[,peaks$code=="G1"]/ class_cTIC$g, rsim[,peaks$code=="S1"]/ class_cTIC$sy, pch=pch.all, xlab="G1/sum guaiacol", ylab="S1/sum syringolol")
+corplot(rsim[,peaks$code=="G2"]/ class_cTIC$g, rsim[,peaks$code=="S2"]/ class_cTIC$sy, pch=pch.all, xlab="G2/sum guaiacol", ylab="S2/sum syringolol")
+corplot(rsim[,peaks$code=="G3"]/ class_cTIC$g, rsim[,peaks$code=="S3"]/ class_cTIC$sy, pch=pch.all, xlab="G3/sum guaiacol", ylab="S3/sum syringolol")
+corplot(rsim[,peaks$code=="G2:1"]/ class_cTIC$g, rsim[,peaks$code=="S2:1"]/ class_cTIC$sy, pch=pch.all, xlab="G2:1/sum guaiacol", ylab="S2:1/sum syringolol")
+corplot(rsim[,peaks$code=="G3:1c"]/ class_cTIC$g, rsim[,peaks$code=="S3:1c"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1c/sum guaiacol",ylab="S3:1c/sum syringolol") 
+corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1=O/sum guaiacol", ylab="S3:1=O/sum syringolol")
+  
+#sidechains<-data.frame(rsim[,peaks$class=="g"]/class_cTIC$g, rsim[,peaks$class=="sy"]/class_cTIC$sy)
+#for (i in 1:ncol(sidechains))
+#  print(anova(lm(sidechains[,i]~type*harvest)))
+#colnames(sidechains)<-
+#  cbind(
+#    peaks$code[peaks$class=="g"]
+#    ,     peaks$code[peaks$class=="sy"]    )
+#colnames(sidechains)
+#  peaks
+    
+@
+\caption{Lignin side chains occur in the same ratios for both guaiacol and syringol lignin, but differences in the content of -H and -CH$_3$ side chains were found.}
+\label{fig:sidechainratios}
+\end{figure}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=0.6\textwidth}
+
+<<notlignin, width=7, height=7, echo=F, fig=T, results=hide>>=
+  par(mfrow=c(2,2), mar=c(4,4,1,1))
+timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds")
+cond<-c(F,F,rep(T,72))
+timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T)
+timeseries(orig_cTIC$al[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)")
+timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)")
+@
+\end{center}
+\caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
+\label{fig:notlig}
+\end{figure*}
 
 
 
@@ -391,7 +443,7 @@ abline(h=0, lty=2)
 %\end{figure}
 
 \newpage
-\section{Tables}
+%\section{Tables}
 
 \begin{table*}[h!]
 \begin{center}
