@@ -1,9 +1,9 @@
-"name";"N-methyl-pyrrol";"pyridine";"methylpyridine1";"methylpyridine2";"pyrrole";"methylpyrrol1";"methylpyrrol2";"Pyridol";"Indole";"Methylindole"
-"RT";;;;;;;;;;
-"MW";;;;;;;;;;
-"m/z";;;;;;;;;;
-"class";"p";"p";"p";"p";"p";"p";"p";"unk";"ind";"ind"
-"origin";"N";"N";"N";"N";"N";"N";"N";"unk";"N";"N"
+"name";"N-methyl-pyrrol";"Pyridine";"Methylpyridine";"methylpyridine";"Pyrrol";"Methylpyrrol";"Methylpyrrol";"3-Hydroxypyridine";"Indole";"Methylindole"
+"RT";6.15;6.9;7.5;9.02;13.11;13.81;14.1;26.52;26.85;27.42
+"MW";81;95;93;93;67;81;81;95;117;131
+"m/z";"80+81";"52+79+95";"66+92+93";"66+93";"39+41+67";"80+81";"80+81";"67+95";"89+117";"130+131"
+"class";"N-me-pyr";"p";"p";"p";"p";"p";"p";"pyridol";"ind";"ind"
+"origin";"N";"N";"N";"N";"N";"N";"N";"N";"N";"N"
 "tic";5.4743220269;1.6763104903;1.4113710874;0.5530547433;1.8853371611;1.8407913815;2.2955035346;2.1142456847;2.9698643238;0
 "exclude";"F";"F";"F";"F";"F";"F";"F";"F";"F";"F"
 "code";"N-methyl-pyrrol";"pyridine";"methylpyridine1";"methylpyridine2";"pyrrole";"methylpyrrol1";"methylpyrrol2";"Pyridol";"Indole";"Methylindole"

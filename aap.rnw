@@ -210,6 +210,27 @@ The pattern of abundances of different side chains was the same for guaiacol and
 
 \cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
 
+\subsection{N compounds}
+
+<<>>=
+n<-1
+p<-1
+for(i in     
+    which(peaks$origin=="N")
+    )
+  {
+tmp<-cor.test(rsim[,i], samples$N_lit)
+n[i]<-tmp$estimate
+p[i]<-tmp$p.value
+}
+colnames(rsim)
+ncorsig<-length(which((n>0.8&p<0.001)==T))
+@
+
+In total, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. \Sexpr{ncorsig} of them were stricly correlated to litter N content (all R\textgreater 0.8, p\textless 0.001).Two groups could be identified amoung them: indol and methylindole were highly correlated to each other (R=0.98, p\textless 0.05?0.001?), as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). Correlations between peaks of two groups were still high, but lower than within the groups (R = 0.77-0.87, p\textless 0.05?0.001?). Both groups show a continuous increase during litter decomposition: after 15 month pyridine and pyrrol derrivatives increase by 8-20\% of their initial content, indol and methylindol by 20-30\% (fig. \ref{fig:npeaks}).
+
+Two pyrolysis products show different trends:  The abundance of 3-Hydroxypyrrol strongly (30-50\%) decreases during first six month, then follows general N trend. N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 month and remains stable thereafter (fig. \ref{fig:npeaks}).
+
 \subsection{Carbohydrates}
 In total, 42 carbohydrate derived pyrolysis products were identified either by their structure or by comparison to reference material %(cellulose, xylan, glucose, ...). 
 Unlike lignin or N compounds, carbohydrate pyrolysis products do not follow a common trend, but - reflecting the differences within this group. About a third of the peaks could not be identified but were assigned to carbohydrates because they are present reference pyrograms of cabrohydrates, but not in other compounds.
@@ -218,28 +239,13 @@ Methylated cyclopentenone derivatives show an increase over decomposition, while
 
 Furanmethanol shows an especially high degradation rate, loosing 15 to 30 \% of it's initial contribution to the total peak area over 15 month.
 
-\subsection{N compounds}
-
-\Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. Methylindol and indole  were highly correlated to each other (R=0.98, p\textless 0.05?0.001?), as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). These two groups were correlated to each other (R = 0.77-0.87, p\textless 0.05?0.001?), but less strict as within the groups. N-methyl-pyrrol and Methylpyrrol[II] were not or less strictly correlated to the other compounds.
-
-One Methylpyr? peak was of very low abundance with high variance and did not correlate to other N markers but with each other (R=0.74, p=***). They show different trends:
-
-
-
-Furthermore, all N markers except the three mentioned before were correlated to litter N content (R \textgreater 0.81, p \textless 0.001.
-
-%While N compounds generally increase in 
-
-The abundance of 3-Hydroxypyrrol strongly decreases during first three month, then follows general N trend. N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 month and remains stable thereafter.
-
-
-
-\subsection{Terpenoid compounds}
+\subsection{Other compounds}
+\subsubsection{Phytol}
  
-We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_20$ compound  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
+We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_{20}$ alcohol  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
 and a second one identified as Limonene by the NiSt data base. 
 
-\subsection{Fatty acids}
+\subsubsection{Fatty acids}
 Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
 
 For fatty acid analysis 2 samples were excluded as contaminations were encountered.
@@ -247,7 +253,7 @@ For fatty acid analysis 2 samples were excluded as contaminations were encounter
 Initial content of fatty acids showed differences of up to 30 \% between sites.
 Fot the three fatty acids found, between 15 and 50 \% were degraded over 15 month, indication that both accumulation and depletion occurs in certain sites.
 
-\subsection{Long chained alkanes and alkenes}
+\subsubsection{Long chained alkanes and alkenes}
 
 We found C25-C29 alkanes and alkenes in our pyrograms. The two had different decomposition trends: While
 
@@ -444,7 +450,7 @@ corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ 
 timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", col=colscale)
 cond<-c(F,F,rep(T,72))
 timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, col=colscale)
-timeseries(orig_cTIC$al[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", col=colscale)
+timeseries(class_cTIC$phytol[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", col=colscale)
 timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", col=colscale)
 @
 \end{center}
@@ -456,19 +462,26 @@ timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl c
 \begin{figure*}[h!]
 \vspace*{2mm}
 \begin{center}
-\setkeys{Gin}{width=0.8\textwidth}
+\setkeys{Gin}{width=\textwidth}
 
-<<ncomp, width=7, height=7, echo=F, fig=T, results=hide>>=
-par(mfrow=c(2,2), mar=c(4,4,1,1))
+<<ncomp, width=10.5, height=7, echo=F, fig=T, results=hide>>=
+par(mfrow=c(2,3), mar=c(4,4,1,1))
 timeseries(orig_cTIC$N, days, type, pch=pch, main="N compounds", col=colscale, normalize=1, endsig=T)
 timeseries(class_cTIC$ind, days, type, pch=pch, main="indole", endsig=T, col=colscale, normalize=1, lty=2)
-timeseries(rowSums(rsim[,peaks$class=="p" & peaks$name!="Pyridol"]), days, type, pch=pch, main="pyridine & pyrrol", endsig=T, xlab="incubation(days)", col=colscale)
+timeseries(rowSums(rsim[,peaks$class=="p" & peaks$class!="pyridol"]), days, type, pch=pch, main="pyridine & pyrrol", endsig=T, xlab="incubation(days)", col=colscale)
 
-timeseries(rsim[,peaks$name=="Pyridol"], days, type, pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", col=colscale, )
+peaks$name
+
+timeseries(rsim[,peaks$class=="pyridol"], days, type, pch=pch, main="3-Hydroxypyridine", endsig=T, xlab="incubation(days)", col=colscale, )
+
+timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpyrrol", endsig=T, xlab="incubation(days)", col=colscale, )
+
+
+
 @
 \end{center}
-\caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
-\label{fig:notlig}
+\caption{Trends for nitrogen compounds found in isolated lignin. Two samples were excluded due to contaminations.}
+\label{fig:npeaks}
 \end{figure*}
 
 
@@ -593,72 +606,12 @@ F-OH.1.1=O&	5-hydroxymethylfuran-1-carboxaldehyde&	Furan&		&		27.51&		126&	97+12
 \label{tab:chprod}
 \end{table*}
 
-\newpage
-\begin{table*}[h!]
-\begin{center}
-{\tiny
-\begin{tabular}{lcccccc}
-\hline
-name & RT & MW & m/z & class & origin&Rf\\
-\hline
-Toluene&NA&ar&non&b.d.\\
-Xylene1&NA&ar&non&4.46\\
-Xylene2&NA&ar&non&b.d.\\
-Xylene3&NA&ar&non&b.d.\\
-Methoxymethylbenzene&NA&ar&non&4.04\\
-Benzaldehyde&NA&ar&non&12.88\\
-N-methyl-pyrrol&NA&p&N&5.47\\
-Pyridine&NA&p&N&1.68\\
-Methylpyridine1&NA&p&N&1.41\\
-Methylpyridine2&NA&p&N&0.55\\
-Pyrrole&NA&p&N&1.89\\
-% 53               methylpyrrol1    NA                 p      N   1.8407914
-% 54               methylpyrrol2    NA                 p      N   2.2955035
-% 55                     Pyridol    NA                 p      N   2.1142457
-% 56                      Indole    NA               ind      N   2.9698643
-% 57                Methylindole    NA               ind      N   0.0000000
-% 58                        25:0    NA              cut0    Cut   3.1630146
-% 59                        25:1    NA              cut1    Cut  13.3215300
-% 60                        27:0    NA              cut0    Cut   2.9741360
-% 61                        27:1    NA              cut1    Cut   6.2380446
-% 62                        29:0    NA              cut0    Cut   4.4698657
-% 63                        29:1    NA              cut1    Cut  13.8218011
-% 68                xylene4_6.99    NA                ar    non   4.0670482
-% 69                limonen_7.29    NA               ter    non   0.5925572
-% 70        methylpyridine3_7.54    NA                 p      N   1.8775678
-% 79                indene_12.64    NA                ar    non   0.7905236
-% 81   1-Methyl-4-methoxybenzene 15.98                ar    non  10.9189835
-% 85         unknown_alcyl_20.00    NA                al     al   9.3875369
-% 86               unknown_20.85    NA               unk    unk   7.9403920
-% 87               unknown_20.86    NA               unk    unk   0.0000000
-% 88               unknown_22.43    NA               unk    unk   3.8791695
-% 89         unknown_alkyl_22.82    NA                al    unk  12.4633995
-% 90  hexan2,4dione,_-enol_23.92    NA                 o    unk   1.1928005
-% 91            benzofuran_26.19    NA                bf    unk   1.4484175
-% 92               unknown_27.76    NA               unk    unk 163.6031069
-% 103                     Ph3:1b 27.76 134 133+134    ph     Ph   4.7795856
-% 114                      Ph1=O 32.70 122 121+122    ph     Ph   0.0000000
-% 124                     Aceton  2.46             short    non   1.6472435
-% 125                 2-Propenal  2.60             short    non   1.7549368
-% 126                   Methanol  2.88             short    non   1.3607664
-% 127              3-Buten-2-one  3.39             short    non   2.9318465
-% 128             2,3-Butandione  3.67             short    non   1.5758264
-% 129             3-Penten-2-one  3.89             short    non   3.5475272
-% 130                  2-Butanal  4.56             short    non   0.0000000
-% 131             2,3-Pentadione  4.77             short    non   2.4595113
-% 132                    Hexanal  5.16             short    non   2.8490305
-% 133             1-Penten-3-one 11.28             short    non   2.1402314
-% 134                     14:0fa  2.35  68   39+68    fa    lip  50.0000000
-% 135                     16.0fa  2.74  82   81+82    fa    lip  62.6700000
-% 136                     18:0fa  2.91  82   81+82    fa    lip  29.5900000
-
-\hline
-\end{tabular}}
-\caption{Carbohydrate pyrolysis products.}
-\end{center}
-\label{tab:nprod}
-\end{table*}
-
+<<Ntable, echo=F, results=tex, fig=F>>=
+tab<-peaks[is.element(peaks$origin, c("N","non")),T]
+tab<-tab[order(tab$origin, tab$RT),T  ]
+tab<-data.frame(tab$name, tab$RT, tab$origin)
+print(xtable(tab))
+@
 
 
 
