@@ -6,6 +6,7 @@
 \usepackage{fullpage}
 \usepackage{textgreek}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 %\renewcommand{\thechapter}{}
 \renewcommand{\chaptername}{}
 
@@ -40,7 +41,7 @@
 \normalsize angestrebter akademischer Grad\\
 \large \textbf{Magister der Naturwissenschaften (Mag. rer. nat.)}\\
 \end{center}
-\vspace{5cm}
+\vspace{3cm}
 
 \begin{flushleft}
 \normalsize Wien, 2011 \\
@@ -109,9 +110,9 @@ This work is composed of three major parts that serve different perposes and are
 % \section{Conclusions}
 % \input{conclusions.tex}
 
-\section{Acknowledgements}
-FWF NRN MicDiF, Katherina Keiblinger DOC fForte
-Thanks to Andreas Bl\"ochl, Clemens Schwarzinger, and Birgit Wild for technical advice on Pyr-GC/MS techniques.
+\includepdf[pages=-]{sbb}
+
+\includepdf[pages=-]{aap}
 
 \bibliographystyle{plainnat}
 \bibliography{library}
