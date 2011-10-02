@@ -1,5 +1,5 @@
 <<startup, echo=F, fig=F, results=hide>>=
-  setwd("/home/lluc/dip")
+setwd("/home/lluc/dip")
 source("startup.R")
 options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 @
@@ -57,7 +57,7 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 
 % \biboptions{}
 \usepackage{textcomp, fixltx2e}
-
+\usepackage{fullpage, lscape}
 
 \journal{Journal of Analytical and Applied Pyrolysis}
 \begin{document}
@@ -131,7 +131,11 @@ Beech litter from 4 different sites in Austria was collected in October 2008, cu
 
 Pyrolysis-GC/MS was performed on a Pyroprobe 5250 pyrolysis system (CDS Analytical) coupled to a Thermo Trace gas chromatograph an a DSQ II MS detector (both Thermo Scientific) equipped with a carbowax colomn (Supelcowax 10, Sigma-Aldrich). 2-300 \textmu g dried and finely ball-milled litter were heated to 600\textdegree C for 10 seconds in helium atmosphere. The temperature of the valve oven and the transfer line to the GC injection port were set to 250\textdegree C,a 10x split injection was applied with the injector heated to 240\textdegree C. Carrier gas flow was set to 1ml min$^{-1}$. GC Oven temperature was constant at 50 \textdegree C for 2 minutes, followed by an increase of 7\textdegree C/min to a final temperature of 260 \textdegree C, which was held for 15 minutes. The transfer line was heated to 270 \textdegree C. The MS detector was set for electron ionization at 70 EV, the ion source was heated to 270\textdegree C. Detection was set to cycle between m/z 20 and 300 with a cycle time of 0.3 seconds.
 
+<<<<<<< HEAD
 Peaks were assignment was based on NiSt 05 MS library and comparison with reference material measured. 133 peaks were selected for integration due to their hiht abundance or diagnostic value. For each peak between one and four mass fragments selected for high abundance and specificity were integrated (i.e. \cite{Schellekens2009}). Peak areas are stated as \% of the sum of all integrated peaks of a sample.
+=======
+Peaks were assignment was based on NiSt 05 MS library and comparison with reference material measured.  128 peaks were selected for integration due to their hiht abundance or diagnostic value. For each peak between one and four mass fragments selected for high abundance and specificity were integrated (i.e. \cite{Schellekens2009}). Peak areas are stated as \% of the sum of all integrated peaks of a sample. 
+>>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 Pyrolysis products were assigned to their substances of origin by comparison to reference material, structural similarity and in accordance with literature (\cite{Ralph1991a, Schellekens2009, Chiavari1992}[more lit!]). We confirmed the identity of two products rarely reported for plant material (Phytol and 3-Hydroxypyridine) by the addition of reference material to the sample and comparison to MS libraries. Both substances were bought from Sigma-Aldrich (St. Louis, MO, USA).
 
@@ -208,6 +212,7 @@ Most important difference between sites were observed in the ratio between Guaia
 The pattern of abundances of different side chains was the same for guaiacol and syringol derived compounds. Fig \ref{fig:sidechainratios} shows that pairwise ratios between 5 different lignin side chains are highly significant in guaiacol and syringol lignin based pyrolysis products. However, there are some site-specific differences in these patterns: the abundance of -H and -CH$_3$ side chains relative to other side chains is different between the litter types, but consistent between guaiacol and syringol derivatives.
 de chains with oxygen based functional groups were present, but in abundances much lower than the before mentioned.
 
+<<<<<<< HEAD
 
 
 \cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation.
@@ -235,10 +240,30 @@ N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 
 
 
 % check pyridol peak!!
+=======
+\cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
 
-%All nitrogen containing compounds and their sum were correlated to litter N content (R\textgreater0.49 for all and R\textgreater0.79 for 8 of 11 pyrolysis products and the sum of all N containing compounds. For all correlations, p=***). all peaks were correlated to their sum with .... The cTIC sum correlated to PCA1 with R\textgreater0.8x (p=***=).
+\subsection{N compounds}
 
-%Of the 28 lignin derived molecules were detected, 26 were positivly correlated to their sum (p=** or ***), 18 with R\textgreater0.07 (all p=***). Another the 10 non-lignin phenolic compounds found, of which 9 were positively correlated to the sum of all Phenoles, 7 with R\textgreater0.7.
+<<>>=
+n<-1
+p<-1
+for(i in     
+    which(peaks$origin=="N")
+    )
+  {
+tmp<-cor.test(rsim[,i], samples$N_lit)
+n[i]<-tmp$estimate
+p[i]<-tmp$p.value
+}
+colnames(rsim)
+ncorsig<-length(which((n>0.8&p<0.001)==T))
+@
+>>>>>>> 83023bd153260b64216ac578210859742abb33a3
+
+In total, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. \Sexpr{ncorsig} of them were stricly correlated to litter N content (all R\textgreater 0.8, p\textless 0.001).Two groups could be identified amoung them: indol and methylindole were highly correlated to each other (R=0.98, p\textless 0.05?0.001?), as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). Correlations between peaks of two groups were still high, but lower than within the groups (R = 0.77-0.87, p\textless 0.05?0.001?). Both groups show a continuous increase during litter decomposition: after 15 month pyridine and pyrrol derrivatives increase by 8-20\% of their initial content, indol and methylindol by 20-30\% (fig. \ref{fig:npeaks}).
+
+Two pyrolysis products show different trends:  The abundance of 3-Hydroxypyrrol strongly (30-50\%) decreases during first six month, then follows general N trend. N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 month and remains stable thereafter (fig. \ref{fig:npeaks}).
 
 \subsection{Carbohydrates}
 In total, 42 carbohydrate derived pyrolysis products were identified either by their structure or by comparison to reference material %(cellulose, xylan, glucose, ...).
@@ -248,12 +273,20 @@ Methylated cyclopentenone derivatives show an increase over decomposition, while
 
 Furanmethanol shows an especially high degradation rate, loosing 15 to 30 \% of it's initial contribution to the total peak area over 15 month.
 
+<<<<<<< HEAD
 \subsection{Terpenoid compounds}
 
 We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_20$ compound  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material.
 and a second one identified as Limonene by the NiSt data base.
+=======
+\subsection{Other compounds}
+\subsubsection{Phytol}
+ 
+We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_{20}$ alcohol  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
+and a second one identified as Limonene by the NiSt data base. 
+>>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
-\subsection{Fatty acids}
+\subsubsection{Fatty acids}
 Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
 
 For fatty acid analysis 2 samples were excluded as contaminations were encountered.
@@ -261,7 +294,7 @@ For fatty acid analysis 2 samples were excluded as contaminations were encounter
 Initial content of fatty acids showed differences of up to 30 \% between sites.
 Fot the three fatty acids found, between 15 and 50 \% were degraded over 15 month, indication that both accumulation and depletion occurs in certain sites.
 
-\subsection{Long chained alkanes and alkenes}
+\subsubsection{Long chained alkanes and alkenes}
 
 We found C25-C29 alkanes and alkenes in our pyrograms. The two had different decomposition trends: While
 
@@ -363,6 +396,39 @@ plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
 \label{fig:pcalph}
 \end{figure*}
 
+\newpage
+\begin{figure*}[h!]
+\begin{center}
+\setkeys{Gin}{width=0.5\textwidth}
+<<pcach, fig=T, echo=F, results=hide, width=7, height=14>>=
+par(mfrow=c(2,1))
+  
+ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]), scale=T)
+  
+ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
+
+# peaks$code
+# colnames(rsim)<-peaks$name  
+# fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+# plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+
+
+ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]) - initials.rsim[,peaks$origin=="C"]/ rowSums(initials.rsim[,peaks$origin=="C"]), scale=T)
+   
+ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
+# 
+# 
+# colnames(rsim)<-peaks$name  
+# fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
+# plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+
+@
+\end{center}
+\caption{.}
+\label{fig:pcach}
+\end{figure*}
+
+
 
 \newpage
 \begin{figure*}[h!]
@@ -375,10 +441,9 @@ timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=
 
 timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
 abline(h=0, lty=2)
+
 timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 abline(h=0, lty=2)
-
-
 @
 \end{center}
 \caption{}
@@ -419,21 +484,46 @@ corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ 
 \begin{figure*}[h!]
 \vspace*{2mm}
 \begin{center}
-\setkeys{Gin}{width=0.6\textwidth}
+\setkeys{Gin}{width=0.8\textwidth}
 
 <<notlignin, width=7, height=7, echo=F, fig=T, results=hide>>=
   par(mfrow=c(2,2), mar=c(4,4,1,1))
-timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds")
+timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", col=colscale)
 cond<-c(F,F,rep(T,72))
-timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T)
-timeseries(orig_cTIC$al[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)")
-timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)")
+timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, col=colscale)
+timeseries(class_cTIC$phytol[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", col=colscale)
+timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", col=colscale)
 @
 \end{center}
 \caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
 \label{fig:notlig}
 \end{figure*}
 
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+
+<<ncomp, width=10.5, height=7, echo=F, fig=T, results=hide>>=
+par(mfrow=c(2,3), mar=c(4,4,1,1))
+timeseries(orig_cTIC$N, days, type, pch=pch, main="N compounds", col=colscale, normalize=1, endsig=T)
+timeseries(class_cTIC$ind, days, type, pch=pch, main="indole", endsig=T, col=colscale, normalize=1, lty=2)
+timeseries(rowSums(rsim[,peaks$class=="p" & peaks$class!="pyridol"]), days, type, pch=pch, main="pyridine & pyrrol", endsig=T, xlab="incubation(days)", col=colscale)
+
+peaks$name
+
+timeseries(rsim[,peaks$class=="pyridol"], days, type, pch=pch, main="3-Hydroxypyridine", endsig=T, xlab="incubation(days)", col=colscale, )
+
+timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpyrrol", endsig=T, xlab="incubation(days)", col=colscale, )
+
+
+
+@
+\end{center}
+\caption{Trends for nitrogen compounds found in isolated lignin. Two samples were excluded due to contaminations.}
+\label{fig:npeaks}
+\end{figure*}
 
 
 %\begin{figure}[p!]
@@ -557,6 +647,7 @@ timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl c
 \label{tab:chprod}
 \end{table*}
 
+<<<<<<< HEAD
 \newpage
 \begin{table*}[h!]
 \begin{center}
@@ -623,6 +714,14 @@ timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl c
 \label{tab:nprod}
 \end{table*}
 
+=======
+<<Ntable, echo=F, results=tex, fig=F>>=
+tab<-peaks[is.element(peaks$origin, c("N","non")),T]
+tab<-tab[order(tab$origin, tab$RT),T  ]
+tab<-data.frame(tab$name, tab$RT, tab$origin)
+print(xtable(tab))
+@
+>>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 
 
