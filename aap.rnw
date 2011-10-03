@@ -134,11 +134,8 @@ Beech litter from 4 different sites in Austria was collected in October 2008, cu
 
 Pyrolysis-GC/MS was performed on a Pyroprobe 5250 pyrolysis system (CDS Analytical) coupled to a Thermo Trace gas chromatograph an a DSQ II MS detector (both Thermo Scientific) equipped with a carbowax colomn (Supelcowax 10, Sigma-Aldrich). 2-300 \textmu g dried and finely ball-milled litter were heated to 600\textdegree C for 10 seconds in helium atmosphere. The temperature of the valve oven and the transfer line to the GC injection port were set to 250\textdegree C,a 10x split injection was applied with the injector heated to 240\textdegree C. Carrier gas flow was set to 1ml min$^{-1}$. GC Oven temperature was constant at 50 \textdegree C for 2 minutes, followed by an increase of 7\textdegree C/min to a final temperature of 260 \textdegree C, which was held for 15 minutes. The transfer line was heated to 270 \textdegree C. The MS detector was set for electron ionization at 70 EV, the ion source was heated to 270\textdegree C. Detection was set to cycle between m/z 20 and 300 with a cycle time of 0.3 seconds.
 
-<<<<<<< HEAD
-Peaks were assignment was based on NiSt 05 MS library and comparison with reference material measured. 133 peaks were selected for integration due to their hiht abundance or diagnostic value. For each peak between one and four mass fragments selected for high abundance and specificity were integrated (i.e. \cite{Schellekens2009}). Peak areas are stated as \% of the sum of all integrated peaks of a sample.
-=======
+
 Peaks were assignment was based on NiSt 05 MS library and comparison with reference material measured.  128 peaks were selected for integration due to their hiht abundance or diagnostic value. For each peak between one and four mass fragments selected for high abundance and specificity were integrated (i.e. \cite{Schellekens2009}). Peak areas are stated as \% of the sum of all integrated peaks of a sample. 
->>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 Pyrolysis products were assigned to their substances of origin by comparison to reference material, structural similarity and in accordance with literature (\cite{Ralph1991a, Schellekens2009, Chiavari1992}[more lit!]). We confirmed the identity of two products rarely reported for plant material (Phytol and 3-Hydroxypyridine) by the addition of reference material to the sample and comparison to MS libraries. Both substances were bought from Sigma-Aldrich (St. Louis, MO, USA).
 
@@ -215,40 +212,12 @@ Most important difference between sites were observed in the ratio between Guaia
 The pattern of abundances of different side chains was the same for guaiacol and syringol derived compounds. Fig \ref{fig:sidechainratios} shows that pairwise ratios between 5 different lignin side chains are highly significant in guaiacol and syringol lignin based pyrolysis products. However, there are some site-specific differences in these patterns: the abundance of -H and -CH$_3$ side chains relative to other side chains is different between the litter types, but consistent between guaiacol and syringol derivatives.
 de chains with oxygen based functional groups were present, but in abundances much lower than the before mentioned.
 
-<<<<<<< HEAD
 
-
-\cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation.
-
-\subsection{N compounds}
-
-%<<>>=
-  %timseries()
-%@
-
-11 nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. Methylindol and indole (R=0.98, p\textless 0.05?0.001?) were highly correlated to each other, as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). These two groups were correlated to each other (R = 0.77-0.87, p\textless 0.05?0.001?), but less strict as within the groups.
-
-N-methyl-pyrrol and Methylpyrrol[II]  were not or less strictly correlated to the other compounds and
-
-One Methylpyr? peak was of very low abundance with high variance and did not correlate to other N markers but with each other (R=0.74, p=***). They show different trends:
-
-
-
-  Furthermore, all N markers except the three mentioned before were correlated to litter N content (R \textgreater 0.81, p \textless 0.001.
-
-%While N compounds generally increase in
-
-Pyridol looses during first three month, then follows general N trend.
-N-methyl-pyrrol shows an increase between 5 and 35\% (\%TIC) during the first 6 month and remains stable thereafter.
-
-
-% check pyridol peak!!
-=======
 \cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
 
 \subsection{N compounds}
 
-<<>>=
+<<ncount, results=hide>>=
 n<-1
 p<-1
 for(i in     
@@ -262,7 +231,6 @@ p[i]<-tmp$p.value
 colnames(rsim)
 ncorsig<-length(which((n>0.8&p<0.001)==T))
 @
->>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 In total, \Sexpr{sum(peaks$origin=="N")} nitrogen containing compounds were identified, including two indole three pyridine and 5 pyrrol derrivatives. \Sexpr{ncorsig} of them were stricly correlated to litter N content (all R\textgreater 0.8, p\textless 0.001).Two groups could be identified amoung them: indol and methylindole were highly correlated to each other (R=0.98, p\textless 0.05?0.001?), as were 6 pyridin and pyrrol derivatives (all R \textgreater 0.9, p\textless 0.05?0.001?). Correlations between peaks of two groups were still high, but lower than within the groups (R = 0.77-0.87, p\textless 0.05?0.001?). Both groups show a continuous increase during litter decomposition: after 15 month pyridine and pyrrol derrivatives increase by 8-20\% of their initial content, indol and methylindol by 20-30\% (fig. \ref{fig:npeaks}).
 
@@ -276,18 +244,12 @@ Methylated cyclopentenone derivatives show an increase over decomposition, while
 
 Furanmethanol shows an especially high degradation rate, loosing 15 to 30 \% of it's initial contribution to the total peak area over 15 month.
 
-<<<<<<< HEAD
-\subsection{Terpenoid compounds}
 
-We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_20$ compound  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material.
-and a second one identified as Limonene by the NiSt data base.
-=======
 \subsection{Other compounds}
 \subsubsection{Phytol}
  
 We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_{20}$ alcohol  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
 and a second one identified as Limonene by the NiSt data base. 
->>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 \subsubsection{Fatty acids}
 Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
@@ -359,13 +321,9 @@ peakcodes[peaks$origin=="L"  ]<-"L"
 peakcodes[peaks$origin=="C"  ]<-"C"
 peakcodes[peaks$origin=="Ph"  ]<-"P"
 peakcodes[peaks$origin=="N"  ]<-"N"
-<<<<<<< HEAD
   
 ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col="black", pch=pch, pt.bg=colscale , spe.labels=peakcodes, sep1.unit="days")
-=======
 
-ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe.labels=peakcodes, sep1.unit="days")
->>>>>>> 9ad9f949dd74864d09e8d6dfb97d6c368db46ed2
 @
 \end{center}
 \caption{PCA based on 128 peaks quantified in 74 samples. Error bars indicate standard errors (n=4-5). Letters indicate pyrolysis products:  C - carbohydrates, L - lignin, P - other phenolic compounds, N - N containing compounds,  a - long chained aliphatic compounds (fatty acids, n- alkanes, n-alkenes, phytol}
@@ -380,13 +338,9 @@ ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe
 par(mfrow=c(2,1))
 
 ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
-<<<<<<< HEAD
   
 ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
-=======
 
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
->>>>>>> 9ad9f949dd74864d09e8d6dfb97d6c368db46ed2
 
 peaks$code
 colnames(rsim)<-peaks$name
@@ -395,13 +349,8 @@ plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
 
 
 ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]) - initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
-<<<<<<< HEAD
-  
-ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
-=======
 
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
->>>>>>> 9ad9f949dd74864d09e8d6dfb97d6c368db46ed2
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
 
 
 colnames(rsim)<-peaks$name
@@ -665,7 +614,6 @@ timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpy
 \label{tab:chprod}
 \end{table*}
 
-<<<<<<< HEAD
 \newpage
 \begin{table*}[h!]
 \begin{center}
@@ -673,7 +621,15 @@ timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpy
  \begin{tabular}{lcccccc}
  \hline
  name & RT & MW & m/z & class & origin&Rf\\
- \hline
+
+%colnames(peaks)
+%
+%#table<-data.frame(peaks[is.element(peaks$origin, c("C", "L", "P"))==F,c("name", "RT", "MW", "class", %#"origin")])
+%#rownames(table)<-
+%peaks$RT
+%[is.element(peaks$origin, c("C", "L", "P"))==F]
+%print(xtable(table))
+\hline
  Toluene&NA&ar&non&b.d.\\
  Xylene1&NA&ar&non&4.46\\
  Xylene2&NA&ar&non&b.d.\\
@@ -732,14 +688,13 @@ timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpy
 \label{tab:nprod}
 \end{table*}
 
-=======
+\newpage
 <<Ntable, echo=F, results=tex, fig=F>>=
 tab<-peaks[is.element(peaks$origin, c("N","non")),T]
 tab<-tab[order(tab$origin, tab$RT),T  ]
 tab<-data.frame(tab$name, tab$RT, tab$origin)
 print(xtable(tab))
 @
->>>>>>> 83023bd153260b64216ac578210859742abb33a3
 
 
 
