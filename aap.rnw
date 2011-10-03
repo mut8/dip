@@ -316,7 +316,7 @@ peakcodes[peaks$origin=="C"  ]<-"C"
 peakcodes[peaks$origin=="Ph"  ]<-"P"
 peakcodes[peaks$origin=="N"  ]<-"N"
   
-ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col=colscale, pch=pch , spe.labels=peakcodes, sep1.unit="days")
+ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col="black", pch=pch, pt.bg=colscale , spe.labels=peakcodes, sep1.unit="days")
 @
 \end{center}
 \caption{PCA based on 128 peaks quantified in 74 samples. Error bars indicate standard errors (n=4-5). Letters indicate pyrolysis products:  C - carbohydrates, L - lignin, P - other phenolic compounds, N - N containing compounds,  a - long chained aliphatic compounds (fatty acids, n- alkanes, n-alkenes, phytol}
@@ -332,7 +332,7 @@ par(mfrow=c(2,1))
   
 ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
   
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
 
 peaks$code
 colnames(rsim)<-peaks$name  
@@ -342,7 +342,7 @@ plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
 
 ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]) - initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
   
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
 
 
 colnames(rsim)<-peaks$name  
@@ -364,7 +364,7 @@ par(mfrow=c(2,1))
   
 ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]), scale=T)
   
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
 
 # peaks$code
 # colnames(rsim)<-peaks$name  
@@ -374,7 +374,7 @@ ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$cl
 
 ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]) - initials.rsim[,peaks$origin=="C"]/ rowSums(initials.rsim[,peaks$origin=="C"]), scale=T)
    
-ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
 # 
 # 
 # colnames(rsim)<-peaks$name  
@@ -395,13 +395,13 @@ ord.plot(ord, days, type, spe.mult=1, col=colscale, pch=pch, spe.labels=peaks$cl
 \setkeys{Gin}{width=\textwidth}
 <<g2syTS, fig=T, echo=F, results=hide, height=14, width=14>>=
 par(mfrow=c(2,2))
-timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
-timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
+timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 
-timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, col=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
+timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
 abline(h=0, lty=2)
 
-timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, col=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
+timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy) - initials.class_cTIC$g/(initials.class_cTIC$g+initials.class_cTIC$sy), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 abline(h=0, lty=2)
 @
 \end{center}
@@ -447,11 +447,11 @@ corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ 
 
 <<notlignin, width=7, height=7, echo=F, fig=T, results=hide>>=
   par(mfrow=c(2,2), mar=c(4,4,1,1))
-timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", col=colscale)
+timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", pt.bg=colscale)
 cond<-c(F,F,rep(T,72))
-timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, col=colscale)
-timeseries(class_cTIC$phytol[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", col=colscale)
-timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", col=colscale)
+timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, pt.bg=colscale)
+timeseries(class_cTIC$phytol[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", pt.bg=colscale)
+timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", pt.bg=colscale)
 @
 \end{center}
 \caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
@@ -466,15 +466,15 @@ timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl c
 
 <<ncomp, width=10.5, height=7, echo=F, fig=T, results=hide>>=
 par(mfrow=c(2,3), mar=c(4,4,1,1))
-timeseries(orig_cTIC$N, days, type, pch=pch, main="N compounds", col=colscale, normalize=1, endsig=T)
-timeseries(class_cTIC$ind, days, type, pch=pch, main="indole", endsig=T, col=colscale, normalize=1, lty=2)
-timeseries(rowSums(rsim[,peaks$class=="p" & peaks$class!="pyridol"]), days, type, pch=pch, main="pyridine & pyrrol", endsig=T, xlab="incubation(days)", col=colscale)
+timeseries(orig_cTIC$N, days, type, pch=pch, main="N compounds", pt.bg=colscale, normalize=1, endsig=T)
+timeseries(class_cTIC$ind, days, type, pch=pch, main="indole", endsig=T, pt.bg=colscale, normalize=1, lty=2)
+timeseries(rowSums(rsim[,peaks$class=="p" & peaks$class!="pyridol"]), days, type, pch=pch, main="pyridine & pyrrol", endsig=T, xlab="incubation(days)", pt.bg=colscale)
 
 peaks$name
 
-timeseries(rsim[,peaks$class=="pyridol"], days, type, pch=pch, main="3-Hydroxypyridine", endsig=T, xlab="incubation(days)", col=colscale, )
+timeseries(rsim[,peaks$class=="pyridol"], days, type, pch=pch, main="3-Hydroxypyridine", endsig=T, xlab="incubation(days)", pt.bg=colscale, )
 
-timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpyrrol", endsig=T, xlab="incubation(days)", col=colscale, )
+timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpyrrol", endsig=T, xlab="incubation(days)", pt.bg=colscale, )
 
 
 

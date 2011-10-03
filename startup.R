@@ -204,8 +204,7 @@ for (i in 1:nrow(alldata.stat))
 }
 
 colscale<-c(grey(0), grey(.2), grey(.4), grey(.6))
-pch<-c(1,16,2,17)
-
+pch<-21:24
 initials.rsim<-rsim
 initials.orig_cTIC <- orig_cTIC
 initials.class_cTIC<- class_cTIC

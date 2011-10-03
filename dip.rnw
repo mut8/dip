@@ -55,9 +55,9 @@ Betreuer: Ao. Univ.-Prof. Mag. Dr. Wolfgang Wanek\\
 
  
 % Donna Haraway.
-% \newpage
+\newpage
 % 
-% \tableofcontents
+\tableofcontents
 % 
 
 % \chapter*{Acknowledgements}
@@ -87,7 +87,9 @@ This work is composed of three major parts that serve different perposes and are
 
 \paragraph{[name]}Is a manuscript written to be submitted to Soil Biology and Biochemistry, and aims to become a state-of-the-art original research article in a peer-reviewed international journal.
 
-\paragraph{Appendix} presents additional resources and data, both as background of the research presented and as help to future pyrolysis applicators. Especially a complete peak list an several chromatograms that might be helpful for pyrogram peak assignment are presented.
+%\paragraph{[name2]}Is a manuscript written to be submitted to Soil Biology and Biochemistry, and aims to become a state-of-the-art original research article in a peer-reviewed international journal.
+
+%\paragraph{Appendix} presents additional resources and data, both as background of the research presented and as help to future pyrolysis applicators. Especially a complete peak list an several chromatograms that might be helpful for pyrogram peak assignment are presented.
 
 
 \chapter{General Introduction}
@@ -109,9 +111,9 @@ This work is composed of three major parts that serve different perposes and are
 % \input{discussion.tex}
 % \section{Conclusions}
 % \input{conclusions.tex}
-
+\chapter{Manuscript 1}
 \includepdf[pages=-]{sbb}
-
+\chapter{Manuscript 2}
 \includepdf[pages=-]{aap}
 
 \bibliographystyle{plainnat}
