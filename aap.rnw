@@ -99,6 +99,9 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 \begin{abstract}
 %% Text of abstract
 
+Litter decomposition studies are key to understanding global carbon fluxes and soil formation. Analytical pyrolysis has the potential to provide insight into carbon transformations during decomposition. Most interestingly, this potential was not exploited yet. 
+We report data of beech litter pyrolysis products of litter optained from different sites in Austria and changes in pyrolysis products during litter decomposition
+
 \end{abstract}
 
 \begin{keyword}
@@ -110,7 +113,7 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 \end{keyword}
 
 \end{frontmatter}
-\pagestyle{empty}
+%\pagestyle{empty}
 \linenumbers
 
 \section{Introduction}
