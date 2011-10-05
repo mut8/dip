@@ -1,7 +1,7 @@
-"name";"toluene";"xylene1";"xylene2";"xylene3";"methoxytoluene";"benzaldehyde"
-"RT";;;;;;
-"MW";;;;;;
-"m/z";;;;;;
+"name";"Toluene";"Xylene";"Xylene";"Xylene";"Methoxytoluene";"Benzaldehyde"
+"RT";4.54;5.94;6.09;6.2;11.78;13.35
+"MW";92;106;106;106;122;106
+"m/z";"91+92";"91+105+106";"91+105+106";"91+105+106";"121+122";"77+106"
 "class";"ar";"ar";"ar";"ar";"ar";"ar"
 "origin";"non";"non";"non";"non";"non";"non"
 "tic";0;4.462227926;0;0;4.0364724957;12.8768662682

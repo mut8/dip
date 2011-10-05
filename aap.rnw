@@ -213,11 +213,11 @@ The pattern of abundances of different side chains was the same for guaiacol and
 de chains with oxygen based functional groups were present, but in abundances much lower than the before mentioned.
 
 
-\cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol t o C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
+\cite{Kuder1998, Schellekens2009} use the Guaiacol+Syringol to C$_3$-Gaiacol+Syringol ratio as an indicator for ?aerobic/anaerobic degradation. 
 
 \subsection{N compounds}
 
-<<ncount, results=hide>>=
+<<ncount, results=hide, echo=F>>=
 n<-1
 p<-1
 for(i in     
@@ -248,8 +248,11 @@ Furanmethanol shows an especially high degradation rate, loosing 15 to 30 \% of 
 \subsection{Other compounds}
 \subsubsection{Phytol}
  
-We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_{20}$ alcohol  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. 
-and a second one identified as Limonene by the NiSt data base. 
+We found two compounds with terpenoid structure: Phytol is a chlorphyll derived C$_{20}$ alcohol  mentioned as a pyrolysis product only by \cite{Schwarzinger??}. We confirmed the compounds identity by comparison with comercially available material. Phytol is strongly depleted during decomposition in low-N sites (up to 50\% of its relative peak area in OS and AK), but not in high-N sites (SW). (fig \ref{fig:notlignin})
+
+
+
+%and a second one identified as Limonene by the NiSt data base. 
 
 \subsubsection{Fatty acids}
 Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
@@ -310,6 +313,7 @@ From our dataset, we see that (1) alcenes are accumulated
 \newpage
 \begin{figure*}[h!]
 \begin{center}
+\setkeys{Gin}{width=0.5\textwidth}
 <<pca1, fig=T, echo=F, results=hide>>=
 peakcodes<-alldata$RT
 peakcodes[peaks$origin=="non"  ]<-"o"
@@ -333,77 +337,75 @@ ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col="black", pch=pch, pt.bg
 \newpage
 \begin{figure*}[h!]
 \begin{center}
-\setkeys{Gin}{width=0.5\textwidth}
-<<pcalph, fig=T, echo=F, results=hide, width=7, height=14>>=
-par(mfrow=c(2,1))
+\setkeys{Gin}{width=\textwidth}
+<<pcalph, fig=T, echo=F, results=hide, width=14, height=14>>=
+par(mfrow=c(2,2))
+ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rcTIC[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
+df<-data.frame(class_cTIC[,c("g","sy","ph")], 
+               rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]
+               )
+#df<-df/rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"])
+colnames(df)<-c("Guaiacol", "Syringol", "Phenole", "G0","G1", "G3:1c", "S0", "S1", "S3:1c")
 
-ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
-  
-ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text", main="Lignin")
+fit<-envfit(ord, df)
+plot(fit, p.max=0.05, col=c(rep(colscale[1],3), rep(colscale[2],10)), cex=0.7)
+
+ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rcTIC[,peaks$origin=="C"]), scale=T)
+df<-data.frame(class_cTIC[,c("f","cp")], rsim[,is.element(peaks$code, c("Furanmethanol", "Furanmethanol"))])/ rowSums(rcTIC[,peaks$origin=="C"])
+colnames(df)<-c("Furan", "Cyclopentenone", "Furanmethanol")
+fit<-envfit(ord, df)
 
 
-peaks$code
-colnames(rsim)<-peaks$name
-fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
-plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text", main="Carbohydrates")
+plot(fit, p.max=0.05, col=c(rep(colscale[1],2), rep(colscale[2],1)), cex=0.7)
 
 
 ord<-rda(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"]) - initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]/ rowSums(initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"]), scale=T)
 
-ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text")
+df1<- 
+  data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1","S3:1c"))])/  rowSums(rsim[,peaks$origin=="L"|peaks$origin=="Ph"])
+
+dfi<-data.frame(initials.class_cTIC[,c("g","sy","ph")], initials.rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))])/ rowSums(initials.rsim[,peaks$origin=="L"|peaks$origin=="Ph"])
+
+df<-df1-dfi
+colnames(df)<-c("Guaiacol", "Syringol", "Phenole", "G0","G1", "G3:1", "S0", "S1", "S3:1")
+fit<-envfit(ord, df)
 
 
-colnames(rsim)<-peaks$name
-fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
-plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
-
-@
-\end{center}
-\caption{The upper graph shows a PCA of 45 lignin and phenol compounds, relative to their sum. Black arrows indicate fits for \%TIC sum of compound classes (g - guaiacol lignin, sy - syringol lignin ph - other phenols), grey arrows indicate selected individual markers (G1/S0 - guaiacol/syringol, G/S1 - methylguaiacol/-syringol, G3:1/S3:1 - Propenylguaiacol/syringol.) The lower graph shows a PCA based on  differences to initial peak abundance.}
-\label{fig:pcalph}
-\end{figure*}
-
-\newpage
-\begin{figure*}[h!]
-\begin{center}
-\setkeys{Gin}{width=0.5\textwidth}
-<<pcach, fig=T, echo=F, results=hide, width=7, height=14>>=
-par(mfrow=c(2,1))
-  
-ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]), scale=T)
-  
-ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
-
-# peaks$code
-# colnames(rsim)<-peaks$name  
-# fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
-# plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="L"|peaks$origin=="Ph"], sep1.unit="days", spe.label.type="text", main="Lignin (differences)")
+plot(fit, p.max=0.05, col=c(rep(colscale[1],3), rep(colscale[2],10)), cex=0.7)
 
 
 ord<-rda(rsim[,peaks$origin=="C"]/ rowSums(rsim[,peaks$origin=="C"]) - initials.rsim[,peaks$origin=="C"]/ rowSums(initials.rsim[,peaks$origin=="C"]), scale=T)
-   
-ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text")
-# 
-# 
-# colnames(rsim)<-peaks$name  
-# fit<-envfit(ord, data.frame(class_cTIC[,c("g","sy","ph")]-initials.class_cTIC[,c("g","sy","ph")], rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]-initials.rsim[,is.element(peaks$code, c("G0","G1", "G3:1c", "S0", "S1", "S3:1c"))]))
-# plot(fit, p.max=0.05, col=c(rep("black",3), rep("darkgrey",10)), cex=0.5)
+df1<-data.frame(class_cTIC[,c("f","cp")], rsim[,is.element(peaks$name, c("Furanmethanol", "Furanmethanol"))])/ rowSums(rsim[,peaks$origin=="C"])
+
+dfi<-data.frame(initials.class_cTIC[,c("f","cp")],initials.rsim[,is.element(peaks$name, c("Furanmethanol", "Furanmethanol"))]) / rowSums(initials.rsim[,peaks$origin=="C"])
+
+df<-df1-dfi
+colnames(df)<-c("Furan", "Cyclopentenone", "Furanmethanol")
+fit<-envfit(ord, df)
+
+
+ord.plot(ord, days, type, spe.mult=1, pt.bg=colscale, pch=pch, spe.labels=peaks$class[peaks$origin=="C"], sep1.unit="days", spe.label.type="text", main="Carbohydrates (differences)")
+plot(fit, p.max=0.05, col=c(rep(colscale[1],2), rep(colscale[2],1)), cex=0.7)
+
 
 @
 \end{center}
-\caption{.}
-\label{fig:pcach}
+\caption{The upper left graphs shows a PCA of relative contributions of lignin and phenol pyrolysis products to the sum of these products, the lower left graph shows the difference of this relative contribution to initial contributions. The both graphs on the right hand show the same relations for carbohydrate derrived pyrolysis products. Sample means (n=4-5) and standard errors are stated as indicated in the plot legend. Letters indicate pyrolysis products (g - guaiacol lignin, sy - syringol lignin, ph - phenolic compounds, cp - cyclopentenone-type and f - furan type carbohydrade markers). Black arrows indicate fits for \%TIC sum of compound classes (guaiacol and syringol lignin, other phenolic compounds, furan- and cyclopentenone-type carbohydrate markers), grey arrows indicate selected individual markers (G1/S0 - guaiacol/syringol, G/S1 - methylguaiacol/-syringol, G3:1/S3:1 - Propenylguaiacol/syringol.) The lower graph shows a PCA based on  differences to initial peak abundance.}
+\label{fig:pcalph}
 \end{figure*}
-
 
 
 \newpage
 \begin{figure*}[h!]
 \begin{center}
 \setkeys{Gin}{width=\textwidth}
-<<g2syTS, fig=T, echo=F, results=hide, height=14, width=14>>=
+<<g2syTS, fig=T, echo=F, results=hide, height=7, width=7>>=
 par(mfrow=c(2,2))
 timeseries((class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
+
 timeseries(class_cTIC$g/(class_cTIC$g+class_cTIC$sy), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Gaiacol/(Gaiacol+Syringol)", lwd=2, cex=2)
 
 timeseries( (class_cTIC$g+class_cTIC$sy)/(class_cTIC$g+class_cTIC$sy+orig_cTIC$Ph)- (initials.class_cTIC$g+initials.class_cTIC$sy)/(initials.class_cTIC$g+initials.class_cTIC$sy+initials.orig_cTIC$Ph), days, type, endsig=T, pch=pch, pt.bg=colscale, main="Lignin/(Lignin+Phenolics)", lwd=2, cex=2)
@@ -420,31 +422,86 @@ abline(h=0, lty=2)
 \begin{figure}
 \centering
 \setkeys{Gin}{width=\textwidth}
-<<sidechainratios, echo=F, results=hide, fig=T, height=7, width=10.5>>=
-par(mfrow=c(2,3))
-pch.all<-c(rep(1,19),rep(16,18),rep(2,19),rep(17,18))
+<<sidechainratios, echo=F, results=hide, fig=T, height=10.5, width=14>>=
+par(mfrow=c(3,4))
 
 corplot(rsim[,peaks$code=="G0"]/ class_cTIC$g, rsim[,peaks$code=="S0"]/ class_cTIC$sy, pch=pch.all, xlab="G0/sum guaiacol", ylab="S0/sum syringolol")
 corplot(rsim[,peaks$code=="G1"]/ class_cTIC$g, rsim[,peaks$code=="S1"]/ class_cTIC$sy, pch=pch.all, xlab="G1/sum guaiacol", ylab="S1/sum syringolol")
 corplot(rsim[,peaks$code=="G2"]/ class_cTIC$g, rsim[,peaks$code=="S2"]/ class_cTIC$sy, pch=pch.all, xlab="G2/sum guaiacol", ylab="S2/sum syringolol")
-corplot(rsim[,peaks$code=="G3"]/ class_cTIC$g, rsim[,peaks$code=="S3"]/ class_cTIC$sy, pch=pch.all, xlab="G3/sum guaiacol", ylab="S3/sum syringolol")
-corplot(rsim[,peaks$code=="G2:1"]/ class_cTIC$g, rsim[,peaks$code=="S2:1"]/ class_cTIC$sy, pch=pch.all, xlab="G2:1/sum guaiacol", ylab="S2:1/sum syringolol")
-corplot(rsim[,peaks$code=="G3:1c"]/ class_cTIC$g, rsim[,peaks$code=="S3:1c"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1c/sum guaiacol",ylab="S3:1c/sum syringolol")
-corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1=O/sum guaiacol", ylab="S3:1=O/sum syringolol")
+#corplot(rsim[,peaks$code=="G3"]/ class_cTIC$g, rsim[,peaks$code=="S3"]/ class_cTIC$sy, pch=pch.all, xlab="G3/sum guaiacol", ylab="S3/sum syringolol")
+#corplot(rsim[,peaks$code=="G2:1"]/ class_cTIC$g, rsim[,peaks$code=="S2:1"]/ class_cTIC$sy, pch=pch.all, xlab="G2:1/sum guaiacol", ylab="S2:1/sum syringolol")
+corplot(rsim[,peaks$code=="G3"]/ class_cTIC$g, rsim[,peaks$code=="S3"]/ class_cTIC$sy, pch=pch.all, xlab="G3/sum guaiacol",ylab="S3/sum syringolol")
+#corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1=O/sum guaiacol", ylab="S3:1=O/sum syringolol")
 
-#sidechains<-data.frame(rsim[,peaks$class=="g"]/class_cTIC$g, rsim[,peaks$class=="sy"]/class_cTIC$sy)
-#for (i in 1:ncol(sidechains))
-#  print(anova(lm(sidechains[,i]~type*harvest)))
-#colnames(sidechains)<-
-#  cbind(
-#    peaks$code[peaks$class=="g"]
-#    ,     peaks$code[peaks$class=="sy"]    )
-#colnames(sidechains)
-#  peaks
+timeseries(rsim[,peaks$code=="G0"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G0/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G1"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G1/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G2"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G2/sum(Guaicol)", lwd=2, cex=2)
+#timeseries(rsim[,peaks$code=="G3"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3/sum(Guaicol)", lwd=2, cex=2)
+
+timeseries(rsim[,peaks$code=="S0"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S0/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S1"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S1/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S2"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S2/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3/sum(Syringol)", lwd=2, cex=2)
 
 @
 \caption{Lignin side chains occur in the same ratios for both guaiacol and syringol lignin, but differences in the content of -H and -CH$_3$ side chains were found.}
 \label{fig:sidechainratios}
+\end{figure}
+
+\begin{figure}
+\centering
+\setkeys{Gin}{width=\textwidth}
+<<sidechainratios2, echo=F, results=hide, fig=T, height=10.5, width=14>>=
+par(mfrow=c(3,4))
+
+corplot(rsim[,peaks$code=="G2:1"]/ class_cTIC$g, rsim[,peaks$code=="S2:1"]/ class_cTIC$sy, pch=pch.all, xlab="G2:1/sum guaiacol", ylab="S2:1/sum syringolol")
+corplot(rsim[,peaks$code=="G3:1a"]/ class_cTIC$g, rsim[,peaks$code=="S3:1a"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1a/sum guaiacol", ylab="S3:1a/sum syringolol")
+corplot(rsim[,peaks$code=="G3:1b"]/ class_cTIC$g, rsim[,peaks$code=="S3:1b"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1b/sum guaiacol", ylab="S3:1b/sum syringolol")
+corplot(rsim[,peaks$code=="G3:1c"]/ class_cTIC$g, rsim[,peaks$code=="S3:1c"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1c/sum guaiacol",ylab="S3:1c/sum syringolol")
+
+timeseries(rsim[,peaks$code=="G2:1"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G2:1/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3:1a"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3:1a/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3:1b"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3:1b/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3:1c"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3:1c/sum(Guaicol)", lwd=2, cex=2)
+
+timeseries(rsim[,peaks$code=="S2:1"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S2:1/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3:1a"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3:1a/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3:1b"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3:1b/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3:1c"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3:1c/sum(Syringol)", lwd=2, cex=2)
+
+@
+\caption{Lignin side chains occur in the same ratios for both guaiacol and syringol lignin, but differences in the content of -H and -CH$_3$ side chains were found.}
+\label{fig:sidechainratios2}
+\end{figure}
+\begin{figure}
+\centering
+\setkeys{Gin}{width=\textwidth}
+<<sidechainratios3, echo=F, results=hide, fig=T, height=10.5, width=14>>=
+par(mfrow=c(3,4))
+
+corplot(rsim[,peaks$code=="G1=O"]/ class_cTIC$g, rsim[,peaks$code=="S1=O"]/ class_cTIC$sy, pch=pch.all, xlab="G1=O/sum guaiacol", ylab="S1=O/sum syringolol")
+
+peaks$code
+corplot(rsim[,peaks$code=="G3=O"]/ class_cTIC$g, rsim[,peaks$code=="S3=O"]/ 
+class_cTIC$sy, pch=pch.all, xlab="G3=O/sum guaiacol", ylab="S=O/sum syringolol")
+
+corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ class_cTIC$sy, pch=pch.all, xlab="G3:1=O/sum guaiacol", ylab="S3:1=O/sum syringolol")
+corplot(rsim[,peaks$code=="G2=O/-OH"]/ class_cTIC$g, rsim[,peaks$code=="S2=O/-OH"]/ class_cTIC$sy, pch=pch.all, xlab="G2=O/-OH/sum guaiacol",ylab="S2=O/-OH/sum syringolol")
+
+timeseries(rsim[,peaks$code=="G1=O"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G1=O/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3=O"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3=O/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G3:1=O/sum(Guaicol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="G2=O/-OH"]/ class_cTIC$g, days, type, endsig=T, pch=pch, pt.bg=colscale, main="G2=O/-OH/sum(Guaicol)", lwd=2, cex=2)
+
+timeseries(rsim[,peaks$code=="S1=O"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S1=O/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3=O"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3=O/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S3:1=O"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S3:1=O/sum(Syringol)", lwd=2, cex=2)
+timeseries(rsim[,peaks$code=="S2=O/-OH"]/ class_cTIC$sy, days, type, endsig=T, pch=pch, pt.bg=colscale, main="S2=O/-OH/sum(Syringol)", lwd=2, cex=2)
+
+@
+\caption{Lignin side chains occur in the same ratios for both guaiacol and syringol lignin, but differences in the content of -H and -CH$_3$ side chains were found.}
+\label{fig:sidechainratios3}
 \end{figure}
 
 \newpage
@@ -453,13 +510,14 @@ corplot(rsim[,peaks$code=="G3:1=O"]/ class_cTIC$g, rsim[,peaks$code=="S3:1=O"]/ 
 \begin{center}
 \setkeys{Gin}{width=0.8\textwidth}
 
-<<notlignin, width=7, height=7, echo=F, fig=T, results=hide>>=
-  par(mfrow=c(2,2), mar=c(4,4,1,1))
-timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", pt.bg=colscale)
+<<notlignin, width=10.5, height=7, echo=F, fig=T, results=hide>>=
+  par(mfrow=c(2,3), mar=c(4,4,1,1))
+#timeseries(orig_cTIC$Ph, days, type, pch=pch, main="Phenolic compounds", pt.bg=colscale)
 cond<-c(F,F,rep(T,72))
-timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, pt.bg=colscale)
+timeseries(orig_cTIC$lip[cond], days[cond], type[cond], pch=pch, main="Fatty acids", endsig=T, pt.bg=colscale, legend="bottomleft")
 timeseries(class_cTIC$phytol[cond], days[cond], type[cond], pch=pch, main="Phytol", endsig=T, xlab="incubation(days)", pt.bg=colscale)
-timeseries(orig_cTIC$Cut[cond], days[cond], type[cond], pch=pch, main="n-alkyl compounds", endsig=T, xlab="incubation(days)", pt.bg=colscale)
+timeseries(class_cTIC$cut0[cond], days[cond], type[cond], pch=pch, main="n-alkanes", endsig=T, xlab="incubation(days)", pt.bg=colscale)
+timeseries(class_cTIC$cut1[cond], days[cond], type[cond], pch=pch, main="n-alkanes", endsig=T, xlab="incubation(days)", pt.bg=colscale)
 @
 \end{center}
 \caption{Trends for lipophilic compounds found in isolated lignin. Two samples were excluded due to contaminations.}
@@ -499,201 +557,40 @@ timeseries(rsim[,peaks$class=="N-me-pyr"], days, type, pch=pch, main="N-Methylpy
 %    \includegraphics[width=0.5\textwidth]{G_Sy_ratio.pdf}
 %\end{figure}
 
-\newpage
-%\section{Tables}
-
-\begin{table*}[h!]
-\begin{center}
-{\tiny
- \begin{tabular}{llclcccccc}
- code & name & ring & side chain & RT & MW & m/z & class & origin&Rf\\
- \hline
- Ph0&           Phenol&                         Phenol&         -H&                     21.02&          &       &               ph&     Ph&     1.717828\\
- Ph1a&          4-Methylphenol&                 Phenol&         -CH$_3$&                22.11&          &       &               ph&     Ph&     1.700271\\
- Ph1b&          3-Methylphenol&                 Phenol&         -CH$_3$&                22.22&          &       &               ph&     Ph&     1.353149\\
- Ph2&           Ehtylphenol&                    Phenol&         -CH$_2$CH$_3$&          23.38&          &       &               ph&     Ph&     1.356640\\
- Ph3:1a&                Propenylphenol&                 Phenol&         -CH$_2$CH=CH$_2$&       26.93&          &       &               ph&     Ph&     5.133600\\
- Ph3:1b&                Propenylphenol&                 Phenol&         -CH$_2$CH=CH$_2$&       27.76&          134&    133+134&        ph&     Ph&     4.779586\\
- Ph3&           Propylphenol&                   Phenol&         -CH$_2$CH$_2$CH$_3$&    31.11&          &       &               ph&     Ph&     1.387483\\
- Ph4&           ?Butylphenol&                   Phenol&         -C$_4$H$_9$&            31.86&          &       &               ph&     Ph&     2.417611\\
- ph1=O&         4-Hydroxybenzaldehyde&          Phenol&         -CHO&                   32.70&          122&    121+122&        ph&     Ph&     b.d.\\
- Ph-OH&         Hydroquinone&                   Phenol&         -OH&                    33.40&          &       &               ph&     Ph&     2.143460\\
- \\
- G0&            Guaiacol&                       Guaiacol&       -H&                     18.87&          124&    109+124&        g&      L&      2.48\\
- G1&            Methylguaiacol&                 Guaiacol&       -CH$_3$&                20.32&          138&    123+138&        g&      L&      1.93\\
- G2&            Ethylguaiacol&                  Guaiacol&       -CH$_2$CH$_3$&          21.4&           152&    137+152&        g&      L&      2.18\\
- G3:1a&         Propenylguaiacol[1]&            Guaiacol&       -CH$_2$CH=CH$_2$&       23.29&          164&    149+164&        g&      L&      3.30\\
- G2:1&          Ethylenguaiacol&                Guaiacol&       -CH=CH$_2$&             23.69&          150&    135+150&        g&      L&      2.05\\
- G3:1b&         Propenylguaiacol[2]&            Guaiacol&       -CH$_2$CH=CH$_2$&       24.48&          164&    149+164&        g&      L&      14.20\\
- G3:1c&         Propenylguaiacol[3]&            Guaiacol&       -CH$_2$CH=CH$_2$&       25.66&          164&    149+164&        g&      L&      5.01\\
- G1=O&          Gaiacolaldehyde&                Guaiacol&       -CHO&                   28.4&           152&    109+152&        g&      L&      b.d.\\
- G3&            Propanylguaiacol&               Guaiacol&       -CH$_2$CH$_2$CH$_3$&    28.72&          166&    137+166&        g&      L&      1.47\\
- G3=0-OH&       Oxo-hydroxy-propanylguaiacol&   Guaiacol&       -CH(OH)-CH$_2$-CHO&     28.77&          182&    182&            g&      L&      20.45\\
- G2=O&          Oxo-ethylguaiacol&              Guaiacol&       -CH$_2$CHO&             29.2&           166&    151+166&        g&      L&      1.69\\
- G3=O&          Oxo-propanylguaiacol&           Guaiacol&       -CH$_2$CH$_2$CHO&       29.36&          180&    137+180&        g&      L&      1.70\\
- GAc&           Guaiacylacetic acid&            Guaiacol&       -CH$_2$COOH&            32.88&          182&    137+182&        g&      L&      2.04\\
- G3:1=O&                Oxo-propenylguaiacol&           Guaiacol&       -CH=CH-CHO&             35.3&           178&    135+178&        g&      L&      4.12\\
- G3:1-OH&       Hydroxy-propenylguaiacol&       Guaiacol&       -CH=CH-CH$_2$OH&        37.1&           180&    137+180&        g&      L&      2.08\\
- \\
- S0&            Syringol&                       Syringol&       -H&                     24.58&          154&    139+154&        sy&     L&      2.37\\
- S1&            Methylsyringol&                 Syringol&       -CH$_3$&                25.67&          168&    153+168&        sy&     L&      b.d.\\
- S2&            Ethylsyringol&                  Syringol&       -CH$_2$CH$_3$&          26.39&          182&    167+182&        sy&     L&      1.70\\
- S3:1a&         Propenylsyringol[1]&            Syringol&       -CH$_2$CH=CH$_2$&       27.97&          194&    179+194&        sy&     L&      4.58\\
- S2:1&          Ethylensyringol&                Syringol&       -CH=CH$_2$&             28.37&          180&    165+180&        sy&     L&      5.10\\
- S3:1b&         Propenylsyringol[2]&            Syringol&       -CH$_2$CH=CH$_2$&       28.91&          194&    179+194&        sy&     L&      2.71\\
- S3:1c&         Propenylsyringol[3]&            Syringol&       -CH$_2$CH=CH$_2$&       30.16&          194&    194+179&        sy&     L&      3.76\\
- S1=O&          Syringolaldehyd&                Syringol&       -CHO&                   32.68&          182&    139+182&        sy&     L&      7.20\\
- S3&            Propanylsyringol&               Syringol&       -CH$_2$CH$_2$CH$_3$&    33.15&          196&    181+196&        sy&     L&      3.05\\
- S3=O-OH&       Oxo-hydroxy-propanylsyringol&   Syringol&       -CH(OH)-CH$_2$-CHO&     32.8&           212&    212&            sy&     L&      b.d.\\
- S3=O&          Oxo-propanylsyringol&           Syringol&       -CH$_2$CH$_2$CHO&       33.32&          210&    167+210&        sy&     L&      1.64\\
- SAc&           Syringylacetic acid&            Syringol&       -CH$_2$COOH&            38.78&          212&    212&            sy&     L&      4.78\\
- S3:1=O&                Oxo-propenylsyringol&           Syringol&       -CH=CH-CHO&             43.06&          208&    165+208&        sy&     L&      2.96\\
- \hline
- \end{tabular}}
-\caption{Lignin and phenol pyrolysis products.}
-\end{center}
-\label{tab:ligprod}
-\end{table*}
 
 \newpage
-\begin{table*}[h!]
-\begin{center}
-{\tiny
- \begin{tabular}{llclcccccc}
- code & name & ring & side chain & RT & MW & m/z & class & origin&Rf\\
- F0&            Furan&                          Furan&                  &               2.35&           68&     39+68&          f&      C&      1.19\\
- F1a&           Methylfuran&                    Furan&                  &               2.74&           82&     81+82&          f&      C&      1.00\\
- F1b&           Methylfuran&                    Furan&                  &               2.91&           82&     81+82&          f&      C&      b.d.\\
- F1.1a&         Dimethylfuran&                  Furan&                  &               3.43&           96&     95+96&          f&      C&      b.d.\\
- F1.1b&         Dimethylfuran&                  Furan&                  &               3.66&           96&     95+96&          f&      C&      1.10\\
- F2:1&          Vinylfuran&                     Furan&                  &               5.01&           94&     65+94&          f&      C&      2.59\\
- F1=Oa&         3-Furaldehyd&                   Furan&                  &               11.57&          96&     95+96&          f&      C&      1.65\\
- FH2=O&         2(5H)Furanon&                   Furan&                  &               11.69&          98&     55+98&          f&      C&      2.41\\
- F1=Ob&         2-Furaldehyd&                   Furan&                  &               12.22&          96&     95+96&          f&      C&      1.67\\
- FAc&           Acetylfuran&                    Furan&                  &               12.99&          110&    95+110&         cp&     C&      2.38\\
- F1.1=O&                5-Methyl-2-furancarboxaldehyde& Furan&                  &               14.23&          110&    109+110&        f&      C&      2.44\\
- F=O&           Butyrolactone&                  Furan&                  &               15.22&          86&     56+86&          cp&     C&      12.37\\
- F1-OH&         Furanmethanol&                  Furan&                  &               15.61&          98&     98&             cp&     C&      5.21\\
- FH2-1&         5-Methyl-2(5H)-furanone&        Furan&                  &               16.06&          98&     55+98&          f&      C&      3.92\\
- F-OH.1.1=O&    5-hydroxymethylfuran-1-carboxaldehyde&  Furan&          &               27.51&          126&    97+126&         f&      C&      2.17\\
- &              Unknown furan derivative&       Furan&                  &               6.36&           &       &               f&      C&      1.93\\
-
- \\
- &              2-Cyclopenten-1-one&            Cyclopentenone&         &               10.26&          82&     53+54+52&       cp&     C&      2.02\\
- &              2-Methyl-2-cyclopenten-1-one&   Cyclopentenone&         &               10.51&          96&     53+96&          cp&     C&      2.37\\
- &              3-Methyl-cyclopentanone&        Cyclopentenone&         &               13.31&          &       67+96&          cp&     C&      4.06\\
- &              Dimethylcyclopentenone&         Cyclopentenone&         &               13.69&          110&    67+95+110&      cp&     C&      1.63\\
- &              2-Cyclopenten-1,4-dione&        Cyclopentenone&         &               14.44&          96&     54+68+96&       cp&     C&      1.68\\
- &              1,2-Cylopentandione&            Cyclopentenone&         &               17.51&          986     55+98&          cp&     C&      2.22\\
- &              2-Hydroxy-3-methyl-2-cyclopenten-1-one& Cyclopentenone& &               18.14&          98&     98&             cp&     C&      15.96\\
- &              3-Methyl-1,2-cyclopentanedione& Cyclopentenone&         &               18.42&          112&    69+112&         cp&     C&      2.74\\
- &              Cyclopentanone&                 Cyclopentenone&         &               6.99&           &       &               cp&     C&      b.d.\\
- &              Methylfurane[II]&               Furan&                  &               7.64&           &       &               f&      C&      2.00\\
- &              1-Hydroxy-2-propanone&          &                       &               10.69&          &       &               cp&     C&      2.46\\
- &              Unknown carbohydrate&           &                       &               11.38&          &       &               cp&     C&      4.66\\
- &              Unknown carbohydrate&           &                       &               15.56&          &       &               cp&     C&      119.69\\
- &              Unknown carbohydrate&           &                       &               16.17&          &       &               cp&     C&      2.58\\
- &              Unknown carbohydrate&           &                       &               17.67&          &       &               cp&     C&      1.16\\
- &              Acetaldehyde&                   &                       &               2.06&           44&     29+44&          cp&     C&      1.04\\
- \\
- &              2-Oxopropanoic Acid, ME&        &                       &               7.92&           102&    43+102&         cp&     C&      0.58\\
- &              1-Hydroxypropanone&             &                       &               9.24&           74&     43&             cp&     C&      1.43\\
- &              Propanoic acid, ME&             &                       &               12.1&           102&    43+102&         cp&     C&      1.44\\
- &              Unknown carbohydrate 1&         &                       &               19.06&          &       58+86+114&      f&      C&      1.83\\
- &              Unknown carbohydrate 2&         &                       &               19.35&          &       98+126&         cp&     C&      5.35\\
- &              Unknown carbohydrate 3&         &                       &               21.77&          &       116&            f&      C&      b.d.\\
- &              Unknown carbohydrate 4&         &                       &               22.33&          &       44&             cp&     C&      3.34\\
- &              Unknown carbohydrate 5&         &                       &               26.18&          &       57+69&          f&      C&      1.15\\
- &              Unknown carbohydrate 6&         &                       &               31.67&          &       73+135&         f&      C&      7.59\\
- &              Laevoglucosan&                  &                       &               40.44&          &       60+73&          f&      C&      b.d.\\
-
- \hline
- \end{tabular}}
-\caption{Carbohydrate pyrolysis products.}
-\end{center}
-\label{tab:chprod}
-\end{table*}
-
-\newpage
-\begin{table*}[h!]
-\begin{center}
-{\tiny
- \begin{tabular}{lcccccc}
- \hline
- name & RT & MW & m/z & class & origin&Rf\\
-
-%colnames(peaks)
-%
-%#table<-data.frame(peaks[is.element(peaks$origin, c("C", "L", "P"))==F,c("name", "RT", "MW", "class", %#"origin")])
-%#rownames(table)<-
-%peaks$RT
-%[is.element(peaks$origin, c("C", "L", "P"))==F]
-%print(xtable(table))
-\hline
- Toluene&NA&ar&non&b.d.\\
- Xylene1&NA&ar&non&4.46\\
- Xylene2&NA&ar&non&b.d.\\
- Xylene3&NA&ar&non&b.d.\\
- Methoxymethylbenzene&NA&ar&non&4.04\\
- Benzaldehyde&NA&ar&non&12.88\\
- N-methyl-pyrrol&NA&p&N&5.47\\
- Pyridine&NA&p&N&1.68\\
- Methylpyridine1&NA&p&N&1.41\\
- Methylpyridine2&NA&p&N&0.55\\
- Pyrrole&NA&p&N&1.89\\
- % 53               methylpyrrol1    NA                 p      N   1.8407914
- % 54               methylpyrrol2    NA                 p      N   2.2955035
- % 55                     Pyridol    NA                 p      N   2.1142457
- % 56                      Indole    NA               ind      N   2.9698643
- % 57                Methylindole    NA               ind      N   0.0000000
- % 58                        25:0    NA              cut0    Cut   3.1630146
- % 59                        25:1    NA              cut1    Cut  13.3215300
- % 60                        27:0    NA              cut0    Cut   2.9741360
- % 61                        27:1    NA              cut1    Cut   6.2380446
- % 62                        29:0    NA              cut0    Cut   4.4698657
- % 63                        29:1    NA              cut1    Cut  13.8218011
- % 68                xylene4_6.99    NA                ar    non   4.0670482
- % 69                limonen_7.29    NA               ter    non   0.5925572
- % 70        methylpyridine3_7.54    NA                 p      N   1.8775678
- % 79                indene_12.64    NA                ar    non   0.7905236
- % 81   1-Methyl-4-methoxybenzene 15.98                ar    non  10.9189835
- % 85         unknown_alcyl_20.00    NA                al     al   9.3875369
- % 86               unknown_20.85    NA               unk    unk   7.9403920
- % 87               unknown_20.86    NA               unk    unk   0.0000000
- % 88               unknown_22.43    NA               unk    unk   3.8791695
- % 89         unknown_alkyl_22.82    NA                al    unk  12.4633995
- % 90  hexan2,4dione,_-enol_23.92    NA                 o    unk   1.1928005
- % 91            benzofuran_26.19    NA                bf    unk   1.4484175
- % 92               unknown_27.76    NA               unk    unk 163.6031069
- % 103                     Ph3:1b 27.76 134 133+134    ph     Ph   4.7795856
- % 114                      Ph1=O 32.70 122 121+122    ph     Ph   0.0000000
- % 124                     Aceton  2.46             short    non   1.6472435
- % 125                 2-Propenal  2.60             short    non   1.7549368
- % 126                   Methanol  2.88             short    non   1.3607664
- % 127              3-Buten-2-one  3.39             short    non   2.9318465
- % 128             2,3-Butandione  3.67             short    non   1.5758264
- % 129             3-Penten-2-one  3.89             short    non   3.5475272
- % 130                  2-Butanal  4.56             short    non   0.0000000
- % 131             2,3-Pentadione  4.77             short    non   2.4595113
- % 132                    Hexanal  5.16             short    non   2.8490305
- % 133             1-Penten-3-one 11.28             short    non   2.1402314
- % 134                     14:0fa  2.35  68   39+68    fa    lip  50.0000000
- % 135                     16.0fa  2.74  82   81+82    fa    lip  62.6700000
- % 136                     18:0fa  2.91  82   81+82    fa    lip  29.5900000
-
- \hline
- \end{tabular}}
-\caption{Carbohydrate pyrolysis products.}
-\end{center}
-\label{tab:nprod}
-\end{table*}
-
-\newpage
-<<Ntable, echo=F, results=tex, fig=F>>=
-tab<-peaks[is.element(peaks$origin, c("N","non")),T]
+<<phtable, echo=F, results=tex, fig=F>>=
+tab<-peaks[is.element(peaks$origin, c("Ph","L")),T]
 tab<-tab[order(tab$origin, tab$RT),T  ]
-tab<-data.frame(tab$name, tab$RT, tab$origin)
-print(xtable(tab))
+tab<-data.frame(tab$name, tab$RT, tab$MW, tab$m.z, tab$origin, tab$class)
+colnames(tab)<-c("Name", "RT", "MW","integrated framents", "Origin", "Class")
+tab<-xtable(tab, caption="Lignin derrived and other phenolic pyrolysis products", label="tab:phprod", align=rep("c",7))
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+
+<<chtable, echo=F, results=tex, fig=F>>=
+tab<-peaks[peaks$origin=="C",T]
+tab<-tab[order(tab$origin, tab$RT),T  ]
+tab<-data.frame(tab$name, tab$RT, tab$MW, tab$m.z, tab$origin, tab$class)
+colnames(tab)<-c("Name", "RT", "MW","integrated framents", "Origin", "Class")
+tab<-xtable(tab, caption="Carbohydrate derrived pyrolysis products", label="tab:chprod", align=rep("c",7))
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+
+
+\newpage
+<<ntable, echo=F, results=tex, fig=F>>=
+tab<-peaks[is.element(peaks$origin, c("L","Ph", "C"))==F,T]
+tab<-tab[order(tab$origin, tab$RT),T  ]
+tab<-data.frame(tab$name, tab$RT, tab$MW, tab$m.z, tab$origin, tab$class)
+colnames(tab)<-c("Name", "RT", "MW","integrated framents", "Origin", "Class")
+tab<-xtable(tab, caption="Other pyrolysis products quantified", label="tab:nprod", align=rep("c",7))
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 @
 
 

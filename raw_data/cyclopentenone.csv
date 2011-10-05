@@ -1,4 +1,4 @@
-"name";"10.26_2-cyclopenten-1-one";"10.51_2-methyl-2-cyclopenten-1-one";"13.31_3-methyl-cyclopentanone";"13.69_dimethylcyclopentenone";"14.44_2-cyclopenten-1,4-dione";"17.51_1,2-cylopentandione";"18.14_2-cyclopenten-1-one,_-2-hydroxy-3-me";"18.42_1,2-cyclopentanedione,_-3-methyl-"
+"name";"2-Cyclopenten-1-one";"2-Methyl-2-cyclopenten-1-one";"3-Methyl-cyclopentanone";"Dimethylcyclopentenone";"2-Cyclopenten-1,4-dione";"1,2-Cylopentandione";"2-Hydroxy-3-methyl-2-cyclopenten-1-one";"3-Methy-l1,2-cyclopentanedione"
 "RT";10.26;10.51;13.31;13.69;14.44;17.51;18.14;18.42
 "MW";82;96;;110;96;98;98;112
 "m/z";"53+54+52";"53+96";"67+96";"67+95+110";"54+68+96";"55+98";98;"69+112"
