@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: sbb.aux
+The style file: model2-names.bst
+Database file #1: library.bib
+Repeated entry---line 2733 of file library.bib
+ : @article{Ralph1991a
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3350 of file library.bib
+ : @article{Schellekens2009
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Schinner1996"
+You've used 26 entries,
+            2761 wiz_defined-function locations,
+            780 strings with 10282 characters,
+and the built_in function-call counts, 17346 in all, are:
+= -- 1369
+> -- 796
+< -- 10
++ -- 305
+- -- 279
+* -- 2037
+:= -- 2673
+add.period$ -- 77
+call.type$ -- 26
+change.case$ -- 222
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 1086
+empty$ -- 1105
+format.name$ -- 357
+if$ -- 3120
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 241
+newline$ -- 139
+num.names$ -- 104
+pop$ -- 256
+preamble$ -- 1
+purify$ -- 197
+quote$ -- 0
+skip$ -- 347
+stack$ -- 0
+substring$ -- 875
+swap$ -- 951
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 231
+warning$ -- 0
+while$ -- 122
+width$ -- 0
+write$ -- 366
+(There were 2 error messages)

@@ -1,0 +1,234 @@
+\begin{thebibliography}{26}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Berg and Staaf(1980)}]{Berg1980}
+\bibinfo{author}{Berg, B.}, \bibinfo{author}{Staaf, H.}, \bibinfo{year}{1980}.
+\newblock \bibinfo{title}{{Decomposition rate and chemical changes of Scots
+  pine needle litter. II. Influence of chemical composition}}.
+\newblock \bibinfo{journal}{Ecological Bulletins} , \bibinfo{pages}{373--390}.
+%Type = Article
+\bibitem[{Bol et~al.(2009)Bol, Poirier, Balesdent and Gleixner}]{Bol2009}
+\bibinfo{author}{Bol, R.}, \bibinfo{author}{Poirier, N.},
+  \bibinfo{author}{Balesdent, J.}, \bibinfo{author}{Gleixner, G.},
+  \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{{Molecular turnover time of soil organic matter in
+  particle‐size fractions of an arable soil}}.
+\newblock \bibinfo{journal}{Rapid Communications in Mass Spectrometry}
+  \bibinfo{volume}{23}, \bibinfo{pages}{2551--2558}.
+%Type = Article
+\bibitem[{Chiavari and Galletti(1992)}]{Chiavari1992}
+\bibinfo{author}{Chiavari, G.}, \bibinfo{author}{Galletti, G.C.},
+  \bibinfo{year}{1992}.
+\newblock \bibinfo{title}{{Pyrolysis-gas chromatography/mass spectrometry of
+  amino acids}}.
+\newblock \bibinfo{journal}{Journal of Analytical and Applied Pyrolysis}
+  \bibinfo{volume}{24}, \bibinfo{pages}{123-- 137}.
+%Type = Article
+\bibitem[{Co\^{u}teaux et~al.(1995)Co\^{u}teaux, Bottner and
+  Berg}]{Couteaux1995}
+\bibinfo{author}{Co\^{u}teaux, M.M.}, \bibinfo{author}{Bottner, P.},
+  \bibinfo{author}{Berg, B.}, \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{{Litter decomposition, climate and liter quality.}}
+\newblock \bibinfo{journal}{Trends in ecology \& evolution (Personal edition)}
+  \bibinfo{volume}{10}, \bibinfo{pages}{63--66}.
+%Type = Article
+\bibitem[{Craine et~al.(2007)Craine, Morrow and Fierer}]{Craine2007}
+\bibinfo{author}{Craine, J.M.}, \bibinfo{author}{Morrow, C.},
+  \bibinfo{author}{Fierer, N.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{{Microbial nitrogen limitation increases
+  decomposition.}}
+\newblock \bibinfo{journal}{Ecology} \bibinfo{volume}{88},
+  \bibinfo{pages}{2105--13}.
+%Type = Article
+\bibitem[{Fontaine et~al.(2011)Fontaine, Henault, Aamor, Bdioui, Bloor, Maire,
+  Mary, Revaillot and Maron}]{Fontaine2011}
+\bibinfo{author}{Fontaine, S.}, \bibinfo{author}{Henault, C.},
+  \bibinfo{author}{Aamor, a.}, \bibinfo{author}{Bdioui, N.},
+  \bibinfo{author}{Bloor, J.}, \bibinfo{author}{Maire, V.},
+  \bibinfo{author}{Mary, B.}, \bibinfo{author}{Revaillot, S.},
+  \bibinfo{author}{Maron, P.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{Fungi mediate long term sequestration of carbon and
+  nitrogen in soil through their priming effect}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry}
+  \bibinfo{volume}{43}, \bibinfo{pages}{86--96}.
+%Type = Article
+\bibitem[{Hatfield and Romualdo(2005)}]{Hatfield2005}
+\bibinfo{author}{Hatfield, R.D.}, \bibinfo{author}{Romualdo, S.F.},
+  \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{{Can Lignin Be Accurately Measured?}}
+\newblock \bibinfo{journal}{Crop Science} \bibinfo{volume}{45},
+  \bibinfo{pages}{832--839}.
+%Type = Book
+\bibitem[{Henschler(1988)}]{Henschler1988}
+\bibinfo{author}{Henschler, G.}, \bibinfo{year}{1988}.
+\newblock \bibinfo{title}{{Analysen im biologischen Material}}.
+\newblock \bibinfo{publisher}{VCH Verlagsgesellschaft mbH},
+  \bibinfo{address}{Weinheim}.
+%Type = Article
+\bibitem[{Kaiser et~al.(2010)Kaiser, Koranda, Kitzler, Fuchslueger, Schnecker,
+  Schweiger, Rasche, Zechmeister-Boltenstern, Sessitsch and
+  Richter}]{Kaiser2010b}
+\bibinfo{author}{Kaiser, C.}, \bibinfo{author}{Koranda, M.},
+  \bibinfo{author}{Kitzler, B.}, \bibinfo{author}{Fuchslueger, L.},
+  \bibinfo{author}{Schnecker, J.}, \bibinfo{author}{Schweiger, P.},
+  \bibinfo{author}{Rasche, F.}, \bibinfo{author}{Zechmeister-Boltenstern, S.},
+  \bibinfo{author}{Sessitsch, A.}, \bibinfo{author}{Richter, A.},
+  \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Belowground carbon allocation by trees drives
+  seasonal patterns of extracellular enzyme activities by altering microbial
+  community composition in a beech forest soil}}.
+\newblock \bibinfo{journal}{New Phytologist} \bibinfo{volume}{187},
+  \bibinfo{pages}{843--858}.
+%Type = Article
+\bibitem[{Kalbitz et~al.(2006)Kalbitz, Kaiser, Bargholz and
+  Dardenne}]{Kalbitz2006}
+\bibinfo{author}{Kalbitz, K.}, \bibinfo{author}{Kaiser, K.},
+  \bibinfo{author}{Bargholz, J.}, \bibinfo{author}{Dardenne, P.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{{Lignin degradation controls the production of
+  dissolved organic matter in decomposing foliar litter}}.
+\newblock \bibinfo{journal}{European Journal of Soil Science}
+  \bibinfo{volume}{57}, \bibinfo{pages}{504--516}.
+%Type = Article
+\bibitem[{Klotzb\"{u}cher et~al.(2011)Klotzb\"{u}cher, Kaiser, Guggenberger,
+  Gatzek and Kalbitz}]{Klotzbucher2011}
+\bibinfo{author}{Klotzb\"{u}cher, T.}, \bibinfo{author}{Kaiser, K.},
+  \bibinfo{author}{Guggenberger, G.}, \bibinfo{author}{Gatzek, C.},
+  \bibinfo{author}{Kalbitz, K.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{A new conceptual model for the fate of lignin in
+  decomposing plant litter}}.
+\newblock \bibinfo{journal}{America} \bibinfo{volume}{92},
+  \bibinfo{pages}{1052--1062}.
+%Type = Article
+\bibitem[{Knorr et~al.(2005)Knorr, Frey and Curtis}]{Knorr2005}
+\bibinfo{author}{Knorr, M.}, \bibinfo{author}{Frey, S.},
+  \bibinfo{author}{Curtis, P.}, \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{{Nitrogen addition and litter decomposition : A
+  meta-analysis}}.
+\newblock \bibinfo{journal}{Ecology} \bibinfo{volume}{86},
+  \bibinfo{pages}{3252--3257}.
+%Type = Article
+\bibitem[{Leitner et~al.(2011)Leitner, Wanek, Wild, Haemmerle, Kohl, Keiblinger
+  and Zechmeister-Boltenstern}]{Leitner2011}
+\bibinfo{author}{Leitner, S.}, \bibinfo{author}{Wanek, W.},
+  \bibinfo{author}{Wild, B.}, \bibinfo{author}{Haemmerle, I.},
+  \bibinfo{author}{Kohl, L.}, \bibinfo{author}{Keiblinger, K.M.},
+  \bibinfo{author}{Zechmeister-Boltenstern, S.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{Linking resource quality to decomposition processes:
+  Influence iof litter chemistry and stoichiometry on glucan depolymerization
+  during decomposition of beech ($\backslash$emph\{Fagus silvatica\} L. )
+  litter}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry} .
+%Type = Article
+\bibitem[{Marx(2001)}]{Marx2001}
+\bibinfo{author}{Marx, M.}, \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{{A microplate fluorimetric assay for the study of
+  enzyme diversity in soils}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry}
+  \bibinfo{volume}{33}, \bibinfo{pages}{1633--1640}.
+%Type = Article
+\bibitem[{Moorhead and Sinsabaugh(2006)}]{Moorhead2006}
+\bibinfo{author}{Moorhead, D.L.}, \bibinfo{author}{Sinsabaugh, R.L.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{{A theoretical model of litter decay and microbial
+  interaction}}.
+\newblock \bibinfo{journal}{Ecological Monographs} \bibinfo{volume}{76},
+  \bibinfo{pages}{151--174}.
+%Type = Article
+\bibitem[{Mooshammer et~al.(2011)Mooshammer,  and the Crew}]{Mooshammer2011}
+\bibinfo{author}{Mooshammer, M.}, , \bibinfo{author}{the Crew},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{Marias paper}}.
+\newblock \bibinfo{journal}{ecosystems} .
+%Type = Misc
+\bibitem[{Oksanen et~al.(2011)Oksanen, Blanchet, Kindt, Legendre, O'Hara,
+  Simpson, Slymos, Stevens and Wagner}]{Oksanen2011}
+\bibinfo{author}{Oksanen, J.}, \bibinfo{author}{Blanchet, F.G.},
+  \bibinfo{author}{Kindt, R.}, \bibinfo{author}{Legendre, P.},
+  \bibinfo{author}{O'Hara, R.}, \bibinfo{author}{Simpson, G.L.},
+  \bibinfo{author}{Slymos, P.}, \bibinfo{author}{Stevens, M.H.H.},
+  \bibinfo{author}{Wagner, H.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{vegan: Community Ecology Package. R packge version
+  1.17-9}}.
+%Type = Article
+\bibitem[{Prescott(2010)}]{Prescott2010}
+\bibinfo{author}{Prescott, C.E.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Litter decomposition: what controls it and how can
+  we alter it to sequester more carbon in forest soils?}}
+\newblock \bibinfo{journal}{Biogeochemistry} \bibinfo{volume}{101},
+  \bibinfo{pages}{133--149}.
+%Type = Article
+\bibitem[{Preston et~al.(1997)Preston, Trofymow, Sayer and Niu}]{Preston1997}
+\bibinfo{author}{Preston, C.M.}, \bibinfo{author}{Trofymow, J.A.},
+  \bibinfo{author}{Sayer, B.G.}, \bibinfo{author}{Niu, J.},
+  \bibinfo{year}{1997}.
+\newblock \bibinfo{title}{{13C nuclear magnetic resonance spectroscopy with
+  cross-polarization and magic–angle spinning investigation of the proximate
+  analysis fractions used to assess litter quality in decomposition studies}}.
+\newblock \bibinfo{journal}{Canadian Journal of Botany} \bibinfo{volume}{75},
+  \bibinfo{pages}{1601--1613}.
+%Type = Article
+\bibitem[{Ralph and Hatfield(1991)}]{Ralph1991a}
+\bibinfo{author}{Ralph, J.}, \bibinfo{author}{Hatfield, R.D.},
+  \bibinfo{year}{1991}.
+\newblock \bibinfo{title}{{Pyrolysis-GC-MS characterization of forage
+  materials}}.
+\newblock \bibinfo{journal}{Journal of Agricultural and Food Chemistry}
+  \bibinfo{volume}{39}, \bibinfo{pages}{1426--1437}.
+%Type = Article
+\bibitem[{Schellekens et~al.(2009)Schellekens, Buurman and
+  Pontevedra-Pombal}]{Schellekens2009}
+\bibinfo{author}{Schellekens, J.}, \bibinfo{author}{Buurman, P.},
+  \bibinfo{author}{Pontevedra-Pombal, X.}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{{Selecting parameters for the environmental
+  interpretation of peat molecular chemistry – A pyrolysis-GC/MS study}}.
+\newblock \bibinfo{journal}{Organic Geochemistry} \bibinfo{volume}{40},
+  \bibinfo{pages}{678--691}.
+%Type = Article
+\bibitem[{Sinsabaugh(1999)}]{Sinsabaugh1999}
+\bibinfo{author}{Sinsabaugh, R.L.}, \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{{Characterizing soil microbial communities}}.
+\newblock \bibinfo{journal}{Standard Soil Methods for Long-Term Ecological
+  Research} \bibinfo{volume}{2}, \bibinfo{pages}{318--348}.
+%Type = Article
+\bibitem[{Sinsabaugh(2010)}]{Sinsabaugh2010}
+\bibinfo{author}{Sinsabaugh, R.L.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Phenol oxidase, peroxidase and organic matter
+  dynamics of soil}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry}
+  \bibinfo{volume}{42}, \bibinfo{pages}{391--404}.
+%Type = Article
+\bibitem[{Thevenot et~al.(2010)Thevenot, Dignac and Rumpel}]{Thevenot2010a}
+\bibinfo{author}{Thevenot, M.}, \bibinfo{author}{Dignac, M.F.},
+  \bibinfo{author}{Rumpel, C.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Fate of lignins in soils: A review}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry}
+  \bibinfo{volume}{42}, \bibinfo{pages}{1200--1211}.
+%Type = Article
+\bibitem[{Wanek et~al.(2011)Wanek, Mooshammer and Blochl}]{Wanek2011}
+\bibinfo{author}{Wanek, W.}, \bibinfo{author}{Mooshammer, M.},
+  \bibinfo{author}{Blochl, A.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{Determination of gross rates of amino acid
+  production and immobilization in decomposing leaf litter by a novel N-15
+  isotope pool dilution technique (vol 42, pg 1293, 2010)}}.
+\newblock \bibinfo{journal}{SOIL BIOLOGY \& BIOCHEMISTRY} \bibinfo{volume}{43},
+  \bibinfo{pages}{221--221}.
+%Type = Article
+\bibitem[{Wanek et~al.(2010)Wanek, Mooshammer, Bl\"{o}chl, Hanreich and
+  Richter}]{Wanek2010}
+\bibinfo{author}{Wanek, W.}, \bibinfo{author}{Mooshammer, M.},
+  \bibinfo{author}{Bl\"{o}chl, A.}, \bibinfo{author}{Hanreich, A.},
+  \bibinfo{author}{Richter, A.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{{Determination of gross rates of amino acid
+  production and immobilization in decomposing leaf litter by a novel N-15
+  isotope pool dilution technique}}.
+\newblock \bibinfo{journal}{Soil Biology and Biochemistry}
+  \bibinfo{volume}{42}, \bibinfo{pages}{1293--1302}.
+
+\end{thebibliography}

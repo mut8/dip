@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: dip.aux
+White space in argument---line 58 of file dip.aux
+ : \citation{Vancampenhout2009
+ :                             }
+I'm skipping whatever remains of this command
+The style file: plainnat.bst
+Database file #1: library.bib.bib
+Repeated entry---line 2581 of file library.bib.bib
+ : @article{Schellekens2009
+ :                         ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Enriquez1993"
+Warning--I didn't find a database entry for "Dykmans2002"
+Warning--I didn't find a database entry for "Sinsabaugh2011"
+Warning--I didn't find a database entry for "Ralph1991"
+You've used 18 entries,
+            2773 wiz_defined-function locations,
+            762 strings with 10879 characters,
+and the built_in function-call counts, 11098 in all, are:
+= -- 970
+> -- 867
+< -- 10
++ -- 289
+- -- 271
+* -- 1059
+:= -- 1785
+add.period$ -- 84
+call.type$ -- 18
+change.case$ -- 136
+chr.to.int$ -- 18
+cite$ -- 36
+duplicate$ -- 396
+empty$ -- 719
+format.name$ -- 297
+if$ -- 2254
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 21
+newline$ -- 126
+num.names$ -- 76
+pop$ -- 240
+preamble$ -- 1
+purify$ -- 121
+quote$ -- 0
+skip$ -- 317
+stack$ -- 0
+substring$ -- 370
+swap$ -- 45
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 183
+warning$ -- 0
+while$ -- 84
+width$ -- 0
+write$ -- 299
+(There were 2 error messages)

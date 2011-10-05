@@ -1,0 +1,26 @@
+\contentsline {paragraph}{General introduction}{5}
+\contentsline {paragraph}{Methodological comments}{5}
+\contentsline {paragraph}{[name]}{5}
+\contentsline {chapter}{\numberline {1}General Introduction}{7}
+\contentsline {section}{\numberline {1.1}Litter decomposition and the global carbon cycle}{7}
+\contentsline {subsection}{\numberline {1.1.1}Ecological stoichiometry}{8}
+\contentsline {section}{\numberline {1.2}Chemical constituents of initial beech litter}{9}
+\contentsline {subsection}{\numberline {1.2.1}Micronutrients}{10}
+\contentsline {section}{\numberline {1.3}Changes of litter carbon chemistry during decomposition}{10}
+\contentsline {subsection}{\numberline {1.3.1}The traditional model developed by B. Berg}{10}
+\contentsline {subsection}{\numberline {1.3.2}Microbial nitrogen mining hypothesis}{11}
+\contentsline {subsection}{\numberline {1.3.3}Carbon limitation of lignin decomposition}{11}
+\contentsline {subsection}{\numberline {1.3.4}Analytical methods to characterize high molecular weight compounds}{12}
+\contentsline {paragraph}{Carbohydrates}{12}
+\contentsline {paragraph}{Lignin}{12}
+\contentsline {chapter}{\numberline {2}Methodological comments}{13}
+\contentsline {section}{\numberline {2.1}Column choice and temperature programm}{13}
+\contentsline {section}{\numberline {2.2}Internal standards and absolute quantification}{14}
+\contentsline {section}{\numberline {2.3}Peak assignment}{15}
+\contentsline {section}{\numberline {2.4}Peak classification}{15}
+\contentsline {paragraph}{Lignin}{15}
+\contentsline {paragraph}{Carbohydrates}{15}
+\contentsline {paragraph}{Protein}{16}
+\contentsline {paragraph}{Lipids}{16}
+\contentsline {chapter}{\numberline {3}Manuscript 1}{21}
+\contentsline {chapter}{\numberline {4}Manuscript 2}{53}
