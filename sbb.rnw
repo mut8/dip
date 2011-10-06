@@ -59,7 +59,7 @@
 \def\Tiny{ \font\Tinyfont = cmr10 at 4pt \relax  \Tinyfont}
 
 <<startup, echo=F, fig=F, results=hide>>=
-  setwd("/home/lluc/dip")
+setwd("/home/lluc/dip")
 source("startup.R")
 options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 @
@@ -544,7 +544,7 @@ colnames(hmw.proc) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp",
 
   barp<-function(data, cond1, cond2, ylim=c(-3,3), ...)
 {
-  height<- tapply(data[cond1], type[cond1], mean)- tapply(data[cond2], type[cond2], mean)
+  height<- tapply(data[cond1], type[cond1], mean) - tapply(data[cond2], type[cond2], mean)
   error<-sqrt(tapply(data[cond1], type[cond1], stderr)^2 + tapply(data[cond1], type[cond1], stderr)^2)
                                         #ci<-sqrt(tapply(data[cond1], type[cond1], CI(alpha=0.05)^2 + tapply(data[cond1], type[cond1], CI(alpha=0.05))^2)
   barplot.def(height, error, ylim=ylim, ...)
@@ -713,11 +713,8 @@ mtext("LCI (% of initial LCI)", side=4, padj=5, las=0)
 \vspace*{2mm}
 \begin{center}
 \setkeys{Gin}{width=\textwidth}
-<<degrdiff, fig=T, results=hide, echo=false, width=12, height=3.5>>=
-  par(mfrow=c(1,5))
-                                        #barp(orig_cTIC$L, days==97, days==0)
-                                        #barp(orig_cTIC$Ph, days==97, days==0)
-                                        #barp(orig_cTIC$C, days==97, days==0)
+<<degrdiff, fig=T, results=hide, echo=false, width=12, height=7>>=
+  par(mfrow=c(2,5))
 
 par(mar=c(2, 5, 0.6,0))
 barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==181, days==0, ylim=c(0,20), ylab="% of initial pool degraded \n days 0 - 181", names.arg=typlev, main="Lignin")
@@ -753,6 +750,43 @@ axis(4)
 axis(2, labels=F)
 mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, cex=.7)
 abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 5, 0.6,0))
+barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,20), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="Lignin")
+                                        #barp(orig_cTIC$Ph, days==181, days==97)
+axis(4, labels=F)
+
+par(mar=c(2, 0, 0.6,5))
+barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,20), yaxt="n", names.arg=typlev, main="Carbohydrates")
+axis(4)
+axis(2, labels=F)
+                                        #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+                                        #barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+
+par(mar=c(2, 5, 0.6,0))
+barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="Lignin")
+                                        #barp(orig_cTIC$Ph, days==181, days==97)
+axis(4, labels=F)
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), yaxt="n", main="Carbohydrates", names.arg=typlev)
+axis(4)
+axis(2, labels=F)
+                                        #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+                                        #barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
+                                        #, log="y"
+      )
+axis(4)
+axis(2, labels=F)
+mtext("Ratio (% of initial pools degraded)\n days 181-475", side=4, padj=2, las=0, cex=.7)
+abline(h=1, col="black", lty=2)
+
+
 @
 \end{center}
 \caption{Carbon loss corrected amounts of lignin and carbohydrates degraded. Carbon loss was calculated based on accumulated respiration. Error bars indicate standard errors (n=4-5). The dashed line marks no discrination between lignin, carbohydrates and bulk carbon loss.}
@@ -765,14 +799,16 @@ abline(h=1, col="black", lty=2)
 \begin{center}
 \setkeys{Gin}{width=\textwidth}
 <<graphcorr, fig=T, echo=F, results=hide, width=10.5, height=7>>=
-  par(mfrow=c(2,3))
+h3.pch<-c(rep(21,5), rep(22,5), rep(23,5), rep(24,5))
+h3.col<-c(rep(colscale[1],5),rep(colscale[2],5),rep(colscale[3],5),rep(colscale[4],5))
+
+par(mfrow=c(2,3))
 
 var1<-alldata$CN_inbal[alldata$days==181]
 var2<-alldata$CP_inbal[alldata$days==181]
 var3<-alldata$NP_inbal[alldata$days==181]
 var4<-hmw.proc$LCI
 var5<-hmw.proc$LCdec
-pch.h3<-c(rep(1,5), rep(16,5), rep(2,5), rep(17,5))
 
 var1lab<-"C:N resource / C:N microbial"
 var2lab<-"C:P resource / C:P microbial"
@@ -781,17 +817,17 @@ var4lab<-"LCI change"
 var5lab<-"Lignin decomposition /\n Carbohydrate decomposition"
 
 par(mar=c(4,5,1,0))
-corplot(var1, var4, "", var4lab)
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var4, "", "")
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var3, var4, "", "")
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,5,0,0))
-corplot(var1, var5, var1lab, var5lab)
+corplot(var1, var5, xlab=var1lab, ylab=var5lab, bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var2, var5, var2lab, "")
+corplot(var2, var5, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var3, var5, var3lab, "")
+corplot(var3, var5, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
 
 @
 \end{center}
@@ -805,9 +841,7 @@ corplot(var3, var5, var3lab, "")
 \begin{center}
 \setkeys{Gin}{width=\textwidth}
 <<graphcorr2, fig=T, echo=F, results=hide, width=10.5, height=14>>=
-  par(mfrow=c(4,3))
-
-names(alldata)
+par(mfrow=c(4,3))
 
 var1<-alldata$C.N_lit[alldata$days==181]
 var2<-alldata$C.P_lit[alldata$days==181]
@@ -816,8 +850,6 @@ var4<-  hmw.proc$LTIC
 var5<-  hmw.proc$CTIC
 var6<-hmw.proc$Ldec
 var7<-hmw.proc$Cdec
-
-pch.h3<-c(rep(1,5), rep(16,5), rep(2,5), rep(17,5))
 
 var1lab<-"C:N litter"
 var2lab<-"C:P litter"
@@ -828,26 +860,26 @@ var6lab<-"Lignin decomposition (% of initial pool)"
 var7lab<-"Carbohydrates decomposition (% of initial pool)"
 
 par(mar=c(4,5,1,0))
-corplot(var1, var4, "", var4lab)
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var4, "", "")
-corplot(var3, var4, "", "")
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(4,5,1,0))
-corplot(var1, var5, "", var5lab)
+corplot(var1, var5, xlab="", ylab=var5lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var5, "", "")
-corplot(var3, var5, "", "")
+corplot(var2, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(4,5,1,0))
-corplot(var1, var6, "", var6lab)
+corplot(var1, var6, xlab="", ylab=var6lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var6, "", "")
-corplot(var3, var6, "", "")
+corplot(var2, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,5,0,0))
-corplot(var1, var7, var1lab, var7lab)
+corplot(var1, var7, xlab=var1lab, ylab=var7lab, bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var2, var7, var2lab, "")
+corplot(var2, var7, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var3, var7, var3lab, "")
+corplot(var3, var7, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
 
 @
 \end{center}
@@ -865,45 +897,43 @@ corplot(var3, var7, var3lab, "")
 
 names(alldata)
 
-var1<-alldata$C.N_lit[alldata$days==181]
-var2<-alldata$C.P_lit[alldata$days==181]
-var3<-alldata$N.P_lit[alldata$days==181]
-var4<-  hmw.proc$LTIC
-var5<-  hmw.proc$CTIC
+var1<-alldata$CN_inbal[alldata$days==181]
+var2<-alldata$CP_inbal[alldata$days==181]
+var3<-alldata$NP_inbal[alldata$days==181]
+var4<-hmw.proc$LTIC
+var5<-hmw.proc$CTIC
 var6<-hmw.proc$Ldec
 var7<-hmw.proc$Cdec
 
-pch.h3<-c(rep(1,5), rep(16,5), rep(2,5), rep(17,5))
-
-var1lab<-"C:N litter"
-var2lab<-"C:P litter"
-var3lab<-"N:P litter"
+var1lab<-"C:N inbalance"
+var2lab<-"C:P inbalance"
+var3lab<-"N:P inbalance"
 var4lab<-"Lignin accumulation (%TIC difference)"
 var5lab<-"Carbohydrates accumulation (%TIC difference)"
 var6lab<-"Lignin decomposition (% of initial pool)"
 var7lab<-"Carbohydrates decomposition (% of initial pool)"
 
 par(mar=c(4,5,1,0))
-corplot(var1, var4, xlab="", ylab=var4lab, pch=pch.h3)
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var4, xlab="", ylab="", pch=pch.h3)
-corplot(var3, var4, xlab="", ylab="", pch=pch.h3)
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(4,5,1,0))
-corplot(var1, var5, xlab="", ylab=var5lab, pch=pch.h3)
+corplot(var1, var5, xlab="", ylab=var5lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var5, xlab="", ylab="", pch=pch.h3)
-corplot(var3, var5, xlab="", ylab="", pch=pch.h3)
+corplot(var2, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(4,5,1,0))
-corplot(var1, var6, xlab="", ylab=var6lab, pch=pch.h3)
+corplot(var1, var6, xlab="", ylab=var6lab, bg=h3.col, pch=h3.pch)
 par(mar=c(4,4,1,1))
-corplot(var2, var6, xlab="", ylab="", pch=pch.h3)
-corplot(var3, var6, xlab="", ylab="", pch=pch.h3)
+corplot(var2, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,5,0,0))
-corplot(var1, var7, xlab=var1lab, ylab=var7lab, pch=pch.h3)
+corplot(var1, var7, xlab=var1lab, ylab=var7lab, bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var2, var7, xlab=var2lab, ylab="", pch=pch.h3)
+corplot(var2, var7, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
 par(mar=c(5,4,0,1))
-corplot(var3, var7, xlab=var3lab, ylab="", pch=pch.h3)
+corplot(var3, var7, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
 
 @
 \end{center}
@@ -969,21 +999,22 @@ rownames(minerals.init) <- typlev
 \newpage
 <<corrtable, results=tex, echo=F, fig=F>>=
   mighty.corr.matrix<-
-  corr.ab(alldata[alldata$days==181,c(10, 37, 11,15:16,77:78,18:26, 28, 34:36, 38:56, 73:75#, 79:84
-                    )],hmw.proc, tex=T
+  corr.ab(
+    alldata[alldata$days==181,c(10, 37, 11,15:16,77:78,18:26, 28, 34:36, 38:56, 73:75)],
+    data.frame(hmw.proc, (alldata[alldata$days==181, "Peroxydase"]/ alldata[alldata$days==181, "Cellulase"]),(alldata[alldata$days==181, "Phenoloxidase"]/ alldata[alldata$days==181, "Cellulase"])), tex=T
           )
                                         #rownames cor corraltion table
 rownames(mighty.corr.matrix) <- c("Massloss", "Respiration", "Cellulase activity", "Phenoloxidase activity", "Peroxidase activity", "Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", "N mineralization", "NH4 immobilization", "Nitrification", "NO3 immobilization", "P mineralization", "P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", "C litter", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter", "K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter", "Cmic", "Nmic", "Pmic", "C:N mic", "C:P mic", "N:P mic", "extractable C", "C:N inbalance", "C:P inbalance", "N:P inbalance"#, "CN extr", "CP extr", "NP extr", "CN immo", "CP immo", "NP immo"
                                   )
 
-colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec")
+colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/C", "Phen/C")
 
                                         #write table for export if needed
                                         #write.csv(mighty.corr.matrix, "corrmatrix.csv")
 
                                         #convert table to latex
 
-tab<-xtable(   mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011, Frank2011}", label="corrtable", align=rep("c",9) )
+tab<-xtable(   mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011, Frank2011}", label="corrtable", align=rep("c",11) )
 
 print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 

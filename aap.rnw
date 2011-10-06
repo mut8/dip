@@ -255,9 +255,9 @@ We found two compounds with terpenoid structure: Phytol is a chlorphyll derived 
 %and a second one identified as Limonene by the NiSt data base. 
 
 \subsubsection{Fatty acids}
-Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). Fatty acids were reported as underrepresented in pyrgrams due to their decarboxylation during pyrolysis [lit], so only the most abundant fatty acids are expected to be found. Additionally, free fatty acids are hard to seperate on our chromatographic system . The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
+Three saturated fatty acids were found in litter pyrograms (14:0, 16:0, 18:0). The three fatty acids were also most abundant in THM analysis of this litter material (data not shown).
 
-For fatty acid analysis 2 samples were excluded as contaminations were encountered.
+%For fatty acid analysis 2 samples were excluded as contaminations were encountered.
 
 Initial content of fatty acids showed differences of up to 30 \% between sites.
 Fot the three fatty acids found, between 15 and 50 \% were degraded over 15 month, indication that both accumulation and depletion occurs in certain sites.
@@ -269,7 +269,7 @@ We found C25-C29 alkanes and alkenes in our pyrograms. The two had different dec
 \section{Discussion}
 
 \subsection{Inter-site variance during litter decomposition}
-We found that differences in litter pyrolysis products persist at least during early litter decomposition. Differences in Lignin side chains are characteristic for
+We found that differences in litter pyrolysis products persist at least during early litter decomposition. Differences in Lignin side chains indicate different polymerization patterns in different sites. 
 
 \subsection{Lignin side chains}
 Until now, studies following lignin degradation with Pyr-GC/MS were focusing on changes between the frequency of lignin pyrolysis products, only the ratio between guaiacol/syringol/phenol based ring system was investigated. We found substantial differences in the frequency of different lignin side chains between litter collected at different sites. We found that these differences remained nearly constant during during 15 month of litter decomposition.
@@ -314,7 +314,8 @@ From our dataset, we see that (1) alcenes are accumulated
 \begin{figure*}[h!]
 \begin{center}
 \setkeys{Gin}{width=0.5\textwidth}
-<<pca1, fig=T, echo=F, results=hide>>=
+<<pca1, fig=T, echo=F, results=hide, width=7, height=14>>=
+par(mfrow=c(2,1))
 peakcodes<-alldata$RT
 peakcodes[peaks$origin=="non"  ]<-"o"
 peakcodes[peaks$origin=="al"]<-"a"
@@ -327,6 +328,9 @@ peakcodes[peaks$origin=="Ph"  ]<-"P"
 peakcodes[peaks$origin=="N"  ]<-"N"
   
 ord.plot(rda(rsim, scale=T), days, type, spe.mult=2, col="black", pch=pch, pt.bg=colscale , spe.labels=peakcodes, sep1.unit="days")
+
+ord.plot(rda((rsim-initials.rsim), scale=T), days, type, spe.mult=2, col="black", pch=pch, pt.bg=colscale , spe.labels=peakcodes, sep1.unit="days")
+
 
 @
 \end{center}

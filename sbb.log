@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  3 OCT 2011 14:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  6 OCT 2011 18:00
 entering extended mode
  %&-line parsing enabled.
 **sbb.tex
@@ -348,10 +348,10 @@ File: sbb-chemdif.pdf Graphic file (type pdf)
 File: sbb-lci.pdf Graphic file (type pdf)
 
 <use sbb-lci.pdf> [23 <./sbb-lci.pdf>]
-<sbb-degrdiff.pdf, id=122, 867.24pt x 252.945pt>
+<sbb-degrdiff.pdf, id=122, 867.24pt x 505.89pt>
 File: sbb-degrdiff.pdf Graphic file (type pdf)
- <use sbb-degrdiff.pdf>
-[24 <./sbb-degrdiff.pdf>] <sbb-graphcorr.pdf, id=130, 758.835pt x 505.89pt>
+ <use sbb-degrdiff.pdf> [24 <./sbb-degrdiff.pdf>] <sbb-graphcorr.pdf, id=130, 7
+58.835pt x 505.89pt>
 File: sbb-graphcorr.pdf Graphic file (type pdf)
 
 <use sbb-graphcorr.pdf> [25 <./sbb-graphcorr.pdf>]
@@ -388,6 +388,11 @@ Package natbib Warning: Citation `Frank2011' on page 28 undefined on input line
  548.
 
 
+Overfull \hbox (23.43968pt too wide) in paragraph at lines 551--600
+ [] 
+ []
+
+
 Package natbib Warning: There were undefined citations.
 
 [28] [29 <./sbb-graphcorr2.pdf>] [30 <./sbb-graphcorr3.pdf>] (./sbb.aux)
@@ -401,7 +406,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2998 strings out of 495021
  38867 string characters out of 1181035
- 103080 words of memory out of 3000000
+ 107080 words of memory out of 3000000
  6093 multiletter control sequences out of 15000+50000
  41815 words of font info for 81 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -423,7 +428,7 @@ texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmti7.pfb>
-Output written on sbb.pdf (30 pages, 539758 bytes).
+Output written on sbb.pdf (30 pages, 550168 bytes).
 PDF statistics:
  229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
