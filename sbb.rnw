@@ -1,3 +1,10 @@
+<<startup, echo=F, fig=F, results=hide>>=
+setwd("/home/lluc/dip")
+source("startup.R")
+options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
+@
+
+
 %% \documentclass[preprint,authoryear,12pt]{elsarticle}
 
 %% Use the option review to obtain double line spacing
@@ -58,11 +65,6 @@
 \usepackage{fullpage, lscape}
 \def\Tiny{ \font\Tinyfont = cmr10 at 4pt \relax  \Tinyfont}
 
-<<startup, echo=F, fig=F, results=hide>>=
-setwd("/home/lluc/dip")
-source("startup.R")
-options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
-@
 
 \journal{Soil Biology and Biochemistry}
 \begin{document}
@@ -318,7 +320,40 @@ legend("bottomright", pt.bg=colscale, pch=pch, typlev, lty=1, lwd=2)
 
 Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 to 3.5 mg P per g litter (d.w.). In KL and OS biomass buildup reaches a plateau after 3 month, AK and SW show further growth reaching a maximum of microbial C and N contents after 6 month (AK also for P). Microbial C:N ratios measured range between 1:6 and 1:18, C:P ratios between 1:8 abd 1:35, and N:P ratios between 1:0.5 and 1:3.5. Microbial C:N ratios (Fig. \ref{fig:mb}).
 
-Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry) \citep{Mooshammer2011}, but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, p < 0.016). Litter C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, with the highest variance between litter from different sites after 3 month incubation (Fig. \ref{fig:mb}).
+<<homeostastis, echo=F, results=h>>=
+lm<-lm(log(alldata$C.N_mic[alldata$days==14])~log(alldata$C.N_lit[alldata$days==14]),)
+H.cn.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==97])~log(alldata$C.N_lit[alldata$days==97]),)
+H.cn.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==181])~log(alldata$C.N_lit[alldata$days==181]),)
+H.cn.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==475])~log(alldata$C.N_lit[alldata$days==475]),)
+H.cn.h4<-1/lm$coefficients[2]
+
+lm<-lm(log(alldata$C.Pmic[alldata$days==14])~log(alldata$C.P_lit[alldata$days==14]),)
+H.cp.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==97])~log(alldata$C.P_lit[alldata$days==97]),)
+H.cp.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==181])~log(alldata$C.P_lit[alldata$days==181]),)
+H.cp.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==475])~log(alldata$C.P_lit[alldata$days==475]),)
+H.cp.h4<-1/lm$coefficients[2]
+
+lm<-lm(log(alldata$N.Pmic[alldata$days==14])~log(alldata$N.P_lit[alldata$days==14]),)
+H.np.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==97])~log(alldata$N.P_lit[alldata$days==97]),)
+H.np.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==181])~log(alldata$N.P_lit[alldata$days==181]),)
+H.np.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==475])~log(alldata$N.P_lit[alldata$days==475]),)
+H.np.h4<-1/lm$coefficients[2]
+
+?round
+round(H.cn.h4, digits=2)
+?formatC
+@
+
+Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry) \citep{Mooshammer2011}, but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, all p \textless 0.002, H\textsubscript{C:N}=\Sexpr{round(H.cn.h4, digits=2)}, H\textsubscript{C:P}=\Sexpr{round(H.cp.h4, digits=2)}, H\textsubscript{N:P}=\Sexpr{round(H.np.h4, digits=2)}). Microbial C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, with the highest variance between litter from different sites after 3 month incubation (Fig. \ref{fig:mb}).
 
 \subsubsection{Potential enzyme activities}
 Absolute potential enzyme activities were correlated to litter N, respiration and other other decomposition processes (all R \textgreater  0.8, p \textless 0.001). For all enzymes and at all time points, SW showed the highest and AK the lowest activity. Cellulase was below detecten limit after 14 days, oxidatitve enzymes after 15 month. Cellulases activity is highest after 3 month and decreases between 97 and 181 days. Peroxidase and Peroxidase activities reach their maximum after 181 (fig. \ref{fig:enz}). After between 6 and 15 month, cellulase activity strongly increased. After 475 days, the activity of oxidative enzymes was below the detection limit [data not shown]
@@ -753,25 +788,25 @@ mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, 
 abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 5, 0.6,0))
-barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="Lignin")
+barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="")
                                         #barp(orig_cTIC$Ph, days==181, days==97)
 axis(4, labels=F)
 
 par(mar=c(2, 0, 0.6,5))
-barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,25), yaxt="n", names.arg=typlev, main="Carbohydrates")
+barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,25), yaxt="n", names.arg=typlev, main="")
 axis(4)
 axis(2, labels=F)
                                         #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
                                         #barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
 
 par(mar=c(2, 5, 0.6,0))
-barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="Lignin")
+barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="")
                                         #barp(orig_cTIC$Ph, days==181, days==97)
 axis(4, labels=F)
 abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
-barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), yaxt="n", main="Carbohydrates", names.arg=typlev)
+barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), yaxt="n", main="")
 axis(4)
 axis(2, labels=F)
                                         #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
@@ -779,7 +814,7 @@ axis(2, labels=F)
 abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
-barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main=""
                                         #, log="y"
       )
 axis(4)
@@ -896,8 +931,6 @@ corplot(var3, var7, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
 <<graphcorr3, fig=T, echo=F, results=hide, width=10.5, height=14>>=
   par(mfrow=c(4,3))
 
-names(alldata)
-
 var1<-alldata$CN_inbal[alldata$days==181]
 var2<-alldata$CP_inbal[alldata$days==181]
 var3<-alldata$NP_inbal[alldata$days==181]
@@ -1005,14 +1038,38 @@ rownames(mighty.corr.matrix) <- c("Massloss", "Respiration", "Cellulase activity
 
 colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/C", "Phen/C")
 
-                                        #write table for export if needed
-                                        #write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
 
-                                        #convert table to latex
-
-tab<-xtable(   mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011, Frank2011}", label="corrtable", align=rep("c",11) )
+tab<-xtable(mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011, Frank2011}", label="corrtable", align=rep("c",11) )
 
 print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 
+
 @
+
+<<chemcorrtable, results=tex, echo=F, fig=F>>=
+chem.corr.matrix<-corr.ab(data.frame(
+      alldata[alldata$days==181, c("Mass.loss" , "Respiration", "Cellulase", "Peroxydase", "Phenoloxidase", "cell2phen", "cell2per","Gross.protein.depolymerization" , "Gross.amino.acid.immobilization","Gross.N.mineralization", "Gross.NH4.immobilization","Gross.nitrification", "Gross.NO3.immobilization" ,"Gross.P.mineralization","Gross.P.immobilization","Glucan.Gross.Depolymerisation", "Glucose.Gross.Consumption", "NH4.concentration","NO3.concentration","PO4.concentration","C_lit", "N_lit","P_lit","C.N_lit","C.P_lit","N.P_lit", "K.litter" ,"CA.litter", "MG.litter","FE.litter"  ,"MN.litter","ZN.litter","C_mic" ,"N_.mic","P_mic","C.N_mic","C.Pmic", "N.Pmic","DOC","CN_inbal", "CP_inbal","NP_inbal")]),orig_cTIC[days==181, c("L", "C", "N", "Ph")], tex=T)
+                                  
+#rownames cor corraltion table
+rownames(chem.corr.matrix) <- c("Massloss", "Respiration", "Cellulase activity", "Phenoloxidase activity", "Peroxidase activity", "Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", "N mineralization", "NH4 immobilization", "Nitrification", "NO3 immobilization", "P mineralization", "P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", "C litter", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter", "K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter", "Cmic", "Nmic", "Pmic", "C:N mic", "C:P mic", "N:P mic", "extractable C", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+colnames(chem.corr.matrix)<-c("Lignin(pyr)", "Carbohydrates(pyr)", "Protein(pyr)", "Phenol(pyr)")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+
+#convert table to latex
+
+tab<-xtable(chem.corr.matrix, caption="caption", label="corrtable", align=rep("c",5) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+@
+
+
 \end{document}

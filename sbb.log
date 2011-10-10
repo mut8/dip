@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  7 OCT 2011 16:17
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  10 OCT 2011 14:36
 entering extended mode
  %&-line parsing enabled.
 **sbb.tex
@@ -229,28 +229,31 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./sbb.aux)
+)))) (./sbb.aux
+
+LaTeX Warning: Label `corrtable' multiply defined.
+
+)
 \openout1 = `sbb.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 64.
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    ... okay on input line 66.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -266,20 +269,20 @@ LaTeX Font Info:    ... okay on input line 64.
 \everyMPtoPDFconversion=\toks19
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 129.
+(Font)              <7> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 129.
+(Font)              <5> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 129.
+(Font)              <12> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 129.
+(Font)              <8> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 129.
+(Font)              <6> on input line 131.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aess on input line 132.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 134.
 
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aess.fd
@@ -287,46 +290,46 @@ File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
 
 Package natbib Warning: Citation `i.e. Hatfield2005' on page 2 undefined on inp
-ut line 137.
+ut line 139.
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 218.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 220.
 
  (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 218.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 220.
  [4]
 
 Package natbib Warning: Citation `Schinner1996' on page 5 undefined on input li
-ne 225.
+ne 227.
 
 [5] [6]
 
 Package natbib Warning: Citation `Kuder1998' on page 7 undefined on input line 
-253.
+255.
 
 
-Overfull \hbox (7.34169pt too wide) in paragraph at lines 264--265
+Overfull \hbox (7.34169pt too wide) in paragraph at lines 266--267
 []\T1/aer/m/n/12 Relative peak ar-eas are dif-fer-ent from weight%, but al-low 
 trac-ing of ac-cu-mu-la-tion/depletion
  []
 
 [7]
 
-LaTeX Warning: Reference `.' on page 8 undefined on input line 293.
+LaTeX Warning: Reference `.' on page 8 undefined on input line 295.
 
 [8] <sbb-doc.pdf, id=42, 505.89pt x 505.89pt>
 File: sbb-doc.pdf Graphic file (type pdf)
  <use sbb-doc.pdf> [9 <./sbb-doc.pdf>]
 
-LaTeX Warning: Reference `fig:timeseries' on page 10 undefined on input line 32
-7.
+LaTeX Warning: Reference `fig:timeseries' on page 10 undefined on input line 33
+0.
 
 
 Package natbib Warning: Citation `Snajdr2010' on page 10 undefined on input lin
-e 327.
+e 330.
 
 [10] [11] [12] [13] [14] (./sbb.bbl [15] [16] [17]) [18]
 <sbb-mb.pdf, id=79, 867.24pt x 650.43pt>
@@ -356,7 +359,7 @@ File: sbb-graphcorr.pdf Graphic file (type pdf)
 File: sbb-graphcorr2.pdf Graphic file (type pdf)
  <use sbb-graphcorr2.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 487.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 490.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -365,7 +368,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: sbb-graphcorr3.pdf Graphic file (type pdf)
  <use sbb-graphcorr3.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 498.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 501.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -373,29 +376,35 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [26]
 
 Package natbib Warning: Citation `Frank2011' on page 27 undefined on input line
- 536.
+ 539.
 
 
 Package natbib Warning: Citation `Frank2011' on page 27 undefined on input line
- 536.
+ 539.
 
 
-Overfull \hbox (23.43968pt too wide) in paragraph at lines 539--588
+Overfull \hbox (23.43968pt too wide) in paragraph at lines 542--591
  [] 
  []
 
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Package natbib Warning: There were undefined citations.
 
-[27] [28 <./sbb-graphcorr2.pdf>] [29 <./sbb-graphcorr3.pdf>] (./sbb.aux)
+[27] [28] [29 <./sbb-graphcorr2.pdf>] [30 <./sbb-graphcorr3.pdf>] (./sbb.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  2998 strings out of 495021
  38867 string characters out of 1181035
- 107041 words of memory out of 3000000
+ 117080 words of memory out of 3000000
  6093 multiletter control sequences out of 15000+50000
  41815 words of font info for 81 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -417,9 +426,9 @@ texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmti7.pfb>
-Output written on sbb.pdf (29 pages, 555027 bytes).
+Output written on sbb.pdf (30 pages, 557678 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
