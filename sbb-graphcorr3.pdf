@@ -2,8 +2,8 @@
 %âãÏÓ\r
 1 0 obj
 <<
-/CreationDate (D:20111006175942)
-/ModDate (D:20111006175942)
+/CreationDate (D:20111007161731)
+/ModDate (D:20111007161731)
 /Title (R Graphics Output)
 /Producer (R 2.12.1)
 /Creator (R)
@@ -1544,7 +1544,7 @@ S
 Q q 0.00 0.00 252.00 252.00 re W n
 BT
 0.000 0.000 0.000 rg
-/F2 1 Tf 8.00 0.00 -0.00 8.00 124.64 11.40 Tm (C:N inbalance) Tj
+/F2 1 Tf 8.00 0.00 -0.00 8.00 123.53 11.40 Tm (C:N imbalance) Tj
 ET
 BT
 /F2 1 Tf 0.00 8.00 -8.00 0.00 17.11 66.11 Tm [(Carboh) 30 (ydr) 10 (ates decomposition \(% of initial pool\))] TJ
@@ -1709,7 +1709,7 @@ S
 Q q 252.00 0.00 252.00 252.00 re W n
 BT
 0.000 0.000 0.000 rg
-/F2 1 Tf 8.00 0.00 -0.00 8.00 367.36 11.40 Tm (C:P inbalance) Tj
+/F2 1 Tf 8.00 0.00 -0.00 8.00 366.25 11.40 Tm (C:P imbalance) Tj
 ET
 Q q 290.02 47.52 204.48 204.48 re W n
 0.000 0.000 0.000 RG
@@ -1871,7 +1871,7 @@ S
 Q q 504.00 0.00 252.00 252.00 re W n
 BT
 0.000 0.000 0.000 rg
-/F2 1 Tf 8.00 0.00 -0.00 8.00 619.36 11.40 Tm (N:P inbalance) Tj
+/F2 1 Tf 8.00 0.00 -0.00 8.00 618.25 11.40 Tm (N:P imbalance) Tj
 ET
 Q q 542.02 47.52 204.48 204.48 re W n
 BT

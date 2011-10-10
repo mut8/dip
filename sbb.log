@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  6 OCT 2011 18:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  7 OCT 2011 16:17
 entering extended mode
  %&-line parsing enabled.
 **sbb.tex
@@ -229,11 +229,7 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./sbb.aux
-
-LaTeX Warning: Label `initstoech' multiply defined.
-
-)
+)))) (./sbb.aux)
 \openout1 = `sbb.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -250,7 +246,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
 LaTeX Font Info:    ... okay on input line 64.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 64.
- (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 64.
@@ -344,7 +341,7 @@ File: sbb-pca2.pdf Graphic file (type pdf)
 433.62pt>
 File: sbb-chemdif.pdf Graphic file (type pdf)
  <use sbb-chemdif.pdf>
-[22 <./sbb-chemdif.pdf>] <sbb-lci.pdf, id=114, 1011.78pt x 433.62pt>
+[22 <./sbb-chemdif.pdf>] <sbb-lci.pdf, id=114, 722.7pt x 361.35pt>
 File: sbb-lci.pdf Graphic file (type pdf)
 
 <use sbb-lci.pdf> [23 <./sbb-lci.pdf>]
@@ -373,40 +370,32 @@ LaTeX Warning: Float too large for page by 70.6159pt on input line 498.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[26]
 
-Overfull \hbox (11.35597pt too wide) in paragraph at lines 509--520
- [] 
- []
-
-[26] [27]
-
-Package natbib Warning: Citation `Frank2011' on page 28 undefined on input line
- 548.
+Package natbib Warning: Citation `Frank2011' on page 27 undefined on input line
+ 536.
 
 
-Package natbib Warning: Citation `Frank2011' on page 28 undefined on input line
- 548.
+Package natbib Warning: Citation `Frank2011' on page 27 undefined on input line
+ 536.
 
 
-Overfull \hbox (23.43968pt too wide) in paragraph at lines 551--600
+Overfull \hbox (23.43968pt too wide) in paragraph at lines 539--588
  [] 
  []
 
 
 Package natbib Warning: There were undefined citations.
 
-[28] [29 <./sbb-graphcorr2.pdf>] [30 <./sbb-graphcorr3.pdf>] (./sbb.aux)
+[27] [28 <./sbb-graphcorr2.pdf>] [29 <./sbb-graphcorr3.pdf>] (./sbb.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  2998 strings out of 495021
  38867 string characters out of 1181035
- 107080 words of memory out of 3000000
+ 107041 words of memory out of 3000000
  6093 multiletter control sequences out of 15000+50000
  41815 words of font info for 81 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -428,9 +417,9 @@ texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/font
 s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmti7.pfb>
-Output written on sbb.pdf (30 pages, 550168 bytes).
+Output written on sbb.pdf (29 pages, 555027 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
+ 226 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
