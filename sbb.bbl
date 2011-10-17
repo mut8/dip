@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{25}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -12,6 +12,12 @@
 \newblock \bibinfo{title}{{Decomposition rate and chemical changes of Scots
   pine needle litter. II. Influence of chemical composition}}.
 \newblock \bibinfo{journal}{Ecological Bulletins} , \bibinfo{pages}{373--390}.
+%Type = Book
+\bibitem[{{Berg, B. \& McClaugherty}(2008)}]{Berg2008}
+\bibinfo{author}{{Berg, B. \& McClaugherty}, C.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{{Plant Litter. Decomposition, Humus Formation, Carbon
+  Sequestration.}}
+\newblock \bibinfo{publisher}{Springer}, \bibinfo{address}{Berlin}.
 %Type = Article
 \bibitem[{Bol et~al.(2009)Bol, Poirier, Balesdent and Gleixner}]{Bol2009}
 \bibinfo{author}{Bol, R.}, \bibinfo{author}{Poirier, N.},
@@ -21,14 +27,6 @@
   particle‐size fractions of an arable soil}}.
 \newblock \bibinfo{journal}{Rapid Communications in Mass Spectrometry}
   \bibinfo{volume}{23}, \bibinfo{pages}{2551--2558}.
-%Type = Article
-\bibitem[{Chiavari and Galletti(1992)}]{Chiavari1992}
-\bibinfo{author}{Chiavari, G.}, \bibinfo{author}{Galletti, G.C.},
-  \bibinfo{year}{1992}.
-\newblock \bibinfo{title}{{Pyrolysis-gas chromatography/mass spectrometry of
-  amino acids}}.
-\newblock \bibinfo{journal}{Journal of Analytical and Applied Pyrolysis}
-  \bibinfo{volume}{24}, \bibinfo{pages}{123-- 137}.
 %Type = Article
 \bibitem[{Co\^{u}teaux et~al.(1995)Co\^{u}teaux, Bottner and
   Berg}]{Couteaux1995}
@@ -114,6 +112,14 @@
 \newblock \bibinfo{journal}{Ecology} \bibinfo{volume}{86},
   \bibinfo{pages}{3252--3257}.
 %Type = Article
+\bibitem[{Kuder and Kruge(1998)}]{Kuder1998}
+\bibinfo{author}{Kuder, T.}, \bibinfo{author}{Kruge, M.A.},
+  \bibinfo{year}{1998}.
+\newblock \bibinfo{title}{{Preservation of biomolecules in sub-fossil plants
+  from raised peat bogs — a potential paleoenvironmental proxy}}.
+\newblock \bibinfo{journal}{Organic Geochemistry} \bibinfo{volume}{29},
+  \bibinfo{pages}{1355--1368}.
+%Type = Article
 \bibitem[{Leitner et~al.(2011)Leitner, Wanek, Wild, Haemmerle, Kohl, Keiblinger
   and Zechmeister-Boltenstern}]{Leitner2011}
 \bibinfo{author}{Leitner, S.}, \bibinfo{author}{Wanek, W.},
@@ -122,8 +128,7 @@
   \bibinfo{author}{Zechmeister-Boltenstern, S.}, \bibinfo{year}{2011}.
 \newblock \bibinfo{title}{{Linking resource quality to decomposition processes:
   Influence iof litter chemistry and stoichiometry on glucan depolymerization
-  during decomposition of beech ($\backslash$emph\{Fagus silvatica\} L. )
-  litter}}.
+  during decomposition of beech (Fagus silvatica L. ) litter}}.
 \newblock \bibinfo{journal}{Soil Biology and Biochemistry} .
 %Type = Article
 \bibitem[{Marx(2001)}]{Marx2001}
@@ -157,13 +162,6 @@
 \newblock \bibinfo{title}{{vegan: Community Ecology Package. R packge version
   1.17-9}}.
 %Type = Article
-\bibitem[{Prescott(2010)}]{Prescott2010}
-\bibinfo{author}{Prescott, C.E.}, \bibinfo{year}{2010}.
-\newblock \bibinfo{title}{{Litter decomposition: what controls it and how can
-  we alter it to sequester more carbon in forest soils?}}
-\newblock \bibinfo{journal}{Biogeochemistry} \bibinfo{volume}{101},
-  \bibinfo{pages}{133--149}.
-%Type = Article
 \bibitem[{Preston et~al.(1997)Preston, Trofymow, Sayer and Niu}]{Preston1997}
 \bibinfo{author}{Preston, C.M.}, \bibinfo{author}{Trofymow, J.A.},
   \bibinfo{author}{Sayer, B.G.}, \bibinfo{author}{Niu, J.},
@@ -174,14 +172,6 @@
 \newblock \bibinfo{journal}{Canadian Journal of Botany} \bibinfo{volume}{75},
   \bibinfo{pages}{1601--1613}.
 %Type = Article
-\bibitem[{Ralph and Hatfield(1991)}]{Ralph1991a}
-\bibinfo{author}{Ralph, J.}, \bibinfo{author}{Hatfield, R.D.},
-  \bibinfo{year}{1991}.
-\newblock \bibinfo{title}{{Pyrolysis-GC-MS characterization of forage
-  materials}}.
-\newblock \bibinfo{journal}{Journal of Agricultural and Food Chemistry}
-  \bibinfo{volume}{39}, \bibinfo{pages}{1426--1437}.
-%Type = Article
 \bibitem[{Schellekens et~al.(2009)Schellekens, Buurman and
   Pontevedra-Pombal}]{Schellekens2009}
 \bibinfo{author}{Schellekens, J.}, \bibinfo{author}{Buurman, P.},
@@ -190,6 +180,10 @@
   interpretation of peat molecular chemistry – A pyrolysis-GC/MS study}}.
 \newblock \bibinfo{journal}{Organic Geochemistry} \bibinfo{volume}{40},
   \bibinfo{pages}{678--691}.
+%Type = Article
+\bibitem[{Schinner(1996)}]{Schinner1996}
+\bibinfo{author}{Schinner}, \bibinfo{year}{1996}.
+\newblock \bibinfo{title}{chloroform fumigation method (dummy)} .
 %Type = Article
 \bibitem[{Sinsabaugh(1999)}]{Sinsabaugh1999}
 \bibinfo{author}{Sinsabaugh, R.L.}, \bibinfo{year}{1999}.
@@ -210,15 +204,6 @@
 \newblock \bibinfo{title}{{Fate of lignins in soils: A review}}.
 \newblock \bibinfo{journal}{Soil Biology and Biochemistry}
   \bibinfo{volume}{42}, \bibinfo{pages}{1200--1211}.
-%Type = Article
-\bibitem[{Wanek et~al.(2011)Wanek, Mooshammer and Blochl}]{Wanek2011}
-\bibinfo{author}{Wanek, W.}, \bibinfo{author}{Mooshammer, M.},
-  \bibinfo{author}{Blochl, A.}, \bibinfo{year}{2011}.
-\newblock \bibinfo{title}{{Determination of gross rates of amino acid
-  production and immobilization in decomposing leaf litter by a novel N-15
-  isotope pool dilution technique (vol 42, pg 1293, 2010)}}.
-\newblock \bibinfo{journal}{SOIL BIOLOGY \& BIOCHEMISTRY} \bibinfo{volume}{43},
-  \bibinfo{pages}{221--221}.
 %Type = Article
 \bibitem[{Wanek et~al.(2010)Wanek, Mooshammer, Bl\"{o}chl, Hanreich and
   Richter}]{Wanek2010}

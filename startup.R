@@ -1,4 +1,4 @@
-source("/home/lluc/R/functions.R")
+source("~/R/functions.R")
 
 addpeaks<-function(source, sep=",") {
 
@@ -64,54 +64,12 @@ type<-samples$type
 harlev<-as.numeric(levels(as.factor(harvest)))
 typlev<-levels(type)
 
-harvest
-
-                                        # carbos<-peaks[,2]=="c"|peaks[,2]=="ch"|peaks[,2]=="f"
-                                        # ligs<-peaks[,2]=="sy"|peaks[,2]=="g"|peaks[,2]=="h"
-                                        # #ligs<-peaks[,2]=="sy"|peaks[,2]=="g"|peaks[,2]=="bf"|peaks[,2]=="h"
-                                        # nitr<-peaks[,2]=="ind"|peaks[,2]=="pr"
-                                        # phen<-peaks[,2]=="ph"
-                                        # al<-peaks[,2]=="al"
-                                        # ka<-peaks[,2]=="ka"
-                                        # unk<-peaks[,2]=="u"
-
 peaknr<-length(colnames(sim))
-
-                                        # code2<-vector(length=peaknr)
-                                        # code2[ligs]<-"L"
-                                        # code2[nitr]<-"Pr"
-                                        # code2[carbos]<-"C"
-                                        # code2[phen]<-"Ph"
-                                        # code2[peaks$origin=="a"]<-"a"
-                                        # code2[al]<-"al"
-                                        # code2[ka]<-"ka"
-                                        # code2[peaks$origin=="s"]<-"s"
-                                        # code2[peaks$origin=="t"]<-"t"
-                                        # code2[peaks$origin=="bf"]<-"bf"
-                                        # code2[unk]<-"u"
-                                        #
-                                        # code3<-vector(length=peaknr)
-                                        # code3[ligs]<-paste("L", 1:sum(ligs), sep="")
-                                        # code3[nitr]<-paste("Pr", 1:sum(nitr), sep="")
-                                        # code3[carbos]<-paste("C", 1:sum(carbos), sep="")
-                                        # code3[phen]<-paste("Ph", 1:sum(phen), sep="")
-                                        # code3[peaks$origin=="a"]<-paste("a", 1:sum(peaks$origin=="a"), sep="")
-                                        # code3[al]<-paste("al", 1:sum(al), sep="")
-                                        # code3[ka]<-paste("ka", 1:sum(ka), sep="")
-                                        # code3[peaks$origin=="s"]<-paste("s", 1:sum(peaks$origin=="s"), sep="")
-                                        # code3[peaks$origin=="t"]<-paste("t", 1:sum(peaks$origin=="t"), sep="")
-                                        # code3[peaks$origin=="bf"]<-paste("t", 1:sum(peaks$origin=="bf"), sep="")
-                                        # code3[unk]<-paste("u", 1:sum(unk), sep="")
-
-                                        # peaks<-data.frame(peaks, code2, code3)
-
-colnames(peaks)
 
                                         # calculate cTIC
 cTIC<-sim
 for (i in 1:peaknr)
-  cTIC[,i]<-sim[,i] * peaks$tic[i]
-cTIC
+cTIC[,i]<-sim[,i] * peaks$tic[i]
 
                                         #subs by categories
 colnames(peaks)
@@ -134,47 +92,12 @@ controls<-data.frame(class_cTIC[harvest==2|harvest==6, T], orig_cTIC[harvest==2|
 contnames<-colnames(controls)
 procnames<-colnames(processes)
 
-h2<-corr$harvest==2
-h3<-corr$harvest==6
+h2<-samples$harvest==2
+h3<-samples$harvest==6
 h23<-harvest==2|harvest==6
 h234<-harvest==2|harvest==6|harvest==15
 h34<-harvest==6|harvest==15
 h4<-harvest==15
-
-                                        #h2.mds<-metaMDS(rsim[harvest==2,1:ncol(rsim)])
-                                        #h3.mds<-metaMDS(rsim[harvest==6,1:ncol(rsim)])
-                                        #h23.mds<-metaMDS(rsim[harvest==6|harvest==2,1:ncol(rsim)])
-                                        #all.mds<-metaMDS(rsim)
-
-                                        #h2.pca<-rda(rsim[harvest==2,1:ncol(rsim)], scale=TRUE)
-                                        #h3.pca<-rda(rsim[harvest==6,1:ncol(rsim)], scale=TRUE)
-                                        #h23.pca<-rda(rsim[harvest==6|harvest==2,1:ncol(rsim)], scale=TRUE)
-                                        #all.pca<-rda(rsim, scale=TRUE)
-                                        #h23.wo.n.pca<-rda(rsim[h23, 1:ncol(rsim)],,controls[,52], scale=TRUE)
-                                        #h23.wo.p.pca<-rda(rsim[h23, 1:ncol(rsim)],,controls[,53], scale=TRUE)
-                                        #h23.wo.n.p.pca<-rda(rsim[h23, 1:ncol(rsim)],,controls[,52:53], scale=TRUE)
-                                        #h2.wo.n.pca<-rda(rsim[harvest==2, 1:ncol(rsim)],,controls[h2,52], scale=TRUE)
-                                        #h2.wo.p.pca<-rda(rsim[harvest==2, 1:ncol(rsim)],,controls[h2,53], scale=TRUE)
-                                        #h2.wo.n.p.pca<-rda(rsim[harvest==2, 1:ncol(rsim)],,controls[h2,52:53], scale=TRUE)
-                                        #h3.wo.n.pca<-rda(rsim[harvest==6, 1:ncol(rsim)],,controls[h3,52], scale=TRUE)
-                                        #h3.wo.p.pca<-rda(rsim[harvest==6, 1:ncol(rsim)],,controls[h3,53], scale=TRUE)
-                                        #h3.wo.n.p.pca<-rda(rsim[harvest==6, 1:ncol(rsim)],,controls[h3,52:53], scale=TRUE)
-
-
-rec<-matrix(ncol=5, nrow=peaknr)
-colnames(rec)<-c(typlev, "mean")
-rownames(rec)=rownames(peaks)
-for (i in 1:peaknr)
-  {
-    for (j in 1:length(typlev))
-      {
-
-        tmp<-rsim[type==typlev[j]&harvest!=0,i]/mean(rsim[type==typlev[j]&harvest!=0,i])
-        mod<-lm(tmp ~ samples$massloss[type==typlev[j]&harvest!=0])
-        rec[i,j]<-mod$coefficients[2]
-      }
-    rec[i,5]<-mean(rec[i, 1:4])
-  }
 
 minerals.stat<-data.frame(matrix(nrow=length(typlev), ncol=2*(ncol(minerals[,2:ncol(minerals)]))))
 colnames(minerals.stat)<-paste(c(rep("means", ncol(minerals[,2:ncol(minerals)])), rep("se", ncol(minerals[,2:ncol(minerals)]))), rep(colnames(minerals[,2:ncol(minerals)]),2))
@@ -222,6 +145,22 @@ for (i in 1:nrow(samples))
   initials.class_cTIC[i,T] <-colMeans(class_cTIC[harvest==0 & type==type[i], T])
 }
 
+
+h3init.rsim<-rsim
+h3init.orig_cTIC <- orig_cTIC
+h3init.class_cTIC<- class_cTIC
+samples$h3init.respacc.litC <- samples$cons_acc_resp_litC
+
+for (i in 1:nrow(samples))
+{
+  h3init.rsim[i,T] <-      colMeans(rsim      [harvest==6 & type==type[i], T])
+  h3init.orig_cTIC[i,T] <- colMeans(orig_cTIC [harvest==6 & type==type[i], T])
+  h3init.class_cTIC[i,T] <-colMeans(class_cTIC[harvest==6 & type==type[i], T])
+  samples$h3init.respacc.litC[i]<-mean(alldata$cons_acc_resp_litC[harvest==6 & type==type[i]])
+}
+
+
+
 alldata$CN_inbal <- alldata$C.N_lit/ alldata$C.N_mic
 alldata$CP_inbal <- alldata$C.P_lit/ alldata$C.Pmic
 alldata$NP_inbal <- alldata$N.P_lit/ alldata$N.Pmic
@@ -229,3 +168,44 @@ alldata$NP_inbal <- alldata$N.P_lit/ alldata$N.Pmic
 closs.corr.rsim <- rsim*(1- samples$cons_acc_resp_litC)
 closs.corr.orig_cTIC <- orig_cTIC*(1- samples$cons_acc_resp_litC)
 closs.corr.class_cTIC <- class_cTIC* (1- samples$cons_acc_resp_litC)
+
+alld.h4.cond<-alldata$days==475 & c(rep(T,79),F)
+
+alldata$phen2cell<-alldata$Phenoloxidase/alldata$Cellulase
+alldata$per2cell<-alldata$Peroxydase/alldata$Cellulase
+
+
+hmw.proc<-data.frame(
+  orig_cTIC$L[h3]-initials.orig_cTIC$L[h3],
+  orig_cTIC$C[h3]-initials.orig_cTIC$C[h3],
+  orig_cTIC$L[h3] / (orig_cTIC$L[h3]+orig_cTIC$C[h3]) - initials.orig_cTIC$L[h3]/(initials.orig_cTIC$L[h3]+initials.orig_cTIC$C[h3]),
+  -closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3],
+  -closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3],
+  (-closs.corr.orig_cTIC$L [h3]+initials.orig_cTIC$L[h3]) / samples$cons_acc_resp_litC[h3],
+  (-closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3])/samples$cons_acc_resp_litC[h3],
+  (-closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3]) / (-closs.corr.orig_cTIC$C[h3] + initials.orig_cTIC$C[h3]), 
+  alldata$phen2cell[alldata$days==181]
+  , alldata$per2cell[alldata$days==181])
+
+colnames(hmw.proc) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp", "LCdec", "Phen2Cell", "Per2Cell"
+      #, "log(L:Cdec)"
+      )
+
+hmw.proc
+
+hmw.proc2 <-
+data.frame(  orig_cTIC$L[h4]-h3init.orig_cTIC$L[h4],
+orig_cTIC$C[h4]-h3init.orig_cTIC$C[h4],
+orig_cTIC$L[h4] / (orig_cTIC$L[h4]+orig_cTIC$C[h4]) - h3init.orig_cTIC$L[h4]/(h3init.orig_cTIC$L[h4]+h3init.orig_cTIC$C[h4]),
+-closs.corr.orig_cTIC$L[h4]+h3init.orig_cTIC$L[h4],
+-closs.corr.orig_cTIC$C[h4]+h3init.orig_cTIC$C[h4],
+(-closs.corr.orig_cTIC$L [h4]+initials.orig_cTIC$L[h4])/   samples$h3init.respacc.litC[h4],
+(-closs.corr.orig_cTIC$C[h4]+initials.orig_cTIC$C[h4])/samples$h3init.respacc.litC[h4],
+(-closs.corr.orig_cTIC$L[h4]+initials.orig_cTIC$L[h4]) / (-closs.corr.orig_cTIC$C[h4] + initials.orig_cTIC$C[h4]), 
+alldata$phen2cell[alld.h4.cond], alldata$per2cell[alld.h4.cond])
+
+colnames(hmw.proc2) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp", "LCdec", "Phen2Cell", "Per2Cell"
+      #, "log(L:Cdec)"
+      )
+
+
