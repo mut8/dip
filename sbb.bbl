@@ -12,12 +12,6 @@
 \newblock \bibinfo{title}{{Decomposition rate and chemical changes of Scots
   pine needle litter. II. Influence of chemical composition}}.
 \newblock \bibinfo{journal}{Ecological Bulletins} , \bibinfo{pages}{373--390}.
-%Type = Book
-\bibitem[{{Berg, B. \& McClaugherty}(2008)}]{Berg2008}
-\bibinfo{author}{{Berg, B. \& McClaugherty}, C.}, \bibinfo{year}{2008}.
-\newblock \bibinfo{title}{{Plant Litter. Decomposition, Humus Formation, Carbon
-  Sequestration.}}
-\newblock \bibinfo{publisher}{Springer}, \bibinfo{address}{Berlin}.
 %Type = Article
 \bibitem[{Bol et~al.(2009)Bol, Poirier, Balesdent and Gleixner}]{Bol2009}
 \bibinfo{author}{Bol, R.}, \bibinfo{author}{Poirier, N.},
@@ -197,6 +191,20 @@
   dynamics of soil}}.
 \newblock \bibinfo{journal}{Soil Biology and Biochemistry}
   \bibinfo{volume}{42}, \bibinfo{pages}{391--404}.
+%Type = Article
+\bibitem[{Snajdr et~al.(2011)Snajdr, Cajthaml, Val\'{a}\v{s}kov\'{a},
+  Merhautov\'{a}, Petr\'{a}nkov\'{a}, Spetz, Lepp\"{a}nen and
+  Baldrian}]{Snajdr2011}
+\bibinfo{author}{Snajdr, J.}, \bibinfo{author}{Cajthaml, T.},
+  \bibinfo{author}{Val\'{a}\v{s}kov\'{a}, V.}, \bibinfo{author}{Merhautov\'{a},
+  V.}, \bibinfo{author}{Petr\'{a}nkov\'{a}, M.}, \bibinfo{author}{Spetz, P.},
+  \bibinfo{author}{Lepp\"{a}nen, K.}, \bibinfo{author}{Baldrian, P.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{{Transformation of Quercus petraea litter: successive
+  changes in litter chemistry are reflected in differential enzyme activity and
+  changes in the microbial community composition.}}
+\newblock \bibinfo{journal}{FEMS microbiology ecology} \bibinfo{volume}{75},
+  \bibinfo{pages}{291--303}.
 %Type = Article
 \bibitem[{Thevenot et~al.(2010)Thevenot, Dignac and Rumpel}]{Thevenot2010a}
 \bibinfo{author}{Thevenot, M.}, \bibinfo{author}{Dignac, M.F.},

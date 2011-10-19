@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  17 OCT 2011 16:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  19 OCT 2011 14:55
 entering extended mode
  %&-line parsing enabled.
 **sbb.tex
@@ -237,31 +237,28 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./sbb.aux
-
-LaTeX Warning: Label `corrtable' multiply defined.
-
-)
+)))) (./sbb.aux)
 \openout1 = `sbb.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
-LaTeX Font Info:    ... okay on input line 66.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
- (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    ... okay on input line 65.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -277,94 +274,76 @@ LaTeX Font Info:    ... okay on input line 66.
 \everyMPtoPDFconversion=\toks19
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 132.
+(Font)              <7> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 132.
+(Font)              <5> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 132.
+(Font)              <12> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 132.
+(Font)              <8> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 132.
+(Font)              <6> on input line 131.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aess on input line 135.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 134.
 
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 ) [2] [3]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 217.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 202.
 
 
 (/usr/share/texmf/tex/latex/R/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 217.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 202.
  [4] [5] [6]
-Overfull \hbox (7.34169pt too wide) in paragraph at lines 263--264
+Overfull \hbox (7.34169pt too wide) in paragraph at lines 248--249
 []\T1/aer/m/n/12 Relative peak ar-eas are dif-fer-ent from weight%, but al-low 
 trac-ing of ac-cu-mu-la-tion/depletion
  []
 
 [7]
 
-LaTeX Warning: Reference `fig:doc' on page 8 undefined on input line 292.
+LaTeX Warning: Reference `fig:doc' on page 8 undefined on input line 277.
 
-[8]
+[8] [9]
 
-LaTeX Warning: Reference `fig:timeseries' on page 9 undefined on input line 325
-.
-
-
-Package natbib Warning: Citation `Snajdr2010' on page 9 undefined on input line
- 325.
-
-[9]
-
-LaTeX Warning: Reference `fig:chemdif' on page 10 undefined on input line 341.
+LaTeX Warning: Reference `fig:timeseries' on page 10 undefined on input line 31
+0.
 
 [10]
 
-Package natbib Warning: Citation `(' on page 11 undefined on input line 359.
-
-
-Overfull \hbox (7.3295pt too wide) in paragraph at lines 359--360
-[]\T1/aer/m/n/12 Contradicting tra-di-tional con-cepts of lit-ter de-com-po-si-
-tion (\T1/aer/bx/n/12 ?\T1/aer/m/n/12 )Berg1982), our re-sults demon-
- []
+LaTeX Warning: Reference `fig:chemdif' on page 11 undefined on input line 326.
 
 [11]
 
-Package natbib Warning: Citation `Berg1982' on page 12 undefined on input line 
-361.
+Package natbib Warning: Citation `Talbot2011' on page 12 undefined on input lin
+e 351.
 
-! Undefined control sequence.
-l.368 ...tion inhibited by N fertilization\footnit
-                                                  {cit.}. Nitrogen starvatio...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+[12]
 
-[12] [13] (./sbb.bbl [14] [15] [16]) [17]
-<sbb-mb.pdf, id=70, 867.24pt x 650.43pt>
+Package natbib Warning: Citation `Talbot2011' on page 13 undefined on input lin
+e 353.
+
+[13] [14] (./sbb.bbl [15] [16]) [17] <sbb-mb.pdf, id=70, 867.24pt x 650.43pt>
 File: sbb-mb.pdf Graphic file (type pdf)
- <use sbb-mb.pdf> [18 <./sbb-mb.pdf>]
-<sbb-enz.pdf, id=79, 505.89pt x 505.89pt>
+
+<use sbb-mb.pdf> [18 <./sbb-mb.pdf>] <sbb-enz.pdf, id=79, 505.89pt x 505.89pt>
 File: sbb-enz.pdf Graphic file (type pdf)
- <use sbb-enz.pdf> [19 <./sbb-enz.pdf>] <sbb-lci.pdf, id=89, 722.7pt x 361.35pt
->
+
+<use sbb-enz.pdf> [19 <./sbb-enz.pdf>]
+<sbb-lci.pdf, id=89, 722.7pt x 361.35pt>
 File: sbb-lci.pdf Graphic file (type pdf)
  <use sbb-lci.pdf> [20 <./sbb-lci.pdf>] <sbb-degrdiff.pdf, id=97, 578.16pt x 50
 5.89pt>
 File: sbb-degrdiff.pdf Graphic file (type pdf)
- <use sbb-degrdiff.pdf>
-[21 <./sbb-degrdiff.pdf>] <sbb-graphcorr.pdf, id=105, 1517.67pt x 1011.78pt>
+ <use sbb-degrdiff.pdf> [21 <./sbb-degrdiff.pdf>] <sbb-graphcorr.pdf, id=105, 1
+517.67pt x 1011.78pt>
 File: sbb-graphcorr.pdf Graphic file (type pdf)
 
 <use sbb-graphcorr.pdf> [22 <./sbb-graphcorr.pdf>]
@@ -379,7 +358,7 @@ File: sbb-enzcorr.pdf Graphic file (type pdf)
 File: sbb-graphcorr2.pdf Graphic file (type pdf)
  <use sbb-graphcorr2.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 550.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 532.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -388,40 +367,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: sbb-graphcorr3.pdf Graphic file (type pdf)
  <use sbb-graphcorr3.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 561.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 543.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [25]
-Overfull \hbox (22.84572pt too wide) in paragraph at lines 602--633
+Overfull \hbox (22.84572pt too wide) in paragraph at lines 584--616
  [] 
  []
 
 [26]
-Overfull \hbox (13.59944pt too wide) in paragraph at lines 643--674
+Overfull \hbox (13.59944pt too wide) in paragraph at lines 626--658
  [] 
  []
 
+[27] [28 <./sbb-graphcorr2.pdf>] [29 <./sbb-graphcorr3.pdf>] [30
+
+] [31]
 
 Package natbib Warning: There were undefined citations.
 
-[27] [28 <./sbb-graphcorr2.pdf>] [29 <./sbb-graphcorr3.pdf>] (./sbb.aux)
+(./sbb.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3182 strings out of 493848
- 41938 string characters out of 1152822
- 101146 words of memory out of 3000000
- 6366 multiletter control sequences out of 15000+50000
+ 3181 strings out of 493848
+ 41968 string characters out of 1152822
+ 103195 words of memory out of 3000000
+ 6365 multiletter control sequences out of 15000+50000
  38671 words of font info for 75 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 35i,8n,34p,1567b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,8n,34p,1417b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf
 -texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fo
 nts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-texlive/fonts/type1/pu
@@ -439,9 +421,9 @@ fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 i7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on sbb.pdf (29 pages, 536029 bytes).
+Output written on sbb.pdf (31 pages, 543830 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
+ 227 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

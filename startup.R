@@ -191,7 +191,22 @@ colnames(hmw.proc) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp",
       #, "log(L:Cdec)"
       )
 
-hmw.proc
+notlig.proc<-data.frame(
+  class_cTIC$cut0[h3]-initials.class_cTIC$cut0[h3],
+  class_cTIC$cut1[h3]-initials.class_cTIC$cut1[h3],
+  class_cTIC$fa[h3]-initials.class_cTIC$fa[h3],
+  class_cTIC$phytol[h3]-initials.class_cTIC$phytol[h3],
+  -closs.corr.class_cTIC$cut0[h3]+initials.class_cTIC$cut0[h3],
+  -closs.corr.class_cTIC$cut1[h3]+initials.class_cTIC$cut1[h3],
+  -closs.corr.class_cTIC$fa[h3]+initials.class_cTIC$fa[h3],
+  -closs.corr.class_cTIC$phytol[h3]+initials.class_cTIC$phytol[h3],
+  (-closs.corr.class_cTIC$cut0 [h3]+initials.class_cTIC$cut0[h3]) / samples$cons_acc_resp_litC[h3],
+  (-closs.corr.class_cTIC$cut1 [h3]+initials.class_cTIC$cut1[h3]) / samples$cons_acc_resp_litC[h3],
+  (-closs.corr.class_cTIC$fa [h3]+initials.class_cTIC$fa[h3]) / samples$cons_acc_resp_litC[h3],
+  (-closs.corr.class_cTIC$phytol [h3]+initials.class_cTIC$phytol[h3]) / samples$cons_acc_resp_litC[h3]
+)
+
+colnames(notlig.proc) <-   c("alkanacc","alkenacc", "faacc", "phytolacc", "alkandeg", "alkendeg", "fadeg", "phytoldeg", "alkanresp", "alkenresp", "faresp", "phytolresp")
 
 hmw.proc2 <-
 data.frame(  orig_cTIC$L[h4]-h3init.orig_cTIC$L[h4],
@@ -208,4 +223,18 @@ colnames(hmw.proc2) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp"
       #, "log(L:Cdec)"
       )
 
-
+notlig.proc2<-data.frame(
+  class_cTIC$cut0[h4]-h3init.class_cTIC$cut0[h4],
+  class_cTIC$cut1[h4]-h3init.class_cTIC$cut1[h4],
+  class_cTIC$fa[h4]-h3init.class_cTIC$fa[h4],
+  class_cTIC$phytol[h4]-h3init.class_cTIC$phytol[h4],
+  -closs.corr.class_cTIC$cut0[h4]+h3init.class_cTIC$cut0[h4],
+  -closs.corr.class_cTIC$cut1[h4]+h3init.class_cTIC$cut1[h4],
+  -closs.corr.class_cTIC$fa[h4]+h3init.class_cTIC$fa[h4],
+  -closs.corr.class_cTIC$phytol[h4]+h3init.class_cTIC$phytol[h4],
+  (-closs.corr.class_cTIC$cut0[h4]+initials.class_cTIC$cut0[h4])/samples$h3init.respacc.litC[h4],
+  (-closs.corr.class_cTIC$cut1[h4]+initials.class_cTIC$cut1[h4])/samples$h3init.respacc.litC[h4],
+  (-closs.corr.class_cTIC$fa[h4]+initials.class_cTIC$fa[h4])/samples$h3init.respacc.litC[h4],
+  (-closs.corr.class_cTIC$phytol[h4]+initials.class_cTIC$phytol[h4])/samples$h3init.respacc.litC[h4]
+)
+colnames(notlig.proc2) <-   c("alkanacc","alkenacc", "faacc", "phytolacc", "alkandeg", "alkendeg", "fadeg", "phytoldeg", "alkanresp", "alkenresp", "faresp", "phytolresp")

@@ -63,7 +63,6 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 
 \usepackage{textcomp, fixltx2e}
 \usepackage{fullpage, lscape}
-\def\Tiny{ \font\Tinyfont = cmr10 at 4pt \relax \Tinyfont}
 
 
 \journal{Soil Biology and Biochemistry}
@@ -116,11 +115,11 @@ options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
 \fntext[boku]{Current adress: Institute for Soil Science, University of Natural Resources and Life Sciences, Peter Jordan-Stra\ss e 82, A-1190, Vienna, Austria}
 
 \begin{abstract}
-Lignin is considered the most recalcitrant component of plant litter, accumulated during early decomposition and degraded only during late decomposition stages when its concentration limits litter decomposition rates. A recent study based on the more specific (CuO-oxidation) to determine lignin contents reports challenges this concept, reporting highest lignin decomposition rates during early litter decomposition. Until now, no further studies exploring early lignin decomposition were published, and its potential controls remain unknown.
+Lignin is considered the most recalcitrant component of plant litter, accumulated during early decomposition and degraded only during late decomposition stages when its concentration limits litter decomposition rates. A recent study based on the more specific methods challenges this concept, reporting highest lignin decomposition rates during early litter decomposition. Until now, no further studies exploring early lignin decomposition were published, and its potential controls remain unknown.
 
-We follow early litter decomposition with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over early lignin decomposition and microbial carbon substrate preferences. Beech litter with different C:N:P stoichiometry but innoculated with identical initial microbial communities was incubated at constant climatic conditions to identify the control of litter chemistry on the developing microbial community and its decomposition activity. 
+We follow lignin and carbohydrate decomposition during early litter decay with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over microbial carbon substrate preferences. Beech litter with different C:N:P stoichiometry but identical initial microbial communities was incubated to identify the control of litter chemistry on the developing microbial community and its decomposition activity. 
 
-During the first 6 month fundamental differences in lignin degrading activities were found between sites. Lignin discrimination in litter decomposition ranges between only marginal amounts of lignin being decomposed and lignin decomposition at the same rate average litter, leading to different niveaus of lignin accumulation. Between 6 and 15 month, no lignin discrimination was found, but different lignin contents aquired earlier reminded.
+During the first 6 month fundamental differences in lignin degrading activities were found between sites. Lignin discrimination in litter decomposition ranges from insignificant amounts of lignin decomposed to lignin decomposition at the same rate bulk litter, leading to different niveaus of lignin accumulation. Between 6 and 15 month, no lignin discrimination was found, but different lignin contents aquired earlier reminded.
 
 [results]
 %Neither nitrogen nor labile carbon availability could be identified as a control over lignin decomposition. However, amounts of lignin decomposed were correlated to the buildup of resource to decomposer C:N and C:P imbalances.
@@ -143,13 +142,25 @@ Litter decomposition models [lit] follow the concept that macromolecules in litt
 
 Recent studies based on specific methods to determine litter lignin content (CuO - oxidation, Pyrolysis-GC/MS, NMR) question the assumed intrinsic recalcitrance of lignin. Experiments using isotope labeling used to calculate mean residence times for lignin in soils and litter/soil mixtures in both laboratory and outdoor incubation reported lignin residence times no longer than that of other carbon compounds or bulk SOM \citep{Thevenot2010a, Bol2009}\footnote{more lit?}.
 
-For leaf litter, lignin depletion during early decomposition and decreasing lignin decomposition rates were recently by \cite{Klotzbucher2011}. Based on their results, the authors proposed a new concept for lignin degradation in which fastest lignin degradation occurs during early litter decomposition. Lignin decomposition during late decomposition is limited by (dissolved organic) carbon availability, a pulsed input of labile carbon (during litterfall or experimental manipulations like drying and rewetting) causes higher lignin degradation rates for a limited time period .
+For leaf litter, lignin depletion during early decomposition and decreasing lignin decomposition rates were recently by \cite{Klotzbucher2011}. Based on their results, the authors proposed a new concept for lignin degradation in which fastest lignin degradation occurs during early litter decomposition. Lignin decomposition during late decomposition is limited by (dissolved organic) carbon availability, a pulsed input of labile carbon (during litterfall or experimental manipulations like drying and rewetting) causes higher lignin degradation rates for a limited time period. The authors also suggest, that lignin decomposition is hampered in late decomposition stage, when labile (soluble) carbon source are limited. %This concept is supported by results from decomposition experiments with \emph{Arabidopsis thaliana} mutants. Lignin decomposition was completely inhibited in a low-cellolose mutant \citep{Talbot2011}.
 
-\cite{Klotzbucher2011} do not elaborate the of stoecheometric constrains on lignin decomposition. Nitrogen fertilization experiments on litter and soils indicate a that litter N contents are important controls of lignin degradation: N addition increases mass loss rates in low-lignin litter while slowing down decomposition in lignin-rich litter \citep{Knorr2005}. High nitrogen levels were reported to inhibit lignolytic enzyme in forest soils\citep{Sinsabaugh2010}. Cellulose triggered higher priming effect in fertilized than in unfertilized soils indicating that the mineralization of recalcitrant C is controlled by an interaction of labile C and N availability \citep{Fontaine2011}.
+\cite{Klotzbucher2011} do not elaborate the of stoecheometric constrains on lignin decomposition. In isolated lignin fractions from fresh beech litter, N contents twice as high as bulk litter were found \footnote{cit}. It was argued that, while yielding little C and energy, lignin decomposition makes occluded cell wall protein accessable to decomposers, and lignin decompostion is driven not by carbon but by nitrogen demand ("Nitrogen mining theory", \cite{Craine2007}). 
 
-Decomposer behavior in fertilization eperiments might be different from the behavior in litter with different nutrient levels, as leaf litter N is stored in protein and lignin structures and not directly availeable to microorganisms. To our knowledge, no other experiment has yet compared effects of intra-specific variance in litter nutrient contents on decomposition processes. N-fertilization experiments can simulate increased N-deposition rates. To simulate variations litter C:N ratios, our approach is preferable, because potential variations in litter N content occur in complex substrates. N location and accessibility is different from the low molecular weight N species used in fertilization experiments.
+Nitrogen fertilization experiments on litter and soils indicate a that litter N contents are important controls of lignin degradation: N addition increases mass loss rates in low-lignin litter while slowing down decomposition in lignin-rich litter \citep{Knorr2005}. High nitrogen levels were reported to inhibit lignolytic enzyme in forest soils\citep{Sinsabaugh2010}. Cellulose triggered higher priming effect in fertilized than in unfertilized soils indicating that the mineralization of recalcitrant C is controlled by an interaction of labile C and N availability \citep{Fontaine2011}.
 
+N fertilization has different effects on litter decomposition than different nutrient levels in litter, as leaf litter N is stored in protein and lignin structures and not directly availeable to microorganisms. N-fertilization experiments can simulate increased N-deposition rates. To simulate variations litter C:N ratios, our approach is preferable, because potential variations in litter N content occur in complex substrates.
 
+In this study we analyze samples from climate-chamber incubated beech litter varying in N and P content with pyrolysis-GC/MS (pyr-GC/MS). The experiment was designed to study the effect of resource stroichiometry on microbial decomposition, exclude decomposing fauna and keep climatic conditions constant.
+
+We test several proposed mechanisms, by which lignin degradation is affected by litter chemistry:
+
+(1) High lignin contents inhibit the degradation of other carbon sources, and trigger lignin decomposition \citep{Berg1980}.
+
+(2) Lignin degradation is inhibited, when the availability of cofactors for oxidative enzymes (mainly Mn) is low \footnote{cit}.
+
+(3) Lignin degradation is directed to degrade N, therefore less lignin is decomposed in litter with narrow C:N ratios where more lignin is available \citep{Craine2007}.
+
+-(4) The availability of dissolved carbon limits lignin decomposition, and lignin decomposition is inhibited when DOC content becomes rate limiting (and therefore correlated to) carbon respiration rates\citep{Klotzbucher2011}.
 % [Elevated N deposition and elevated soil N content increase litter N contents, while a recent meta-study hints that elevated atmospheric CO$_{2}$ concentrations cause wider litter C:N ratios \citep{Luo2006}. Therefore it is important to assess the impact of shifts in litter C:N ratio on decomposition processes and the chemical nature of the resulting organic matter to predict feedback mechanisms of anthropogenic alterations of global carbon and nitrogen cycles. While predictions of changes in mass loss rates under alternated litter C:N ratios are abound [lit.], no studies on changes in the quality of litter biomass during and after decomposition or of the dynamics of accumulation/depletion of fragments of the litter biomass during decomposition exist yet.]
 
 %Also, interdependance of these pools seems much higher than expected. Lignified cellulose and protein is not accessable without degrading lignin... Ligin fractions extracted from (fresh) beech litter have beed demonstrated to have a very narrow C:N ratio if compared to bulk litter, nonligneous cell walls or soluble matter. It is assumed, that proteins are covalently bound to lignin polymers during polymerization. For litter decomposing microbia this implies that degrading lignin increases nitrogen availability, while degrading non-lignified carbohydrates yields more metabolic energy, but no additional nitrogen. In an incubation eperiment with a litter/soil mixture, N addition stimulated carbon mineralization during the first weeks of incubation but slowed it down duringThe after with ratios after climate chamber incubation for up to 15 month. late decomposition.
@@ -164,16 +175,16 @@ Decomposer behavior in fertilization eperiments might be different from the beha
 %\cite{Kuder1998}
 
 %European beech (\emph{Fagus silvaticus} L.) is the dominant forest building tree species in central europe.
-In this study we analyze samples from climate-chamber incubated beech litter varying in N and P content with pyrolysis-GC/MS (pyr-GC/MS). The experiment was designed to study the effect of resource stroichiometry on microbial decomposition, exclude decomposing fauna and keep climatic conditions constant.
+
 %Extensive data on litter chemistry and and decomposition process rates are available for this samples from previously publications \citep{Mooshammer2011, Wanek2010, Leitner2011}.
 
-We hypothesize that
+%We hypothesize that
 
-(1) While (non-lignified) carbohydrates are easier degraded than lignin and the resulting sugar monomers yield more energy, lignin degradation improves to accessibility of nitrogen (``lignin mining'', \cite{Craine2007}). More lignin is decomposed when nitrogen availability is low, and high nitrogen availability inhibits lignin degradation.
+%(1) While (non-lignified) carbohydrates are easier degraded than lignin and the resulting sugar monomers yield more energy, lignin degradation improves to accessibility of nitrogen (``lignin mining'', \cite{Craine2007}). More lignin is decomposed when nitrogen availability is low, and high nitrogen availability inhibits lignin degradation.
 
-(2) Lignin degradation is inhibited when labile (dissolved) carbon availability is low and decomposition is energy limited (as proposed by \cite{Klotzbucher2011}).
+%(2) Lignin degradation is inhibited when labile (dissolved) carbon availability is low and decomposition is energy limited (as proposed by \cite{Klotzbucher2011}).
 
-(3) Lignin decomposition yields less energy than carbohydrate decomposition, therefore carbon loss and decomposition process rates are lower in litter that decomposes more lignin.
+%(3) Lignin decomposition yields less energy than carbohydrate decomposition, therefore carbon loss and decomposition process rates are lower in litter that decomposes more lignin.
 
  %Their accumulation and/or depletion during decomposition was extensively studied, nevertheless recent studies based on new methods to measure lignin content challange traditional models.
 
@@ -189,32 +200,6 @@ We hypothesize that
  %\cite{Snajdr2011a} used THM (a pyrolysis-related method) in a litterbag expiriment, but limits analysis to determining lignin:carbohydrate ratios.
 
  %These studies often explain biomarkers found in SOM by their occurance in a plant polymers and propose a decendence from thos biomarkers \citep{Schellekens2009b}, some of them also analyze local vegetation for comparison.
-
-
- % We follow three research questions:
-
- %(1) To which does HMW carbon at different sites differ?
-
- %(2) Which substance classes are accumulaten/depleted during decomposition and is the rate of accumulation/depletion influences by nutrient compositoin? Nutrient addition studies show a decrease of phenole oxidizing enzymes (lit!), but those have not been shown in pyrolysis data yet.
-
- %(3) Does HMW chemistry excercice control over decomposition processes? Do changes in HMW chemistry (i.e. accumulation of more recalcitrant substances) explain the decline of decomposition rates?
-
-
-
-
- % Nitrogen availability has been shown to be rate limiting in beech litter (lit) ??\citep{Mooshammer2011}??.
-
- %With increasing anthropogenic nitrogen deposition and contradicting studies on whether litter C:N ratio is change due to increasing anthmospheric CO$_2$ ratios, knowledge about effects of nutrient availability on the chemical properties of soil organic matter become increasingly relevant (lit.).
-
- % Most experiments study nutrient control by fertilization.
- %Nutrient availability Litter stoichiometry...
- %prescott -> metastudy zu litter CN aus den 90ern
- %die aktuelle metastudy
- %prescott N deposition
- %N-addition studys. few studies on stoichiometry in naturally variing systems.
-
- % CN ratio changes >>
-
 
 \section{Material and methods}
 \subsection{Litter decomposition experiment}
@@ -355,7 +340,7 @@ The ratio between the potential activities of cellulases and oxidative enzymes w
 
 Litter pyrolysis products and different sites are reported in detail elsewhere (Kohl, in preparation). We found only minor changes during pyrograms during decomposition, differences between sites were were small but well preserved during decomposition. The high similarity allowed tracind small changes in lignin and carbohydrate abundance during decomposition. % A PCA performed on relative peak areas of 128 peaks shows that samples cluster according to litter types, with no constistent seperation between different harvests. \ref{fig:pca1}. %118 (94.5\%) [!check nr!] of the peaks integrated show significant differences in relative peak areas between different litter types before incubation.
 
-When measured by pyr-GC/MS, lignin derrived compounds make up between 29 and 31 \%TIC in the initial litter, with an increase of up to 3 \%TIC over the first 3 month. Carbohydrate derrived pyrolysis products account for 26 to 29 \%TIC in initial litter and decrease by up to 2.6 \% during litter decomposition. Carbohydrate depletion and lignin accumulation were coorelated (R = 0.47, p \textless 0.01) in all samples measured. The initial (pyrolysis-) LCI index (applied to excludes influences of changes in the abundance of other pyrolysis products) ranges between 0.517 and 0.533. During decomposition, it increases by up to 8.7\% of the initial value, with SW showing the highest and KL the lowest increase. This increase almost completely occurs over the first 6 month, with insignificant changes in both directions between 6 and 15 month incubation. Figure \ref{fig:timeseries}\footnote{check fig.} shows changes in the relative abundance of in pyrolysis products versus incubation time and accumulated respiration. Lignin to carbohydrate ratios in a similar range (increasing from 0.565 to 0.588 over 24 month) were reported for in situ oak litter decomposition by \cite{Snajdr2010} using thermochemolysis. \footnote{I converted the L:C ratio stated by Snajdr to L/(L+C). This demonstrates a surprising coherence between quite different analytical methods, different peaks analyzed.}
+When measured by pyr-GC/MS, lignin derrived compounds make up between 29 and 31 \%TIC in the initial litter, with an increase of up to 3 \%TIC over the first 3 month. Carbohydrate derrived pyrolysis products account for 26 to 29 \%TIC in initial litter and decrease by up to 2.6 \% during litter decomposition. Carbohydrate depletion and lignin accumulation were coorelated (R = 0.47, p \textless 0.01) in all samples measured. The initial (pyrolysis-) LCI index (applied to excludes influences of changes in the abundance of other pyrolysis products) ranges between 0.517 and 0.533. During decomposition, it increases by up to 8.7\% of the initial value, with SW showing the highest and KL the lowest increase. This increase almost completely occurs over the first 6 month, with insignificant changes in both directions between 6 and 15 month incubation. Figure \ref{fig:timeseries}\footnote{check fig.} shows changes in the relative abundance of in pyrolysis products versus incubation time and accumulated respiration. Lignin to carbohydrate ratios in a similar range (increasing from 0.565 to 0.588 over 24 month) were reported for in situ oak litter decomposition by \cite{Snajdr2011} using thermochemolysis. \footnote{I converted the L:C ratio stated by Snajdr to L/(L+C). This demonstrates a surprising coherence between quite different analytical methods, different peaks analyzed.}
 
  % Some details are worth mentioning here: Within the carbohydrates group, AK and OS have significantly higher peak areas for most (10 of 15) furan-type carbohydrate pyrolysis products, SW and KL are significantly higher in 2, rest show no clear pattern. Cyclopentenone-type carbohydrate pyrolysis products do not show this pattern.
 
@@ -387,35 +372,30 @@ While carbohydrate degradation and depletion was correlated litter N content, C:
 
 \section{Discussion}
 
-Our experimental approach allows to single out litter quality and it's influence on the development of the microbial decomposer community as the sole source of the differences in decomposition processes found, while excluding fauna, climate and the initial microbial community as controlling factors. By exploiting intra-specific differences in beech litter stoichiometry, we were able to minimize differences in the composition of initial lignin and carbohydrate contents while exploring the effect of different litter nutrient contents. Therefore, we can attribute different levels of carbohydrate-over-lignin preference encountered to the intrinsic qualities of different litter types used.
+Our experimental approach allows to single out litter quality and it's influence on the microbial decomposer community as the only source of the differences in decomposition processes found, while we can excluding fauna, climate and the initial microbial community as controlling factors. By exploiting intra-specific differences in beech litter stoichiometry, we were able to minimize differences in the composition of initial litter while exploring the effect of different litter nutrient contents on lignin and carbohydrate decomposition. Therefore, we can attribute different levels of carbohydrate-over-lignin preference encountered to the intrinsic qualities of different litter types used.
 
-Contradicting traditional concepts of litter decomposition \citep(Berg1982), our results demonstrate that relevant amounts of lignin are degraded during the the first 6 month of litter decomposition. Lignin decomposition rates found during this early stage depend on litter quality and ranges from non-significant amounts decomposed to degradation at bulk carbon mineralization rates (i.e. no discrimination against lignin). We can therefore confirm that early lignin decomposition rates are by far underestimated, as proposed by \cite{Klotzbucher2011}, with complementary analytic approach. Contrasting their results, we found no significant decreases in lignin contents and constant or increasing lignin degradation rates during early decomposition. Additionally, we found a change in controls over lignin discrimination after this initial period. While the preference of carbohydrate over lignin decomposition was controlled by litter chemistry over the first 6 month, all components of litter were degraded at similar rates thereafter.
+Contradicting traditional concepts of litter decomposition, our results demonstrate that relevant amounts of lignin are degraded during the the first 6 month of litter decomposition. Lignin decomposition rates found during this early stage depend on litter quality and ranges from non-significant amounts decomposed to degradation at bulk carbon mineralization rates (i.e. no discrimination against lignin). We can therefore confirm that early lignin decomposition rates are by far underestimated, as proposed by \cite{Klotzbucher2011}, with complementary analytic approach. Contrasting their results, we found no significant decreases in lignin contents and constant or increasing lignin degradation rates during early decomposition. Additionally, we found a change in controls over lignin discrimination after this initial period. While the preference of carbohydrate over lignin decomposition was controlled by litter chemistry over the first 6 month, all components of litter were degraded at similar rates thereafter.
 
-Several control mechanisms of litter chemistry over (late) lignin decomposition were proposed over the last years. In the traditional model for chemical changes during litter decomposition \cite{Berg1982} suggest lignin is decomposed only if its high content in litter limits the decomposition of other substrates. We found differences in initial lignin contents below 10\%, and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. 
+In the search of the control over this early lignin decomposision, we can descard hypothesis (1) and (2): Differences in initial lignin contents were below 10\%, and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. Mn and Fe contents strongly vary between litter collected at different sites, but both Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab. \ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition. Hypothesis (3) can be excluded because we found highest amounts of soluble carbon in litter from two different sites who show the highest and the lowest lignin degradation.
 
-Mineral elements are co-factors of oxidative enzymes involved into lignin decomposition, and Mn availability was suggested to limit mass loss rates during lignin-rich late decomposition stages \footnote{cit.}. While Mn and Fe contents strongly vary between litter collected at different sites, we can exclude their availability as a limiting factor for lignin decomposition in our experiment, because Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab. \ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition.
-
-
-Relative decomposition rates of Lignin were strictly correlated to C:P imbalances and a number of P pools analyzed. Correlation was highest when lignin decomposition was compared to resource:consumer C:P ratios. C:N imbalances were also found correlated to carbohydrate-over-lignin discrimination, but linked stronger to carbohydrate decomposition stimulation than lignin decomposition inhibition.
-
-Strong evidence already exists that labile carbon and nitrogen availability control (late) lignin decomposition. Beech litter lignin was shown to occlude significant amounts of nitrogen during it's polymerization \footnote{citation!}. The 'nitrogen mining hypothesis' \citep{Craine2007} suggests that microbial degradation of recalcitrant carbon compounds is directed to access nitrogen, not carbon, and several experiments found lignin decomposition inhibited by N fertilization\footnit{cit.}. Nitrogen starvation was also shown to trigger lignin decomposition in cultivation studies.  However, it is unclear to which extend results gathered from the addition of readily available nitrogen can be applied to different levels of leaf protein content. On the other hand, lignin decomposition was suggested to be inhibited when little labile carbon is available. Cultivation experiments suggest, that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the input of other carbon sources \footnote{citation}. \cite{Klotzbucher2011} found highest lignin decomposition rates immediately after the manipulation of litter (i.e. draught-rewetting during experimental setup), but no increase in lignin decomposition activities from fresh to 3-year old litter used. In our experiment, amounts of extractable carbon were highest in AK and SW litter, two sites which have the highest and the lowest lignin decomposition trends. Therefore, extractable carbon can be excluded as a control over lignin decomposition. 
-
-A stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools found, was not reported yet. We obseved a N- and P- co-limited situation during early litter decomposition, in which lignin is degraded either to access additional nutrients or as a mean to use a C surplus in a N and P limited situation.  
-
-Between 6 and 15 month lignin contents remained constant in all litter types. This indicates that lignin is not degraded slower than other litter compounds, but differences in lignin contents acquired during the first 6 month remain. The controls which lead to differences in the extend of lignin discrimination over the first six month are no longer predominant between 6 and 15 month. 
-
-This change in decomposition dynamics corresponds to change in soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon were strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. \cite{Klotzbucher2011} suggests a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. We can confirm the correlation between extractable carbon and respiration after 181 days, see both processes adapt to litter N content. Our data agrees that respiration is limited by labile carbon availability, but the production of labile carbon itself seems controlled by litter N content. As the process of degrading macromolecular is conducted by extracellular enzymes and is more N intensive that the mineralization of labile carbon, de-polymerization is the point in the decomposition process, where a N limitation would be most likely to become effective.
-
-While the microbial community was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after early decomposition. 
-
-Most decomposition processes (enzyme activities and depolymerization rates) were correlated to litter nitrogen content and C:N ratio. We find lignin decomposition rates is negatively correlated to these processes, but not to litter N contents. Also, no little lignin decomposition occurs OS litter, which has a N content just as low as AK litter. The correlation found between LCI change and litter N and C:N seems based on an enhanced carbohydrate degradation, but no inhibition in lignin decomposition.
+We did find strong evidence that C:N:P stoichiometric ratios wield key control over the extend of lignin accumulation during this first decomposition stage. While carbohydrate decomposition was correlated to litter N contents (as were a majority of decomposition processes found, from respiration to enzymatic activities), relative decomposition rates of Lignin were strictly correlated to C:P imbalances and a number of P pools analyzed. Correlation was highest when lignin decomposition was compared to resource:consumer C:P ratios.
 
 
+Strong evidence exists that labile carbon and nitrogen availability control (late) lignin decomposition. Cultivation studies show that lignin decomposition in fungi is triggered by nitrogen starvation, and that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the use of other carbon sources \footnote{citation}. Lignin decomposition was found in wild-type A. thaliana litter, but not in a low-cellulose mutant during 12 month incubation in a boreal forest \citep{Talbot2011}. However, a stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools we found, was not reported yet. In the N- and P- co-limited situation during early litter decomposition, in which lignin is degraded either to access additional nutrients or as a mean to use a C surplus in a N/P co-limited situation. 
+
+\cite{Talbot2011} also suggests that lignin decomposition might be interpreted a k-strategy used by microbes to be able to colonize more lignin-rich and nutrient-poor substrates. Low nutrient availability might favor this strategy, as the high P- demands of a fast growing microbial community can not be met under such conditions.
+
+While we found different levels of lignin degredation during the first 6 month, lignin contents remained constant in all litter types between 6 and 15 month. This indicates that lignin is not degraded slower than other litter compounds, but differences in lignin contents acquired during the first 6 month remain in place. The controls which lead to differences in the extend of lignin discrimination over the first six month are no longer predominant between 6 and 15 month. 
+
+This change in decomposition dynamics corresponds to change in soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon is strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. \cite{Klotzbucher2011} suggests a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. The authors interprets this correlation as carbon limited respiration, and suggest that lignin decomposition is inhibited under such a limitation. We can confirm the correlation between extractable carbon and respiration after 181 days, but not the inhibition of lignin decomposition. Also, we found that both respiration and the production of soluble carbon are controled by litter N content. The process of degrading macromolecular compounds into soluble molecules is conducted by extracellular enzymes and is therefore N intensive that the mineralization of labile carbon, de-polymerization is the point in the decomposition process where a N limitation would be most likely to become effective. 
+
+Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
 
 \section{Conclusions}
 
-Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month.
+Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month. The extend, to which lignin is decomposed, was controlled by litter chemistry over the first 6 month. However, we did not find lignin decomposition rates controlled by litter quality thereafter. Soluble carbon contents were not restrictive to lignin decomposition.
 
+While carbohydrate decomposition was stimulated by high N contents, early lignin decomposition rates were highly correlated C:P ratio and resource:consumer imbalances. High lignin contents accumulated during this stages remained in place during later decomposition. For further studies, this raises the question, to which extend late decomposition is influenced by this early, stoichiometry-controlled accumulation of recalcitrant compounds.
 
 \section{Acknowledgements}
 %FWF NRN MicDiF, Katherina Keiblinger DOC fForte
@@ -657,7 +637,7 @@ timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter,
 %
 %barp(orig_cTIC$L, days==475, days==181, ylim=c(-4,6), names.arg=typlev, ylab="% TIC difference\n181-475 days")
 %#barp(orig_cTIC$Ph, days==475, days==181)
-%axis(4, labels=F)
+%axis(4, labels=F)litter quality
 %
 %par(mar=c(2, 0, 0.6,5))
 %barp(orig_cTIC$C, days==475, days==181, yaxt="n", names.arg=typlev, ylim=c(-4,6))
@@ -1063,12 +1043,12 @@ colnames(stoech.init) <- c(typlev[1], "(SE)", typlev[2], "(SE)",typlev[3], "(SE)
 
 \newpage
 <<corrtable, results=tex, echo=F, fig=F>>=
-corr1<-alldata[alldata$days==181,c(10,37, 71,11,14,13,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr1<-alldata[alldata$days==181,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
 corr2<-hmw.proc
 mighty.corr.matrix<-corr.ab(corr1, corr2, tex=T)
 #rownames cor corraltion table
 rownames(mighty.corr.matrix) <- 
-  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Chitinase activity", "Phosphatase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
 "N mineralization", #"NH4 immobilization", 
 "Nitrification", #"NO3 immobilization",
 "P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
@@ -1082,19 +1062,19 @@ colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec",
 #write.csv(mighty.corr.matrix, "corrmatrix.csv")
 #convert table to latex
 
-tab<-xtable(mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}", label="corrtable", align=rep("c",11) )
+tab<-xtable(mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 0 and 181 days, process rates were measured after 181 days.", label="corrtable", align=rep("c",11) )
 
 print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 @
 
 \newpage
 <<corrtable2, results=tex, echo=F, fig=F>>=
-corr1<-alldata[alldata$days==475,c(10,37, 71,11,14,13,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr1<-alldata[alldata$days==475,c(10,37, 71,11,14,13,12, 15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
 corr2<-hmw.proc2
 mighty.corr.matrix2<-corr.ab(corr1, corr2, tex=T)
 #rownames cor corraltion table
 rownames(mighty.corr.matrix2) <- 
-  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
 "N mineralization", #"NH4 immobilization", 
 "Nitrification", #"NO3 immobilization",
 "P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
@@ -1109,9 +1089,65 @@ colnames(mighty.corr.matrix2)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec"
 #write.csv(mighty.corr.matrix, "corrmatrix.csv")
 #convert table to latex
 
-tab<-xtable(mighty.corr.matrix2, caption="-->Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}<--", label="corrtable", align=rep("c",11) )
+tab<-xtable(mighty.corr.matrix2, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 181 and 475 days, process rates were measured after 475 days.", label="corrtable2", align=rep("c",11) )
 
 print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 @
 
+\newpage
+\begin{landscape}
+<<corrtable_notlig, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==181,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-notlig.proc
+mighty.corr.matrix<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+#colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix, caption="Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 0 and 181 days.", label="corrtable_notlig", align=rep("c",13) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<corrtable2_notlig, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==475,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-notlig.proc2
+mighty.corr.matrix2<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix2) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+
+#colnames(mighty.corr.matrix2)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix2, caption="Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 181 and 475 days.", label="corrtable2_notlig", align=rep("c",13) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+\end{landscape}
 \end{document}
+
+%timeseries(alldata$Chitinase, alldata$days, alldata$Litter, pt.bg=colscale, pch=pch)
