@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  19 OCT 2011 14:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  20 OCT 2011 11:29
 entering extended mode
  %&-line parsing enabled.
 **sbb.tex
@@ -195,7 +195,7 @@ Package: fullpage 1999/02/23 1.1 (PWD)
 (/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-(/usr/share/texmf/tex/latex/R/tex/latex/Sweave.sty
+(/usr/share/R/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
 
 (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
@@ -212,7 +212,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \c@FancyVerbLine=\count103
 \FV@StepNumber=\count104
 \FV@OutFile=\write4
-) (/usr/share/texmf/tex/latex/R/tex/latex/upquote.sty
+) (/usr/share/R/share/texmf/tex/latex/upquote.sty
 Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
 atim and verb
 )
@@ -237,7 +237,14 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))) (./sbb.aux)
+)))) (./sbb.aux
+
+LaTeX Warning: Label `morecorr1' multiply defined.
+
+
+LaTeX Warning: Label `morecorr1' multiply defined.
+
+)
 \openout1 = `sbb.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
@@ -254,8 +261,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 65.
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 65.
@@ -296,7 +302,7 @@ File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 202.
 
 
-(/usr/share/texmf/tex/latex/R/tex/latex/ts1aer.fd
+(/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
@@ -320,15 +326,14 @@ LaTeX Warning: Reference `fig:timeseries' on page 10 undefined on input line 31
 
 LaTeX Warning: Reference `fig:chemdif' on page 11 undefined on input line 326.
 
-[11]
-
-Package natbib Warning: Citation `Talbot2011' on page 12 undefined on input lin
-e 351.
-
-[12]
+[11] [12]
 
 Package natbib Warning: Citation `Talbot2011' on page 13 undefined on input lin
-e 353.
+e 350.
+
+
+Package natbib Warning: Citation `Talbot2011' on page 13 undefined on input lin
+e 352.
 
 [13] [14] (./sbb.bbl [15] [16]) [17] <sbb-mb.pdf, id=70, 867.24pt x 650.43pt>
 File: sbb-mb.pdf Graphic file (type pdf)
@@ -358,7 +363,7 @@ File: sbb-enzcorr.pdf Graphic file (type pdf)
 File: sbb-graphcorr2.pdf Graphic file (type pdf)
  <use sbb-graphcorr2.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 532.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 531.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -367,40 +372,71 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: sbb-graphcorr3.pdf Graphic file (type pdf)
  <use sbb-graphcorr3.pdf>
 
-LaTeX Warning: Float too large for page by 70.6159pt on input line 543.
+LaTeX Warning: Float too large for page by 70.6159pt on input line 542.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [25]
-Overfull \hbox (22.84572pt too wide) in paragraph at lines 584--616
+Overfull \hbox (22.84572pt too wide) in paragraph at lines 583--615
  [] 
  []
 
 [26]
-Overfull \hbox (13.59944pt too wide) in paragraph at lines 626--658
+Overfull \hbox (13.59944pt too wide) in paragraph at lines 625--657
  [] 
  []
 
 [27] [28 <./sbb-graphcorr2.pdf>] [29 <./sbb-graphcorr3.pdf>] [30
 
 ] [31]
+Overfull \hbox (8.91954pt too wide) in paragraph at lines 755--785
+ [] 
+ []
+
+[32
+
+]
+Overfull \hbox (11.45177pt too wide) in paragraph at lines 796--825
+ [] 
+ []
+
+[33]
+Overfull \hbox (14.25974pt too wide) in paragraph at lines 835--863
+ [] 
+ []
+
+[34]
+Overfull \hbox (16.25133pt too wide) in paragraph at lines 873--902
+ [] 
+ []
+
+[35]
+Overfull \hbox (1.51564pt too wide) in paragraph at lines 912--943
+ [] 
+ []
+
+[36]
+Overfull \hbox (21.95036pt too wide) in paragraph at lines 953--982
+ [] 
+ []
+
 
 Package natbib Warning: There were undefined citations.
 
-(./sbb.aux)
+[37] (./sbb.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3181 strings out of 493848
- 41968 string characters out of 1152822
- 103195 words of memory out of 3000000
- 6365 multiletter control sequences out of 15000+50000
+ 3185 strings out of 493848
+ 41984 string characters out of 1152822
+ 103280 words of memory out of 3000000
+ 6369 multiletter control sequences out of 15000+50000
  38671 words of font info for 75 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  35i,8n,34p,1417b,309s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -421,9 +457,9 @@ fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmt
 i7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on sbb.pdf (31 pages, 543830 bytes).
+Output written on sbb.pdf (37 pages, 558380 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
+ 248 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

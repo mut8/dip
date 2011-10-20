@@ -376,18 +376,17 @@ Our experimental approach allows to single out litter quality and it's influence
 
 Contradicting traditional concepts of litter decomposition, our results demonstrate that relevant amounts of lignin are degraded during the the first 6 month of litter decomposition. Lignin decomposition rates found during this early stage depend on litter quality and ranges from non-significant amounts decomposed to degradation at bulk carbon mineralization rates (i.e. no discrimination against lignin). We can therefore confirm that early lignin decomposition rates are by far underestimated, as proposed by \cite{Klotzbucher2011}, with complementary analytic approach. Contrasting their results, we found no significant decreases in lignin contents and constant or increasing lignin degradation rates during early decomposition. Additionally, we found a change in controls over lignin discrimination after this initial period. While the preference of carbohydrate over lignin decomposition was controlled by litter chemistry over the first 6 month, all components of litter were degraded at similar rates thereafter.
 
-In the search of the control over this early lignin decomposision, we can descard hypothesis (1) and (2): Differences in initial lignin contents were below 10\%, and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. Mn and Fe contents strongly vary between litter collected at different sites, but both Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab. \ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition. Hypothesis (3) can be excluded because we found highest amounts of soluble carbon in litter from two different sites who show the highest and the lowest lignin degradation.
+In the search of the control over this "early lignin decomposision", we can descard hypothesis (1) and (2): Differences in initial lignin contents were below 10\%, and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. Mn and Fe contents strongly vary between litter collected at different sites, but both Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab. \ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition. Hypothesis (3) can be excluded because we found highest amounts of soluble carbon in litter from two different sites who show the highest and the lowest lignin degradation.
 
 We did find strong evidence that C:N:P stoichiometric ratios wield key control over the extend of lignin accumulation during this first decomposition stage. While carbohydrate decomposition was correlated to litter N contents (as were a majority of decomposition processes found, from respiration to enzymatic activities), relative decomposition rates of Lignin were strictly correlated to C:P imbalances and a number of P pools analyzed. Correlation was highest when lignin decomposition was compared to resource:consumer C:P ratios.
 
+Strong evidence exists that labile carbon and nitrogen availability control (late) lignin decomposition. Cultivation studies show that lignin decomposition in fungi is triggered by nitrogen starvation, and that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the use of other carbon sources \footnote{citation}. Lignin decomposition was found in wild-type A. thaliana litter, but not in a low-cellulose mutant during 12 month incubation in a boreal forest \citep{Talbot2011}. However, a stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools we found, was not reported yet. 
 
-Strong evidence exists that labile carbon and nitrogen availability control (late) lignin decomposition. Cultivation studies show that lignin decomposition in fungi is triggered by nitrogen starvation, and that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the use of other carbon sources \footnote{citation}. Lignin decomposition was found in wild-type A. thaliana litter, but not in a low-cellulose mutant during 12 month incubation in a boreal forest \citep{Talbot2011}. However, a stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools we found, was not reported yet. In the N- and P- co-limited situation during early litter decomposition, in which lignin is degraded either to access additional nutrients or as a mean to use a C surplus in a N/P co-limited situation. 
-
-\cite{Talbot2011} also suggests that lignin decomposition might be interpreted a k-strategy used by microbes to be able to colonize more lignin-rich and nutrient-poor substrates. Low nutrient availability might favor this strategy, as the high P- demands of a fast growing microbial community can not be met under such conditions.
+\cite{Talbot2011} \footnote{Talbot2011} suggests that lignin decomposition might be interpreted a k-strategy used by microbes to be able to colonize more lignin-rich and nutrient-poor substrates. Low nutrient availability might favor this strategy, as the high P- demands of a fast growing microbial community can not be met under such conditions. In the N- and P- co-limited situation during early litter decomposition lignin degraded might be motivated either to access additional nutrients occluded by lignin or as a mean to make use a C surplus by degrading of less C efficient substrate. 
 
 While we found different levels of lignin degredation during the first 6 month, lignin contents remained constant in all litter types between 6 and 15 month. This indicates that lignin is not degraded slower than other litter compounds, but differences in lignin contents acquired during the first 6 month remain in place. The controls which lead to differences in the extend of lignin discrimination over the first six month are no longer predominant between 6 and 15 month. 
 
-This change in decomposition dynamics corresponds to change in soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon is strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. \cite{Klotzbucher2011} suggests a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. The authors interprets this correlation as carbon limited respiration, and suggest that lignin decomposition is inhibited under such a limitation. We can confirm the correlation between extractable carbon and respiration after 181 days, but not the inhibition of lignin decomposition. Also, we found that both respiration and the production of soluble carbon are controled by litter N content. The process of degrading macromolecular compounds into soluble molecules is conducted by extracellular enzymes and is therefore N intensive that the mineralization of labile carbon, de-polymerization is the point in the decomposition process where a N limitation would be most likely to become effective. 
+This change in lignin decomposition corresponds to a change to different controls over the production of soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon is strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. \cite{Klotzbucher2011} suggests a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. The authors interprets this correlation as carbon limited respiration, and suggest that lignin decomposition is inhibited under such a limitation. We can confirm the correlation between extractable carbon and respiration after 181 days, but not the inhibition of lignin decomposition. Also, we found that both respiration and the production of soluble carbon are controled by litter N content. The process of degrading macromolecular compounds into soluble molecules is conducted by extracellular enzymes and is therefore N intensive that the mineralization of labile carbon, de-polymerization is the point in the decomposition process where a N limitation would be most likely to become effective. 
 
 Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
 
@@ -708,7 +707,7 @@ par(mar=c(2, 5, 0.6,0))
 barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==181, days==0, ylim=c(0,2), ylab="% loss / % carbon loss \n days 0 - 181", names.arg=typlev, main="Lignin")
 #barp(orig_cTIC$Ph, days==181, days==97)
 axis(4, labels=F)
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
 barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==181, days==0, ylim=c(0,2), yaxt="n", main="Carbohydrates", names.arg=typlev)
@@ -716,7 +715,7 @@ axis(4)
 axis(2, labels=F)
 #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
 #barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
 barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==181, days==0, ylim=c(0,2), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
@@ -725,7 +724,7 @@ barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initia
 axis(4)
 axis(2, labels=F)
 mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, cex=.7)
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=2)
 
 #par(mar=c(2, 5, 0.6,0))
 #barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="")
@@ -743,7 +742,7 @@ par(mar=c(2, 5, 0.6,0))
 barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="")
 #barp(orig_cTIC$Ph, days==181, days==97)
 axis(4, labels=F)
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=about:startpage2)
 
 par(mar=c(2, 0, 0.6,5))
 barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev,  main="")
@@ -751,7 +750,7 @@ axis(4)
 axis(2, labels=F)
 #mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
 #barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
 barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main=""
@@ -760,7 +759,7 @@ barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initia
 axis(4)
 axis(2, labels=F)
 mtext("Ratio (% of initial pools degraded)\n days 181-475", side=4, padj=2, las=0, cex=.7)
-abline(h=1, col="black", lty=2)
+#abline(h=1, col="black", lty=2)
 @
 \end{center}
 \caption{Carbon loss corrected amounts of lignin and carbohydrates degraded. Carbon loss was calculated based on accumulated respiration. Error bars indicate standard errors (n=4-5). The dashed line marks no discrination between lignin, carbohydrates and bulk carbon loss.}
@@ -1148,6 +1147,158 @@ tab<-xtable(mighty.corr.matrix2, caption="Correlations between C25/27/29 alkanes
 print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
 @
 \end{landscape}
-\end{document}
 
-%timeseries(alldata$Chitinase, alldata$days, alldata$Litter, pt.bg=colscale, pch=pch)
+
+<<morecorr_prep, results=hide, echo=F>>=
+corr1<-alldata[,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+
+for (i in 1:ncol(corr1)) {
+
+if (i==1) {
+corr1.h2.mean<-tapply(corr1[alldata$days==97,i],alldata$Litter[alldata$days==97], mean) } else {
+corr1.h2.mean<-cbind(corr1.h2.mean,
+tapply(corr1[alldata$days==97,i],alldata$Litter[alldata$days==97], mean)
+)}
+
+if (i==1) {
+corr1.h3.mean<-tapply(corr1[alldata$days==181,i],alldata$Litter[alldata$days==181], mean) } else {
+corr1.h3.mean<-cbind(corr1.h3.mean,
+tapply(corr1[alldata$days==181,i],alldata$Litter[alldata$days==181], mean)
+)}
+
+
+if (i==1) {
+corr1.h4.mean<-tapply(corr1[alldata$days==475,i],alldata$Litter[alldata$days==475], mean) } else {
+corr1.h4.mean<-cbind(corr1.h4.mean,
+tapply(corr1[alldata$days==475,i],alldata$Litter[alldata$days==475], mean)
+)}
+
+if (i==1) {
+corr1.h34.mean<-rowMeans(cbind(corr1.h3.mean+corr1.h4.mean))} else {
+corr1.h33.mean<-cbind(corr1.h34.mean,
+rowMeans(cbind(corr1.h3.mean[,i]+corr1.h4.mean[,i]))
+)}
+
+if (i==1) {
+corr1.h2.se<-tapply(corr1[alldata$days==97,i],alldata$Litter[alldata$days==97], stderr) } else {
+corr1.h2.se<-cbind(corr1.h2.se,
+tapply(corr1[alldata$days==97,i],alldata$Litter[alldata$days==97], stderr)
+)}
+
+if (i==1) {
+corr1.h3.se<-tapply(corr1[alldata$days==181,i],alldata$Litter[alldata$days==181], stderr) } else {
+corr1.h3.se<-cbind(corr1.h3.se,
+tapply(corr1[alldata$days==181,i],alldata$Litter[alldata$days==181], stderr)
+)}
+
+if (i==1) {
+corr1.h4.se<-tapply(corr1[alldata$days==475,i],alldata$Litter[alldata$days==475], stderr) } else {
+corr1.h4.se<-cbind(corr1.h4.se,
+tapply(corr1[alldata$days==475,i],alldata$Litter[alldata$days==475], stderr)
+)}
+
+}
+
+for (i in 1:ncol(corr1)) {
+if (i==1) {
+corr1.h23.mean<-rowMeans(cbind(corr1.h2.mean[,i], corr1.h3.mean[,i]))} else {corr1.h23.mean<-cbind(corr1.h23.mean, rowMeans(cbind(corr1.h2.mean[,i],corr1.h3.mean[,i]))
+)}
+
+if (i==1) {
+corr1.h34.mean<-rowMeans(cbind(corr1.h3.mean[,i],corr1.h4.mean[,i]))} else {
+corr1.h34.mean<-cbind(corr1.h34.mean,
+rowMeans(cbind(corr1.h3.mean[,i],corr1.h4.mean[,i]))
+)}
+}
+
+
+for (i in 1:ncol(hmw.proc)) {
+if (i==1) {
+hmw.proc.h3.means<-tapply(hmw.proc[,i],type[days==181], mean) } else {
+hmw.proc.h3.means<-cbind(hmw.proc.h3.means, tapply(hmw.proc[,i],type[days==181], mean)
+)}
+
+if (i==1) {
+hmw.proc.h4.means<-tapply(hmw.proc2[,i],type[days==475], mean) } else {
+hmw.proc.h4.means<-cbind(hmw.proc.h4.means, tapply(hmw.proc2[,i],type[days==475], mean)
+)}
+
+if (i==1) {
+hmw.proc.h3.se<-tapply(hmw.proc[,i],type[days==181], stderr) } else {
+hmw.proc.h3.se<-cbind(hmw.proc.h3.se, tapply(hmw.proc[,i],type[days==181], stderr)
+)}
+
+if (i==1) {
+hmw.proc.h4.se<-tapply(hmw.proc2[,i],type[days==475], stderr) } else {
+hmw.proc.h4.se<-cbind(hmw.proc.h4.se, tapply(hmw.proc2[,i],type[days==475], stderr)
+)}
+
+}
+
+names<-c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+colnames(corr1.h2.mean)<-names
+colnames(corr1.h3.mean)<-names
+colnames(corr1.h4.mean)<-names
+colnames(corr1.h23.mean)<-names
+colnames(corr1.h34.mean)<-names
+colnames(corr1.h2.se)<-names
+colnames(corr1.h3.se)<-names
+colnames(corr1.h4.se)<-names
+
+colnames(hmw.proc.h3.means)<-colnames(hmw.proc)
+colnames(hmw.proc.h4.means)<-colnames(hmw.proc)
+colnames(hmw.proc.h3.se)<-colnames(hmw.proc)
+colnames(hmw.proc.h4.se)<-colnames(hmw.proc)
+@
+
+\newpage
+<<morecorr_pyrh3_corh2, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h2.mean[,is.na(colSums(corr1.h2.mean))==F],hmw.proc.h3.means, tex=T), caption="H3 vs. H2", label="morecorr1", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+
+\newpage
+<<morecorr_pyrh3_corh3, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h3.mean[,is.na(colSums(corr1.h3.mean))==F],hmw.proc.h3.means, tex=T), caption="H3 vs. H3", label="morecorr2", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<morecorr_pyrh3_corh23, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h23.mean[,is.na(colSums(corr1.h23.mean))==F],hmw.proc.h3.means, tex=T), caption="H3 vs. mean (H2+H3)", label="morecorr3", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<morecorr_pyrh4_corh3, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h3.mean[,is.na(colSums(corr1.h3.mean))==F],hmw.proc.h4.means, tex=T), caption="H4 vs. H3", label="morecorr4", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<morecorr_pyrh4_corh4, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h4.mean[,is.na(colSums(corr1.h4.mean))==F],hmw.proc.h4.means, tex=T), caption="H4 vs. H4", label="morecorr1", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<morecorr_pyrh4_corh34, results=tex, echo=F>>=
+tab<-xtable(corr.ab(corr1.h34.mean[,is.na(colSums(corr1.h34.mean))==F],hmw.proc.h4.means, tex=T), caption="H4 vs. mean (H3 + H4)", label="morecorr1", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\end{document}
