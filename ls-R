@@ -1,0 +1,391 @@
+% ls-R -- filename database for kpathsea; do not change this line.
+./:
+.:
+20110126_pyr.R~
+aap.aux
+aap.bbl
+aap.blg
+aap-g2syTS.eps
+aap-g2syTS.pdf
+aap.log
+aap-ncomp.eps
+aap-ncomp.pdf
+aap-notlignin.eps
+aap-notlignin.pdf
+aap-pca1.eps
+aap-pca1.pdf
+aap-pcach.eps
+aap-pcach.pdf
+aap-pca.lph.eps
+aap-pcalph.eps
+aap-pca.lph.pdf
+aap-pcalph.pdf
+aap.pdf
+aap.rnw
+aap.rnw~
+aap.rnw.backup
+aap.rnw.orig
+aap-sidechainratios2.eps
+aap-sidechainratios2.pdf
+aap-sidechainratios3.eps
+aap-sidechainratios3.pdf
+aap-sidechainratios.eps
+aap-sidechainratios.pdf
+aap.spl
+aap.tex
+aap.tex~
+aap.tex.backup
+abstract.tex
+all_cor_h2.csv
+all_cor_h3.csv
+all_h2.csv
+Analytical Chemistry and Life Sciences.bib
+Analytical Methods.bib
+Analytical Pyrolysis and Thermochemolysis in Ecology and Biogeochemistry.bib
+analytic methods.bib
+analytic methods-plfa methods.bib
+analytic methods-pyrolysis.bib
+analytic methods-pyrolysis-methods.bib
+analytic methods-pyrolysis-other pyrolysis.bib
+analytic methods-pyrolysis-pyr carbohydrates.bib
+analytic methods-pyrolysis-pyr decomposition studies.bib
+analytic methods-pyrolysis-pyr DOM.bib
+analytic methods-pyrolysis-pyr esterbound.bib
+analytic methods-pyrolysis-pyr internal standard.bib
+analytic methods-pyrolysis-pyr isotopes.bib
+analytic methods-pyrolysis-pyrolysis and isotopes.bib
+analytic methods-pyrolysis-pyr plant material.bib
+analytic methods-pyrolysis-pyr SOM.bib
+atm. co2 & n depos. > litter cn.bib
+Awesome Papers in Ecology (and some other stuff).bib
+Biology Classics.bib
+ChECO.bib
+checo papers.bib
+checo papers-micdif papers.bib
+checo pyrolysis.bib
+Classic Papers in Ecology and Evolutionary Biology.bib
+Climate change.bib
+conclusions.tex
+cond_cont_cor_h2.csv
+cond_cont_cor_h3.csv
+contr.csv
+controls.R
+controls.R~
+correlations.R
+correlations.R~
+correlations.R.rkward_autosave
+corrmatrix.csv
+decompositionmodel_berg.jpg
+decompositionmodel_klotzbuecher.jpg
+dip.aux
+dip.bbl
+dip.blg
+dip.dvi
+dip_lk_20111019.pdf
+dip.log
+dippaper.bib
+dippaper_biogeosciences.tex
+dippaper-Q1 - intraspecific variance in beech litter.bib
+dippaper-Q2 - selective accumulation and depletion of pyrolysis markers in beech litter decomposition.bib
+dippaper-Q3 - stoichiometric controls on whicht pyrolysis markers are accumulated.bib
+dippaper.tex
+dip.pdf
+dip.R
+dip.R~
+.dip.R.kate-swp
+dip.rnw
+dip.R.rkward_autosave
+dip.tex
+dip.tex~
+dip.toc
+.directory
+discussion.tex
+doc_barplots.pdf
+doc_h2.pdf
+doc.R
+doc.R~
+doc.R#
+ecoenzymes.bib
+ecoenzymes-phenoloxidase & peroxidase.bib
+Ecophysiology and Ecosystem Processes.bib
+Ecosystem Services.bib
+elsarticle
+elsarticle-num.bst
+elsarticle-template-2-harv.tex
+enz_funct.csv
+enzyme_ratio_barplots.pdf
+enzymeratio.pdf
+enzymes~
+enzymes_barplots.pdf
+enzymes.R
+enzymes.R~
+fatty acids.bib
+Future of Science.bib
+generalintroduction.log
+generalintroduction.tex
+generalintroduction.tex~
+generalintroduction.tex.backup
+glcdepoly_h2.pdf
+gmb.R
+gmb.R~
+graphics.tex
+graphs_captions.log
+graphs_captions.pdf
+#graphs_captions.tex#
+graphs_captions.tex
+how_to_write_papers.bib
+initstoech.tex
+intercor_carbos.csv
+intercor_ligs.csv
+introduction.tex
+IPCC.bib
+IPCC-IPCC AR4 (2007).bib
+IPCC-IPCC AR4 (2007)-part 1 (physical science basis).bib
+library.bak
+library.bib
+lignin.bib
+lignin.decomp.csv
+lignin-lignin N content.bib
+lig_ph_markers.csv
+litter decomposition.bib
+litter decomposition-models.bib
+litter decomposition-models-early lignin decomposition.bib
+ls-R
+marker_corr_ch.csv
+massloss_n_lit.pdf
+massloss_n_lit.R
+materials.tex
+microbialbiomass.pdf
+microbialbm.R
+microbialbm.R~
+missfont.log
+model2-names.bst
+n_marker_n_lit_cor.txt
+n_marker_n_lit.pdf
+organic carbon.bib
+other ecology.bib
+output
+paper_manuscript_20110531.tex
+pca_allpeaks.R
+pca_allpeaks.R~
+pca_decomp_controls.R
+pca_decomp_controls.R~
+pca_decomp_controls.R.rkward_autosave
+pca_lig_ph.R
+pca_lig_ph.R~
+pdfpages.zip
+peaksord.csv
+peaksord.csv~
+plfa.pdf
+plfa.R
+plfa.R~
+plos2009.bst
+plosone.aux
+plosone.bbl
+plosone.blg
+plosone-CUE.eps
+plosone-CUE.pdf
+plosone-degrdiff.eps
+plosone-degrdiff.pdf
+plosone-enzcorr.eps
+plosone-enzcorr.pdf
+plosone-enz.eps
+plosone-enz.pdf
+plosone-graphcorr2.eps
+plosone-graphcorr2.pdf
+plosone-graphcorr3.eps
+plosone-graphcorr3.pdf
+plosone-graphcorr.eps
+plosone-graphcorr.pdf
+plosone-lci.eps
+plosone-lci.pdf
+plosone.log
+plosone-mb.eps
+plosone-mb.pdf
+plosone.pdf
+plosone-respcorr.eps
+plosone-respcorr.pdf
+plosone.rnw
+plosone.rnw~
+plosone.rnw.backup
+plosone.synctex.gz
+plosone.tex
+proc_cont_cor_h2.csv
+proc_cont_cor_h3.csv
+proc_proc_cor_h2.csv
+proc_proc_cor_h3.csv
+pyr
+pyr_diffs.R
+pyr_diffs.R~
+pyr lignin.bib
+raw_data
+R.bib
+.RData
+_region_.tex
+Reinventing the Scientific Paper.bib
+rel_enzymes_barplots.pdf
+resp_glcdepoly.pdf
+resp_glcdepoly.R
+resp_glcdepoly.R~
+resp_h2.pdf
+results.tex
+R manuals and scripts.bib
+Rplot.pdf
+Rplots.pdf
+R stuff.bib
+RZ_Logo_Uni_sw.jpg
+sbb.aux
+sbb-b2f.eps
+sbb-b2f.pdf
+sbb.bbl
+sbb.blg
+sbb-chembalance.eps
+sbb-chembalance.pdf
+sbb-chemdif.eps
+sbb-chemdif.pdf
+sbb-CUE.eps
+sbb-CUE.pdf
+sbb-degrdiff.eps
+sbb-degrdiff.pdf
+sbb-degr.eps
+sbb-degr.pdf
+sbb-degr.ratio.eps
+sbb-degrratio.eps
+sbb-degr.ratio.pdf
+sbb-degrratio.pdf
+sbb-doc.eps
+sbb-doc.pdf
+sbb-enzcorr.eps
+sbb-enzcorr.pdf
+sbb-enz.eps
+sbb-enz.pdf
+sbb-f2b.eps
+sbb-f2b.pdf
+sbb-graphcorr2.eps
+sbb-graphcorr2.pdf
+sbb-graphcorr3.eps
+sbb-graphcorr3.pdf
+sbb-graphcorr.eps
+sbb-graphcorr.pdf
+sbb-lci.eps
+sbb-lci.pdf
+sbb-lignin.eps
+sbb-lignin.pdf
+sbb.log
+sbb-mb.eps
+sbb-mb.pdf
+sbb-notlignin.eps
+sbb-notlignin.pdf
+sbb-pca1.eps
+sbb-pca1.pdf
+sbb-pca2.eps
+sbb-pca2.pdf
+sbb-pca3.eps
+sbb-pca3.pdf
+sbb.pdf
+sbb-respcorr.eps
+sbb-respcorr.pdf
+#sbb.rnw#
+sbb.rnw
+sbb.rnw~
+sbb.rnw.backup
+sbb.spl
+sbb.tex
+sbb.tex~
+sbb.tex.backup
+siglevs.R
+siglevs.R~
+software references.bib
+soils.bib
+soils-priming & N.bib
+soils-soil warming.bib
+startup.R
+startup.R~
+statistics & data presentation.bib
+stoecheometry.bib
+STS.bib
+table1.tex
+tables.tex
+timeseries2.pdf
+timeserieslci01.csv
+timeseries.pdf
+timeseries.pdf~
+timeseries.R
+timeseries.R~
+tmp.tex
+Toxicology.bib
+Writing.bib
+
+./elsarticle:
+.directory
+elsarticle.cls
+elsarticle-harv.bst
+elsarticle-num.bst
+elsarticle-num-names.bst
+elsarticle-template-1a-num.tex
+elsarticle-template-1b-num.tex
+elsarticle-template-1c-num.tex
+elsarticle-template-1-num.tex
+elsarticle-template-2-harv.tex
+elsarticle-template-3a-num.tex
+elsarticle-template-3-num.tex
+elsarticle-template-4-harv.tex
+elsarticle-template-5-harv.tex
+elsarticle-template-6-num.tex
+elsarticle-template-harv.tex
+elsarticle-template-num.tex
+elsdoc.pdf
+model1a-num-names.bst
+model1b-num-names.bst
+model1c-num-names.bst
+model1-num-names.bst
+model2-names.bst
+model3a-num-names.bst
+model3-num-names.bst
+model4-names.bst
+model5-names.bst
+model6-num-names.bst
+numcompress.sty
+README
+
+
+./output:
+audit.txt
+
+./raw_data:
+alkan_en_cleaned.csv
+alkan_en_cleaned.csv~
+aromates.csv
+aromates.csv~
+aromates.ods
+carbos_neu.csv
+carbos_neu.csv~
+corr_data.csv
+cyclopentenone.csv
+cyclopentenone.csv~
+cyclopentenone.ods
+f2b.csv
+fa.csv
+fa.csv~
+furane.csv
+furane.csv~
+keto-alkyl_alcohole.csv
+keto-alkyl_alcohole.csv~
+lignin2.csv
+lignin2.csv~
+.~lock.f2b.csv#
+massloss_new.xlsx
+micdif_alldata.csv
+minerals.csv
+n_compounds_neu.csv
+n_compounds_neu.csv~
+peaks.csv
+phenole.csv
+phenole.csv~
+plfa_raw.csv
+samples.csv
+samples.csv~
+sim.csv
+the_rest.csv
+the_rest.csv~
+tic.csv

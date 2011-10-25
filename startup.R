@@ -179,11 +179,11 @@ hmw.proc<-data.frame(
   orig_cTIC$L[h3]-initials.orig_cTIC$L[h3],
   orig_cTIC$C[h3]-initials.orig_cTIC$C[h3],
   orig_cTIC$L[h3] / (orig_cTIC$L[h3]+orig_cTIC$C[h3]) - initials.orig_cTIC$L[h3]/(initials.orig_cTIC$L[h3]+initials.orig_cTIC$C[h3]),
-  -closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3],
-  -closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3],
-  (-closs.corr.orig_cTIC$L [h3]+initials.orig_cTIC$L[h3]) / samples$cons_acc_resp_litC[h3],
-  (-closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3])/samples$cons_acc_resp_litC[h3],
-  (-closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3]) / (-closs.corr.orig_cTIC$C[h3] + initials.orig_cTIC$C[h3]), 
+  (-closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3])/initials.orig_cTIC$L[h3],
+  (-closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3])/initials.orig_cTIC$C[h3],
+  (-closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3])/(initials.orig_cTIC$L[h3]*samples$cons_acc_resp_litC[h3]),
+  (-closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3])/(initials.orig_cTIC$C[h3]*samples$cons_acc_resp_litC[h3]),
+  ((-closs.corr.orig_cTIC$L[h3]+initials.orig_cTIC$L[h3])/initials.orig_cTIC$L[h3])/((-closs.corr.orig_cTIC$C[h3]+initials.orig_cTIC$C[h3])/initials.orig_cTIC$C[h3]), 
   alldata$phen2cell[alldata$days==181]
   , alldata$per2cell[alldata$days==181])
 
@@ -196,14 +196,14 @@ notlig.proc<-data.frame(
   class_cTIC$cut1[h3]-initials.class_cTIC$cut1[h3],
   class_cTIC$fa[h3]-initials.class_cTIC$fa[h3],
   class_cTIC$phytol[h3]-initials.class_cTIC$phytol[h3],
-  -closs.corr.class_cTIC$cut0[h3]+initials.class_cTIC$cut0[h3],
-  -closs.corr.class_cTIC$cut1[h3]+initials.class_cTIC$cut1[h3],
-  -closs.corr.class_cTIC$fa[h3]+initials.class_cTIC$fa[h3],
-  -closs.corr.class_cTIC$phytol[h3]+initials.class_cTIC$phytol[h3],
-  (-closs.corr.class_cTIC$cut0 [h3]+initials.class_cTIC$cut0[h3]) / samples$cons_acc_resp_litC[h3],
-  (-closs.corr.class_cTIC$cut1 [h3]+initials.class_cTIC$cut1[h3]) / samples$cons_acc_resp_litC[h3],
-  (-closs.corr.class_cTIC$fa [h3]+initials.class_cTIC$fa[h3]) / samples$cons_acc_resp_litC[h3],
-  (-closs.corr.class_cTIC$phytol [h3]+initials.class_cTIC$phytol[h3]) / samples$cons_acc_resp_litC[h3]
+  (-closs.corr.class_cTIC$cut0[h3]+initials.class_cTIC$cut0[h3])/initials.class_cTIC$cut0[h3],
+  (-closs.corr.class_cTIC$cut1[h3]+initials.class_cTIC$cut1[h3])/initials.class_cTIC$cut1[h3],
+  (-closs.corr.class_cTIC$fa[h3]+initials.class_cTIC$fa[h3])/initials.class_cTIC$fa[h3],
+  (-closs.corr.class_cTIC$phytol[h3]+initials.class_cTIC$phytol[h3])/initials.class_cTIC$phytol[h3],
+  (-closs.corr.class_cTIC$cut0 [h3]+initials.class_cTIC$cut0[h3]) / (initials.class_cTIC$cut0[h3]*samples$cons_acc_resp_litC[h3]),
+  (-closs.corr.class_cTIC$cut1 [h3]+initials.class_cTIC$cut1[h3]) / (initials.class_cTIC$cut1[h3]*samples$cons_acc_resp_litC[h3]),
+  (-closs.corr.class_cTIC$fa [h3]+initials.class_cTIC$fa[h3]) / (initials.class_cTIC$fa[h3]*samples$cons_acc_resp_litC[h3]),
+  (-closs.corr.class_cTIC$phytol [h3]+initials.class_cTIC$phytol[h3]) / (initials.class_cTIC$phytol[h3]*samples$cons_acc_resp_litC[h3])
 )
 
 colnames(notlig.proc) <-   c("alkanacc","alkenacc", "faacc", "phytolacc", "alkandeg", "alkendeg", "fadeg", "phytoldeg", "alkanresp", "alkenresp", "faresp", "phytolresp")
@@ -212,11 +212,11 @@ hmw.proc2 <-
 data.frame(  orig_cTIC$L[h4]-h3init.orig_cTIC$L[h4],
 orig_cTIC$C[h4]-h3init.orig_cTIC$C[h4],
 orig_cTIC$L[h4] / (orig_cTIC$L[h4]+orig_cTIC$C[h4]) - h3init.orig_cTIC$L[h4]/(h3init.orig_cTIC$L[h4]+h3init.orig_cTIC$C[h4]),
--closs.corr.orig_cTIC$L[h4]+h3init.orig_cTIC$L[h4],
--closs.corr.orig_cTIC$C[h4]+h3init.orig_cTIC$C[h4],
-(-closs.corr.orig_cTIC$L [h4]+initials.orig_cTIC$L[h4])/   samples$h3init.respacc.litC[h4],
-(-closs.corr.orig_cTIC$C[h4]+initials.orig_cTIC$C[h4])/samples$h3init.respacc.litC[h4],
-(-closs.corr.orig_cTIC$L[h4]+initials.orig_cTIC$L[h4]) / (-closs.corr.orig_cTIC$C[h4] + initials.orig_cTIC$C[h4]), 
+(-closs.corr.orig_cTIC$L[h4]+h3init.orig_cTIC$L[h4])/h3init.orig_cTIC$L[h4],
+(-closs.corr.orig_cTIC$C[h4]+h3init.orig_cTIC$C[h4])/h3init.orig_cTIC$C[h4],
+(-closs.corr.orig_cTIC$L [h4]+initials.orig_cTIC$L[h4])/(initials.orig_cTIC$L[h4]* samples$h3init.respacc.litC[h4]),
+(-closs.corr.orig_cTIC$C[h4]+initials.orig_cTIC$C[h4])/( initials.orig_cTIC$C[h4]*samples$h3init.respacc.litC[h4]),
+((-closs.corr.orig_cTIC$L[h4]+h3init.orig_cTIC$L[h4])/h3init.orig_cTIC$L[h4])/((-closs.corr.orig_cTIC$C[h4]+h3init.orig_cTIC$C[h4])/h3init.orig_cTIC$C[h4]), 
 alldata$phen2cell[alld.h4.cond], alldata$per2cell[alld.h4.cond])
 
 colnames(hmw.proc2) <- c("LTIC", "CTIC", "LCI", "Ldec", "Cdec", "Lresp", "Cresp", "LCdec", "Phen2Cell", "Per2Cell"
@@ -228,13 +228,13 @@ notlig.proc2<-data.frame(
   class_cTIC$cut1[h4]-h3init.class_cTIC$cut1[h4],
   class_cTIC$fa[h4]-h3init.class_cTIC$fa[h4],
   class_cTIC$phytol[h4]-h3init.class_cTIC$phytol[h4],
-  -closs.corr.class_cTIC$cut0[h4]+h3init.class_cTIC$cut0[h4],
-  -closs.corr.class_cTIC$cut1[h4]+h3init.class_cTIC$cut1[h4],
-  -closs.corr.class_cTIC$fa[h4]+h3init.class_cTIC$fa[h4],
-  -closs.corr.class_cTIC$phytol[h4]+h3init.class_cTIC$phytol[h4],
-  (-closs.corr.class_cTIC$cut0[h4]+initials.class_cTIC$cut0[h4])/samples$h3init.respacc.litC[h4],
-  (-closs.corr.class_cTIC$cut1[h4]+initials.class_cTIC$cut1[h4])/samples$h3init.respacc.litC[h4],
-  (-closs.corr.class_cTIC$fa[h4]+initials.class_cTIC$fa[h4])/samples$h3init.respacc.litC[h4],
-  (-closs.corr.class_cTIC$phytol[h4]+initials.class_cTIC$phytol[h4])/samples$h3init.respacc.litC[h4]
+  (-closs.corr.class_cTIC$cut0[h4]+h3init.class_cTIC$cut0[h4])/h3init.class_cTIC$cut0[h4],
+  (-closs.corr.class_cTIC$cut1[h4]+h3init.class_cTIC$cut1[h4])/h3init.class_cTIC$cut1[h4],
+  (-closs.corr.class_cTIC$fa[h4]+h3init.class_cTIC$fa[h4])/h3init.class_cTIC$fa[h4],
+  (-closs.corr.class_cTIC$phytol[h4]+h3init.class_cTIC$phytol[h4])/h3init.class_cTIC$phytol[h4],
+  (-closs.corr.class_cTIC$cut0[h4]+initials.class_cTIC$cut0[h4])/(initials.class_cTIC$cut0[h4]*samples$h3init.respacc.litC[h4]),
+  (-closs.corr.class_cTIC$cut1[h4]+initials.class_cTIC$cut1[h4])/(initials.class_cTIC$cut1[h4]*samples$h3init.respacc.litC[h4]),
+  (-closs.corr.class_cTIC$fa[h4]+initials.class_cTIC$fa[h4])/(initials.class_cTIC$fa[h4]*samples$h3init.respacc.litC[h4]),
+  (-closs.corr.class_cTIC$phytol[h4]+initials.class_cTIC$phytol[h4])/(initials.class_cTIC$phytol[h4]*samples$h3init.respacc.litC[h4])
 )
 colnames(notlig.proc2) <-   c("alkanacc","alkenacc", "faacc", "phytolacc", "alkandeg", "alkendeg", "fadeg", "phytoldeg", "alkanresp", "alkenresp", "faresp", "phytolresp")

@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: plosone.aux
+The style file: plos2009.bst
+Database file #1: library.bib
+Repeated entry---line 2639 of file library.bib
+ : @article{Talbot2011
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2769 of file library.bib
+ : @article{Snajdr2011
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2847 of file library.bib
+ : @article{Schellekens2009
+ :                         ,
+I'm skipping whatever remains of this entry
+`journal' is a missing field, not a string, for entry Schinner1996
+while executing---line 3964 of file plos2009.bst
+Warning--empty journal in Schinner1996
+You've used 26 entries,
+            2441 wiz_defined-function locations,
+            747 strings with 11326 characters,
+and the built_in function-call counts, 21934 in all, are:
+= -- 2056
+> -- 340
+< -- 0
++ -- 170
+- -- 85
+* -- 1909
+:= -- 2630
+add.period$ -- 52
+call.type$ -- 26
+change.case$ -- 25
+chr.to.int$ -- 0
+cite$ -- 53
+duplicate$ -- 2168
+empty$ -- 2288
+format.name$ -- 106
+if$ -- 4872
+int.to.chr$ -- 0
+int.to.str$ -- 26
+missing$ -- 259
+newline$ -- 145
+num.names$ -- 26
+pop$ -- 299
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 164
+stack$ -- 0
+substring$ -- 3254
+swap$ -- 503
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 155
+width$ -- 28
+write$ -- 293
+(There were 4 error messages)
