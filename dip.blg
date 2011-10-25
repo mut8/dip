@@ -1,12 +1,12 @@
 This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: dip.aux
-White space in argument---line 58 of file dip.aux
- : \citation{Vancampenhout2009
- :                             }
+White space in argument---line 55 of file dip.aux
+ : \citation{Schellekens2009,Buurman2010,Vancampenhout2009
+ :                                                         }
 I'm skipping whatever remains of this command
 The style file: plainnat.bst
 Database file #1: library.bib.bib
-Repeated entry---line 2581 of file library.bib.bib
+Repeated entry---line 2847 of file library.bib.bib
  : @article{Schellekens2009
  :                         ,
 I'm skipping whatever remains of this entry
@@ -14,45 +14,45 @@ Warning--I didn't find a database entry for "Enriquez1993"
 Warning--I didn't find a database entry for "Dykmans2002"
 Warning--I didn't find a database entry for "Sinsabaugh2011"
 Warning--I didn't find a database entry for "Ralph1991"
-You've used 18 entries,
+You've used 19 entries,
             2773 wiz_defined-function locations,
-            762 strings with 10879 characters,
-and the built_in function-call counts, 11098 in all, are:
-= -- 970
-> -- 867
-< -- 10
-+ -- 289
-- -- 271
-* -- 1059
-:= -- 1785
-add.period$ -- 84
-call.type$ -- 18
-change.case$ -- 136
-chr.to.int$ -- 18
-cite$ -- 36
-duplicate$ -- 396
-empty$ -- 719
-format.name$ -- 297
-if$ -- 2254
+            773 strings with 10754 characters,
+and the built_in function-call counts, 11118 in all, are:
+= -- 985
+> -- 814
+< -- 11
++ -- 272
+- -- 253
+* -- 1042
+:= -- 1775
+add.period$ -- 87
+call.type$ -- 19
+change.case$ -- 133
+chr.to.int$ -- 19
+cite$ -- 38
+duplicate$ -- 412
+empty$ -- 759
+format.name$ -- 280
+if$ -- 2271
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 21
-newline$ -- 126
-num.names$ -- 76
-pop$ -- 240
+newline$ -- 131
+num.names$ -- 80
+pop$ -- 236
 preamble$ -- 1
-purify$ -- 121
+purify$ -- 117
 quote$ -- 0
-skip$ -- 317
+skip$ -- 325
 stack$ -- 0
-substring$ -- 370
+substring$ -- 391
 swap$ -- 45
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 183
+type$ -- 194
 warning$ -- 0
-while$ -- 84
+while$ -- 89
 width$ -- 0
-write$ -- 299
+write$ -- 312
 (There were 2 error messages)

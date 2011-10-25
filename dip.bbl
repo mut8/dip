@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -82,12 +82,16 @@ K.L. Denman, G.~Brasseur, A.~Chidthaisong, P.~Ciais, P.M. Cox, R.E. Dickinson,
   \url{http://scholar.google.com/scholar?hl=en\&btnG=Search\&q=intitle:Couplin%
 gs+Between+Changes+in+the+Climate+System+and+Biogeochemistry\#0}.
 
-\bibitem[Hatfield and Romualdo(2005)]{Hatfield2005}
-Ronald~D. Hatfield and S.~Fukushima Romualdo.
-\newblock {Can Lignin Be Accurately Measured?}
-\newblock \emph{Crop Science}, 45\penalty0 (3):\penalty0 832--839, March 2005.
+\bibitem[Dyckmans et~al.(2002)Dyckmans, Flessa, Brinkmann, Mai, and
+  Polle]{Dyckmans2002}
+J~Dyckmans, H~Flessa, K~Brinkmann, C~Mai, and A~Polle.
+\newblock {Carbon and nitrogen dynamics in acid detergent fibre lignins of
+  beech (Fagus sylvatica L.) during the growth phase}.
+\newblock \emph{Plant, Cell \& Environment}, 25\penalty0 (4):\penalty0
+  469--478, 2002.
 \newblock URL
-  \url{http://crop.scijournals.org/cgi/doi/10.2135/cropsci2004.0238}.
+  \url{http://onlinelibrary.wiley.com/doi/10.1046/j.1365-3040.2002.00826.x/ful%
+l}.
 
 \bibitem[Klotzb\"{u}cher et~al.(2011)Klotzb\"{u}cher, Kaiser, Guggenberger,
   Gatzek, and Kalbitz]{Klotzbucher2011}
@@ -97,14 +101,18 @@ Thimo Klotzb\"{u}cher, Klaus Kaiser, Georg Guggenberger, Christiane Gatzek, and
   litter}.
 \newblock \emph{America}, 92\penalty0 (5):\penalty0 1052--1062, 2011.
 
-\bibitem[Leitner et~al.(2011)Leitner, Wanek, Wild, Haemmerle, Kohl, Keiblinger,
-  and Zechmeister-Boltenstern]{Leitner2011}
-Sonja Leitner, Wolfgang Wanek, Birgit Wild, Ieda Haemmerle, Lukas Kohl,
-  Katherina~M. Keiblinger, and Sophie Zechmeister-Boltenstern.
-\newblock {Linking resource quality to decomposition processes: Influence iof
-  litter chemistry and stoichiometry on glucan depolymerization during
-  decomposition of beech (Fagus silvatica L. ) litter}.
-\newblock \emph{Soil Biology and Biochemistry}, 2011.
+\bibitem[Moldoveanu(1998)]{Moldoveanu}
+Serban~C. Moldoveanu.
+\newblock {Analytical Pyrolysis of Natural Organic Polymers}, 1998.
+
+\bibitem[Moorhead and Sinsabaugh(2006)]{Moorhead2006}
+Daryl~L. Moorhead and Robert~L. Sinsabaugh.
+\newblock {A theoretical model of litter decay and microbial interaction}.
+\newblock \emph{Ecological Monographs}, 76\penalty0 (2):\penalty0 151--174,
+  2006.
+\newblock URL
+  \url{http://www.esajournals.org/doi/pdf/10.1890/0012-9615(2006)076[0151:ATMO%
+LD]2.0.CO;2}.
 
 \bibitem[Mooshammer et~al.(2011)Mooshammer, , and the Crew]{Mooshammer2011}
 Maria Mooshammer, , and the Crew.
@@ -134,20 +142,14 @@ Judith Schellekens, Peter Buurman, and Xabier Pontevedra-Pombal.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0146638009000680}.
 
-\bibitem[Snajdr et~al.(2011)Snajdr, Cajthaml, Val\'{a}\v{s}kov\'{a},
-  Merhautov\'{a}, Petr\'{a}nkov\'{a}, Spetz, Lepp\"{a}nen, and
-  Baldrian]{Snajdr2011}
-Jaroslav Snajdr, Tom\'{a}\v{s} Cajthaml, Vendula Val\'{a}\v{s}kov\'{a},
-  V\v{e}ra Merhautov\'{a}, Mirka Petr\'{a}nkov\'{a}, Peter Spetz, Kaisu
-  Lepp\"{a}nen, and Petr Baldrian.
-\newblock {Transformation of Quercus petraea litter: successive changes in
-  litter chemistry are reflected in differential enzyme activity and changes in
-  the microbial community composition.}
-\newblock \emph{FEMS microbiology ecology}, 75\penalty0 (2):\penalty0 291--303,
-  February 2011.
-\newblock ISSN 1574-6941.
-\newblock \doi{10.1111/j.1574-6941.2010.00999.x}.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/21114504}.
+\bibitem[Sobeih et~al.(2008)Sobeih, Baron, and Gonzalez-Rodriguez]{Sobeih2008}
+Karina~L Sobeih, Mark Baron, and Jose Gonzalez-Rodriguez.
+\newblock {Recent trends and developments in pyrolysis-gas chromatography.}
+\newblock \emph{Journal of chromatography. A}, 1186\penalty0 (1-2):\penalty0
+  51--66, April 2008.
+\newblock ISSN 0021-9673.
+\newblock \doi{10.1016/j.chroma.2007.10.017}.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/17980891}.
 
 \bibitem[Steinbeiss et~al.(2006)Steinbeiss, Schmidt, Heide, and
   Gleixner]{Steinbeiss2006}

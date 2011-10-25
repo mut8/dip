@@ -1,12 +1,17 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.19)  5 OCT 2011 17:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  25 OCT 2011 12:36
 entering extended mode
  %&-line parsing enabled.
 **dip.tex
 (./dip.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
-
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/bk10.clo
@@ -140,11 +145,11 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 )
-(/home/lluc/texmf/tex/latex/natbib.sty
-Package: natbib 2006/09/06 7.4a (PWD)
+(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
+Package: natbib 2009/07/16 8.31 (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
-LaTeX Info: Redefining \cite on input line 541.
+LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count92
 )
 (/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
@@ -154,17 +159,6 @@ Package: `setspace' 6.7 <2000/12/01>
 ) (/usr/share/texmf-texlive/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip45
-)
-(/home/lluc/texmf/tex/latex/textgreek.sty
-Package: textgreek 2011/04/08 v0.5 greek symbols in text
-Package textgreek Info: Loading the definitions for the Greek fontencoding. on 
-input line 37.
-
-(/usr/share/texmf-texlive/tex/generic/babel/lgrenc.def
-File: lgrenc.def 2008/06/17 v2.3 Greek Encoding
-)
-Package textgreek Info: Loaded fontmap: {eur/*/*}{U/eur/*/*} {phv/*/*}{U/psy/*/
-*}. on input line 66.
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -187,8 +181,8 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gin@req@height=\dimen107
 \Gin@req@width=\dimen108
 )
-(/home/lluc/texmf/tex/latex/pdfpages.sty
-Package: pdfpages 2011/07/31 v0.4p Insert pages of external PDF documents (AM)
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
 
 (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -212,8 +206,8 @@ Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
 (/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/home/lluc/texmf/tex/latex/pppdftex.def
-File: pppdftex.def 2011/07/31 v0.4p Pdfpages driver for pdfTeX (AM)
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box26
 \AM@toc@title=\toks21
@@ -281,13 +275,6 @@ LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 26.
-
-(/usr/share/texmf-texlive/tex/generic/babel/lgrcmr.fd
-File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
-)
-LaTeX Font Info:    ... okay on input line 26.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -332,9 +319,8 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
-
-fontencoding LGR patched
-) (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+)
+(/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
 \scratchdimen=\dimen111
@@ -381,61 +367,60 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  1.
 (./generalintroduction.tex [7]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 33.
+(Font)              <8> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 33.
+(Font)              <6> on input line 17.
  [8]
 (/usr/share/texmf-texlive/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
 )
 
 Package natbib Warning: Citation `Enriquez1993' on page 9 undefined on input li
-ne 41.
+ne 25.
 
 
 Package natbib Warning: Citation `Dykmans2002' on page 9 undefined on input lin
-e 45.
+e 30.
 
-[9]
 
-Package natbib Warning: Citation `Sinsabaugh2011' on page 10 undefined on input
- line 47.
+Package natbib Warning: Citation `Sinsabaugh2011' on page 9 undefined on input 
+line 32.
 
-[10] <decompositionmodel_berg.jpg, id=43, 316.64691pt x 367.31041pt>
+[9] [10] <decompositionmodel_berg.jpg, id=43, 316.64691pt x 367.31041pt>
 File: decompositionmodel_berg.jpg Graphic file (type jpg)
 
-<use decompositionmodel_berg.jpg>
-<decompositionmodel_klotzbuecher.jpg, id=44, 412.75856pt x 245.867pt>
+<use decompositionmodel_berg.jpg> [11 <./decompositionmodel_berg.jpg>]
+<decompositionmodel_klotzbuecher.jpg, id=47, 412.75856pt x 245.867pt>
 File: decompositionmodel_klotzbuecher.jpg Graphic file (type jpg)
 
-<use decompositionmodel_klotzbuecher.jpg> [11 <./decompositionmodel_berg.jpg>]
-[12 <./decompositionmodel_klotzbuecher.jpg>]
- 2.
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 143.
+<use decompositionmodel_klotzbuecher.jpg>
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 79.
 
 (/usr/share/texmf/tex/latex/R/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 143.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 79.
+ [12 <./decompositionmodel_klotzbuecher.jpg>] [13] [14
 
 ]
+ 2.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
+ [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package natbib Warning: Citation `Ralph1991' on page 15 undefined on input line
- 180.
+ [16]
+
+Package natbib Warning: Citation `Ralph1991' on page 17 undefined on input line
+ 181.
 
 
-Package natbib Warning: Citation `Vancampenhout2009 ' on page 15 undefined on i
-nput line 180.
+Package natbib Warning: Citation `Vancampenhout2009 ' on page 17 undefined on i
+nput line 181.
 
-[15]) [16] (./dip.bbl
+[17]) [18] (./dip.bbl
 LaTeX Font Info:    Try loading font information for T1+aett on input line 24.
  (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
@@ -514,43 +499,43 @@ ouplings+Between+Changes+in+the+Climate+System+and+Biogeochemistry#0\T1/aer/m/n
 /10 . 
  []
 
-[17
+[19
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
-[]\T1/aer/m/n/10 Ronald D. Hat-field and S. Fukushima Ro-mualdo.  Can Lignin Be
- Ac-cu-
+Underfull \hbox (badness 10000) in paragraph at lines 109--116
+[]\T1/aer/m/n/10 Daryl L. Moor-head and Robert L. Sins-abaugh.  A the-o-ret-i-c
+al model of lit-ter de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--91
-\T1/aer/m/n/10 rately Mea-sured?  \T1/aer/m/it/10 Crop Sci-ence\T1/aer/m/n/10 ,
- 45(3):832--839, March 2005.  URL
+Underfull \hbox (badness 7981) in paragraph at lines 109--116
+\T1/aer/m/n/10 cay and mi-cro-bial in-ter-ac-tion.  \T1/aer/m/it/10 Eco-log-i-c
+al Mono-graphs\T1/aer/m/n/10 , 76(2):151--174, 2006.  URL
  []
 
-[18]
-Underfull \hbox (badness 1708) in paragraph at lines 185--196
+[20]
+Underfull \hbox (badness 1708) in paragraph at lines 187--198
 \T1/aer/m/n/10 De-ter-mi-na-tion of gross rates of amino acid pro-duc-tion and 
 im-mo-bi-liza-tion in de-com-pos-ing
  []
 
 
-Underfull \hbox (badness 2277) in paragraph at lines 185--196
+Underfull \hbox (badness 2277) in paragraph at lines 187--198
 \T1/aer/m/n/10 leaf lit-ter by a novel N-15 iso-tope pool di-lu-tion tech-nique
 .  \T1/aer/m/it/10 Soil Bi-ol-ogy and Bio-chem-
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 185--196
+Underfull \hbox (badness 2189) in paragraph at lines 187--198
 \T1/aer/m/it/10 istry\T1/aer/m/n/10 , 42(8):1293--1302, 2010.  ISSN 00380717.  
 doi: 10.1016/j.soilbio.2010.04.001.  URL
  []
 
-) [19] [20
+) [21] [22
 
 ]
  3.
-[21] <sbb.pdf, id=84, page=1, 614.295pt x 794.97pt>
+[23] <sbb.pdf, id=90, page=1, 614.295pt x 794.97pt>
 File: sbb.pdf Graphic file (type pdf)
  <use sbb.pdf, page 1>
 File: sbb.pdf Graphic file (type pdf)
@@ -559,438 +544,38 @@ File: sbb.pdf Graphic file (type pdf)
 File: sbb.pdf Graphic file (type pdf)
  <use sbb.pdf, page 1>
 File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 1> [22 <./sbb.pdf>] <sbb.pdf, id=129, page=2, 614.295pt x 7
-94.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 2>
+ <use sbb.pdf, page 1>
 File: sbb.pdf Graphic file (type pdf)
 
-<use sbb.pdf, page 2>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 2> [23 <./sbb.pdf>]
-<sbb.pdf, id=143, page=3, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 3>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 3>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 3> [24 <./sbb.pdf>]
-<sbb.pdf, id=147, page=4, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 4>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 4>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 4> [25 <./sbb.pdf>]
-<sbb.pdf, id=152, page=5, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 5>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 5>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 5> [26 <./sbb.pdf>]
-<sbb.pdf, id=172, page=6, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 6>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 6>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 6> [27 <./sbb.pdf>]
-<sbb.pdf, id=176, page=7, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 7>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 7>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 7> [28 <./sbb.pdf>]
-<sbb.pdf, id=185, page=8, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 8>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 8>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 8> [29 <./sbb.pdf>]
-<sbb.pdf, id=194, page=9, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 9>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 9>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 9> [30 <./sbb.pdf>]
-<sbb.pdf, id=204, page=10, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 10>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 10>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 10> [31 <./sbb.pdf>]
-<sbb.pdf, id=209, page=11, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 11>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 11>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 11> [32 <./sbb.pdf>]
-<sbb.pdf, id=213, page=12, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 12>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 12>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 12> [33 <./sbb.pdf>]
-<sbb.pdf, id=217, page=13, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 13>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 13>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 13> [34 <./sbb.pdf>]
-<sbb.pdf, id=221, page=14, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 14>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 14>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 14> [35 <./sbb.pdf>]
-<sbb.pdf, id=225, page=15, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 15>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 15>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 15> [36 <./sbb.pdf>]
-<sbb.pdf, id=229, page=16, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 16>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 16>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 16> [37 <./sbb.pdf>]
-<sbb.pdf, id=234, page=17, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 17>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 17>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 17> [38 <./sbb.pdf>]
-<sbb.pdf, id=238, page=18, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 18>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 18>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 18> [39 <./sbb.pdf>]
-<sbb.pdf, id=242, page=19, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 19>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 19>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 19> [40 <./sbb.pdf>]
-<sbb.pdf, id=252, page=20, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 20>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 20>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 20> [41 <./sbb.pdf>]
-<sbb.pdf, id=262, page=21, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 21>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 21>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 21> [42 <./sbb.pdf>]
-<sbb.pdf, id=271, page=22, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 22>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 22>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 22> [43 <./sbb.pdf>]
-<sbb.pdf, id=281, page=23, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 23>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 23>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 23> [44 <./sbb.pdf>]
-<sbb.pdf, id=290, page=24, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 24>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 24>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 24> [45 <./sbb.pdf>]
-<sbb.pdf, id=299, page=25, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 25>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 25>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 25> [46 <./sbb.pdf>]
-<sbb.pdf, id=308, page=26, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 26>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 26>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 26> [47 <./sbb.pdf>]
-<sbb.pdf, id=317, page=27, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 27>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 27>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 27> [48 <./sbb.pdf>]
-<sbb.pdf, id=321, page=28, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 28>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 28>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 28> [49 <./sbb.pdf>]
-<sbb.pdf, id=341, page=29, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 29>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 29>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 29> [50 <./sbb.pdf>]
-<sbb.pdf, id=350, page=30, 614.295pt x 794.97pt>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 30>
-File: sbb.pdf Graphic file (type pdf)
-
-<use sbb.pdf, page 30>
-File: sbb.pdf Graphic file (type pdf)
- <use sbb.pdf, page 30> [51 <./sbb.pdf>] [52
-
-]
- 4.
-[53] <aap.pdf, id=367, page=1, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 1>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 1>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 1>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 1> [54 <./aap.pdf>] <aap.pdf, id=390, page=2, 614.295pt x 7
-94.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 2>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 2>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 2> [55 <./aap.pdf>]
-<aap.pdf, id=410, page=3, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 3>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 3>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 3> [56 <./aap.pdf>]
-<aap.pdf, id=420, page=4, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 4>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 4>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 4> [57 <./aap.pdf>]
-<aap.pdf, id=424, page=5, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 5>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 5>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 5> [58 <./aap.pdf>]
-<aap.pdf, id=428, page=6, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 6>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 6>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 6> [59 <./aap.pdf>]
-<aap.pdf, id=432, page=7, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 7>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 7>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 7> [60 <./aap.pdf>]
-<aap.pdf, id=436, page=8, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 8>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 8>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 8> [61 <./aap.pdf>]
-<aap.pdf, id=446, page=9, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 9>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 9>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 9> [62 <./aap.pdf>]
-<aap.pdf, id=450, page=10, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 10>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 10>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 10> [63 <./aap.pdf>]
-<aap.pdf, id=462, page=11, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 11>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 11>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 11> [64 <./aap.pdf>]
-<aap.pdf, id=469, page=12, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 12>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 12>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 12> [65 <./aap.pdf>]
-<aap.pdf, id=473, page=13, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 13>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 13>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 13> [66 <./aap.pdf>]
-<aap.pdf, id=477, page=14, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 14>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 14>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 14> [67 <./aap.pdf>]
-<aap.pdf, id=488, page=15, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 15>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 15>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 15> [68 <./aap.pdf>]
-<aap.pdf, id=498, page=16, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 16>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 16>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 16> [69 <./aap.pdf>]
-<aap.pdf, id=511, page=17, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 17>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 17>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 17> [70 <./aap.pdf>]
-<aap.pdf, id=521, page=18, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 18>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 18>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 18> [71 <./aap.pdf>]
-<aap.pdf, id=531, page=19, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 19>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 19>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 19> [72 <./aap.pdf>]
-<aap.pdf, id=541, page=20, 614.295pt x 794.97pt>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 20>
-File: aap.pdf Graphic file (type pdf)
-
-<use aap.pdf, page 20>
-File: aap.pdf Graphic file (type pdf)
- <use aap.pdf, page 20> [73 <./aap.pdf>]
+<use sbb.pdf, page 1> [24 <./sbb.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
 (./dip.aux) ) 
 Here is how much of TeX's memory you used:
- 4805 strings out of 495021
- 70685 string characters out of 1181035
- 124216 words of memory out of 3000000
- 7863 multiletter control sequences out of 15000+50000
+ 4264 strings out of 493848
+ 60442 string characters out of 1152822
+ 122687 words of memory out of 3000000
+ 7415 multiletter control sequences out of 15000+50000
  39867 words of font info for 73 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 35i,17n,44p,1335b,405s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/lluc/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss8.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.
-pfb>
-Output written on dip.pdf (73 pages, 1245616 bytes).
+ 714 hyphenation exceptions out of 8191
+ 35i,17n,43p,1483b,403s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmti7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on dip.pdf (24 pages, 402301 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
+ 169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 286 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

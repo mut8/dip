@@ -5,7 +5,7 @@
 \usepackage[authoryear, round, sort]{natbib}
 \usepackage{setspace}
 \usepackage{fullpage}
-\usepackage{textgreek}
+%\usepackage{textgreek}
 \usepackage{graphicx}
 \usepackage[final]{pdfpages}
 %\renewcommand{\thechapter}{}
@@ -116,7 +116,7 @@ This work is composed of three major parts that serve different perposes and are
 % \input{discussion.tex}
 % \section{Conclusions}
 % \input{conclusions.tex}
-\includepdfset{pages=-,noautoscale}
+%\includepdfset{pages=-,noautoscale}
 
 \chapter{Manuscript 1}
 \includepdf[scale=1.25]{sbb}
