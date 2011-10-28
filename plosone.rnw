@@ -279,6 +279,14 @@ This change in decomposition dynamics corresponds to change in soluble carbon. W
 
 Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
 
+%new
+
+Lignin decomposition is traditionally exclusively attributed to fungi. Contradicting this expectation, we found fungi dominating during early decomposition litter that was degraded fast, but where no lignin was decomposed. This implies that fungi are more successfull in rapid growth on labile carbon, while bacterial presence increases with elevated competition in later decomposition stages. 
+
+It was suggested, that lignin decomposition is a strategy to reduce competition. 
+
+?Fungi were found more successfull in usding labile carbon to degrade recalcitrant carbon \cite{Fontaine2011}.
+
 %\section*{Conclusions}
 
 Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month. The extend, to which lignin is decomposed, was controlled by litter chemistry over the first 6 month. However, we did not find lignin decomposition rates controlled by litter quality thereafter. Soluble carbon contents were not restrictive to lignin decomposition.
@@ -290,7 +298,7 @@ While carbohydrate decomposition was stimulated by high N contents, early lignin
 % authors may use "Analysis" 
 \section*{Material and methods}
 \subsection*{Litter decomposition experiment}
-A detailed description of our litter decomposition experiment was published in \cite{Wanek2010}. Briefly, beech litter was collected at four different sites in Austria (Achenkirch (AK), Klausenleopoldsdorf(KL), Ossiach(OS), and Schottenwald(SW); refered to as litter types) in October 2008. Litter was cut to pieces of approximately 0.25cm$^2$, homogenized, sterilized twice by gamma\footnote{greek gamma here} radiation (35 kGy, 7 days between irradiations) and inoculated (1.5\% w/w) with a mixture of litter and soil to assure that all litter types share the same initial microbial community. From each type, four samples of litter were taken after inoculation and stored dried at room temperature. Samples of 60g litter (fresh weight) were incubated at 15 \textdegree C and 60\% water content in mesocosms for a duration between 2 weeks to 15 month. For each litter type 5 replicas were removed and analyzed after 14, 97, 181 and 475 days.
+A detailed description of our litter decomposition experiment was previously published \cite{Wanek2010}. Briefly, beech litter was collected at four different sites in Austria (Achenkirch (AK), Klausenleopoldsdorf(KL), Ossiach(OS), and Schottenwald(SW); refered to as litter types) in October 2008. Litter was cut to pieces of approximately 0.25cm$^2$, homogenized, sterilized twice by gamma\footnote{greek gamma here} radiation (35 kGy, 7 days between irradiations) and inoculated (1.5\% w/w) with a mixture of litter and soil to assure that all litter types share the same initial microbial community. From each type, four samples of litter were taken after inoculation and stored dried at room temperature. Samples of 60g litter (fresh weight) were incubated at 15 \textdegree C and 60\% water content in mesocosms for a duration between 2 weeks to 15 month. For each litter type 5 replicas were removed and analyzed after 14, 97, 181 and 475 days.
 
 Litter chemistry as analyzed 14 days after incubation is listed in table \ref{initstoech}. C:N ratios between 1:41 and 1:58 and C:P ratios between 1:700 and 1:1300 were found, N:P ratios ranged between 1:15 and 1:30. No significant changes occurred during litter incubation except a slight decrease of the C:N ratio (1:41.8 to 1:37.4) found in the most active litter type (SW) after 15 month. Fe content were more than twice as high for OS (approx. 450 ppm) than for other litter types (approx. 200 ppm). Litter Mn also was highly variable between litter types, ranging between 170 and 2130 ppm. Changes of micro-nutrient concentrations during litter incubation were significant, but in all cases \textless 15\% of the initial concentration.
 
