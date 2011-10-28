@@ -42,7 +42,7 @@ addpeaks(c("raw_data/furane.csv","raw_data/aromates.csv", "raw_data/phenole.csv"
 minerals<-read.csv("raw_data/minerals.csv", sep=",", header=TRUE)
 alldata<-read.csv("raw_data/micdif_alldata.csv", sep=";", header=TRUE)
 alldata$days<-rep(c(rep(14,5), rep(97,5), rep(181,5), rep(475,5)),4)
-
+f2b<-read.csv("raw_data/micdif_f2b.csv", sep=",", header=TRUE)
 
 
 sim<-read.csv("raw_data/sim.csv", sep=",", header=TRUE)

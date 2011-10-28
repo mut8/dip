@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  25 OCT 2011 20:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.17)  27 OCT 2011 18:12
 entering extended mode
  %&-line parsing enabled.
 **plosone.tex
@@ -251,7 +251,7 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box28
 LaTeX Info: Redefining \\ on input line 3056.
 )
-(/usr/share/texmf/tex/latex/R/tex/latex/Sweave.sty
+(/usr/share/R/share/texmf/tex/latex/Sweave.sty
 Package: Sweave 
 
 (/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
@@ -268,7 +268,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \c@FancyVerbLine=\count109
 \FV@StepNumber=\count110
 \FV@OutFile=\write3
-) (/usr/share/texmf/tex/latex/R/tex/latex/upquote.sty
+) (/usr/share/R/share/texmf/tex/latex/upquote.sty
 Package: upquote 2003/08/11 v1.1 Covington's upright-quote modification to verb
 atim and verb
 )
@@ -340,20 +340,8 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 81.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
+LaTeX Font Info:    Try loading font information for T1+aess on input line 120.
 
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.92 \\
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-LaTeX Font Info:    Try loading font information for T1+aess on input line 121.
 
 (/usr/share/texmf-texlive/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
@@ -372,16 +360,16 @@ Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
 [3]
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 156.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 155.
 
- (/usr/share/texmf/tex/latex/R/tex/latex/ts1aer.fd
+ (/usr/share/R/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 156.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 155.
 
 
-LaTeX Warning: Reference `fig:doc' on page 4 undefined on input line 159.
+LaTeX Warning: Reference `fig:doc' on page 4 undefined on input line 158.
 
 
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
@@ -389,11 +377,11 @@ Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 [4]
 
-LaTeX Warning: Reference `fig:timeseries' on page 5 undefined on input line 192
+LaTeX Warning: Reference `fig:timeseries' on page 5 undefined on input line 191
 .
 
 
-LaTeX Warning: Reference `fig:chemdif' on page 5 undefined on input line 208.
+LaTeX Warning: Reference `fig:chemdif' on page 5 undefined on input line 207.
 
 
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
@@ -437,80 +425,81 @@ LaTeX Font Info:    Try loading font information for T1+aett on input line 173.
  (/usr/share/texmf-texlive/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ))
-Overfull \vbox (6.43994pt too high) has occurred while \output is active []
-
-
-[14] <plosone-mb.pdf, id=60, 867.24pt x 650.43pt>
+<plosone-mb.pdf, id=56, 867.24pt x 650.43pt>
 File: plosone-mb.pdf Graphic file (type pdf)
  <use plosone-mb.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[15 <./plosone-mb.pdf>] <plosone-enz.pdf, id=69, 505.89pt x 505.89pt>
+[14 <./plosone-mb.pdf>] <plosone-enz.pdf, id=66, 505.89pt x 505.89pt>
 File: plosone-enz.pdf Graphic file (type pdf)
 
 <use plosone-enz.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[16 <./plosone-enz.pdf>] <plosone-lci.pdf, id=78, 722.7pt x 361.35pt>
+[15 <./plosone-enz.pdf>] <plosone-lci.pdf, id=75, 722.7pt x 361.35pt>
 File: plosone-lci.pdf Graphic file (type pdf)
 
 <use plosone-lci.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[17 <./plosone-lci.pdf>] <plosone-degrdiff.pdf, id=86, 578.16pt x 505.89pt>
+[16 <./plosone-lci.pdf>] <plosone-degrdiff.pdf, id=83, 578.16pt x 505.89pt>
 File: plosone-degrdiff.pdf Graphic file (type pdf)
 
 <use plosone-degrdiff.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[18 <./plosone-degrdiff.pdf>]
-<plosone-graphcorr.pdf, id=94, 1517.67pt x 1011.78pt>
+[17 <./plosone-degrdiff.pdf>]
+<plosone-graphcorr.pdf, id=91, 1517.67pt x 1011.78pt>
 File: plosone-graphcorr.pdf Graphic file (type pdf)
 
 <use plosone-graphcorr.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[19 <./plosone-graphcorr.pdf>]
-<plosone-respcorr.pdf, id=103, 505.89pt x 505.89pt>
+[18 <./plosone-graphcorr.pdf>]
+<plosone-respcorr.pdf, id=99, 505.89pt x 505.89pt>
 File: plosone-respcorr.pdf Graphic file (type pdf)
  <use plosone-respcorr.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[20 <./plosone-respcorr.pdf>]
-<plosone-enzcorr.pdf, id=112, 505.89pt x 252.945pt>
+[19 <./plosone-respcorr.pdf>]
+<plosone-enzcorr.pdf, id=109, 505.89pt x 252.945pt>
 File: plosone-enzcorr.pdf Graphic file (type pdf)
  <use plosone-enzcorr.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[21 <./plosone-enzcorr.pdf>]
-<plosone-graphcorr2.pdf, id=120, 758.835pt x 1011.78pt>
+[20 <./plosone-enzcorr.pdf>]
+<plosone-graphcorr2.pdf, id=117, 758.835pt x 1011.78pt>
 File: plosone-graphcorr2.pdf Graphic file (type pdf)
 
 <use plosone-graphcorr2.pdf>
 
-LaTeX Warning: Float too large for page by 55.6159pt on input line 512.
+LaTeX Warning: Float too large for page by 55.6159pt on input line 509.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<plosone-graphcorr3.pdf, id=121, 758.835pt x 1011.78pt>
+<plosone-graphcorr3.pdf, id=118, 758.835pt x 1011.78pt>
 File: plosone-graphcorr3.pdf Graphic file (type pdf)
 
 <use plosone-graphcorr3.pdf>
 
-LaTeX Warning: Float too large for page by 55.6159pt on input line 523.
+LaTeX Warning: Float too large for page by 55.6159pt on input line 520.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Overfull \vbox (6.43994pt too high) has occurred while \output is active []
+
+
+[21]
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
@@ -543,26 +532,28 @@ Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 [28] <plosone-CUE.pdf, id=155, 505.89pt x 758.835pt>
 File: plosone-CUE.pdf Graphic file (type pdf)
  <use plosone-CUE.pdf>
-
-LaTeX Warning: Float too large for page by 121.90454pt on input line 738.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
+<plosone-f2bnew.pdf, id=156, 578.16pt x 578.16pt>
+File: plosone-f2bnew.pdf Graphic file (type pdf)
+ <use plosone-f2bnew.pdf>
 Overfull \vbox (6.43994pt too high) has occurred while \output is active []
 
 
-[29 <./plosone-CUE.pdf>] (./plosone.aux)
+[29
+
+ <./plosone-CUE.pdf>]
+Overfull \vbox (6.43994pt too high) has occurred while \output is active []
+
+
+[30 <./plosone-f2bnew.pdf>] (./plosone.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4557 strings out of 493848
- 63848 string characters out of 1152822
- 124578 words of memory out of 3000000
- 7679 multiletter control sequences out of 15000+50000
+ 4563 strings out of 493848
+ 63943 string characters out of 1152822
+ 124588 words of memory out of 3000000
+ 7684 multiletter control sequences out of 15000+50000
  43002 words of font info for 88 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  36i,9n,38p,1421b,353s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -582,9 +573,9 @@ mf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/f
 onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
 m1000.pfb>
-Output written on plosone.pdf (29 pages, 525832 bytes).
+Output written on plosone.pdf (30 pages, 544130 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
+ 226 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -92,7 +92,6 @@ Lucia Fuchslueger$^{1}$,
 J\"org Schnecker$^{1}$, 
 Sophie Zechmeister-Boltenstern$^{2,3}$, 
 Andreas Richter$^{1}$, 
-
 \\
 \bf{1} Department of Chemical Ecology and Ecosystem Research, University of Vienna, Althanstra\ss e 14, A-1090 Vienna, Austria
 \\
@@ -273,7 +272,7 @@ This change in decomposition dynamics corresponds to change in soluble carbon. W
 
 Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
 
-%\section{Conclusions}
+%\section*{Conclusions}
 
 Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month. The extend, to which lignin is decomposed, was controlled by litter chemistry over the first 6 month. However, we did not find lignin decomposition rates controlled by litter quality thereafter. Soluble carbon contents were not restrictive to lignin decomposition.
 
@@ -282,7 +281,7 @@ While carbohydrate decomposition was stimulated by high N contents, early lignin
 % You may title this section "Methods" or "Models". 
 % "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
 % authors may use "Analysis" 
-\section{Material and methods}
+\section*{Material and methods}
 \subsection*{Litter decomposition experiment}
 A detailed description of our litter decomposition experiment was published in \cite{Wanek2010}. Briefly, beech litter was collected at four different sites in Austria (Achenkirch (AK), Klausenleopoldsdorf(KL), Ossiach(OS), and Schottenwald(SW); refered to as litter types) in October 2008. Litter was cut to pieces of approximately 0.25cm$^2$, homogenized, sterilized twice by gamma\footnote{greek gamma here} radiation (35 kGy, 7 days between irradiations) and inoculated (1.5\% w/w) with a mixture of litter and soil to assure that all litter types share the same initial microbial community. From each type, four samples of litter were taken after inoculation and stored dried at room temperature. Samples of 60g litter (fresh weight) were incubated at 15 \textdegree C and 60\% water content in mesocosms for a duration between 2 weeks to 15 month. For each litter type 5 replicas were removed and analyzed after 14, 97, 181 and 475 days.
 
@@ -372,23 +371,10 @@ All statistical analyses were performed with the software and statistical comput
 %\end{figure}
 
 
-\section*{Tables}
-%\begin{table}[!ht]
-%\caption{
-%\bf{Table title}}
-%\begin{tabular}{|c|c|c|}
-%table information
-%\end{tabular}
-%\begin{flushleft}Table caption
-%\end{flushleft}
-%\label{tab:label}
-% \end{table}
 
-\newpage
-\begin{figure*}[h!s]
-\vspace*{2mm}
+\begin{figure}[!ht]
 \begin{center}
-\setkeys{Gin}{width=\textwidth}
+\setkeys{Gin}{width=4in}
 <<mb, fig=T, echo=F, results=hide, width=12, height=9>>=
 par(mfrow=c(3,3), mar=c(2.5,4.1,2,0.1), tck=0.01)
 data <- alldata$C_mic
@@ -481,10 +467,21 @@ xlab="litter incubation (days)", main="N:P imbalance")
 axis(4, labels=F)
 axis(3, labels=F)
 @
+
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+
+
 \end{center}
-\caption{Microbial biomassm, microbial stoichiometry and resource:consumer stoichiometric imbalance. Error bars indicate standard errors (n=5).}
+\caption{
+{\bf Microbial biomassm, microbial stoichiometry and resource:consumer stoichiometric imbalance.} Error bars indicate standard errors (n=5).}
 \label{fig:mb}
-\end{figure*}
+\end{figure}
 
 
 <<init.stoech, echo=F, fig=F, results=hide>>=
@@ -1011,6 +1008,19 @@ colnames(stoech.init) <- c(typlev[1], "(SE)", typlev[2], "(SE)",typlev[3], "(SE)
 
 @
 
+\section*{Tables}
+%\begin{table}[!ht]
+%\caption{
+%\bf{Table title}}
+%\begin{tabular}{|c|c|c|}
+%table information
+%\end{tabular}
+%\begin{flushleft}Table caption
+%\end{flushleft}
+%\label{tab:label}
+% \end{table}
+
+
 \newpage
 <<init_table, results=tex, echo=F>>=
   print(
@@ -1180,6 +1190,47 @@ text(.97, 1.4, paste("r² =", round((cor$estimate)^2, digits=3), siglev(cor$p.va
 \label{fig:cutlig}
 \end{figure*}     
      
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<f2b, fig=T, echo=F, results=hide, width=7, height=10.5>>=
+
+
+@
+\end{center}
+\caption{captionf2b}
+\label{fig:f2b}
+\end{figure*}
+
+
+\begin{figure}[!ht]
+\begin{center}
+\setkeys{Gin}{width=4in}
+%\includegraphics[width=4in]{figure_name.2.eps}
+<<f2bnew, results=hide, echo=F, fig=T>>=
+  prot.means<-tapply(f2b$f2b_prot, list(alldata$days, alldata$Litter), mean)
+  plot(as.numeric(levels(as.factor(alldata$days))), prot.means[,1], xlim=c(0, 500), ylim=c(0, max(prot.means)), type="o", pch=pch[1], bg=colscale[1], xlab="Litter incubation (days)", ylab="Metaproteome Fungi:Bacteria ratio")
+  for (i in 2:length(levels(type)))
+    {
+  lines(as.numeric(levels(as.factor(alldata$days))), prot.means[,i])
+  points(as.numeric(levels(as.factor(alldata$days))), prot.means[,i], pch=pch[i], bg=colscale[i])
+  #, pch=pch[i]], bg=colscale[i])
+    }
+legend("topright", levels(type), pch=pch, pt.bg=colscale)
+@
+\end{center}
+\caption{
+{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+should be left justified, as specified by the options to the caption 
+package.
+}
+\label{Figure_label}
+\end{figure}
+
+
+
 
 \end{document}
 
