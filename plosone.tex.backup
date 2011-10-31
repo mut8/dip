@@ -1,0 +1,707 @@
+
+
+% Template for PLoS
+% Version 1.0 January 2009
+%
+% To compile to pdf, run:
+% latex plos.template
+% bibtex plos.template
+% latex plos.template
+% latex plos.template
+% dvipdf plos.template
+
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+\doublespacing
+
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+%load my own packages (not PLoS template)
+\usepackage{textcomp, fixltx2e}
+\usepackage{fullpage, lscape}
+\usepackage{lineno}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+%% END MACROS SECTION
+
+\usepackage{Sweave}
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{Controls of litter chemistry over early lignin decomposition in beech litter}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Lukas Kohl$^{1}$, % $^{3,\ast}$
+Wolfgang Wanek$^{1}$, 
+Katharina Keiblinger$^{2,3}$, 
+Sonja Leitner$^{1,3}$, 
+Maria Mooshammer$^{1}$, 
+Ieda H\"ammerle$^{1}$, 
+Lucia Fuchslueger$^{1}$, 
+J\"org Schnecker$^{1}$, 
+Sophie Zechmeister-Boltenstern$^{2,3}$, 
+Andreas Richter$^{1}$,
+\\
+\bf{1} Department of Chemical Ecology and Ecosystem Research, University of Vienna, Althanstra\ss e 14, A-1090 Vienna, Austria
+\\
+\bf{2} Federal Research and Training Centre for Forests, Natural Hazards and Landscape, Department of Soil Biology, Seckendorff-Gudent-Weg 8, A-1131 Vienna, Austria
+\\
+\bf{3} Current address: Institute for Soil Science, University of Natural Resources and Life Sciences, Peter Jordan-Stra\ss e 82, A-1190, Vienna, Austria
+\\
+$\ast$ E-mail: Corresponding author@institute.edu
+\end{flushleft}
+
+% Please keep the abstract between 250 and 300 words
+\section*{Abstract}
+
+Lignin is considered the most recalcitrant component of plant litter, which is accumulated during early decomposition and is degraded only in late decomposition stages when its concentration limits litter decomposition rates. A recent study based on the more specific methods challenges this concept, reporting highest lignin decomposition rates during early litter decomposition. Until now, no further studies exploring early lignin decomposition were published, and its potential controls remain unknown.
+
+We follow lignin and carbohydrate decomposition during early litter decay with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over microbial carbon substrate preferences. Beech litter with different C:N:P stoichiometry but identical initial microbial communities was incubated to identify the control of litter chemistry on the developing microbial community and its decomposition activity. 
+
+During the first 6 month fundamental differences in lignin degrading activities were found between sites. Lignin discrimination in litter decomposition ranges from insignificant amounts of lignin decomposed to lignin decomposition at the same rate bulk litter, leading to different niveaus of lignin accumulation. Between 6 and 15 month, no lignin discrimination was found, but different lignin contents aquired earlier reminded.
+
+[results]
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLoS ONE authors please skip this step. 
+% Author Summary not valid for PLoS ONE submissions.   
+%\section*{Author Summary}
+
+%not from the template: start line numbers here.
+\linenumbers
+
+\section*{Introduction}
+Plant litter biomass is dominated by macromolecular compounds. In deciduous foliar litter, lignin and carbohydrate polymers together make up 40-60\% of litter dry mass\cite{Berg2008}, while leachable substances ("DOM") account for only 1.5-6\%\cite{Don2005}. 
+
+Litter decomposition models follow the concept that organic compounds in litter form up to three independent pools of increasing recalcitrance (i.e. soluble compounds,  cellulose and hemi-celluloses, and lignin). During decomposition, soluble compounds are most accessible to microbes and are consumed first, followed by carbohydrates (i.e. cellulose). Lignin can be decomposed only by specialized fungi and is not degraded until accumulated to a certain, critical level when it inhibits the degradation of less recalcitrant compounds\cite{Berg1980, Couteaux1995, Moorhead2006, Adair2008}. The pools are usually quantified by gravimatric determination of cellulose, hemi-celluloses and lignin after sequential extractions with selective solvents. These methods were repeatedly criticized as unspecific for lignin determination \cite{Hatfield2005}. When analyzed with alternative methods (NMR, CuO-oxidation, Pyrolysis-GC/MS), extracted lignin fractions contain many other than the proclaimed substances (e.g.\cite{Preston1997}). \footnote{[lit CuO], lit[Pyr]}
+
+Recent studies based on more specific methods to determine litter lignin content question the assumed intrinsic recalcitrance of lignin. Experiments using isotope labeling used to calculate mean residence times for lignin in soils and litter/soil mixtures in both laboratory and outdoor incubation reported lignin residence times no longer than that of other carbon compounds or bulk soil organic matter \cite{Thevenot2010a, Bol2009}. It was also shown that several bacterial taxa are able to degrade lignin\footnote{ref.}.
+
+For leaf litter, lignin depletion during early decomposition and lignin decomposition rates decreasing with litter age were recently reported\cite{Klotzbucher2011}. Based on this results, the authors proposed a new concept for lignin degradation in which fastest lignin degradation occurs during early litter decomposition when labile carbon availability is high. Lignin decomposition during late decomposition is limited by (dissolved organic) carbon availability. However, they do  do not elaborate stoichiometric constraints of lignin decomposition\footnote{ev. nutrient contents instead of stoichiometry?}. During radical polymerization, significant amounts of cellulose and protein are incorporated into lignin structures\cite{Achyuthan2010}. In isolated lignin fractions from fresh beech litter, N contents twice as high as in bulk litter were found\cite{Dyckmans2002}. It was therefore argued that, while yielding little C and energy, lignin decomposition makes occluded cell wall protein accessible to decomposers, and lignin decompostion is therefore not driven by C but by N demand ("Nitrogen mining theory")\cite{Craine2007}. 
+
+Nitrogen fertilization experiments with litter and soils indicated that litter N contents are important controls of lignin degradation: N addition increased mass loss rates in low-lignin litter while slowing down decomposition in lignin-rich litter \cite{Knorr2005}. High nitrogen levels were reported to inhibit lignolytic enzymes in forest soils\cite{Sinsabaugh2010}. Moreover, cellulose triggered a stronger priming effect in fertilized than in unfertilized soils indicating that the mineralization of recalcitrant C is controlled by an interaction of labile C and N availability \cite{Fontaine2011}.
+
+Addition of N has very different effects on litter decomposition than varying N levels in litter. This is due to the fact that leaf litter N is stored in protein and lignin structures and not directly available to microorganisms, while fertilizer N is added in the form of readily available inorganic N (NH$_4^+$, NO$_3^-$). N-fertilization experiments can simulate increased N-deposition rates but not the effect of litter N on decomposition processes\cite{Talbot2011}.
+
+In this study we analyze samples from climate-chamber incubated beech litter varying in N and P content with pyrolysis-GC/MS (pyr-GC/MS). The experiment was designed to study the effect of resource stoichiometry on microbial decomposition, exclude decomposing fauna and keep climatic conditions constant.
+
+The experiment was designed to address the following questions:
+
+(1) Is lignin decomposition delayed until late decomposition stages or are significant amounts of lignin degraded during early litter decomposition?
+
+(2) Are lignin and carbohydrate degradation rates controlled\footnote{correlated?} by litter N, P, and soluble C content?
+
+(3) Do high lignin degradation rates correspond to higher fungal activity?
+
+
+% Results and Discussion can be combined.
+\section*{Results}
+
+\subsection*{Mass loss, respiration and extractable organic carbon}
+
+Litter mass loss was not significant after 2 weeks and 3 month, significant for 2 litter types after 6 month. After 15 month, litter mass loss was significant for all litter types, and strongly correlated to litter N content (R=0.794, p=***). Detailed results were reported by \cite{Mooshammer2011}. After 15 month, between 5 and 12\% of the initial dry mass was lost. This is less than reported in litter decomposition studies on other species, but in a similar range as recently reported for beech litter from an in-situ litterbag-study \cite{Kalbitz2006} .
+
+Highest respiration rates were measured after 14 days incubation (150-350 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C), dropped to rates between between 75 and 100 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C after 97 days. After 181 and 375 days, respiration rates for AK and OS further decreased, while SW and KL show a second maximal respiration after 181 days. %Respiration was correlated to litter N content after 2 weeks, 6 and 15 month(R\textgreater 0.70 in all cases, all p \textless  0.001), but not after 3 month. All harvests combined were weakly correlated to litter N content (R=0.416, p \textless  0.001).
+%Accumulated respiration was correlated to litter mass loss for all harvest with significant mass loss when means per litter type and harvest were compared (n=6).
+
+Soluble organic carbon content decreased between the first three harvests (14 to 181 days), to strongly increase after 475 days (0.1 to 0.7 mg C g $^{-1}$ d.w. were found after 14, 97 and 181 days, and increased to amounts between 1.5 and 4 mg/g after 375 days. After 14 and 97 days, the highest C content was found in SW litter followed by AK (see fig. \ref{fig:doc}. DOC content was loosely correlated to litter N content after 14 (R=0.69, p\textless  0.001) and 97 days (R = 0.65, p =\textless  0.01), they were strictly correlated after 181 days (R = 0.85, p=\textless  0.001) and 375 days (R=0.90, p=\textless  0.001).
+
+%\begin{figure*}[t]
+%\vspace*{2mm}
+%\begin{center}
+%\setkeys{Gin}{width=0.5\textwidth}
+%<<doc, echo=F, results=hide, fig=T, height=7, width=7>>=
+%timeseries(alldata$DOC/1000, alldata$days, alldata$Litter, pch=pch, pt.bg=colscale,  xlab="Incubation (days)", ylab="mg C g-1 d.w.", main="Extractable carbon", lwd=2)
+%legend("bottomright", pt.bg=colscale, pch=pch, typlev, lty=1, lwd=2)
+%@
+%\end{center}
+%\caption{Extractable organic carbon. Error bars indicate standard errors (n=5).}
+%\label{fig:doc}
+%\end{figure*}
+
+
+\subsection*{Microbial biomass abundance and stoichiometry}
+
+Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 to 3.5 mg P per g litter (d.w.). In KL and OS biomass buildup reaches a plateau after 3 month, AK and SW show further growth reaching a maximum of microbial C and N contents after 6 month (AK also for P). Microbial C:N ratios measured range between 1:6 and 1:18, C:P ratios between 1:8 abd 1:35, and N:P ratios between 1:0.5 and 1:3.5. Microbial C:N ratios (Fig. \ref{fig:mb}).
+
+
+Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry) \cite{Mooshammer2011}, but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, all p \textless 0.002, H\textsubscript{C:N}=2.01, H\textsubscript{C:P}=1.68, H\textsubscript{N:P}=2.29). Microbial C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, with the highest variance between litter from different sites after 3 month incubation (Fig. \ref{fig:mb}).
+
+\subsubsection*{Potential enzyme activities}
+Absolute potential enzyme activities were correlated to litter N, respiration and other other decomposition processes (all R \textgreater  0.8, p \textless 0.001). For all enzymes and at all time points, SW showed the highest and AK the lowest activity. Cellulase was below detecten limit after 14 days, oxidatitve enzymes after 15 month. Cellulases activity is highest after 3 month and decreases between 97 and 181 days. Peroxidase and Peroxidase activities reach their maximum after 181 (fig. \ref{fig:enz}). After between 6 and 15 month, cellulase activity strongly increased. After 475 days, the activity of oxidative enzymes was below the detection limit [data not shown]
+
+The ratio between the potential activities of cellulases and oxidative enzymes was lowest for AK at all time points. Microbial communities in AK litter invest more energy and nitrogen into degrading lignin and less into degrading carbohydrates than other litter types. (fig. \ref{fig:enz})
+
+\subsection*{Pyrolysis-GC/MS and Lignin content}
+%Lignin contents determined by ADF extraction show initial lignin contents between 15 and 21 \% d.w.. After 3 month, lignin contents rise to levels above 30\% d.w. in two sites, an increase that can not be explained by passive accumulation \cite{Leitner2011}.
+
+Litter pyrolysis products and different sites are reported in detail elsewhere (Kohl, in preparation). We found only minor changes during pyrograms during decomposition, differences between sites were were small but well preserved during decomposition. The high similarity allowed tracind small changes in lignin and carbohydrate abundance during decomposition. % A PCA performed on relative peak areas of 128 peaks shows that samples cluster according to litter types, with no constistent seperation between different harvests. \ref{fig:pca1}. %118 (94.5\%) [!check nr!] of the peaks integrated show significant differences in relative peak areas between different litter types before incubation.
+
+When measured by pyr-GC/MS, lignin derrived compounds make up between 29 and 31 \%TIC in the initial litter, with an increase of up to 3 \%TIC over the first 3 month. Carbohydrate derrived pyrolysis products account for 26 to 29 \%TIC in initial litter and decrease by up to 2.6 \% during litter decomposition. Carbohydrate depletion and lignin accumulation were coorelated (R = 0.47, p \textless 0.01) in all samples measured. The initial (pyrolysis-) LCI index (applied to excludes influences of changes in the abundance of other pyrolysis products) ranges between 0.517 and 0.533. During decomposition, it increases by up to 8.7\% of the initial value, with SW showing the highest and KL the lowest increase. This increase almost completely occurs over the first 6 month, with insignificant changes in both directions between 6 and 15 month incubation. Figure \ref{fig:timeseries}\footnote{check fig.} shows changes in the relative abundance of in pyrolysis products versus incubation time and accumulated respiration. Lignin to carbohydrate ratios in a similar range (increasing from 0.565 to 0.588 over 24 month) were reported for in situ oak litter decomposition by \cite{Snajdr2011} using thermochemolysis. \footnote{I converted the L:C ratio stated by Snajdr to L/(L+C). This demonstrates a surprising coherence between quite different analytical methods, different peaks analyzed.}
+
+ % Some details are worth mentioning here: Within the carbohydrates group, AK and OS have significantly higher peak areas for most (10 of 15) furan-type carbohydrate pyrolysis products, SW and KL are significantly higher in 2, rest show no clear pattern. Cyclopentenone-type carbohydrate pyrolysis products do not show this pattern.
+
+ % Among the lignin derived pyrolysis products, while most other peaks are tightly correlated to each other, the ratio between methylguaiacol and guaiacol shows strong differences between AK and OS (0.7:1) vs. KL and SW (0.45:1). Similar differences can be found in the Methylsyringol:syringol ratio. These differences remain constant during litter incubation. Unlike other studies [lit.], we do not find a shift in the guaiacol/syringol ratio during decomposition.
+
+%To check wether the sum of lignin and carbohydrate peaks represents trends of the majority of derrived from these substances, for each peak in each sample, we substracted the mean relative peak area of the respective peak in initial litter of the same litter type and applied a principal component analysis to the results. (fig. \ref{fig:pca2}). The first two principal components represent 45.2\% of the total variance. Initial litter samples cluster cluster in the bottom right corner of the graph with positive loadings on PCA 1 and negative loadings on PCA2. Decomposed samples are shifted versus fresh litter along different axis: While decomposed SW samples are in the bottom left quadrant of the samples, shifted along PCA 1 toward more negative values and indifferent along PCA2, decomposed AK samples are shifted along PCA2 towards more positive values and do not shift along PCA1. KL and OS show intermediate decomposition trends. Their decomposed samples are placed in the top left corner, combining both decomposition trends.
+%
+%Pyrolysis products that are positioned in the bottom-right quadrant are depleted in all litter types, while products in the top left quadrant are accumulated in all litter types. Substances in the bottom left quadrant are depleted in AK and accumulated in SW, substances in the top-right quadrant show the opposite trend.
+%
+%21 of 28 lignin markers cluster with the most negative loadings on both PCA1 and PCA2. The trends described herein therefore are based on on a consistent set of independently quantified lignin  markers (fig.\ref{fig:pca2}. Carbohydrate products show diverging trends, with both accumulated and depleted compounds, representing the polymorphy of this compounds class in plant litter.
+%
+%\subsubsection*{Amounts of Lignin and Carbohydrates degraded}
+%
+During the first 6 month of litter decomposition, between one and 6\% of the initial lignin pool and between 4 and 17\% of the initial carbohydrate pool were degraded. Lignin decomposition was highest in AK and KL litter, while KL and SW decomposed the highest part of their carbohydrate pools. Lignin discimination (compared to carbohydrates) was highest in SW and lowest in AK litter. In AK litter, lignin molecules were 50\% more likely to be decomposed than carbohydrates, while in SW litter carbohydrates were 10 times more likely to be decomposed (fig. \ref{fig:degr}).
+
+Between 6 and 15 month, no further discrimination occurs, lignin and carbohydrate are degraded at the same rates and their content in pyrograms remains constant (fig. \ref{fig:chemdif}).
+
+%\subsubsection*{Other phenolic and lipophilic compounds}
+
+%We quantified a number of other recalcitrant or lipophilic substances (fig. \ref{fig:notlignin}). Phenoles (most dominant phenol and 2/3-methylphenol) account for up to 9-15 \% TIC, increasing in their abundance over the first 3 month (stronger in AK and KL litter than in OS and SW). While lignin does produce phenole during pyrolysis, so do carbohydrates and protein. The increase during the first
+%Alkanes and alkenes show a drastic increase (+80\%) during the first three month. This increase can not be explained by passive accumulation, but corresponds to the build-up of microbial biomass during early litter decomposition. It also corresponds to the increase of extracted lignin. It could also be explained by the demethoxylation of lignin compounds, but no sufficient decrease in lignin pyrolysis product abundance was not found.
+%N-alkanes and n-alkanes also strongly increase in their abundance over the first 3 month. Compound identified as phytol and three fatty acids (14:0, 16:0 and 18:9) are depleted during litter decomposition and therefore decomposed faster than average litter biomass (fig \ref{fig:waxes}), and are decomposed faster in N-poor than in N-rich litter. \footnote{to include this data or not to include it...}
+
+\subsection*{Fungi:Bacteria ratio}
+
+Metaproteome fungi:bateria ratios were highest (1:5 - 1:12) after 14 days and decrease during decomposistion (1:1.7 - 1:3 after 475 days). Differences between litter from different sites decrease during decomposition. Fungi are most dominant in SW, bacteria in AK. The fungi to bacteria ratio is negatively correlated to lignin decompostion during the first 6 month \ref{fig:f2b}.
+
+\subsection*{Correlations between lignin and carbohydrate decomposition and litter chemistry, microbial community and decomposition processes}
+
+Table \ref{corrtable} provides linear regressions found between lignin and carbohydrate degradation, litter chemistry, microbial biomass and decomposition processes after 6 month incubation including data presented by \cite{Mooshammer2011} and \cite{Leitner2011}. We found  The lignin to cellulose degradation ratio was correlated to phenoloxidase to cellulase and peroxidase to cellulase enzymatic activity ratios (R=0.729 and R=0.863, p=?). Lignin accumulation and carbohydrate depletion were found to increase with enzymatic activities measured (including lignolytic enzymes) N, and P gross depolymerization rates but not with glucan depolymerization.
+
+While carbohydrate degradation and depletion was correlated litter N content, C:N ratio and C:N imbalances. lignin degradation and accumulation were correlated to litter P, litter C:P and N:P ratios, C:P and N:P imbalances and extractable organic C and PO$_4$. High lignin accumulation and carbohydrate depletion were also connected to wide C:N, C:P and N:P ratios.
+
+\section*{Discussion}
+
+Our experimental approach allowed us to single out the effects of litter quality on the microbial decomposer community as well as decomposition processes, while excluding effects of fauna, climate and the initial microbial community. By exploiting intra-specific differences in beech litter stoichiometry, we were able to minimize differences in the macromolecular composition of initial litter (lignin and cellulose content), while exploring the effect of litter nutrient contents on lignin and carbohydrate decomposition. Therefore, we can attribute different rates of carbohydrate and lignin decomposition to the intrinsic qualities of different litter types.
+
+Contradicting the traditional concepts of litter decomposition, our results demonstrate that relevant amounts of lignin are degraded during the the first 6 months of incubation. Lignin decomposition rates during this early stage depended on litter quality (N & P) and ranged from non-significant amounts decomposed to degradation rates similar to bulk carbon mineralization rates (i.e. no discrimination against lignin). We can therefore confirm that early lignin decomposition rates are by far underestimated, as recently proposed Klotzb\"{u}cher et. al.\cite{Klotzbucher2011}, based on a complementary analytic approach. Unlike them, we found no decreases in lignin contents and constant or increasing lignin degradation rates during early decomposition. Additionally, we found a change in the controls of lignin discrimination after this initial period. While the preference for carbohydrate to lignin decomposition was controlled by litter chemistry over the first 6 month, all components of litter were degraded at similar rates thereafter.
+
+The differences we found in early lignin accumulation do not result from high lignin contents, as is suggested by traditional decomposition models. Differences in initial lignin contents were marginal (below 10\%), and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. Also, these differences are not caused by a lack of Mn or Fe, as was suggested for late lignin decomposition\cite{Berg1980}. While Mn and Fe contents strongly varied between litter collected at different sites, but both Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab.\ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition. Also, soluble carbon was not limiting lignin decomposition since we found it's highest amounts in litter from the two different sites who show the highest and the lowest lignin degradation.
+
+We found strong evidences that C:N:P stoichiometry exerts a key control over the extent of lignin decomposition during initial decomposition. Carbohydrate decomposition was correlated positively to litter N contents and negatively to litter C:N ratios, as were a majority of decomposition processes (mass loss, respiration, potential extracellular enzymatic activities). In contrast, relative decomposition rates of Lignin were positively correlated with litter C:P ratios and negatively with a number of P pools analyzed. Correlation was highest when lignin decomposition was compared to resource/consumer C:P ratios.
+
+Cultivation studies showed that lignin decomposition in fungi is triggered by nitrogen starvation, and that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the use of another carbon sources\footnote{citation}. Lignin decomposition was found in wild-type \emph{A. thaliana} litter , but not in a low-cellulose mutant a during 12 month incubation in a boreal forest \cite{Talbot2011}. In the N- and P- co-limited situation during early litter decomposition, in which lignin is degraded to access additional nutrients or to use a C surplus by decomposing an less C efficient but nutrient enriched substrate. However, a stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools we found, was not reported yet. 
+
+For the decomposition of litter lignin and carbohydrates, microbial decomposers rely on the production and excretion of hydrolytic and oxidative extracellular enzymes. While the absolute amounts, in which these enzymes where produced, was controlled by N availability, the ratio in which they were produced corresponded to differences in cellulose and lignin degradation (fig.\ref{fig:enz}). While the mode of this regulation is unknown, we find a corresponding shift in the microbial community composition. Fungi colonize litter faster than bacteria and therefore dominate early litter decomposition, but the bacteria/fungi ratio decrease over the entire incubation period. Talbot et. al. \cite{Talbot2011} suggested that lignin decomposition might be interpreted a k-strategy used by microbes to be able to colonize more lignin-rich and nutrient-poor substrates, while r-strategist grow fast based on labile carbon. Low nutrient availability might favor this strategy, as the high P- demands of a fast growing microbial community can not be met. Indeed we found that lignin degradation is higher in litter, where the C:P and N:P are highest, i.e. high P demand limits growth.\footnote{naja..}
+
+While we found different levels of lignin degradation during the first 6 month, lignin contents remained constant in all litter types between 6 and 15 month. This indicates that lignin was decomposed at the same rate as other litter compounds, but differences in lignin contents acquired during the first 6 month remain in place. The controls which lead to differences in the extend of lignin discrimination over the first six month are no longer predominant between 6 and 15 month. Lignin loss in this decomposition stage is positively correlated to litter N content, as is litter mass loss and respiration.
+
+This change in decomposition dynamics corresponds to change in soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon is strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. \cite{Klotzbucher2011} suggests a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. The authors interprets this correlation as carbon limited respiration, and suggest that lignin decomposition is inhibited under such a limitation. We can confirm the correlation between extractable carbon and respiration after 181 days, but not the inhibition of lignin decomposition. Also, we found that both respiration and the production of soluble carbon are controled by litter N content. The process of degrading macromolecular compounds into soluble molecules is conducted by extracellular enzymes and is therefore N intensive that the mineralization of labile carbon, de-polymerization is the point in the decomposition process where a N limitation would be most likely to become effective. 
+
+Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
+
+\section*{Conclusions}
+
+Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month. The extend to which lignin is decomposed was controlled by litter chemistry over the first 6 month. However, we did not find lignin decomposition rates controlled by litter quality between 6 and 15 month. Also, soluble carbon contents were not restrictive to lignin decomposition.
+
+While carbohydrate decomposition was stimulated by high N contents, early lignin decomposition rates were highly correlated C:P ratio and resource:consumer imbalances. High lignin contents accumulated during this stages remained in place during later decomposition. Litter with high lignin decomposition rates had higher bacterial  abundance. 
+
+For further studies, this raises the question, to which extend late decomposition is influenced by this early, stoichiometry-controlled accumulation of recalcitrant compounds. 
+
+% You may title this section "Methods" or "Models". 
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis" 
+\section*{Material and methods}
+\subsection*{Litter decomposition experiment}
+A detailed description of our litter decomposition experiment was published in \cite{Wanek2010}. Briefly, beech litter was collected at four different sites in Austria (Achenkirch (AK), Klausenleopoldsdorf(KL), Ossiach(OS), and Schottenwald(SW); refered to as litter types) in October 2008. Litter was cut to pieces of approximately 0.25cm$^2$, homogenized, sterilized twice by gamma\footnote{greek gamma here} radiation (35 kGy, 7 days between irradiations) and inoculated (1.5\% w/w) with a mixture of litter and soil to assure that all litter types share the same initial microbial community. From each type, four samples of litter were taken after inoculation and stored dried at room temperature. Samples of 60g litter (fresh weight) were incubated at 15 \textdegree C and 60\% water content in mesocosms for a duration between 2 weeks to 15 month. For each litter type 5 replicas were removed and analyzed after 14, 97, 181 and 475 days.
+
+Litter chemistry as analyzed 14 days after incubation is listed in table \ref{initstoech}. C:N ratios between 1:41 and 1:58 and C:P ratios between 1:700 and 1:1300 were found, N:P ratios ranged between 1:15 and 1:30. No significant changes occurred during litter incubation except a slight decrease of the C:N ratio (1:41.8 to 1:37.4) found in the most active litter type (SW) after 15 month. Fe content were more than twice as high for OS (approx. 450 ppm) than for other litter types (approx. 200 ppm). Litter Mn also was highly variable between litter types, ranging between 170 and 2130 ppm. Changes of micro-nutrient concentrations during litter incubation were significant, but in all cases \textless 15\% of the initial concentration.
+
+\subsection*{Bulk litter, extractable, and microbial biomass nutrient content}
+To calculate litter mass loss, litter dry mass content was measurement in 5 g litter (fresh weight) after 48 h at 80 \textdegree C. Dried litter was ball-milled for further chemical analysis. Litter C and N content were determined using an elemental analyzer (Leco CN2000, Leco Corp., St. Joseph, MI, USA). Litter phosphorus content was measured with ICP-AES (Vista-Pro, Varian, Darmstadt, Germany) after acid digestion \cite{Henschler1988}).
+
+To determine soluble C, N, and P contents, 1.8g litter (fresh weight) were extracted with 50 ml 0.5M K\textsubscript{2}SO\textsubscript{4}. Samples were shaken on a reciprocal shaker with the extractant for 30 minutes, filtered with ash-free filters and frozen at -20 \textdegree C until analysis. To quantify microbial biomass C, N and P pools, sample were extracted under the same conditions after chloroform fumigation. Microbial biomass was determined as the difference between fumigated and non-fumigated extractions \cite{Schinner1996}. C and N concentration in extracts were determined with a TOC/TN analyzer (TOC-VCPH and TNM, Schimadzu), Phosphorous was determined photometrically.\footnote{lit!!}
+
+Substrate to consumer stoichiometric imbalances \emph{X:Y$_{inbal}$} were calculated as
+\begin{equation}
+ X:Y_{inbal}=\frac{X:Y_{litter}}{X:Y_{microbial}} \label{eq:resp.acc}
+\end{equation}
+where \emph{X} and \emph{Y} stand for one of the elements C, N, or P.
+
+\subsection*{Microbial Respiration}
+Respiration was monitored weekly during the entire incubation in mesocosms removed after 6 month and on the last incubation day for all mesocosms using an infrared gas analyzer (IRGA, EGM4 with SRC1, PPSystems, USA). CO2 concentration was measured over 70 seconds and increase per second was calculated based on initial dry mass. Measurements of ambient air were performed before and after each measurement to assess possible leaks or base-line drifts IRGA. %Measurements were conducted using the following settings: volume of the chamber 1551 cm³, area of the chamber 115 cm², linear measurement, at 15\textdegree.
+Accumulated respiration after 6 month was calculated assuming linear transition between measurements, accumulated respiration after 15 month was estimated from respiration rates after 181 and 475 days.
+%as stated in equation \ref{eq:resp.acc}, where \emph{Resp\textsubscript{acc}} stands for the accumulated respiration, \emph{Resp\textsubscript{n}} and \emph{t\textsubscript{n}} for the actual respiration at and the decomposition time until time point \emph{n}.
+
+% \begin{equation}
+% Resp_{acc}(t_{n})=\sum_{i=0}^n (Resp(t_{i})+Resp(t_{i+1}))*(t_{i+1}-t_{i})/2
+% \label{eq:resp.acc}
+% \end{equation}
+
+
+\subsection*{Enzyme activities}
+
+Measurements of potential exo-enzyme activities for cellulases, peroxidases and phenoloxidase were described by \cite{Leitner2011}. Activities were determined with a series of micro-plate assays based on the hydrolysis of 4-methyl-$\beta$-D-cellobioside (cellulase) and L-3,4-di\-hydroxy\-phenyl\-alanin (oxidative enzymes). Products of enzyme catalyzed reactions were detected photometrically (oxidative enzymes) or flourometrically (cellulase) \cite{Marx2001, Sinsabaugh1999, Kaiser2010b}.
+
+\subsection{Metaproteome analysis}
+
+[..]
+
+\subsection*{Pyrolysis-GC/MS}
+Pyrolysis-GC/MS was performed with a Pyroprobe 5250 pyrolysis system (CDS Analytical) coupled to a Thermo Trace gas chromatograph and a DSQ II MS detector (both Thermo Scientific) equipped with a carbowax colomn (Supelcowax 10, Sigma-Aldrich).
+
+Litter analyzed was sampled immediately after inoculation and after 3, 6, and 15 month incubation. 2-300 \textmu g dried and finely ball-milled litter were heated to 600\textdegree C for 10 seconds in helium atmosphere. GC oven temperature was constant at 50 \textdegree C for 2 minutes, followed by an increase of 7\textdegree C/min to a final temperature of 260 \textdegree C, which was held for 15 minutes. The MS detector was set for electron ionization at 70 EV cycling between m/z 20 and 300.\footnote{maybe cite other paper for method?}
+
+Peaks were assignment was based on NiSt 05 MS library after comparison with reference material measured. 128 peaks were identified and selected for integration due to their hight abundance or diagnostic value, including 28 lignin and 45 carbohydrate derrived substances. For each peak between one and four dominant mass fragments selected for high abundance and specificity were integrated and converted to TIC peak areas by a multiplication with a MS response coefficient \cite{Schellekens2009, Kuder1998}. For principal component analysis, unconverted areas were used. Peak areas are stated as \% of the sum of all integrated peaks of a sample.
+
+ % TIC peak areas are (1) less specific as areas of specific MS fragments and (2) integration was not possible for all peaks a/o all samples. Therefore a MS response factor Rf was calculated for each detected substance:
+ %\begin{equation}
+ %$Rf = median \left(\frac{TIC peak area}{specific MS fragment peak area}\right)$
+ %\end{equation}
+
+ %Peak areas were multiplied by Rf before addition to calculate percentages of TIC area without loosing the specifity of integrating single m/z traces.
+
+ % However, during interpretation, we found little difference between direct sums of the integrated fragments and sums of corrected areas, indicating little sensitivity for exact
+
+Relative peak areas are different from weight\%, but allow tracing of accumulation/depletion of substance classes during decomposition \cite{Schellekens2009}.
+
+We use the terms "accumulation" and depletion to refer to changes in litter composition and "degradation" to refer to the amount of lignin and carbohydrates decomposed.
+
+A lignin to carbohydrates index was calculated to measure the ratio between these two substance classes without influences of changes in the abundance of other compounds
+\begin{equation}
+ LCI=\frac{Lignin}{Lignin + Carbohydrates}
+\end{equation}
+
+Accounting for carbon loss, we estimate \% lignin and cellulose degraded during decomposition according to equation \ref{eq:closscorr}, where \emph{$TIC_{init}$} and \emph{$TIC_{act}$} stand for initial and actual \%TIC area of lignin or cellulose pyrolysis products, \emph{$C_{init}$} for the initial amount of C and \emph{$R_{acc}$} for the accumulated CO$_2$-C respired by a mesocosm.
+\begin{equation}
+ \%_{loss} = 100\cdot\frac{TIC_{init} -TIC_{act}}{TIC_{init}}\cdot\frac{\left ( 1-R_{acc}\right ) }{C_{init}}
+ \label{eq:closscorr}
+\end{equation}
+
+We provide \% of initial lignin and carbohydrate pools decomposed, \% decomposed per \% litter carbon mineralized and the ratio between the twodecomposition rates.
+
+\subsection*{Statistical analysis}
+All statistical analyses were performed with the software and statistical computing environment R using the package ``vegan'' \cite{Oksanen2011}. If not mentioned otherwise, results were considered significant when p \textless 0.05. Due to the frequent of variance inhomogenities Welch anova and paired Welch's t-tests with Bonferroni corrected p limits were used. Principal component analysis was performed using vegan function ``rda'' scaling variables. All correlations refer to Pearson correlations. We calculated correlations between depletion and degradation rates found in this study with litter chemistry parametres and process data reported by \cite{Mooshammer2011} and \cite{Leitner2011}.
+
+% Do NOT remove this, even if you are not including acknowledgments
+\section*{Acknowledgments}
+
+
+%\section*{References}
+% The bibtex filename
+\bibliography{library}
+
+\section*{Figure Legends}
+%\begin{figure}[!ht]
+%\begin{center}
+%%\includegraphics[width=4in]{figure_name.2.eps}
+%\end{center}
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+\setkeys{Gin}{width=4in}
+\includegraphics{plosone-mb}
+
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+
+
+\end{center}
+\caption{
+{\bf Microbial biomassm, microbial stoichiometry and resource:consumer stoichiometric imbalance.} Error bars indicate standard errors (n=5).}
+\label{fig:mb}
+\end{figure}
+
+
+
+
+
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-enz}
+\end{center}
+\caption{Potential eco-enzyme activities}
+\label{fig:enz}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\includegraphics{plosone-lci}
+\end{center}
+\caption{Develoment of the LCI (lignin/(lignin+carbohydrates)). Errorbars indicate standard errors (n=4-5). The dashed line indicates a constant ratio between lignin and carbohydrates (i.e. no preferential decomposition of carbohydrates. )}
+\label{fig:lci}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-degrdiff}
+\end{center}
+\caption{Carbon loss corrected amounts of lignin and carbohydrates degraded. Carbon loss was calculated based on accumulated respiration. Error bars indicate standard errors (n=4-5). The dashed line marks no discrination between lignin, carbohydrates and bulk carbon loss.}
+\label{fig:degr}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-graphcorr}
+\end{center}
+\caption{Correlations between Lignin accumulation during the first 6 month of litter incubation and stoichiometric resource:consumer imbalances}
+\label{fig:cor1}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-respcorr}
+\end{center}
+\caption{caption}
+\label{fig:repcor}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-enzcorr}
+\end{center}
+\caption{caption}
+\label{fig:enzcor}
+\end{figure*}
+
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-graphcorr2}
+\end{center}
+\caption{Correlations between Lignin and Carbohydrates accumulation and decomposition during the first 6 month of litter incubation and litter C:N:P ratios}
+\label{fig:cor2}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+\includegraphics{plosone-graphcorr3}
+\end{center}
+\caption{Correlations between Lignin and Carbohydrates accumulation and decomposition during the first 6 month of litter incubation and stoichiometric resource:consumer imbalances}
+\label{fig:cor3}
+\end{figure*}
+
+
+\section*{Tables}
+%\begin{table}[!ht]
+%\caption{
+%\bf{Table title}}
+%\begin{tabular}{|c|c|c|}
+%table information
+%\end{tabular}
+%\begin{flushleft}Table caption
+%\end{flushleft}
+%\label{tab:label}
+% \end{table}
+
+
+\newpage
+% latex table generated in R 2.12.1 by xtable 1.6-0 package
+% Sun Oct 30 21:34:24 2011
+\begin{table}[h!]
+\begin{center}
+\caption{Litter stoichiometry and mineral elemental contents measured after 14 days incubation. Standard errors are stated in brackets (n=5). C extr stands for extractable carbon.}
+\label{initstoech}
+{\tiny
+\begin{tabular}{cccccccccc}
+  \hline
+ & AK & (SE) & KL & (SE) & OS & (SE) & SW & (SE) & p value \\ 
+  \hline
+C (\% d.w.) & 50.86 & (0.39) & 49.41 & (0.53) & 48.15 & (0.39) & 48.90 & (0.34) & 0.002 \\ 
+  C extr (mg g-1) & 0.46 & (0.03) & 0.14 & (0.01) & 0.21 & (0.01) & 0.64 & (0.03) & 0.002 \\ 
+  N (\% d.w.) & 0.878 &  (0.012) & 0.938 &  (0.012) & 0.806 &  (0.013) & 1.172 &  (0.016) & $<$0.001 \\ 
+  P (\% d.w.) & 0.040 & (0.000) & 0.030 & (0.000) & 0.052 & (0.002) & 0.070 & (0.000) & $<$0.001 \\ 
+  C:N (w/w) & 57.86 &  (0.57) & 52.60 &  (0.49) & 59.97 &  (0.72) & 41.78 &  (0.76) & $<$0.001 \\ 
+  C:P (w/w) & 1282 & (21) & 1548 & (25) & 905 & (15) & 699 & (9) & $<$0.001 \\ 
+  N:P (w/w) & 22.17 & (0.47) & 29.45 & (0.60) & 15.10 & (0.29) & 16.75 & (0.39) & $<$0.001 \\ 
+  K (mg g-1) & 0.26 & (0.00) & 0.54 & (0.00) & 0.21 & (0.00) & 0.55 & (0.00) & $<$0.001 \\ 
+  Ca (mg g-1) & 1.33 & (0.01) & 1.26 & (0.01) & 1.63 & (0.01) & 1.23 & (0.01) & $<$0.001 \\ 
+  Mg (mg g-1) & 0.27 &  (0.00) & 0.14 &  (0.00) & 0.20 &  (0.00) & 0.15 &  (0.00) & $<$0.001 \\ 
+  Fe (ppm) & 210 & (2) & 208 & (4) & 453 & (12) & 192 & (4) & $<$0.001 \\ 
+  Mn (ppm) & 172 &  (2) & 1430 &  (10) & 776 &  (9) & 2137 &  (51) & $<$0.001 \\ 
+  Zn (ppm) & 30.8 & (0.4) & 33.0 & (0.3) & 36.0 & (1.0) & 42.4 & (0.7) & $<$0.001 \\ 
+   \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\newpage
+% latex table generated in R 2.12.1 by xtable 1.6-0 package
+% Sun Oct 30 21:34:24 2011
+\begin{table}[h!]
+\begin{center}
+\caption{Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 0 and 181 days, process rates were measured after 181 days.}
+\label{corrtable}
+{\tiny
+\begin{tabular}{ccccccccccc}
+  \hline
+ & L acc & Ch acc & LCI diff & L dec & C dec & L resp & C resp & L/C dec & Per/Cell & Phen/Cell \\ 
+  \hline
+Massloss & 0.291 & -0.15 & 0.245 & -0.328 & 0.106 & -0.201 & 0.125 & -0.081 & 0.048 & 0.0534 \\ 
+  Actual respiration & 0.333 & \textbf{ -0.723 } & \textbf{ 0.606 } & -0.0822 & \textbf{ 0.771 } & -0.195 & \textbf{ 0.594 } & -0.368 & -0.268 & -0.362 \\ 
+  Accumulated Respiration & \textbf{ 0.494 } & \textbf{ -0.704 } & \textbf{ 0.688 } & -0.132 & \textbf{ 0.856 } & -0.332 & \textbf{ 0.557 } & \textbf{ -0.525 } & \textbf{ -0.506 } & \textbf{ -0.534 } \\ 
+  Cellulase activity & \textbf{ 0.657 } & \textbf{ -0.76 } & \textbf{ 0.803 } & -0.431 & \textbf{ 0.801 } & \textbf{ -0.497 } & \textbf{ 0.664 } & \textbf{ -0.589 } & -0.436 & \textbf{ -0.539 } \\ 
+  Protease activity & 0.186 & -0.296 & 0.264 & -0.132 & 0.274 & -0.157 & 0.301 & -0.27 & -0.26 & -0.18 \\ 
+  Chitinase activity & 0.409 & \textbf{ -0.749 } & \textbf{ 0.663 } & -0.17 & \textbf{ 0.795 } & -0.312 & \textbf{ 0.677 } & \textbf{ -0.559 } & \textbf{ -0.49 } & \textbf{ -0.607 } \\ 
+  Phosphatase activity & \textbf{ 0.549 } & \textbf{ -0.813 } & \textbf{ 0.776 } & -0.302 & \textbf{ 0.851 } & -0.407 & \textbf{ 0.702 } & \textbf{ -0.556 } & -0.418 & \textbf{ -0.522 } \\ 
+  Phenoloxidase activity & \textbf{ 0.632 } & \textbf{ -0.669 } & \textbf{ 0.737 } & -0.415 & \textbf{ 0.719 } & \textbf{ -0.449 } & \textbf{ 0.552 } & \textbf{ -0.484 } & -0.305 & -0.356 \\ 
+  Peroxidase activity & \textbf{ 0.599 } & \textbf{ -0.588 } & \textbf{ 0.677 } & -0.412 & \textbf{ 0.639 } & -0.438 & \textbf{ 0.47 } & -0.435 & -0.173 & -0.302 \\ 
+  N mineralization & \textbf{ 0.466 } & \textbf{ -0.664 } & \textbf{ 0.65 } & -0.167 & \textbf{ 0.739 } & -0.299 & \textbf{ 0.527 } & -0.387 & -0.282 & -0.367 \\ 
+  Nitrification & \textbf{ 0.587 } & \textbf{ -0.707 } & \textbf{ 0.732 } & -0.38 & \textbf{ 0.74 } & -0.432 & \textbf{ 0.621 } & \textbf{ -0.499 } & -0.369 & -0.45 \\ 
+  P mineralization & \textbf{ 0.665 } & \textbf{ -0.55 } & \textbf{ 0.684 } & \textbf{ -0.544 } & \textbf{ 0.596 } & \textbf{ -0.576 } & 0.414 & \textbf{ -0.478 } & -0.212 & -0.255 \\ 
+  C litter & \textbf{ -0.545 } & \textbf{ 0.506 } & \textbf{ -0.578 } & \textbf{ 0.604 } & -0.368 & \textbf{ 0.643 } & \textbf{ -0.618 } & \textbf{ 0.698 } & \textbf{ 0.525 } & \textbf{ 0.581 } \\ 
+  extractable C & \textbf{ 0.609 } & \textbf{ -0.766 } & \textbf{ 0.782 } & -0.37 & \textbf{ 0.814 } & \textbf{ -0.446 } & \textbf{ 0.658 } & \textbf{ -0.54 } & -0.392 & \textbf{ -0.484 } \\ 
+  N litter & 0.354 & \textbf{ -0.517 } & \textbf{ 0.503 } & -0.14 & \textbf{ 0.587 } & -0.187 & 0.366 & -0.203 & -0.119 & -0.159 \\ 
+  P litter & \textbf{ 0.682 } & -0.222 & \textbf{ 0.517 } & \textbf{ -0.747 } & 0.175 & \textbf{ -0.68 } & 0.188 & \textbf{ -0.491 } & -0.0728 & -0.16 \\ 
+  C:N litter & -0.405 & \textbf{ 0.586 } & \textbf{ -0.57 } & 0.175 & \textbf{ -0.654 } & 0.234 & -0.44 & 0.273 & 0.195 & 0.242 \\ 
+  C:P litter & \textbf{ -0.636 } & 0.174 & \textbf{ -0.453 } & \textbf{ 0.754 } & -0.0823 & \textbf{ 0.649 } & -0.176 & 0.418 & 0.049 & 0.0805 \\ 
+  N:P litter & \textbf{ -0.512 } & -0.0287 & -0.264 & \textbf{ 0.714 } & 0.147 & \textbf{ 0.577 } & -0.0202 & 0.316 & -0.0316 & -0.0192 \\ 
+  C:N mic & \textbf{ 0.666 } & \textbf{ -0.758 } & \textbf{ 0.799 } & -0.43 & \textbf{ 0.798 } & \textbf{ -0.515 } & \textbf{ 0.678 } & \textbf{ -0.609 } & \textbf{ -0.584 } & \textbf{ -0.596 } \\ 
+  C:P mic & \textbf{ 0.692 } & \textbf{ -0.787 } & \textbf{ 0.834 } & \textbf{ -0.476 } & \textbf{ 0.814 } & \textbf{ -0.562 } & \textbf{ 0.726 } & \textbf{ -0.672 } & \textbf{ -0.564 } & \textbf{ -0.648 } \\ 
+  N:P mic & \textbf{ 0.582 } & \textbf{ -0.729 } & \textbf{ 0.74 } & -0.415 & \textbf{ 0.729 } & \textbf{ -0.508 } & \textbf{ 0.715 } & \textbf{ -0.67 } & \textbf{ -0.545 } & \textbf{ -0.671 } \\ 
+  C:N imbalance & \textbf{ -0.56 } & \textbf{ 0.81 } & \textbf{ -0.772 } & 0.288 & \textbf{ -0.859 } & 0.391 & \textbf{ -0.71 } & \textbf{ 0.531 } & \textbf{ 0.564 } & \textbf{ 0.56 } \\ 
+  C:P imbalance & \textbf{ -0.817 } & \textbf{ 0.663 } & \textbf{ -0.833 } & \textbf{ 0.757 } & \textbf{ -0.61 } & \textbf{ 0.799 } & \textbf{ -0.668 } & \textbf{ 0.839 } & \textbf{ 0.575 } & \textbf{ 0.67 } \\ 
+  N:P imbalance & \textbf{ -0.724 } & 0.351 & \textbf{ -0.602 } & \textbf{ 0.81 } & -0.253 & \textbf{ 0.764 } & -0.397 & \textbf{ 0.668 } & 0.301 & 0.41 \\ 
+   \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\newpage
+% latex table generated in R 2.12.1 by xtable 1.6-0 package
+% Sun Oct 30 21:34:24 2011
+\begin{table}[h!]
+\begin{center}
+\caption{Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 181 and 475 days, process rates were measured after 475 days.}
+\label{corrtable2}
+{\tiny
+\begin{tabular}{ccccccccccc}
+  \hline
+ & L acc & Ch acc & LCI diff & L dec & C dec & L resp & C resp & L/C dec & Per/Cell & Phen/Cell \\ 
+  \hline
+Massloss & -0.0455 & -0.264 & 0.0665 & \textbf{ 0.623 } & \textbf{ 0.71 } & \textbf{ 0.505 } & \textbf{ 0.496 } & -0.118 & -0.444 & 0.403 \\ 
+  Actual respiration & -0.374 & -0.22 & -0.213 & \textbf{ 0.86 } & \textbf{ 0.83 } & \textbf{ 0.837 } & \textbf{ 0.809 } & 0.0279 & -0.403 & 0.29 \\ 
+  Accumulated Respiration & -0.165 & -0.29 & -0.0113 & \textbf{ 0.909 } & \textbf{ 0.981 } & \textbf{ 0.753 } & \textbf{ 0.825 } & -0.119 & \textbf{ -0.608 } & \textbf{ 0.486 } \\ 
+  Cellulase activity & -0.317 & -0.307 & -0.137 & \textbf{ 0.861 } & \textbf{ 0.863 } & \textbf{ 0.805 } & \textbf{ 0.91 } & -0.00551 & \textbf{ -0.575 } & 0.414 \\ 
+  Protease activity & -0.229 & -0.271 & -0.086 & 0.455 & 0.447 & 0.434 & \textbf{ 0.645 } & -0.0269 & \textbf{ -0.456 } & 0.381 \\ 
+  Phosphatase activity & 0.0425 & -0.0182 & 0.0685 & 0.334 & 0.39 & 0.259 & \textbf{ 0.487 } & -0.0904 & -0.152 & 0.0167 \\ 
+  Chitinase activity & -0.221 & -0.228 & -0.0874 & \textbf{ 0.695 } & \textbf{  0.7 } & \textbf{ 0.578 } & \textbf{ 0.78 } & 0.0348 & \textbf{ -0.58 } & 0.395 \\ 
+  Phenoloxidase activity & 0.34 & -0.436 & 0.435 & -0.196 & 0.0177 & -0.338 & -0.121 & \textbf{ -0.456 } & \textbf{ -0.483 } & \textbf{ 0.692 } \\ 
+  Peroxidase activity & -0.274 & 0.452 & -0.385 & 0.126 & -0.067 & 0.261 & 0.0631 & 0.397 & \textbf{ 0.546 } & \textbf{ -0.708 } \\ 
+  N mineralization & 0.175 & 0.195 & 0.0757 & 0.0631 & 0.111 & -0.0805 & -0.142 & -0.145 & 0.0624 & 0.0892 \\ 
+  Nitrification & -0.289 & 0.23 & -0.321 & \textbf{ 0.645 } & \textbf{ 0.573 } & \textbf{ 0.574 } & 0.407 & 0.164 & -0.105 & -0.0234 \\ 
+  P mineralization & -0.164 & 0.0616 & -0.137 & \textbf{ 0.475 } & \textbf{ 0.461 } & \textbf{ 0.516 } & 0.402 & -0.0877 & 0.0433 & -0.0273 \\ 
+  C litter & 0.33 & 0.231 & 0.176 & -0.329 & -0.269 & -0.358 & \textbf{ -0.654 } & -0.0539 & \textbf{ 0.501 } & -0.348 \\ 
+  extractable C & -0.205 & -0.188 & -0.0882 & \textbf{ 0.884 } & \textbf{ 0.912 } & \textbf{ 0.727 } & \textbf{ 0.774 } & -0.0383 & \textbf{ -0.538 } & 0.409 \\ 
+  N litter & -0.17 & -0.166 & -0.0672 & \textbf{ 0.854 } & \textbf{ 0.896 } & \textbf{ 0.722 } & \textbf{ 0.644 } & -0.0751 & -0.431 & 0.349 \\ 
+  P litter & -0.4 & -0.369 & -0.181 & \textbf{ 0.727 } & \textbf{ 0.701 } & \textbf{ 0.786 } & \textbf{ 0.883 } & -0.00155 & \textbf{ -0.464 } & 0.325 \\ 
+  C:N litter & 0.124 & 0.196 & 0.018 & \textbf{ -0.846 } & \textbf{ -0.912 } & \textbf{ -0.683 } & \textbf{ -0.643 } & 0.113 & \textbf{ 0.49 } & -0.404 \\ 
+  C:P litter & \textbf{ 0.508 } & 0.277 & 0.313 & \textbf{ -0.572 } & \textbf{ -0.463 } & \textbf{ -0.721 } & \textbf{ -0.765 } & -0.144 & 0.283 & -0.162 \\ 
+  N:P litter & \textbf{ 0.477 } & 0.189 & 0.325 & -0.233 & -0.0883 & \textbf{ -0.466 } & \textbf{ -0.5 } & -0.205 & 0.048 & 0.0338 \\ 
+  C:N mic & 0.216 & 0.186 & 0.095 & \textbf{ -0.723 } & \textbf{ -0.745 } & \textbf{ -0.568 } & \textbf{ -0.693 } & 0.136 & \textbf{ 0.57 } & \textbf{ -0.513 } \\ 
+  C:P mic & 0.395 & 0.0762 & 0.312 & \textbf{ -0.559 } & -0.453 & \textbf{ -0.599 } & -0.45 & -0.122 & 0.233 & -0.223 \\ 
+  N:P mic & 0.333 & 0.0142 & 0.288 & -0.288 & -0.169 & -0.409 & -0.207 & -0.174 & -0.00191 & -0.00931 \\ 
+  C:N imbalance & -0.0522 & 0.084 & -0.0756 & -0.348 & -0.412 & -0.311 & -0.132 & 0.00942 & 0.0273 & 0.0196 \\ 
+  C:P imbalance & 0.0913 & 0.335 & -0.0757 & -0.114 & -0.16 & -0.218 & \textbf{ -0.499 } & 0.0773 & 0.16 & -0.0317 \\ 
+  N:P imbalance & 0.0576 & 0.293 & -0.0865 & 0.0497 & 0.0088 & -0.0352 & -0.392 & 0.128 & 0.16 & -0.0803 \\ 
+   \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\newpage
+\begin{landscape}
+% latex table generated in R 2.12.1 by xtable 1.6-0 package
+% Sun Oct 30 21:34:25 2011
+\begin{table}[h!]
+\begin{center}
+\caption{Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 0 and 181 days.}
+\label{corrtable_notlig}
+{\tiny
+\begin{tabular}{ccccccccccccc}
+  \hline
+ & alkanacc & alkenacc & faacc & phytolacc & alkandeg & alkendeg & fadeg & phytoldeg & alkanresp & alkenresp & faresp & phytolresp \\ 
+  \hline
+Massloss & 0.17 & \textbf{ 0.49 } & -0.0933 & 0.226 & -0.15 & -0.348 & -0.00722 & \textbf{ -0.462 } & -0.189 & -0.227 & -0.0146 & -0.291 \\ 
+  Actual respiration & \textbf{ 0.752 } & 0.428 & \textbf{ 0.701 } & \textbf{ 0.792 } & -0.357 & 0.163 & \textbf{ -0.656 } & \textbf{ -0.867 } & 0.119 & 0.349 & \textbf{ -0.767 } & \textbf{ -0.863 } \\ 
+  Accumulated Respiration & \textbf{ 0.703 } & 0.0679 & \textbf{ 0.703 } & \textbf{ 0.781 } & -0.221 & \textbf{ 0.545 } & \textbf{ -0.507 } & \textbf{ -0.714 } & 0.431 & \textbf{ 0.673 } & \textbf{ -0.792 } & \textbf{ -0.87 } \\ 
+  Cellulase activity & \textbf{ 0.665 } & \textbf{ 0.548 } & \textbf{ 0.673 } & \textbf{ 0.894 } & -0.154 & 0.112 & \textbf{ -0.531 } & \textbf{ -0.905 } & 0.308 & 0.332 & \textbf{ -0.719 } & \textbf{ -0.903 } \\ 
+  Protease activity & 0.027 & 0.0541 & 0.139 & 0.304 & 0.245 & 0.178 & 0.09 & -0.172 & 0.344 &  0.3 & -0.0935 & -0.21 \\ 
+  Phosphatase activity & \textbf{ 0.673 } & 0.169 & \textbf{ 0.756 } & \textbf{ 0.778 } & -0.229 & 0.405 & \textbf{ -0.574 } & \textbf{ -0.691 } & 0.231 & \textbf{ 0.574 } & \textbf{ -0.75 } & \textbf{ -0.774 } \\ 
+  Chitinase activity & \textbf{ 0.744 } & \textbf{ 0.519 } & \textbf{ 0.748 } & \textbf{ 0.916 } & -0.234 & 0.157 & \textbf{ -0.617 } & \textbf{ -0.931 } & 0.27 & 0.382 & \textbf{ -0.78 } & \textbf{ -0.93 } \\ 
+  Phenoloxidase activity & \textbf{ 0.626 } & \textbf{ 0.601 } & \textbf{ 0.574 } & \textbf{ 0.838 } & -0.157 & 0.0178 & \textbf{ -0.482 } & \textbf{ -0.911 } & 0.286 & 0.238 & \textbf{ -0.653 } & \textbf{ -0.87 } \\ 
+  Peroxidase activity & \textbf{ 0.535 } & \textbf{ 0.614 } & \textbf{ 0.478 } & \textbf{ 0.79 } & -0.0898 & -0.0474 & -0.426 & \textbf{ -0.917 } & 0.282 & 0.155 & \textbf{ -0.581 } & \textbf{ -0.843 } \\ 
+  N mineralization & \textbf{ 0.724 } & 0.453 & \textbf{ 0.662 } & \textbf{ 0.828 } & -0.327 & 0.132 & \textbf{ -0.625 } & \textbf{ -0.941 } & 0.197 & 0.298 & \textbf{ -0.74 } & \textbf{ -0.923 } \\ 
+  Nitrification & \textbf{ 0.654 } & \textbf{ 0.487 } & \textbf{ 0.551 } & \textbf{ 0.836 } & -0.223 & 0.121 & -0.43 & \textbf{ -0.912 } & 0.19 & 0.319 & \textbf{ -0.615 } & \textbf{ -0.876 } \\ 
+  P mineralization & 0.438 & \textbf{ 0.695 } & 0.368 & \textbf{ 0.652 } & -0.052 & -0.174 & -0.317 & \textbf{ -0.762 } & 0.353 & 0.0259 & -0.437 & \textbf{ -0.712 } \\ 
+  C litter & -0.0337 & -0.192 & -0.284 & -0.369 & -0.244 & -0.0544 & -0.0979 & 0.0362 & -0.303 & -0.155 & 0.0115 & 0.0999 \\ 
+  extractable C & \textbf{ 0.715 } & \textbf{ 0.496 } & \textbf{ 0.688 } & \textbf{ 0.906 } & -0.225 & 0.17 & \textbf{ -0.562 } & \textbf{ -0.944 } & 0.263 & 0.374 & \textbf{ -0.741 } & \textbf{ -0.937 } \\ 
+  N litter & \textbf{ 0.688 } & \textbf{ 0.65 } & \textbf{ 0.502 } & \textbf{  0.7 } & -0.376 & -0.13 & \textbf{ -0.579 } & \textbf{ -0.92 } & 0.0454 & 0.0547 & \textbf{ -0.645 } & \textbf{ -0.829 } \\ 
+  P litter & 0.0781 & \textbf{ 0.728 } & 0.076 & 0.317 & 0.133 & \textbf{ -0.494 } & -0.107 & -0.429 & 0.197 & -0.334 & -0.0955 & -0.294 \\ 
+  C:N litter & \textbf{ -0.728 } & \textbf{ -0.636 } & \textbf{ -0.562 } & \textbf{ -0.759 } & 0.38 & 0.0768 & \textbf{ 0.598 } & \textbf{ 0.943 } & -0.0723 & -0.113 & \textbf{ 0.689 } & \textbf{ 0.87 } \\ 
+  C:P litter & 0.054 & \textbf{ -0.734 } & 0.0372 & -0.219 & -0.216 & \textbf{ 0.57 } & -0.0572 & 0.273 & -0.185 & 0.418 & -0.0817 & 0.135 \\ 
+  N:P litter & 0.305 & \textbf{ -0.561 } & 0.24 & 0.0377 & -0.348 & \textbf{ 0.584 } & -0.263 & -0.0351 & -0.156 & \textbf{ 0.49 } & -0.324 & -0.159 \\ 
+  C:N mic & \textbf{ 0.535 } & 0.398 & \textbf{ 0.62 } & \textbf{ 0.826 } & 0.00763 & 0.226 & -0.345 & \textbf{ -0.704 } & \textbf{ 0.48 } & 0.439 & \textbf{ -0.609 } & \textbf{ -0.782 } \\ 
+  C:P mic & \textbf{ 0.557 } & 0.397 & \textbf{ 0.647 } & \textbf{ 0.864 } & -0.00386 & 0.246 & -0.38 & \textbf{ -0.762 } & \textbf{ 0.458 } & \textbf{ 0.469 } & \textbf{ -0.624 } & \textbf{ -0.821 } \\ 
+  N:P mic & \textbf{ 0.486 } & 0.28 & \textbf{ 0.613 } & \textbf{ 0.773 } & 0.0068 & 0.288 & -0.358 & \textbf{ -0.661 } & 0.396 & \textbf{ 0.487 } & \textbf{ -0.554 } & \textbf{ -0.717 } \\ 
+  C:N imbalance & \textbf{ -0.695 } & \textbf{ -0.486 } & \textbf{ -0.713 } & \textbf{ -0.91 } & 0.167 & -0.193 & \textbf{ 0.507 } & \textbf{ 0.87 } & -0.367 & -0.42 & \textbf{ 0.738 } & \textbf{ 0.915 } \\ 
+  C:P imbalance & -0.289 & \textbf{ -0.576 } & \textbf{ -0.46 } & \textbf{ -0.684 } & -0.196 & 0.0683 & 0.213 & \textbf{ 0.566 } & \textbf{ -0.487 } & -0.164 & 0.375 & \textbf{ 0.574 } \\ 
+  N:P imbalance & 0.0124 & \textbf{ -0.566 } & -0.155 & -0.356 & -0.31 & 0.303 & -0.00124 & 0.271 & -0.354 & 0.128 & 0.0428 & 0.216 \\ 
+   \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\newpage
+% latex table generated in R 2.12.1 by xtable 1.6-0 package
+% Sun Oct 30 21:34:25 2011
+\begin{table}[h!]
+\begin{center}
+\caption{Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 181 and 475 days.}
+\label{corrtable2_notlig}
+{\tiny
+\begin{tabular}{ccccccccccccc}
+  \hline
+ & alkanacc & alkenacc & faacc & phytolacc & alkandeg & alkendeg & fadeg & phytoldeg & alkanresp & alkenresp & faresp & phytolresp \\ 
+  \hline
+Massloss & \textbf{ -0.634 } & -0.289 & 0.0683 & \textbf{ 0.709 } & 0.448 & \textbf{ 0.557 } & 0.344 & \textbf{ -0.478 } & 0.152 & \textbf{ 0.525 } & \textbf{ -0.535 } & \textbf{ -0.731 } \\ 
+  Actual respiration & \textbf{ -0.471 } & -0.301 & 0.432 & \textbf{ 0.676 } & 0.313 & \textbf{ 0.638 } & 0.0176 & -0.253 & 0.157 & \textbf{ 0.464 } & -0.326 & \textbf{ -0.584 } \\ 
+  Accumulated Respiration & \textbf{ -0.795 } & -0.35 & 0.324 & \textbf{ 0.835 } & \textbf{ 0.53 } & \textbf{ 0.764 } & 0.242 & -0.402 & 0.241 & \textbf{ 0.77 } & \textbf{ -0.63 } & \textbf{ -0.829 } \\ 
+  Cellulase activity & \textbf{ -0.596 } & -0.244 & \textbf{ 0.562 } & \textbf{ 0.784 } & 0.386 & \textbf{ 0.613 } & -0.0828 & -0.288 & 0.317 & \textbf{  0.5 } & -0.274 & \textbf{ -0.547 } \\ 
+  Protease activity & -0.38 & -0.00818 & \textbf{ 0.659 } & 0.439 & 0.12 & 0.196 & -0.394 & -0.0506 & 0.264 & 0.194 & -0.011 & -0.0894 \\ 
+  Phosphatase activity & -0.451 & 0.0332 & \textbf{ 0.461 } & 0.323 & 0.25 & 0.194 & -0.224 & -0.000321 & 0.28 & 0.255 & -0.178 & -0.192 \\ 
+  Chitinase activity & \textbf{ -0.633 } & -0.104 & \textbf{ 0.589 } & \textbf{ 0.611 } &  0.3 & 0.44 & -0.189 & -0.186 & 0.244 & \textbf{ 0.536 } & -0.353 & -0.4 \\ 
+  Phenoloxidase activity & -0.0256 & 0.134 & -0.345 & -0.134 & -0.0858 & -0.13 & 0.379 & 0.137 & -0.184 & 0.0737 & -0.0468 & -0.0142 \\ 
+  Peroxidase activity & 0.0627 & -0.106 & 0.343 & 0.127 & 0.028 & 0.0833 & -0.401 & -0.172 & 0.119 & -0.106 & 0.0258 & 0.0264 \\ 
+  N mineralization & -0.0379 & 0.0275 & -0.156 & 0.236 & -0.0981 & 0.0926 & 0.259 & -0.395 & -0.397 & 0.283 & \textbf{ -0.569 } & -0.421 \\ 
+  Nitrification & \textbf{ -0.496 } & -0.451 & 0.253 & \textbf{ 0.663 } & 0.417 & \textbf{ 0.628 } & 0.112 & -0.424 & 0.179 & \textbf{ 0.535 } & \textbf{ -0.57 } & \textbf{ -0.657 } \\ 
+  P mineralization & -0.303 & \textbf{ -0.466 } & 0.206 & \textbf{ 0.473 } & 0.333 & \textbf{ 0.543 } & 0.0642 & -0.249 & 0.235 & 0.211 & -0.182 & -0.447 \\ 
+  C litter & 0.0444 & -0.336 & \textbf{ -0.825 } & -0.0325 & 0.223 & 0.145 & \textbf{ 0.685 } & -0.412 & -0.0238 & 0.0415 & -0.212 & -0.3 \\ 
+  extractable C & \textbf{ -0.733 } & -0.294 & 0.398 & \textbf{ 0.876 } & 0.452 & \textbf{ 0.701 } & 0.14 & \textbf{ -0.5 } & 0.174 & \textbf{ 0.735 } & \textbf{ -0.666 } & \textbf{ -0.809 } \\ 
+  N litter & \textbf{ -0.76 } & \textbf{ -0.548 } & 0.116 & \textbf{ 0.836 } & \textbf{ 0.618 } & \textbf{ 0.862 } & 0.415 & \textbf{ -0.52 } & 0.28 & \textbf{ 0.764 } & \textbf{ -0.652 } & \textbf{ -0.909 } \\ 
+  P litter & -0.354 & -0.181 & \textbf{ 0.597 } & \textbf{ 0.575 } & 0.254 & 0.448 & -0.246 & -0.0722 & 0.345 & 0.17 & 0.0983 & -0.261 \\ 
+  C:N litter & \textbf{ 0.784 } & \textbf{ 0.503 } & -0.0977 & \textbf{ -0.818 } & \textbf{ -0.614 } & \textbf{ -0.843 } & -0.448 & \textbf{ 0.494 } & -0.248 & \textbf{ -0.804 } & \textbf{ 0.701 } & \textbf{ 0.922 } \\ 
+  C:P litter & 0.0939 & 0.0836 & \textbf{ -0.682 } & -0.422 & -0.0492 & -0.249 & \textbf{ 0.48 } & -0.000689 & -0.281 & 0.0934 & -0.341 & -0.0041 \\ 
+  N:P litter & -0.241 & -0.0878 & \textbf{ -0.627 } & -0.0957 & 0.187 & 0.0732 & \textbf{ 0.654 } & -0.191 & -0.202 & 0.445 & \textbf{ -0.659 } & -0.377 \\ 
+  C:N mic & \textbf{ 0.549 } & 0.241 & \textbf{ -0.502 } & \textbf{ -0.611 } & -0.18 & \textbf{ -0.547 } & 0.04 & 0.245 & 0.0205 & \textbf{ -0.687 } & \textbf{ 0.589 } & \textbf{ 0.55 } \\ 
+  C:P mic & 0.206 & 0.413 & -0.218 & \textbf{ -0.503 } & -0.241 & \textbf{ -0.508 } & -0.0471 & 0.26 & -0.217 & -0.175 & 0.0327 & 0.355 \\ 
+  N:P mic & -0.0201 & 0.326 & -0.054 & -0.273 & -0.175 & -0.297 & -0.028 & 0.156 & -0.253 & 0.13 & -0.243 & 0.124 \\ 
+  C:N imbalance & 0.429 & 0.393 & 0.363 & -0.443 & \textbf{ -0.586 } & \textbf{ -0.515 } & \textbf{ -0.584 } & 0.403 & -0.335 & -0.297 & 0.27 & \textbf{ 0.611 } \\ 
+  C:P imbalance & -0.0373 & -0.357 & \textbf{ -0.544 } & 0.0137 & 0.13 & 0.208 & \textbf{ 0.535 } & -0.327 & -0.143 & 0.262 & -0.427 & -0.324 \\ 
+  N:P imbalance & -0.2 & \textbf{ -0.486 } & \textbf{ -0.619 } & 0.199 & 0.37 & 0.391 & \textbf{ 0.687 } & \textbf{ -0.468 } & 0.045 & 0.324 & \textbf{ -0.457 } & \textbf{ -0.522 } \\ 
+   \hline
+\end{tabular}
+}
+\end{center}
+\end{table}\end{landscape}
+
+
+%timeseries(alldata$Chitinase, alldata$days, alldata$Litter, pt.bg=colscale, pch=pch)
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=.6\textwidth}
+\includegraphics{plosone-CUE}
+\end{center}
+\caption{caption}
+\label{fig:cutlig}
+\end{figure*}     
+     
+
+\begin{figure}[!ht]
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+%\includegraphics[width=4in]{figure_name.2.eps}
+\includegraphics{plosone-f2bnew}
+\end{center}
+\caption{
+{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+should be left justified, as specified by the options to the caption 
+package.
+}
+\label{fig:f2b}
+\end{figure}
+
+
+
+
+\end{document}
+
