@@ -1,0 +1,1186 @@
+<<startup, echo=F, fig=F, results=hide>>=
+setwd("~/dip")
+source("startup.R")
+options(SweaveHooks=list(fig=function() par(tck=0.01, las=1)))
+@
+
+
+% Template for PLoS
+% Version 1.0 January 2009
+%
+% To compile to pdf, run:
+% latex plos.template
+% bibtex plos.template
+% latex plos.template
+% latex plos.template
+% dvipdf plos.template
+
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+\doublespacing
+
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+%load my own packages (not PLoS template)
+\usepackage{textcomp, fixltx2e}
+\usepackage{fullpage, lscape}
+\usepackage{lineno}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{Controls of litter chemistry over early lignin decomposition in beech litter}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Lukas Kohl$^{1}$, % $^{3,\ast}$
+Wolfgang Wanek$^{1}$, 
+Katharina Keiblinger$^{2,3}$, 
+Sonja Leitner$^{1,3}$, 
+Maria Mooshammer$^{1}$, 
+Ieda H\"ammerle$^{1}$, 
+Lucia Fuchslueger$^{1}$, 
+J\"org Schnecker$^{1}$, 
+Sophie Zechmeister-Boltenstern$^{2,3}$, 
+Andreas Richter$^{1}$,
+\\
+\bf{1} Department of Chemical Ecology and Ecosystem Research, University of Vienna, Althanstra\ss e 14, A-1090 Vienna, Austria
+\\
+\bf{2} Federal Research and Training Centre for Forests, Natural Hazards and Landscape, Department of Soil Biology, Seckendorff-Gudent-Weg 8, A-1131 Vienna, Austria
+\\
+\bf{3} Current address: Institute for Soil Science, University of Natural Resources and Life Sciences, Peter Jordan-Stra\ss e 82, A-1190, Vienna, Austria
+\\
+$\ast$ E-mail: Corresponding author@institute.edu
+\end{flushleft}
+
+% Please keep the abstract between 250 and 300 words
+\section*{Abstract}
+
+Lignin is considered the most recalcitrant component of plant litter, which is accumulated during early decomposition and is degraded only in late decomposition stages when its concentration limits litter decomposition rates. A recent study based on the more specific methods challenges this concept, reporting highest lignin decomposition rates during early litter decomposition. Until now, no further studies exploring early lignin decomposition were published, and its potential controls remain unknown.
+
+We follow lignin and carbohydrate decomposition during early litter decay with analytical pyrolysis in a climate-chamber decomposition experiment, focusing on resource control over microbial carbon substrate preferences. Beech litter with different C:N:P stoichiometry but identical initial microbial communities was incubated to identify the control of litter chemistry on the developing microbial community and its decomposition activity. 
+
+During the first 6 month fundamental differences in lignin degrading activities were found between sites. Lignin discrimination in litter decomposition ranges from insignificant amounts of lignin decomposed to lignin decomposition at the same rate bulk litter, leading to different niveaus of lignin accumulation. Between 6 and 15 month, no lignin discrimination was found, but different lignin contents aquired earlier reminded.
+
+[results]
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLoS ONE authors please skip this step. 
+% Author Summary not valid for PLoS ONE submissions.   
+%\section*{Author Summary}
+
+%not from the template: start line numbers here.
+\linenumbers
+
+\section*{Introduction}
+Plant litter biomass is dominated by macromolecular compounds. In deciduous foliar litter, lignin and carbohydrate polymers together make up 40-60\% of litter dry mass\cite{Berg2008}, while leachable substances ("DOM") account for only 1.5-6\%\cite{Don2005}. 
+
+Litter decomposition models follow the concept that organic compounds in litter form up to three independent pools of increasing recalcitrance (i.e. soluble compounds,  cellulose and hemi-celluloses, and lignin). During decomposition, soluble compounds are most accessible to microbes and are consumed first, followed by carbohydrates (i.e. cellulose). Lignin can be decomposed only by specialized fungi and is not degraded until accumulated to a certain, critical level when it inhibits the degradation of less recalcitrant compounds\cite{Berg1980, Couteaux1995, Moorhead2006, Adair2008}. The pools are usually quantified by gravimatric determination of cellulose, hemi-celluloses and lignin after sequential extractions with selective solvents. These methods were repeatedly criticized as unspecific for lignin determination \cite{Hatfield2005}. When analyzed with alternative methods (NMR, CuO-oxidation, Pyrolysis-GC/MS), extracted lignin fractions contain many other than the proclaimed substances (e.g.\cite{Preston1997}). \footnote{[lit CuO], lit[Pyr]}
+
+Recent studies based on more specific methods to determine litter lignin content question the assumed intrinsic recalcitrance of lignin. Experiments using isotope labeling used to calculate mean residence times for lignin in soils and litter/soil mixtures in both laboratory and outdoor incubation reported lignin residence times no longer than that of other carbon compounds or bulk soil organic matter \cite{Thevenot2010a, Bol2009}. It was also shown that several bacterial taxa are able to degrade lignin\footnote{ref.}.
+
+For leaf litter, lignin depletion during early decomposition and lignin decomposition rates decreasing with litter age were recently reported\cite{Klotzbucher2011}. Based on this results, the authors proposed a new concept for lignin degradation in which fastest lignin degradation occurs during early litter decomposition when labile carbon availability is high. Lignin decomposition during late decomposition is limited by (dissolved organic) carbon availability. However, they do  do not elaborate stoichiometric constraints of lignin decomposition\footnote{ev. nutrient contents instead of stoichiometry?}. During radical polymerization, significant amounts of cellulose and protein are incorporated into lignin structures\cite{Achyuthan2010}. In isolated lignin fractions from fresh beech litter, N contents twice as high as in bulk litter were found\cite{Dyckmans2002}. It was therefore argued that, while yielding little C and energy, lignin decomposition makes occluded cell wall protein accessible to decomposers, and lignin decompostion is therefore not driven by C but by N demand ("Nitrogen mining theory")\cite{Craine2007}. 
+
+Nitrogen fertilization experiments with litter and soils indicated that litter N contents are important controls of lignin degradation: N addition increased mass loss rates in low-lignin litter while slowing down decomposition in lignin-rich litter \cite{Knorr2005}. High nitrogen levels were reported to inhibit lignolytic enzymes in forest soils\cite{Sinsabaugh2010}. Moreover, cellulose triggered a stronger priming effect in fertilized than in unfertilized soils indicating that the mineralization of recalcitrant C is controlled by an interaction of labile C and N availability \cite{Fontaine2011}.
+
+Addition of N has very different effects on litter decomposition than varying N levels in litter. This is due to the fact that leaf litter N is stored in protein and lignin structures and not directly available to microorganisms, while fertilizer N is added in the form of readily available inorganic N (NH$_4^+$, NO$_3^-$). N-fertilization experiments can simulate increased N-deposition rates but not the effect of litter N on decomposition processes\cite{Talbot2011}.
+
+In this study we analyze samples from climate-chamber incubated beech litter varying in N and P content with pyrolysis-GC/MS (pyr-GC/MS). The experiment was designed to study the effect of resource stoichiometry on microbial decomposition, exclude decomposing fauna and keep climatic conditions constant. We address the following questions:
+
+(1) Is lignin decomposition delayed until late decomposition stages or are significant amounts of lignin degraded during early litter decomposition?
+
+(2) Are lignin and carbohydrate degradation rates controlled\footnote{correlated?} by litter N, P, and soluble C content? Do this controls change during decomposition?
+
+(3) Do high lignin degradation rates correspond to higher fungal activity?
+
+
+% Results and Discussion can be combined.
+\section*{Results}
+
+\subsection*{Mass loss, respiration and extractable organic carbon}
+
+Litter mass loss was not significant after 2 weeks and 3 month, significant for 2 litter types after 6 month. After 15 month, litter mass loss was significant for all litter types, and strongly correlated to litter N content (R=0.794, p=***). Detailed results were reported by \cite{Mooshammer2011}. After 15 month, between 5 and 12\% of the initial dry mass was lost. This is less than reported in litter decomposition studies on other species, but in a similar range as recently reported for beech litter from an in-situ litterbag-study \cite{Kalbitz2006} .
+
+Highest respiration rates were measured after 14 days incubation (150-350 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C), dropped to rates between between 75 and 100 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C after 97 days. After 181 and 375 days, respiration rates for AK and OS further decreased, while SW and KL show a second maximal respiration after 181 days. %Respiration was correlated to litter N content after 2 weeks, 6 and 15 month(R\textgreater 0.70 in all cases, all p \textless  0.001), but not after 3 month. All harvests combined were weakly correlated to litter N content (R=0.416, p \textless  0.001).
+%Accumulated respiration was correlated to litter mass loss for all harvest with significant mass loss when means per litter type and harvest were compared (n=6).
+
+Soluble organic carbon content decreased between the first three harvests (14 to 181 days), to strongly increase after 475 days (0.1 to 0.7 mg C g $^{-1}$ d.w. were found after 14, 97 and 181 days, and increased to amounts between 1.5 and 4 mg/g after 375 days. After 14 and 97 days, the highest C content was found in SW litter followed by AK (data not shown). DOC content was loosely correlated to litter N content after 14 (R=0.69, p\textless  0.001) and 97 days (R = 0.65, p =\textless  0.01), they were strictly correlated after 181 days (R = 0.85, p=\textless  0.001) and 375 days (R=0.90, p=\textless  0.001).
+
+%\begin{figure*}[t]
+%\vspace*{2mm}
+%\begin{center}
+%\setkeys{Gin}{width=0.5\textwidth}
+%<<doc, echo=F, results=hide, fig=T, height=7, width=7>>=
+%timeseries(alldata$DOC/1000, alldata$days, alldata$Litter, pch=pch, pt.bg=colscale,  xlab="Incubation (days)", ylab="mg C g-1 d.w.", main="Extractable carbon", lwd=2)
+%legend("bottomright", pt.bg=colscale, pch=pch, typlev, lty=1, lwd=2)
+%@
+%\end{center}
+%\caption{Extractable organic carbon. Error bars indicate standard errors (n=5).}
+%\label{fig:doc}
+%\end{figure*}
+
+
+\subsection*{Microbial biomass abundance and stoichiometry}
+
+Microbial biomass contents ranged from 0.5 to 6 mg C, 0.05 to 5.5mg N and 0.05 to 3.5 mg P per g litter (d.w.). In KL and OS biomass buildup reaches a plateau after 3 month, AK and SW show further growth reaching a maximum of microbial C and N contents after 6 month (AK also for P). Microbial C:N ratios measured range between 1:6 and 1:18, C:P ratios between 1:8 abd 1:35, and N:P ratios between 1:0.5 and 1:3.5. Microbial C:N ratios (Fig. \ref{fig:mb}).
+
+<<homeostastis, echo=F, results=h>>=
+lm<-lm(log(alldata$C.N_mic[alldata$days==14])~log(alldata$C.N_lit[alldata$days==14]),)
+H.cn.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==97])~log(alldata$C.N_lit[alldata$days==97]),)
+H.cn.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==181])~log(alldata$C.N_lit[alldata$days==181]),)
+H.cn.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.N_mic[alldata$days==475])~log(alldata$C.N_lit[alldata$days==475]),)
+H.cn.h4<-1/lm$coefficients[2]
+
+lm<-lm(log(alldata$C.Pmic[alldata$days==14])~log(alldata$C.P_lit[alldata$days==14]),)
+H.cp.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==97])~log(alldata$C.P_lit[alldata$days==97]),)
+H.cp.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==181])~log(alldata$C.P_lit[alldata$days==181]),)
+H.cp.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$C.Pmic[alldata$days==475])~log(alldata$C.P_lit[alldata$days==475]),)
+H.cp.h4<-1/lm$coefficients[2]
+
+lm<-lm(log(alldata$N.Pmic[alldata$days==14])~log(alldata$N.P_lit[alldata$days==14]),)
+H.np.h1<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==97])~log(alldata$N.P_lit[alldata$days==97]),)
+H.np.h2<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==181])~log(alldata$N.P_lit[alldata$days==181]),)
+H.np.h3<-1/lm$coefficients[2]
+lm<-lm(log(alldata$N.Pmic[alldata$days==475])~log(alldata$N.P_lit[alldata$days==475]),)
+H.np.h4<-1/lm$coefficients[2]
+
+@
+
+Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry) \cite{Mooshammer2011}, but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, all p \textless 0.002, H\textsubscript{C:N}=\Sexpr{round(H.cn.h4, digits=2)}, H\textsubscript{C:P}=\Sexpr{round(H.cp.h4, digits=2)}, H\textsubscript{N:P}=\Sexpr{round(H.np.h4, digits=2)}). Microbial C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, with the highest variance between litter from different sites after 3 month incubation (Fig. \ref{fig:mb}).
+
+\subsubsection*{Potential enzyme activities}
+Absolute potential enzyme activities were correlated to litter N, respiration and other other decomposition processes (all R \textgreater  0.8, p \textless 0.001). For all enzymes and at all time points, SW showed the highest and AK the lowest activity. Cellulase was below detecten limit after 14 days, oxidatitve enzymes after 15 month. Cellulases activity is highest after 3 month and decreases between 97 and 181 days. Peroxidase and Peroxidase activities reach their maximum after 181 (fig. \ref{fig:enz}). After between 6 and 15 month, cellulase activity strongly increased. After 475 days, the activity of oxidative enzymes was below the detection limit [data not shown]
+
+The ratio between the potential activities of cellulases and oxidative enzymes was lowest for AK at all time points. Microbial communities in AK litter invest more energy and nitrogen into degrading lignin and less into degrading carbohydrates than other litter types. (fig. \ref{fig:enz})
+
+\subsection*{Pyrolysis-GC/MS and Lignin content}
+%Lignin contents determined by ADF extraction show initial lignin contents between 15 and 21 \% d.w.. After 3 month, lignin contents rise to levels above 30\% d.w. in two sites, an increase that can not be explained by passive accumulation \cite{Leitner2011}.
+
+Litter pyrolysis products and different sites are reported in detail elsewhere (Kohl, in preparation). We found only minor changes during pyrograms during decomposition, differences between sites were were small but well preserved during decomposition. The high similarity allowed tracind small changes in lignin and carbohydrate abundance during decomposition. % A PCA performed on relative peak areas of 128 peaks shows that samples cluster according to litter types, with no constistent seperation between different harvests. \ref{fig:pca1}. %118 (94.5\%) [!check nr!] of the peaks integrated show significant differences in relative peak areas between different litter types before incubation.
+
+When measured by pyr-GC/MS, lignin derrived compounds make up between 29 and 31 \%TIC in the initial litter, with an increase of up to 3 \%TIC over the first 3 month. Carbohydrate derrived pyrolysis products account for 26 to 29 \%TIC in initial litter and decrease by up to 2.6 \% during litter decomposition. Carbohydrate depletion and lignin accumulation were coorelated (R = 0.47, p \textless 0.01) in all samples measured. The initial (pyrolysis-) LCI index (applied to excludes influences of changes in the abundance of other pyrolysis products) ranges between 0.517 and 0.533. During decomposition, it increases by up to 8.7\% of the initial value, with SW showing the highest and KL the lowest increase. This increase almost completely occurs over the first 6 month, with insignificant changes in both directions between 6 and 15 month incubation. Figure \ref{fig:timeseries}\footnote{check fig.} shows changes in the relative abundance of in pyrolysis products versus incubation time and accumulated respiration. Lignin to carbohydrate ratios in a similar range (increasing from 0.565 to 0.588 over 24 month) were reported for in situ oak litter decomposition by \cite{Snajdr2011} using thermochemolysis. \footnote{I converted the L:C ratio stated by Snajdr to L/(L+C). This demonstrates a surprising coherence between quite different analytical methods, different peaks analyzed.}
+
+During the first 6 month of litter decomposition, between one and 6\% of the initial lignin pool and between 4 and 17\% of the initial carbohydrate pool were degraded. Lignin decomposition was highest in AK and KL litter, while KL and SW decomposed the highest part of their carbohydrate pools. Lignin discimination (compared to carbohydrates) was highest in SW and lowest in AK litter. In AK litter, lignin molecules were 50\% more likely to be decomposed than carbohydrates, while in SW litter carbohydrates were 10 times more likely to be decomposed (fig. \ref{fig:degr}).
+
+Between 6 and 15 month, no further discrimination occurs, lignin and carbohydrate are degraded at the same rates and their content in pyrograms remains constant (fig. \ref{fig:chemdif}).
+
+\subsection*{Fungi:Bacteria ratio}
+
+Metaproteome fungi:bateria ratios were highest (1:5 - 1:12) after 14 days and decrease during decomposition (1:1.7 - 1:3 after 475 days). Differences between litter from different sites decrease during decomposition. Fungi are most dominant in SW, bacteria in AK. The fungi to bacteria ratio is negatively correlated to lignin decomposition during the first 6 month \ref{fig:f2b}. 
+
+\subsection*{Correlations between lignin and carbohydrate decomposition and litter chemistry, microbial community and decomposition processes}
+
+Table \ref{corrtable} provides linear regressions found between lignin and carbohydrate degradation, litter chemistry, microbial biomass and decomposition processes after 6 month incubation including data presented by \cite{Mooshammer2011} and \cite{Leitner2011}. We found  The lignin to cellulose degradation ratio was correlated to phenoloxidase to cellulase and peroxidase to cellulase enzymatic activity ratios (R=0.729 and R=0.863, p=?). Lignin accumulation and carbohydrate depletion were found to increase with enzymatic activities measured (including lignolytic enzymes) N, and P gross depolymerization rates but not with glucan depolymerization.
+
+While carbohydrate degradation and depletion was correlated litter N content, C:N ratio and C:N imbalances. lignin degradation and accumulation were correlated to litter P, litter C:P and N:P ratios, C:P and N:P imbalances and extractable organic C and PO$_4$. High lignin accumulation and carbohydrate depletion were also connected to wide C:N, C:P and N:P ratios.
+
+\section*{Discussion}
+
+Our experimental approach allowed us to single out the effects of litter quality on the microbial decomposer community as well as decomposition processes, while excluding effects of fauna, climate and the initial microbial community. By exploiting intra-specific differences in beech litter stoichiometry, we were able to minimize differences in the macromolecular composition of initial litter (lignin and cellulose content), while exploring the effect of litter nutrient contents on lignin and carbohydrate decomposition. Therefore, we can attribute different rates of carbohydrate and lignin decomposition to the intrinsic qualities of different litter types.
+
+Contradicting the traditional concepts of litter decomposition, our results demonstrate that relevant amounts of lignin are degraded during the the first 6 months of incubation. Lignin decomposition rates during this early stage depended on litter quality (N \& P) and ranged from non-significant amounts decomposed to degradation rates similar to bulk carbon mineralization rates (i.e. no discrimination against lignin). We can therefore confirm that early lignin decomposition rates are by far underestimated, as recently proposed Klotzb\"{u}cher et. al.\cite{Klotzbucher2011}, based on a complementary analytic approach. Unlike them, we found no decreases in lignin contents and constant or increasing lignin degradation rates during early decomposition. Additionally, we found a change in the controls of lignin discrimination after this initial period. While the preference for carbohydrate to lignin decomposition was controlled by litter chemistry over the first 6 month, all components of litter were degraded at similar rates thereafter.
+
+The differences we found in early lignin accumulation do not result from high lignin contents, as is suggested by traditional decomposition models. Differences in initial lignin contents were marginal (below 10\%), and lignin contents of sites with high initial lignin decomposition rates were not higher than that of sites with low rates. Also, these differences are not caused by a lack of Mn or Fe, as was suggested for late lignin decomposition\cite{Berg1980}. While Mn and Fe contents strongly varied between litter collected at different sites, but both Mn and Fe contents are lowest in the litter with the highest lignin decomposition (AK, see tab.\ref{initstoech}). Low contents of these Elements would explain inhibited, not enhance lignin decomposition. Also, soluble carbon was not limiting lignin decomposition since we found it's highest amounts in litter from the two different sites who show the highest and the lowest lignin degradation.
+
+We found strong evidences that C:N:P stoichiometry exerts a key control over the extent of lignin decomposition during initial decomposition. Carbohydrate decomposition was correlated positively to litter N contents and negatively to litter C:N ratios, as were a majority of decomposition processes (mass loss, respiration, potential extracellular enzymatic activities). In contrast, relative decomposition rates of Lignin were positively correlated with litter C:P ratios and negatively with a number of P pools analyzed. Correlation was highest when lignin decomposition was compared to resource/consumer C:P ratios.
+
+Cultivation studies showed that lignin decomposition in fungi is triggered by nitrogen starvation, and that lignin does not provide sufficient energy to maintain the decomposer's metabolism without the use of another carbon sources\footnote{citation}. Lignin decomposition was found in wild-type \emph{A. thaliana} litter , but not in a low-cellulose mutant a during 12 month incubation in a boreal forest \cite{Talbot2011}. In the N- and P- co-limited situation during early litter decomposition, in which lignin is degraded to access additional nutrients or to use a C surplus by decomposing an less C efficient but nutrient enriched substrate. However, a stimulation of lignin decomposition by a high P imbalance or a delay of lignin decomposition under high P availability, as indicated by the high correlation to P pools we found, was not reported yet. 
+
+For the decomposition of litter lignin and carbohydrates, microbial decomposers rely on the production and excretion of hydrolytic and oxidative extracellular enzymes. While the absolute amounts, in which these enzymes where produced, was controlled by N availability, the ratio in which they were produced corresponded to differences in cellulose and lignin degradation (fig.\ref{fig:enz}). While the mode of this regulation is unknown, we find a corresponding shift in the microbial community composition. Fungi colonize litter faster than bacteria and therefore dominate early litter decomposition, but the bacteria/fungi ratio decrease over the entire incubation period. Talbot et. al. \cite{Talbot2011} suggested that lignin decomposition might be interpreted a k-strategy used by microbes to be able to colonize more lignin-rich and nutrient-poor substrates, while r-strategist grow fast based on labile carbon. Low nutrient availability might favor this strategy, as the high P- demands of a fast growing microbial community can not be met. Indeed we found that lignin degradation is higher in litter, where the C:P and N:P are highest, i.e. high P demand limits growth.\footnote{naja..}
+
+While we found different levels of lignin degradation during the first 6 month, lignin contents remained constant in all litter types between 6 and 15 month. This indicates that lignin was decomposed at the same rate as other litter compounds, but differences in lignin contents acquired during the first 6 month remain in place. The controls which lead to differences in the extend of lignin discrimination over the first six month are no longer predominant between 6 and 15 month. Lignin loss in this decomposition stage was positively correlated to litter N content, as was litter mass loss and respiration. The higher fungi/bacteria ratio was higher than during initial decomposition, and differences between sites became  (especially after 15 months incubation). Fungi, which grew fast in N and P rich litter become out-competed by a bacteria-dominated lignin degrading community.
+
+The change in decomposition dynamics corresponds to change in soluble carbon. While during the first 3 month, extractable carbon contents were not or to a lesser extend correlated to litter N, soluble carbon is strictly correlated to litter N and actual respiration after 6 and 15 month\footnote{stats}. Kltzb\"{ü}cher et. al. \cite{Klotzbucher2011} suggest a change in decomposition dynamics after 100 to 200 days of incubation, after which lignin decomposition rates decrease due to lack of labile carbon. They also report a correlation between respiration rates and extractable carbon after this change. The authors interpret this correlation as carbon limitation to respiration, and suggest that lignin decomposition is inhibited under such a limitation. We can confirm the correlation between extractable carbon and respiration after 181 days, but not the inhibition of lignin decomposition. Also, we found that both respiration and the production of soluble carbon are both controlled by litter N content. The process of degrading macromolecular compounds into soluble molecules is conducted by extracellular enzymes and is therefore N intensive that the mineralization of labile carbon, depolymerization is the point in the decomposition process where a N limitation is most likely to become effective. 
+
+Another notable change occurs in the homeostasis of the microbial community. While is was strictly homeostatic during the first 6 month, substrate stoichiometry had a minor, but significant influence on microbial stoichiometry after 15 month. Together, those changes indicate that the microbial community is able to compensate for differences in substrate quality (on the expense of community growth and overall decomposition speed) and can select preferred compounds during the first 6 month. However, this compensation is limited and imbalances can not be upheld at the same intensity after the first 200 days. 
+
+\section*{Conclusions}
+
+Our results further question the concept that lignin decomposition is inhibited until late decomposition. While traditional litter decomposition concepts locate lignin decomposition only during late decomposition, we find substancial amounts of lignin decomposed over the first six month. The extend to which lignin is decomposed was controlled by litter chemistry over the first 6 month. However, we did not find lignin decomposition rates controlled by litter quality between 6 and 15 month. Also, soluble carbon contents were not restrictive to lignin decomposition.
+
+While carbohydrate decomposition was stimulated by high N contents, early lignin decomposition rates were highly correlated C:P ratio and resource:consumer imbalances. High lignin contents accumulated during this stages remained in place during later decomposition. Litter with high lignin decomposition rates had higher bacterial  abundance. 
+
+For further studies, this raises the question, to which extend late decomposition is influenced by this early, stoichiometry-controlled accumulation of recalcitrant compounds. 
+
+% You may title this section "Methods" or "Models". 
+% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
+% authors may use "Analysis" 
+\section*{Material and methods}
+\subsection*{Litter decomposition experiment}
+A detailed description of our litter decomposition experiment was published in \cite{Wanek2010}. Briefly, beech litter was collected at four different sites in Austria (Achenkirch (AK), Klausenleopoldsdorf(KL), Ossiach(OS), and Schottenwald(SW); refered to as litter types) in October 2008. Litter was cut to pieces of approximately 0.25cm$^2$, homogenized, sterilized twice by gamma\footnote{greek gamma here} radiation (35 kGy, 7 days between irradiations) and inoculated (1.5\% w/w) with a mixture of litter and soil to assure that all litter types share the same initial microbial community. From each type, four samples of litter were taken after inoculation and stored dried at room temperature. Samples of 60g litter (fresh weight) were incubated at 15 \textdegree C and 60\% water content in mesocosms for a duration between 2 weeks to 15 month. For each litter type 5 replicas were removed and analyzed after 14, 97, 181 and 475 days.
+
+Litter chemistry as analyzed 14 days after incubation is listed in table \ref{initstoech}. C:N ratios between 1:41 and 1:58 and C:P ratios between 1:700 and 1:1300 were found, N:P ratios ranged between 1:15 and 1:30. No significant changes occurred during litter incubation except a slight decrease of the C:N ratio (1:41.8 to 1:37.4) found in the most active litter type (SW) after 15 month. Fe content were more than twice as high for OS (approx. 450 ppm) than for other litter types (approx. 200 ppm). Litter Mn also was highly variable between litter types, ranging between 170 and 2130 ppm. Changes of micro-nutrient concentrations during litter incubation were significant, but in all cases \textless 15\% of the initial concentration.
+
+\subsection*{Bulk litter, extractable, and microbial biomass nutrient content}
+To calculate litter mass loss, litter dry mass content was measurement in 5 g litter (fresh weight) after 48 h at 80 \textdegree C. Dried litter was ball-milled for further chemical analysis. Litter C and N content were determined using an elemental analyzer (Leco CN2000, Leco Corp., St. Joseph, MI, USA). Litter phosphorus content was measured with ICP-AES (Vista-Pro, Varian, Darmstadt, Germany) after acid digestion \cite{Henschler1988}).
+
+To determine soluble C, N, and P contents, 1.8g litter (fresh weight) were extracted with 50 ml 0.5M K\textsubscript{2}SO\textsubscript{4}. Samples were shaken on a reciprocal shaker with the extractant for 30 minutes, filtered with ash-free filters and frozen at -20 \textdegree C until analysis. To quantify microbial biomass C, N and P pools, sample were extracted under the same conditions after chloroform fumigation. Microbial biomass was determined as the difference between fumigated and non-fumigated extractions \cite{Schinner1996}. C and N concentration in extracts were determined with a TOC/TN analyzer (TOC-VCPH and TNM, Schimadzu), Phosphorous was determined photometrically.\footnote{lit!!}
+
+Substrate to consumer stoichiometric imbalances \emph{X:Y$_{inbal}$} were calculated as
+\begin{equation}
+ X:Y_{inbal}=\frac{X:Y_{litter}}{X:Y_{microbial}} \label{eq:resp.acc}
+\end{equation}
+where \emph{X} and \emph{Y} stand for one of the elements C, N, or P.
+
+\subsection*{Microbial Respiration}
+Respiration was monitored weekly during the entire incubation in mesocosms removed after 6 month and on the last incubation day for all mesocosms using an infrared gas analyzer (IRGA, EGM4 with SRC1, PPSystems, USA). CO2 concentration was measured over 70 seconds and increase per second was calculated based on initial dry mass. Measurements of ambient air were performed before and after each measurement to assess possible leaks or base-line drifts IRGA. %Measurements were conducted using the following settings: volume of the chamber 1551 cm³, area of the chamber 115 cm², linear measurement, at 15\textdegree.
+Accumulated respiration after 6 month was calculated assuming linear transition between measurements, accumulated respiration after 15 month was estimated from respiration rates after 181 and 475 days.
+%as stated in equation \ref{eq:resp.acc}, where \emph{Resp\textsubscript{acc}} stands for the accumulated respiration, \emph{Resp\textsubscript{n}} and \emph{t\textsubscript{n}} for the actual respiration at and the decomposition time until time point \emph{n}.
+
+% \begin{equation}
+% Resp_{acc}(t_{n})=\sum_{i=0}^n (Resp(t_{i})+Resp(t_{i+1}))*(t_{i+1}-t_{i})/2
+% \label{eq:resp.acc}
+% \end{equation}
+
+
+\subsection*{Enzyme activities}
+
+Measurements of potential exo-enzyme activities for cellulases, peroxidases and phenoloxidase were described by \cite{Leitner2011}. Activities were determined with a series of micro-plate assays based on the hydrolysis of 4-methyl-$\beta$-D-cellobioside (cellulase) and L-3,4-di\-hydroxy\-phenyl\-alanin (oxidative enzymes). Products of enzyme catalyzed reactions were detected photometrically (oxidative enzymes) or flourometrically (cellulase) \cite{Marx2001, Sinsabaugh1999, Kaiser2010b}.
+
+\subsection{Metaproteome analysis}
+
+[..]
+
+\subsection*{Pyrolysis-GC/MS}
+Pyrolysis-GC/MS was performed with a Pyroprobe 5250 pyrolysis system (CDS Analytical) coupled to a Thermo Trace gas chromatograph and a DSQ II MS detector (both Thermo Scientific) equipped with a carbowax colomn (Supelcowax 10, Sigma-Aldrich).
+
+Litter analyzed was sampled immediately after inoculation and after 3, 6, and 15 month incubation. 2-300 \textmu g dried and finely ball-milled litter were heated to 600\textdegree C for 10 seconds in helium atmosphere. GC oven temperature was constant at 50 \textdegree C for 2 minutes, followed by an increase of 7\textdegree C/min to a final temperature of 260 \textdegree C, which was held for 15 minutes. The MS detector was set for electron ionization at 70 EV cycling between m/z 20 and 300.\footnote{maybe cite other paper for method?}
+
+Peaks were assignment was based on NiSt 05 MS library after comparison with reference material measured. 128 peaks were identified and selected for integration due to their hight abundance or diagnostic value, including 28 lignin and 45 carbohydrate derrived substances. For each peak between one and four dominant mass fragments selected for high abundance and specificity were integrated and converted to TIC peak areas by a multiplication with a MS response coefficient \cite{Schellekens2009, Kuder1998}. For principal component analysis, unconverted areas were used. Peak areas are stated as \% of the sum of all integrated peaks of a sample.
+
+ % TIC peak areas are (1) less specific as areas of specific MS fragments and (2) integration was not possible for all peaks a/o all samples. Therefore a MS response factor Rf was calculated for each detected substance:
+ %\begin{equation}
+ %$Rf = median \left(\frac{TIC peak area}{specific MS fragment peak area}\right)$
+ %\end{equation}
+
+ %Peak areas were multiplied by Rf before addition to calculate percentages of TIC area without loosing the specifity of integrating single m/z traces.
+
+ % However, during interpretation, we found little difference between direct sums of the integrated fragments and sums of corrected areas, indicating little sensitivity for exact
+
+Relative peak areas are different from weight\%, but allow tracing of accumulation/depletion of substance classes during decomposition \cite{Schellekens2009}.
+
+We use the terms "accumulation" and depletion to refer to changes in litter composition and "degradation" to refer to the amount of lignin and carbohydrates decomposed.
+
+A lignin to carbohydrates index was calculated to measure the ratio between these two substance classes without influences of changes in the abundance of other compounds
+\begin{equation}
+ LCI=\frac{Lignin}{Lignin + Carbohydrates}
+\end{equation}
+
+Accounting for carbon loss, we estimate \% lignin and cellulose degraded during decomposition according to equation \ref{eq:closscorr}, where \emph{$TIC_{init}$} and \emph{$TIC_{act}$} stand for initial and actual \%TIC area of lignin or cellulose pyrolysis products, \emph{$C_{init}$} for the initial amount of C and \emph{$R_{acc}$} for the accumulated CO$_2$-C respired by a mesocosm.
+\begin{equation}
+ \%_{loss} = 100\cdot\frac{TIC_{init} -TIC_{act}}{TIC_{init}}\cdot\frac{\left ( 1-R_{acc}\right ) }{C_{init}}
+ \label{eq:closscorr}
+\end{equation}
+
+We provide \% of initial lignin and carbohydrate pools decomposed, \% decomposed per \% litter carbon mineralized and the ratio between the twodecomposition rates.
+
+\subsection*{Statistical analysis}
+All statistical analyses were performed with the software and statistical computing environment R using the package ``vegan'' \cite{Oksanen2011}. If not mentioned otherwise, results were considered significant when p \textless 0.05. Due to the frequent of variance inhomogenities Welch anova and paired Welch's t-tests with Bonferroni corrected p limits were used. Principal component analysis was performed using vegan function ``rda'' scaling variables. All correlations refer to Pearson correlations. We calculated correlations between depletion and degradation rates found in this study with litter chemistry parametres and process data reported by \cite{Mooshammer2011} and \cite{Leitner2011}.
+
+% Do NOT remove this, even if you are not including acknowledgments
+\section*{Acknowledgments}
+
+
+%\section*{References}
+% The bibtex filename
+\bibliography{library}
+
+\newpage
+\section*{Figure Legends}
+%\begin{figure}[!ht]
+%\begin{center}
+%%\includegraphics[width=4in]{figure_name.2.eps}
+%\end{center}
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+
+
+
+\begin{figure}[!ht]
+\begin{center}
+%\setkeys{Gin}{width=4in}
+\setkeys{Gin}{width=\textwidth}
+<<mb, fig=T, echo=F, results=hide, width=12, height=9>>=
+par(mfrow=c(3,3), mar=c(2.5,4.1,2,0.1), tck=0.01)
+data <- alldata$C_mic
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, main="Microbial C",
+ylab="mg C g-1 d.w.", endsig=T, cex=1.5,
+ #xaxt="n"
+ )
+axis(4, labels=F)
+axis(3, labels=F)
+#axis(1, labels=F)
+
+data <- alldata$N_.mic
+ond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T, main="Microbial N",cex=1.5,
+#ylab="microbial nitrogen (mg N g-1 d.w.)",
+#xaxt="n"
+ )
+axis(4, labels=F)
+axis(3, labels=F)
+#axis(1, labels=F)
+
+data <- alldata$P_mic/1000
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, main="Microbial P",cex=1.5,
+#ylab="microbial phosphorus (mg P g-1 d.w.)",
+#xaxt="n",
+endsig=T)
+axis(4, labels=F)
+axis(3, labels=F)
+#axis(1, labels=F)
+
+data <- alldata$C.N_mic
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T, main="Mic. C:N ratio",cex=1.5,
+ylab="w/w",
+ #xaxt="n"
+ )
+axis(4, labels=F)
+axis(3, labels=F)
+#axis(1, labels=F)
+
+data <- alldata$C.Pmic
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T, main="Mic. C:P ratio",cex=1.5,
+ #ylab="microbial C:Pg ratio (w/w)",
+ #xaxt="n"
+ )
+axis(4, labels=F)
+axis(3, labels=F)
+#axis(1, labels=F)
+
+data <- alldata$N.Pmic
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],main="Mic. N:P ratio",
+type="o", pch=pch, pt.bg=colscale, endsig=T,cex=1.5,
+ #ylab="microbial N:P ratio (w/w",
+ #xaxt="n"
+ )
+axis(4, labels=F)
+axis(3, labels=F)
+# axis(1, labels=F)
+
+data <- alldata$CN_inbal
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T,cex=1.5,
+xlab="Litter incubation (days)", main="C:N imbalance")
+axis(4, labels=F)
+axis(3, labels=F)
+
+data <- alldata$CP_inbal
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T,cex=1.5,
+xlab="Litter incubation (days)", main="C:P imbalance")
+axis(4, labels=F)
+axis(3, labels=F)
+
+data <- alldata$NP_inbal
+cond <- is.na(data)!=T
+timeseries(data[cond], alldata$days[cond], alldata$Litter[cond],
+type="o", pch=pch, pt.bg=colscale, endsig=T,cex=1.5,
+xlab="litter incubation (days)", main="N:P imbalance")
+axis(4, labels=F)
+axis(3, labels=F)
+@
+
+%\caption{
+%{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+%should be left justified, as specified by the options to the caption 
+%package.
+%}
+%\label{Figure_label}
+%\end{figure}
+\end{center}
+\caption{
+{\bf Microbial biomassm, microbial stoichiometry and resource:consumer stoichiometric imbalance.} Error bars indicate standard errors (n=5).}
+\label{fig:mb}
+\end{figure}
+
+<<init.stoech, echo=F, fig=F, results=hide>>=
+  cond <- alldata$Harvest=="I"
+stoech.init <-data.frame (
+paste( formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], mean), digits=2, format="f") , " (", formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
+paste( formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], mean), digits=3, format="f") , " (", formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], stderr), digits=3, format="f"), ")", sep=""),
+paste( formatC(tapply(alldata$P_lit[cond], alldata$Litter[cond], mean), digits=3, format="f"), " (", formatC(tapply(alldata$P_lit[cond], alldata$Litter[cond], stderr), digits=3, format="f"), ")", sep=""),
+paste(formatC( tapply(alldata$C.N_lit[cond], alldata$Litter[cond], mean), digits=2, format="f"), " (", formatC(tapply(alldata$C.N_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f"), ")", sep=""),
+paste(formatC(tapply(alldata$C.P_lit[cond], alldata$Litter[cond], mean) , digits=0, format="f"), " (", formatC(tapply(alldata$C.P_lit[cond], alldata$Litter[cond], stderr), digits=0, format="f"), ")", sep=""),
+paste(formatC(tapply(alldata$N.P_lit[cond], alldata$Litter[cond], mean) , digits=2, format="f"), " (", formatC(tapply(alldata$N.P_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f"), ")", sep=""))
+colnames(stoech.init) <- c("C (% d.w.)", "N (%d.w.)", "P (%d.w.)", "C:N (w/w)", "C:P(w/w)", "N:P(w/w)")
+rownames(stoech.init) <- typlev
+@
+
+<<lig6monthcor,results=hide, echo=F>>=
+h3<-harvest==6
+alldata$pyr.excl<-c(rep(T,5), rep(F, 15), rep(T,5), rep(F,4), T, rep(F, 10), rep(T, 5), rep(F, 15), rep(T,5), rep(F, 14),T)
+alldata$days [alldata$pyr.excl==F]
+@
+
+<<barplotfunction, results=hide, echo=F, fig=F>>=
+  barp<-function(data, cond1, cond2, ylim=c(-3,3), ...)
+{
+  height<- tapply(data[cond1], type[cond1], mean) - tapply(data[cond2], type[cond2], mean)
+  error<-sqrt(tapply(data[cond1], type[cond1], stderr)^2 + tapply(data[cond1], type[cond1], stderr)^2)
+                                        #ci<-sqrt(tapply(data[cond1], type[cond1], CI(alpha=0.05)^2 + tapply(data[cond1], type[cond1], CI(alpha=0.05))^2)
+  barplot.def(height, error, ylim=ylim, ...)
+}
+
+barpr<-function(data1, data2, cond1, cond2, ylim=c(-3,3), ...)
+{
+  dif1<-tapply(data1[cond1], type[cond1], mean)- tapply(data1[cond2], type[cond2], mean)
+  dif2<-tapply(data2[cond1], type[cond1], mean)- tapply(data2[cond2], type[cond2], mean)
+  ste1<-sqrt(tapply(data1[cond1], type[cond1], stderr)^2 + tapply(data1[cond2], type[cond2], stderr)^2)
+  ste2<-sqrt(tapply(data2[cond1], type[cond1], stderr)^2 + tapply(data2[cond2], type[cond2], stderr)^2)  
+  height<- dif1/dif2
+  error<-height*sqrt((ste1/dif1)^2 + (ste2/dif2)^2)
+  
+                                        #ci<-sqrt(tapply(data[cond1], type[cond1], CI(alpha=0.05)^2 + tapply(data[cond1], type[cond1], CI(alpha=0.05))^2)
+  barplot.def(height, error, ylim=ylim, ...)
+}
+
+barpr2<-function(data1, data2, cond1, cond2, ylim=c(-3,3), ...)
+{
+height<- (tapply(data1[cond1], type[cond1], mean)- tapply(data1[cond2], type[cond2], mean))/(tapply(data2[cond1], type[cond1], mean)- tapply(data2[cond2], type[cond2], mean))
+error<-sqrt(tapply(data1[cond1], type[cond1], stderr)^2 + tapply(data1[cond1], type[cond1], stderr)^2)/(tapply(data2[cond1], type[cond1], mean)- tapply(data2[cond2], type[cond2], mean))
+                                        #ci<-sqrt(tapply(data[cond1], type[cond1], CI(alpha=0.05)^2 + tapply(data[cond1], type[cond1], CI(alpha=0.05))^2)
+  barplot.def(height, error, ylim=ylim, ...)
+}
+@
+
+\newpage
+\begin{figure}[!ht]
+\begin{center}
+%\setkeys{Gin}{width=4in}
+\setkeys{Gin}{width=\textwidth}
+<<enz, fig=T, echo=F, results=hide, height=7, width=7>>=
+par(mfrow=c(2,2), mar=c(2,5,2,0))
+timeseries(alldata$Cellulase, alldata$days, alldata$Litter, type="o",
+           pch=pch, pt.bg=colscale, log="y", endsig=T, main="Cellulase", lwd=2)
+mtext("potential activity (µmol min-1 g-1 d.w.", side=2, las=0, padj=-4)
+
+peroxy.tmp<-alldata$Peroxydase
+peroxy.tmp[alldata$days==475]<-rep(c(0.008, 0.009, 0.01, 0.011,0.012), 4)
+
+par(mar=c(2,3,2,2))
+timeseries(peroxy.tmp,
+           alldata$days,
+           alldata$Litter, type="o", pch=pch,cex=2,
+           pt.bg=colscale, log="y", endsig=T, main="Peroxydase", lwd=2)
+
+par(mar=c(2.5,5,2.5,0))
+timeseries(alldata$Phenoloxidase, alldata$days, alldata$Litter, type="o", pch=pch, pt.bg=colscale, log="y", endsig=T, main="Phenoloxydase", lwd=2)
+
+par(mar=c(2.5,3,2.5,2))
+timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter, type="o", pch=pch, pt.bg=colscale, log="y", endsig=T, main="Phenoloxysdase/Cellulase", lwd=2)
+@
+\end{center}
+\caption{
+{\bf Potential eco-enzyme activities} [caption]}
+\label{fig:mb}
+\end{figure}
+
+
+
+\newpage
+\begin{figure}[!ht]
+\begin{center}
+%\setkeys{Gin}{width=4in}
+\setkeys{Gin}{width=\textwidth}
+<<lci, fig=T, echo=F, results=hide, width=10, height=5>>=
+par( mfrow=c(1,2), mar=c(4.1,4.1,2.1,.1), tck=0.01)
+timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type,
+           type="o", pch=pch, pt.bg=colscale, endsig=T, ylab="Lignin/(Lignin+Carbohydrates)", xlab="Litter incubation (days)", lwd=2, cex=1.5)
+axis(4, labels=F)
+axis(3, labels=F)
+
+par(mar=c(4.1,.1,2.1,4.1))
+timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type,
+           type="o", pch=pch, pt.bg=colscale, normalize=1, legsig=F, endsig=T,
+           massloss=samples$cons_acc_resp_litC, masslossSE=samples$cons_acc_resp_litC_se, yaxt="n", xlab="carbon loss (g CO2-C g-1 litter-C)", lwd=2, legend="topleft", cex=1.5)
+abline(h=100, lty=2)
+axis(2, labels=F)
+axis(3, labels=F)
+axis(4)
+mtext("LCI (% of initial LCI)", side=4, padj=5, las=0)
+
+@
+\end{center}
+\caption{
+{\bf Develoment of the LCI (lignin/(lignin+carbohydrates)).} Errorbars indicate standard errors (n=4-5). The dashed line indicates a constant ratio between lignin and carbohydrates (i.e. no preferential decomposition of carbohydrates.}
+\label{fig:mb}
+\end{figure}
+
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<degrdiff, fig=T, results=hide, echo=false, width=8, height=7>>=
+#par(mfrow=c(2,5))
+par(mfrow=c(2,3))
+
+#par(mar=c(2, 5, 0.6,0))
+#barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==181, days==0, ylim=c(0,20), ylab="% of initial pool degraded \n days 0 - 181", names.arg=typlev, main="Lignin")
+#barp(orig_cTIC$Ph, days==181, days==97)
+#axis(4, labels=F)
+
+#par(mar=c(2, 0, 0.6,5))
+#barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==181, days==0, ylim=c(0,20), yaxt="n", names.arg=typlev, main="Carbohydrates")
+#axis(4)
+#axis(2, labels=F)
+#mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+#barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+
+par(mar=c(2, 5, 0.6,0))
+barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==181, days==0, ylim=c(0,2), ylab="% loss / % carbon loss \n days 0 - 181", names.arg=typlev, main="Lignin")
+#barp(orig_cTIC$Ph, days==181, days==97)
+axis(4, labels=F)
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==181, days==0, ylim=c(0,2), yaxt="n", main="Carbohydrates", names.arg=typlev)
+axis(4)
+axis(2, labels=F)
+#mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+#barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==181, days==0, ylim=c(0,2), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
+#, log="y"
+      )
+axis(4)
+axis(2, labels=F)
+mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, cex=.7)
+abline(h=1, col="black", lty=2)
+
+#par(mar=c(2, 5, 0.6,0))
+#barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="")
+#barp(orig_cTIC$Ph, days==181, days==97)
+#axis(4, labels=F)
+
+#par(mar=c(2, 0, 0.6,5))
+#barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, #ylim=c(0,25), yaxt="n", names.arg=typlev, main="")
+#axis(4)
+#axis(2, labels=F)
+#mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+#barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+
+par(mar=c(2, 5, 0.6,0))
+barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="")
+#barp(orig_cTIC$Ph, days==181, days==97)
+axis(4, labels=F)
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr2(-1*closs.corr.orig_cTIC$C/initials.orig_cTIC$C, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev,  main="")
+axis(4)
+axis(2, labels=F)
+#mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
+#barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
+abline(h=1, col="black", lty=2)
+
+par(mar=c(2, 0, 0.6,5))
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main=""
+#, log="y"
+      )
+axis(4)
+axis(2, labels=F)
+mtext("Ratio (% of initial pools degraded)\n days 181-475", side=4, padj=2, las=0, cex=.7)
+abline(h=1, col="black", lty=2)
+@
+\end{center}
+\caption{Carbon loss corrected amounts of lignin and carbohydrates degraded. Carbon loss was calculated based on accumulated respiration. Error bars indicate standard errors (n=4-5). The dashed line marks no discrination between lignin, carbohydrates and bulk carbon loss.}
+\label{fig:degr}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<graphcorr, fig=T, echo=F, results=hide, width=21, height=14>>=
+h3.pch<-c(rep(21,5), rep(22,5), rep(23,5), rep(24,5))
+h3.col<-c(rep(colscale[1],5),rep(colscale[2],5),rep(colscale[3],5),rep(colscale[4],5))
+
+par(mfrow=c(2,3), cex=2.3, cex.axis=1, cex.lab=.8)
+
+var1<-alldata$CN_inbal[alldata$days==181]
+var2<-alldata$CP_inbal[alldata$days==181]
+var3<-alldata$NP_inbal[alldata$days==181]
+var4<-hmw.proc$LCI
+var5<-hmw.proc$LCdec
+
+var1lab<-"C:N resource / C:N microbial"
+var2lab<-"C:P resource / C:P microbial"
+var3lab<-"N:P resource / N:P microbial"
+var4lab<-"LCI change"
+var5lab<-"Lignin decomposition /\n Carbohydrate decomposition"
+
+par(mar=c(4,5,1,0))
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,5,0,0))
+corplot(var1, var5, xlab=var1lab, ylab=var5lab, bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var2, var5, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var3, var5, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
+
+@
+\end{center}
+\caption{Correlations between Lignin accumulation during the first 6 month of litter incubation and stoichiometric resource:consumer imbalances}
+\label{fig:cor1}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<respcorr, fig=T, echo=F, results=hide, width=7, height=7>>=
+par(mfrow=c(2,2))
+
+var1<-samples$cons_acc_resp_litC[h3]
+var2<-samples$cons_acc_resp_litC[h4]-samples$h3init.respacc.litC[h4]
+#var3<-alldata$N.P_lit[alldata$days==181]
+var3<-hmw.proc$Ldec
+var4<-hmw.proc$Cdec
+var5<-hmw.proc2$Ldec
+var6<-hmw.proc2$Cdec
+
+
+var1lab<-"Accumulated respiration \n(g g-1 initial C)"
+var2lab<-"Accumulated respiration \n(g g-1 initial C)"
+var3lab<-"Lignin decomposition (% of initial pool)"
+var4lab<-"Carbohydrates decomposition (% of initial pool)"
+
+par(mar=c(4,5,1,0))
+corplot(var1, var3, xlab="", ylab=var3lab, bg=h3.col, pch=h3.pch, main="days 0 - 181")
+par(mar=c(4,4,1,1))
+corplot(var2, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch, main="days 181-475")
+par(mar=c(4,5,1,0))
+corplot(var1, var4, xlab=var2lab, ylab=var4lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var6, xlab=var1lab, ylab="", bg=h3.col, pch=h3.pch)
+
+@
+\end{center}
+\caption{caption}
+\label{fig:repcor}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<enzcorr, fig=T, echo=F, results=hide, width=7, height=3.5>>=
+par(mfrow=c(1,2))
+
+hmw.proc
+var1<-hmw.proc$LCdec
+var2<-hmw.proc$Phen2Cell
+var3<-hmw.proc$Per2Cell
+
+var1lab<-"Decomposition (Lignin/Carbohydrates) \nratio of % of initial content decomposed."
+var2lab<-"Phenoloxidases / Cellulases \n(Ratio of potential enzymeactivities)"
+var3lab<-"Phenoloxidases / Cellulases \n(Ratio of potential enzymeactivities)"
+
+par(mar=c(4,5,1,0))
+corplot(var2, var1, xlab=var2lab, ylab=var1lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var3, var1, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
+
+
+@
+\end{center}
+\caption{caption}
+\label{fig:enzcor}
+\end{figure*}
+
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<graphcorr2, fig=T, echo=F, results=hide, width=10.5, height=14>>=
+par(mfrow=c(4,3))
+
+var1<-alldata$C.N_lit[alldata$days==181]
+var2<-alldata$C.P_lit[alldata$days==181]
+var3<-alldata$N.P_lit[alldata$days==181]
+var4<-  hmw.proc$LTIC
+var5<-  hmw.proc$CTIC
+var6<-hmw.proc$Ldec
+var7<-hmw.proc$Cdec
+
+var1lab<-"C:N litter"
+var2lab<-"C:P litter"
+var3lab<-"N:P litter"
+var4lab<-"Lignin accumulation (%TIC difference)"
+var5lab<-"Carbohydrates accumulation (%TIC difference)"
+var6lab<-"Lignin decomposition (% of initial pool)"
+var7lab<-"Carbohydrates decomposition (% of initial pool)"
+
+par(mar=c(4,5,1,0))
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(4,5,1,0))
+corplot(var1, var5, xlab="", ylab=var5lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(4,5,1,0))
+corplot(var1, var6, xlab="", ylab=var6lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,5,0,0))
+corplot(var1, var7, xlab=var1lab, ylab=var7lab, bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var2, var7, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var3, var7, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
+
+@
+\end{center}
+\caption{Correlations between Lignin and Carbohydrates accumulation and decomposition during the first 6 month of litter incubation and litter C:N:P ratios}
+\label{fig:cor2}
+\end{figure*}
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+<<graphcorr3, fig=T, echo=F, results=hide, width=10.5, height=14>>=
+  par(mfrow=c(4,3))
+
+var1<-alldata$CN_inbal[alldata$days==181]
+var2<-alldata$CP_inbal[alldata$days==181]
+var3<-alldata$NP_inbal[alldata$days==181]
+var4<-hmw.proc$LTIC
+var5<-hmw.proc$CTIC
+var6<-hmw.proc$Ldec
+var7<-hmw.proc$Cdec
+
+var1lab<-"C:N imbalance"
+var2lab<-"C:P imbalance"
+var3lab<-"N:P imbalance"
+var4lab<-"Lignin accumulation (%TIC difference)"
+var5lab<-"Carbohydrates accumulation (%TIC difference)"
+var6lab<-"Lignin decomposition (% of initial pool)"
+var7lab<-"Carbohydrates decomposition (% of initial pool)"
+
+par(mar=c(4,5,1,0))
+corplot(var1, var4, xlab="", ylab=var4lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var4, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(4,5,1,0))
+corplot(var1, var5, xlab="", ylab=var5lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var5, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(4,5,1,0))
+corplot(var1, var6, xlab="", ylab=var6lab, bg=h3.col, pch=h3.pch)
+par(mar=c(4,4,1,1))
+corplot(var2, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+corplot(var3, var6, xlab="", ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,5,0,0))
+corplot(var1, var7, xlab=var1lab, ylab=var7lab, bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var2, var7, xlab=var2lab, ylab="", bg=h3.col, pch=h3.pch)
+par(mar=c(5,4,0,1))
+corplot(var3, var7, xlab=var3lab, ylab="", bg=h3.col, pch=h3.pch)
+
+@
+\end{center}
+\caption{Correlations between Lignin and Carbohydrates accumulation and decomposition during the first 6 month of litter incubation and stoichiometric resource:consumer imbalances}
+\label{fig:cor3}
+\end{figure*}
+
+<<init.stoech, echo=F, fig=F, results=hide>>=
+cond <- alldata$Harvest=="I"
+
+lst<-data.frame(alldata$C_lit[cond], alldata$C_lit[cond], alldata$DOC[cond],alldata$N_lit[cond], alldata$P_lit[cond],alldata$C.N_lit[cond], alldata$C.P_lit[cond],alldata$N.P_lit[cond], alldata$K[cond], alldata$K[cond], alldata$CA[cond], alldata$MG[cond], alldata$FE[cond], alldata$MN[cond], alldata$ZN[cond])
+
+sig<-1
+
+for (i in 1:13)
+{
+  aov<-anova(lm(lst[,i]~type[cond]))
+  if(aov$'Pr(>F)'[1]<0.001) {sig[i]<-"<0.001"} else {sig[i]<-round(aov$'Pr(>F)'[1], digits=3)}
+}  
+
+stoech.init.mean <-
+rbind(
+formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], mean), digits=2, format="f"),
+formatC(tapply(alldata$DOC[cond]/1000, alldata$Litter[cond], mean), digits=2, format="f") ,
+formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], mean), digits=3, format="f") ,
+formatC(tapply(alldata$P_lit[cond], alldata$Litter[cond], mean), digits=3, format="f"),
+formatC(tapply(alldata$C.N_lit[cond], alldata$Litter[cond], mean), digits=2, format="f"),
+formatC(tapply(alldata$C.P_lit[cond], alldata$Litter[cond], mean) , digits=0, format="f"),
+formatC(tapply(alldata$N.P_lit[cond], alldata$Litter[cond], mean) , digits=2, format="f"),
+formatC(tapply(alldata$K[cond], alldata$Litter[cond], mean), digits=2, format="f") ,
+formatC(tapply(alldata$CA[cond], alldata$Litter[cond], mean), digits=2, format="f") ,
+formatC(tapply(alldata$MG[cond], alldata$Litter[cond], mean), digits=2, format="f") ,
+formatC(tapply(alldata$FE[cond], alldata$Litter[cond], mean), digits=0, format="f") ,
+formatC(tapply(alldata$MN[cond], alldata$Litter[cond], mean), digits=0, format="f"),
+formatC(tapply(alldata$ZN[cond], alldata$Litter[cond], mean) , digits=1, format="f"))
+
+stoech.init.se<-
+rbind(paste( "(", formatC(tapply(alldata$C_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
+paste( "(", formatC(tapply(alldata$DOC[cond]/1000, alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
+paste(  " (", formatC(tapply(alldata$N_lit[cond], alldata$Litter[cond], stderr), digits=3, format="f"), ")", sep=""),
+paste("(", formatC(tapply(alldata$P_lit[cond], alldata$Litter[cond], stderr), digits=3, format="f"), ")", sep=""),
+paste( " (", formatC(tapply(alldata$C.N_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f"), ")", sep=""),
+paste("(", formatC(tapply(alldata$C.P_lit[cond], alldata$Litter[cond], stderr), digits=0, format="f"), ")", sep=""),
+paste( "(", formatC(tapply(alldata$N.P_lit[cond], alldata$Litter[cond], stderr), digits=2, format="f"), ")", sep=""),
+paste( "(", formatC(tapply(alldata$K[cond], alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
+paste( "(", formatC(tapply(alldata$CA[cond], alldata$Litter[cond], stderr), digits=2, format="f") , ")", sep=""),
+paste(  " (", formatC(tapply(alldata$MG[cond], alldata$Litter[cond], stderr), digits=2, format="f"), ")", sep=""),
+paste("(", formatC(tapply(alldata$FE[cond], alldata$Litter[cond], stderr), digits=0, format="f"), ")", sep=""),
+paste( " (", formatC(tapply(alldata$MN[cond], alldata$Litter[cond], stderr), digits=0, format="f"), ")", sep=""),
+paste("(", formatC(tapply(alldata$ZN[cond], alldata$Litter[cond], stderr), digits=1, format="f"), ")", sep=""))
+stoech.init<-
+cbind(stoech.init.mean[,1], stoech.init.se[,1], stoech.init.mean[,2], stoech.init.se[,2], stoech.init.mean[,3], stoech.init.se[,3], stoech.init.mean[,4], stoech.init.se[,4], sig)
+
+rownames(stoech.init) <- c("C (% d.w.)", "C extr (mg g-1)", "N (% d.w.)", "P (% d.w.)", "C:N (w/w)", "C:P (w/w)", "N:P (w/w)", "K (mg g-1)", "Ca (mg g-1)","Mg (mg g-1)", "Fe (ppm)", "Mn (ppm)","Zn (ppm)")
+colnames(stoech.init) <- c(typlev[1], "(SE)", typlev[2], "(SE)",typlev[3], "(SE)", typlev[4], "(SE)", "p value")
+
+@
+
+\section*{Tables}
+%\begin{table}[!ht]
+%\caption{
+%\bf{Table title}}
+%\begin{tabular}{|c|c|c|}
+%table information
+%\end{tabular}
+%\begin{flushleft}Table caption
+%\end{flushleft}
+%\label{tab:label}
+% \end{table}
+
+
+\newpage
+<<init_table, results=tex, echo=F>>=
+  print(
+        xtable(stoech.init, caption="Litter stoichiometry and mineral elemental contents measured after 14 days incubation. Standard errors are stated in brackets (n=5). C extr stands for extractable carbon.",
+               label="initstoech", align="cccccccccc")
+        , size = "tiny",table.placement = "h!", caption.placement = "top"  )
+
+
+@
+
+\newpage
+<<corrtable, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==181,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-hmw.proc
+mighty.corr.matrix<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Chitinase activity", "Phosphatase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 0 and 181 days, process rates were measured after 181 days.", label="corrtable", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<corrtable2, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==475,c(10,37, 71,11,14,13,12, 15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-hmw.proc2
+mighty.corr.matrix2<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix2) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+
+colnames(mighty.corr.matrix2)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix2, caption="Correlation (R) between Lignin and Carbohydrate degration with litter chemistry, microbial community and decomposition processes. Significant (p<0.05) correlations are printed bold. Data taken from \\cite{Mooshammer2011, Leitner2011}. Differences in litter chemistry were calculaten between 181 and 475 days, process rates were measured after 475 days.", label="corrtable2", align=rep("c",11) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+\begin{landscape}
+<<corrtable_notlig, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==181,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-notlig.proc
+mighty.corr.matrix<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+#colnames(mighty.corr.matrix)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix, caption="Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 0 and 181 days.", label="corrtable_notlig", align=rep("c",13) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+
+\newpage
+<<corrtable2_notlig, results=tex, echo=F, fig=F>>=
+corr1<-alldata[alldata$days==475,c(10,37, 71,11,14,13,12,15:16,20,22,24, 38, 56, 39:43, 53:55,  75:77)]
+corr2<-notlig.proc2
+mighty.corr.matrix2<-corr.ab(corr1, corr2, tex=T)
+#rownames cor corraltion table
+rownames(mighty.corr.matrix2) <- 
+  c("Massloss", "Actual respiration", "Accumulated Respiration", "Cellulase activity", "Protease activity","Phosphatase activity","Chitinase activity", "Phenoloxidase activity", "Peroxidase activity", #"Phenoloxidase/Cellulase", "Peroxidase/Cellulase", "Protein depolymerization", "Amino acid immobilization", 
+"N mineralization", #"NH4 immobilization", 
+"Nitrification", #"NO3 immobilization",
+"P mineralization", #"P immobilization", "Glucan depolymerization", "Glucose consumption", "NH4", "NO3", "PO4", 
+"C litter", "extractable C", "N litter", "P litter", "C:N litter", "C:P litter", "N:P litter",
+#"K litter", "Ca litter", "Mg litter", "Fe litter", "Mn litter", "Zn litter","Cmic", "Nmic", "Pmic", 
+"C:N mic", "C:P mic", "N:P mic", "C:N imbalance", "C:P imbalance", "N:P imbalance")
+
+
+#colnames(mighty.corr.matrix2)<-c("L acc", "Ch acc", "LCI diff", "L dec", "C dec", "L resp", "C resp", "L/C dec", "Per/Cell", "Phen/Cell")
+
+#write table for export if needed
+#write.csv(mighty.corr.matrix, "corrmatrix.csv")
+#convert table to latex
+
+tab<-xtable(mighty.corr.matrix2, caption="Correlations between C25/27/29 alkanes and alkenes, 14:0, 16:0 and 18:0 fatty acids and phytol. Differences between 181 and 475 days.", label="corrtable2_notlig", align=rep("c",13) )
+
+print(tab, size="tiny", sanitize.text.function = function(x){x}, table.placement = "h!", caption.placement = "top")
+@
+\end{landscape}
+
+
+%timeseries(alldata$Chitinase, alldata$days, alldata$Litter, pt.bg=colscale, pch=pch)
+
+\newpage
+\begin{figure*}[h!]
+\vspace*{2mm}
+\begin{center}
+\setkeys{Gin}{width=.6\textwidth}
+<<CUE, fig=T, echo=F, results=hide, width=7, height=10.5>>=
+
+par(mfrow=c(3,2), mar=c(5.1,6.1,4.1,2.1))
+par()
+cue.depoly.h2<-(alldata$Glucan.Gross.Depolymerisation[alldata$days==97]-alldata$Respiration[alldata$days==97])/alldata$Glucan.Gross.Depolymerisation[alldata$days==97]
+
+cue.cons.h2<-(alldata$Glucose.Gross.Consumption[alldata$days==97]-alldata$Respiration[alldata$days==97])/alldata$Glucose.Gross.Consumption[alldata$days==97]
+
+cue.depoly.h3<-(alldata$Glucan.Gross.Depolymerisation[alldata$days==181]-alldata$Respiration[alldata$days==181])/alldata$Glucan.Gross.Depolymerisation[alldata$days==181]
+
+cue.cons.h3<-(alldata$Glucose.Gross.Consumption[alldata$days==181]-alldata$Respiration[alldata$days==181])/alldata$Glucose.Gross.Consumption[alldata$days==181]
+
+bplot(cue.depoly.h2, alldata$Litter[alldata$days==97], ylab="CUE (H2)", main="glucan depolymerization based")
+bplot(cue.cons.h2, alldata$Litter[alldata$days==97], main="glucose consumption based based")
+bplot(cue.depoly.h3, alldata$Litter[alldata$days==181], ylab="CUE (H3)")
+bplot(cue.cons.h3, alldata$Litter[alldata$days==181])
+
+sep.h2<-alldata$Litter[alldata$days==97]
+x<-tapply(cue.depoly.h2[is.na(cue.depoly.h2)==F], sep.h2[is.na(cue.depoly.h2)==F], mean)
+xerr<-tapply(cue.depoly.h2[is.na(cue.depoly.h2)==F], sep.h2[is.na(cue.depoly.h2)==F], stderr)
+y<-tapply(hmw.proc$Lresp, type[h3], mean)
+yerr<-tapply(hmw.proc$Lresp, type[h3], stderr)
+
+plot(x,y, type="n", xlim=c(0.80, .97), ylim=c(0,1.4), ylab="Lignin loss / mass loss \n0-181 days", xlab="CUE (97 days) \n(glucan depoly - act. resp) / glucan depoly")
+plotCI(x, y, barcol=errcol, uiw=yerr, liw=yerr, add=T, gap=0, pch=pch, pt.bg=colscale)
+plotCI(x, y, err="x", barcol=errcol, uiw=xerr, liw=xerr, add=T, gap=0, pch=pch, pt.bg=colscale)
+
+cor<-cor.test(x,y)
+abline(lm(y~x))
+abline(h=0, lty=2)
+abline(h=1, lty=2)
+
+#text(cor$estimate^2)
+text(.97, 1.4, paste("r² =", round((cor$estimate)^2, digits=3), siglev(cor$p.value)), adj=c(1,1))
+
+
+CUE<-alldata$C.N_mic/(alldata$C.N_mic+  alldata$conc_acc_resp_dw *100)
+cond<-is.na(CUE)==F
+timeseries(CUE[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, pt.bg=colscale, xlab="days", ylab="CUE (C(mic)/(C(mic)+C(resp)))")
+
+@
+\end{center}
+\caption{caption}
+\label{fig:cutlig}
+\end{figure*}     
+     
+
+\begin{figure}[!ht]
+\begin{center}
+\setkeys{Gin}{width=\textwidth}
+%\includegraphics[width=4in]{figure_name.2.eps}
+<<f2bnew, results=hide, echo=F, fig=T, height=8, width=8>>=
+par(mfrow=c(2,2), mar=c(5.1,6.1,4.1,2.1))  
+prot.means<-tapply(f2b$f2b_prot, list(alldata$days, alldata$Litter), mean)
+  plot(as.numeric(levels(as.factor(alldata$days))), prot.means[,1], xlim=c(0, 500), ylim=c(0, max(prot.means)), type="o", pch=pch[1], bg=colscale[1], xlab="Litter incubation (days)", ylab="Metaproteome Fungi:Bacteria ratio")
+  for (i in 2:length(levels(type)))
+    {
+  lines(as.numeric(levels(as.factor(alldata$days))), prot.means[,i])
+  points(as.numeric(levels(as.factor(alldata$days))), prot.means[,i], pch=pch[i], bg=colscale[i])
+  #, pch=pch[i]], bg=colscale[i])
+    }
+legend("topright", levels(type), pch=pch, pt.bg=colscale, lty=1)
+
+cond<-is.na(alldata$f2b_qpcr)!=T
+timeseries(  alldata$f2b_qpcr[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, pt.bg=colscale, xlab="Litter incubation (days)", ylab="Fungi/Bacteria (qPCR)")
+alldata$f2b_qpcr[cond]
+
+
+x<-f2b$f2b_prot[alldata$days==181]
+xmean<-tapply(x, alldata$Litter[alldata$days==181], mean)
+#xse<-tapply(f2b$f2b_prot[alldata$days==181], alldata$Litter[alldata$days==181], stderr)
+y<-hmw.proc$Lresp
+ymean<-tapply(y, type[days==181], mean)
+yse<-tapply(y, type[days==181], stderr)
+
+
+plot(x,y, ylab="%Lignin loss/ %carbohydrate loss \n0-181 days", xlab="Fungi:Bacteria ratio (181 days)", cex=.5, type="n")
+plotCI(xmean, ymean, barcol=errcol, uiw=yse, liw=yse, add=T, gap=0, pch=pch, pt.bg=colscale, cex=1.2)
+
+
+#cor<-cor.test(x,y)
+cor<-cor.test(xmean,ymean)
+
+abline(lm(ymean~xmean))
+
+#text(cor$estimate^2)
+text(max(x), max(y), paste("r² =", round((cor$estimate)^2, digits=3), siglev(cor$p.value)), adj=c(1,1))
+
+x<-f2b$f2b_prot[alldata$days==181]
+y<-hmw.proc$LCI
+
+plot(x,y, ylab="LCI change \n0-181 days", xlab="Fungi:Bacteria ratio (181 days)")
+
+cor<-cor.test(x,y)
+abline(lm(y~x))
+
+#text(cor$estimate^2)
+text(max(x), max(y), paste("r² =", round((cor$estimate)^2, digits=3), siglev(cor$p.value)), adj=c(1,1))
+
+
+@
+\end{center}
+\caption{
+{\bf Bold the first sentence.}  Rest of figure 2  caption.  Caption 
+should be left justified, as specified by the options to the caption 
+package.
+}
+\label{fig:f2b}
+\end{figure}
+
+
+
+
+\end{document}
+
