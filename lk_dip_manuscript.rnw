@@ -148,12 +148,12 @@ In this study we analyze samples from climate-chamber incubated beech litter var
 
 \subsection*{Mass loss, respiration and extractable organic carbon}
 
-Litter mass loss was not significant after 2 weeks and 3 month, significant for 2 litter types after 6 month. After 15 month, litter mass loss was significant for all litter types, and strongly correlated to litter N content (R=0.794, p=***). Detailed results were reported by \cite{Mooshammer2011}. After 15 month, between 5 and 12\% of the initial dry mass was lost. This is less than reported in litter decomposition studies on other species, but in a similar range as recently reported for beech litter from an in-situ litterbag-study \cite{Kalbitz2006} .
+After 15 month, between 5 and 12\% of the initial dry mass was lost. This is less than reported in litter decomposition studies on other species, but in a similar range as recently reported for beech litter from an in-situ litterbag-study \cite{Kalbitz2006}. Litter mass loss was not significant after 2 weeks and 3 month, significant for 2 litter types after 6 month. After 15 month, litter mass loss was significant for all litter types, and strongly correlated to litter N content (R=0.794, p=***). Detailed results were reported by \cite{Mooshammer2011}. 
 
 Highest respiration rates were measured after 14 days incubation (150-350 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C), dropped to rates between between 75 and 100 \textmu g CO\textsubscript{2}-C d-1 g-1 litter-C after 97 days. After 181 and 375 days, respiration rates for AK and OS further decreased, while SW and KL show a second maximal respiration after 181 days. %Respiration was correlated to litter N content after 2 weeks, 6 and 15 month(R\textgreater 0.70 in all cases, all p \textless  0.001), but not after 3 month. All harvests combined were weakly correlated to litter N content (R=0.416, p \textless  0.001).
 %Accumulated respiration was correlated to litter mass loss for all harvest with significant mass loss when means per litter type and harvest were compared (n=6).
 
-Soluble organic carbon content decreased between the first three harvests (14 to 181 days), to strongly increase after 475 days (0.1 to 0.7 mg C g $^{-1}$ d.w. were found after 14, 97 and 181 days, and increased to amounts between 1.5 and 4 mg/g after 375 days. After 14 and 97 days, the highest C content was found in SW litter followed by AK (data not shown). DOC content was loosely correlated to litter N content after 14 (R=0.69, p\textless  0.001) and 97 days (R = 0.65, p =\textless  0.01), they were strictly correlated after 181 days (R = 0.85, p=\textless  0.001) and 375 days (R=0.90, p=\textless  0.001).
+Soluble organic carbon content decreased between the first three harvests (14 to 181 days), to strongly increase after 475 days (0.1 to 0.7 mg C g $^{-1}$ d.w. were found after 14, 97 and 181 days, and increased to amounts between 1.5 and 4 mg/g after 375 days. After 14 and 97 days, the highest C content was found in SW litter followed by AK (data not shown). DOC content was loosely correlated to litter N content after 14 (R=0.69, p\textless  0.001) and 97 days (R = 0.65, p =\textless  0.01), they were strictly correlated after 181 days (R = 0.85, p=\textless  0.001) and 475 days (R=0.90, p=\textless  0.001).
 
 %\begin{figure*}[t]
 %\vspace*{2mm}
@@ -200,7 +200,6 @@ lm<-lm(log(alldata$N.Pmic[alldata$days==181])~log(alldata$N.P_lit[alldata$days==
 H.np.h3<-1/lm$coefficients[2]
 lm<-lm(log(alldata$N.Pmic[alldata$days==475])~log(alldata$N.P_lit[alldata$days==475]),)
 H.np.h4<-1/lm$coefficients[2]
-
 @
 
 Litter microbial biomass is homeostatic during the first 6 month (no or marginally negative correlation between microbial stoichiometry and litter stoichiometry) \cite{Mooshammer2011}, but not after 15 month, when all three ratios show correlations (R 0.53 - 0.64, all p \textless 0.002, H\textsubscript{C:N}=\Sexpr{round(H.cn.h4, digits=2)}, H\textsubscript{C:P}=\Sexpr{round(H.cp.h4, digits=2)}, H\textsubscript{N:P}=\Sexpr{round(H.np.h4, digits=2)}). Microbial C:N ratios are tighly constrained after 3 (1:14.5 - 1:18.2) and 6 month (1:6.9 - 1:9.0), but significantly different between the two time points. C:P and N:P ratios are less constrained, with the highest variance between litter from different sites after 3 month incubation (Fig. \ref{fig:mb}).
@@ -294,7 +293,7 @@ Accumulated respiration after 6 month was calculated assuming linear transition 
 
 Measurements of potential exo-enzyme activities for cellulases, peroxidases and phenoloxidase were described by \cite{Leitner2011}. Activities were determined with a series of micro-plate assays based on the hydrolysis of 4-methyl-$\beta$-D-cellobioside (cellulase) and L-3,4-di\-hydroxy\-phenyl\-alanin (oxidative enzymes). Products of enzyme catalyzed reactions were detected photometrically (oxidative enzymes) or flourometrically (cellulase) \cite{Marx2001, Sinsabaugh1999, Kaiser2010b}.
 
-\subsection{Metaproteome analysis}
+\subsection*{Metaproteome analysis}
 
 [..]
 
@@ -332,7 +331,7 @@ Accounting for carbon loss, we estimate \% lignin and cellulose degraded during 
 We provide \% of initial lignin and carbohydrate pools decomposed, \% decomposed per \% litter carbon mineralized and the ratio between the twodecomposition rates.
 
 \subsection*{Statistical analysis}
-All statistical analyses were performed with the software and statistical computing environment R using the package ``vegan'' \cite{Oksanen2011}. If not mentioned otherwise, results were considered significant when p \textless 0.05. Due to the frequent of variance inhomogenities Welch anova and paired Welch's t-tests with Bonferroni corrected p limits were used. Principal component analysis was performed using vegan function ``rda'' scaling variables. All correlations refer to Pearson correlations. We calculated correlations between depletion and degradation rates found in this study with litter chemistry parametres and process data reported by \cite{Mooshammer2011} and \cite{Leitner2011}.
+All statistical analyses were performed with the software and statistical computing environment R using the package ``vegan'' \cite{vegan, R}. If not mentioned otherwise, results were considered significant when p \textless 0.05. Due to the frequent of variance inhomogenities Welch anova and paired Welch's t-tests with Bonferroni corrected p limits were used. Principal component analysis was performed using vegan function ``rda'' scaling variables. All correlations refer to Pearson correlations. We calculated correlations between depletion and degradation rates found in this study with litter chemistry parametres and process data reported by \cite{Mooshammer2011} and \cite{Leitner2011}.
 
 % Do NOT remove this, even if you are not including acknowledgments
 \section*{Acknowledgments}
@@ -340,7 +339,7 @@ All statistical analyses were performed with the software and statistical comput
 
 %\section*{References}
 % The bibtex filename
-\bibliography{library}
+\bibliography{library, R}
 
 \newpage
 \section*{Figure Legends}
@@ -523,26 +522,25 @@ error<-sqrt(tapply(data1[cond1], type[cond1], stderr)^2 + tapply(data1[cond1], t
 \begin{center}
 %\setkeys{Gin}{width=4in}
 \setkeys{Gin}{width=\textwidth}
-<<enz, fig=T, echo=F, results=hide, height=7, width=7>>=
-par(mfrow=c(2,2), mar=c(2,5,2,0))
-timeseries(alldata$Cellulase, alldata$days, alldata$Litter, type="o",
-           pch=pch, pt.bg=colscale, log="y", endsig=T, main="Cellulase", lwd=2)
-mtext("potential activity (µmol min-1 g-1 d.w.", side=2, las=0, padj=-4)
+<<enz, fig=T, echo=F, results=hide, height=8, width=10>>=
+par(mfrow=c(2,2), mar=c(2,5,2,.5))
 
-peroxy.tmp<-alldata$Peroxydase
-peroxy.tmp[alldata$days==475]<-rep(c(0.008, 0.009, 0.01, 0.011,0.012), 4)
 
-par(mar=c(2,3,2,2))
-timeseries(peroxy.tmp,
-           alldata$days,
-           alldata$Litter, type="o", pch=pch,cex=2,
-           pt.bg=colscale, log="y", endsig=T, main="Peroxydase", lwd=2)
+timeseries(alldata$Peroxydase[alldata$days!=475],
+           alldata$days[alldata$days!=475],
+           alldata$Litter[alldata$days!=475], type="o", pch=pch, add=F,
+           pt.bg=colscale, log="y", endsig=T, lwd=2, , main="Peroxidase", ylab="potential activity \n(µmol min-1 g-1 d.w.)", xlab="",  xlim=c(0,550), ylim=c(0.05,5), cex=1.5)
+legend("bottomright", pch=pch, lty=1, lwd=2, pt.bg=colscale, typlev)
+text(475, 5, "b.d.", cex=1, adj=c(0,1))
 
-par(mar=c(2.5,5,2.5,0))
-timeseries(alldata$Phenoloxidase, alldata$days, alldata$Litter, type="o", pch=pch, pt.bg=colscale, log="y", endsig=T, main="Phenoloxydase", lwd=2)
 
-par(mar=c(2.5,3,2.5,2))
-timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter, type="o", pch=pch, pt.bg=colscale, log="y", endsig=T, main="Phenoloxysdase/Cellulase", lwd=2)
+timeseries(alldata$Phenoloxidase, alldata$days, alldata$Litter, type="o", pch=pch, add=F, pt.bg=colscale, log="y", endsig=T, lwd=2, main="Phenoloxidase", ylab="", xlab="",  xlim=c(0,550), ylim=c(0.05,5), cex=1.5)
+
+timeseries(alldata$Cellulase, alldata$days, alldata$Litter, type="o", add=F, pch=pch, pt.bg=colscale, log="y", endsig=T, lwd=2, main="Cellulase", ylab="potential activity \n(µmol min-1 g-1 d.w.)", xlab="litter incubation (days)", xlim=c(0,550), ylim=c(0.02,1000), cex=1.5, yaxt="n")
+axis(2, axTicks(2), format(axTicks(2), scientific = F))
+
+timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter, type="o", pch=pch, pt.bg=colscale, log="y", endsig=T, main="Phenoloxysdase/Cellulase", lwd=2,  xlim=c(0,550), cex=1.5, ylab="", ylim=c(0.0005,50), yaxt="n")
+axis(2, axTicks(2), format(axTicks(2), scientific = F))
 @
 \end{center}
 \caption{
@@ -559,20 +557,18 @@ timeseries(alldata$Phenoloxidase/alldata$Cellulase, alldata$days,alldata$Litter,
 \setkeys{Gin}{width=\textwidth}
 <<lci, fig=T, echo=F, results=hide, width=10, height=5>>=
 par( mfrow=c(1,2), mar=c(4.1,4.1,2.1,.1), tck=0.01)
-timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type,
-           type="o", pch=pch, pt.bg=colscale, endsig=T, ylab="Lignin/(Lignin+Carbohydrates)", xlab="Litter incubation (days)", lwd=2, cex=1.5)
+timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type, type="o", pch=pch, pt.bg=colscale, endsig=T, ylab="Lignin/(Lignin+Carbohydrates)", xlab="Litter incubation (days)", lwd=2, cex=1.5)
 axis(4, labels=F)
 axis(3, labels=F)
 
 par(mar=c(4.1,.1,2.1,4.1))
-timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type,
-           type="o", pch=pch, pt.bg=colscale, normalize=1, legsig=F, endsig=T,
-           massloss=samples$cons_acc_resp_litC, masslossSE=samples$cons_acc_resp_litC_se, yaxt="n", xlab="carbon loss (g CO2-C g-1 litter-C)", lwd=2, legend="topleft", cex=1.5)
+timeseries(orig_cTIC$L/(orig_cTIC$L+orig_cTIC$C), days, type, type="o", pch=pch, pt.bg=colscale, normalize=1, legsig=F, endsig=F, massloss=samples$cons_acc_resp_litC, masslossSE=samples$cons_acc_resp_litC_se, yaxt="n", xlab="carbon loss (g CO2-C g-1 litter-C)", lwd=2, cex=1.5)
 abline(h=100, lty=2)
 axis(2, labels=F)
 axis(3, labels=F)
 axis(4)
 mtext("LCI (% of initial LCI)", side=4, padj=5, las=0)
+legend("topleft", pch=pch, lty=1, lwd=2, pt.bg=colscale, typlev)
 
 @
 \end{center}
@@ -618,25 +614,13 @@ axis(2, labels=F)
 abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
-barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==181, days==0, ylim=c(0,2), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
-#, log="y"
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==181, days==0, ylim=c(0.01,20), yaxt="n",names.arg=typlev, main="Lignin/Carbohydrates"
+, log="y"
       )
 axis(4)
 axis(2, labels=F)
-mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2, las=0, cex=.7)
+mtext("Ratio (% of initial pools degraded)\n0-181 days", side=4, padj=2.5, las=0, cex=.7)
 abline(h=1, col="black", lty=2)
-
-#par(mar=c(2, 5, 0.6,0))
-#barp(-1*closs.corr.orig_cTIC$L*100/initials.orig_cTIC$L, days==475, days==181, ylim=c(0,25), ylab="% of initial pool degraded \n days 181 - 475", names.arg=typlev, main="")
-#barp(orig_cTIC$Ph, days==181, days==97)
-#axis(4, labels=F)
-
-#par(mar=c(2, 0, 0.6,5))
-#barp(-1*closs.corr.orig_cTIC$C*100/initials.orig_cTIC$C, days==475, days==181, #ylim=c(0,25), yaxt="n", names.arg=typlev, main="")
-#axis(4)
-#axis(2, labels=F)
-#mtext("Carbohydrates degraded (% of initial pool)\n days 0 - 181", side=4, padj=2)
-#barpr(closs.corr.orig_cTIC$L, closs.corr.orig_cTIC$C, days==181, days==0, ylim=c(-1,3))
 
 par(mar=c(2, 5, 0.6,0))
 barpr2(-1*closs.corr.orig_cTIC$L/initials.orig_cTIC$L, samples$cons_acc_resp_litC, days==475, days==181, ylim=c(0,2), ylab="% loss / % carbon loss \n days 181 - 475", names.arg=typlev, main="")
@@ -653,12 +637,12 @@ axis(2, labels=F)
 abline(h=1, col="black", lty=2)
 
 par(mar=c(2, 0, 0.6,5))
-barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0,2), yaxt="n",names.arg=typlev, main=""
-#, log="y"
+barpr(closs.corr.orig_cTIC$L/initials.orig_cTIC$L, closs.corr.orig_cTIC$C/initials.orig_cTIC$C, days==475, days==181, ylim=c(0.01,20), yaxt="n",names.arg=typlev, main=""
+, log="y"
       )
 axis(4)
 axis(2, labels=F)
-mtext("Ratio (% of initial pools degraded)\n days 181-475", side=4, padj=2, las=0, cex=.7)
+mtext("Ratio (% of initial pools degraded)\n days 181-475", side=4, padj=2.5, las=0, cex=.7)
 abline(h=1, col="black", lty=2)
 @
 \end{center}
@@ -786,8 +770,8 @@ par(mfrow=c(4,3))
 var1<-alldata$C.N_lit[alldata$days==181]
 var2<-alldata$C.P_lit[alldata$days==181]
 var3<-alldata$N.P_lit[alldata$days==181]
-var4<-  hmw.proc$LTIC
-var5<-  hmw.proc$CTIC
+var4<-hmw.proc$LTIC
+var5<-hmw.proc$CTIC
 var6<-hmw.proc$Ldec
 var7<-hmw.proc$Cdec
 
@@ -1123,13 +1107,13 @@ timeseries(CUE[cond], alldata$days[cond], alldata$Litter[cond], pch=pch, pt.bg=c
 <<f2bnew, results=hide, echo=F, fig=T, height=8, width=8>>=
 par(mfrow=c(2,2), mar=c(5.1,6.1,4.1,2.1))  
 prot.means<-tapply(f2b$f2b_prot, list(alldata$days, alldata$Litter), mean)
-  plot(as.numeric(levels(as.factor(alldata$days))), prot.means[,1], xlim=c(0, 500), ylim=c(0, max(prot.means)), type="o", pch=pch[1], bg=colscale[1], xlab="Litter incubation (days)", ylab="Metaproteome Fungi:Bacteria ratio")
-  for (i in 2:length(levels(type)))
-    {
-  lines(as.numeric(levels(as.factor(alldata$days))), prot.means[,i])
-  points(as.numeric(levels(as.factor(alldata$days))), prot.means[,i], pch=pch[i], bg=colscale[i])
-  #, pch=pch[i]], bg=colscale[i])
-    }
+plot(as.numeric(levels(as.factor(alldata$days))), prot.means[,1], xlim=c(0, 500), ylim=c(0, max(prot.means)), type="o", pch=pch[1], bg=colscale[1], xlab="Litter incubation (days)", ylab="Metaproteome Fungi:Bacteria ratio")
+for (i in 2:length(levels(type)))
+  {
+ lines(as.numeric(levels(as.factor(alldata$days))), prot.means[,i])
+ points(as.numeric(levels(as.factor(alldata$days))), prot.means[,i], pch=pch[i], bg=colscale[i])
+ #, pch=pch[i]], bg=colscale[i])
+  }
 legend("topright", levels(type), pch=pch, pt.bg=colscale, lty=1)
 
 cond<-is.na(alldata$f2b_qpcr)!=T
