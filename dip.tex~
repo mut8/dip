@@ -68,7 +68,7 @@ Betreuer: Ao. Univ.-Prof. Mag. Dr. Andreas Richter\\
 % 
 % Both them and all my coworkers at the department I thank for the amazingly cooperative mood at the department and the solidarity among diplma, phd students and post docs at the department. 
 % 
-% For vital support with Pyr-GC/MS I want to thank especially clemens Schwarzinger and Andreas Blöchl who taught me my fist steps with the method and Instrumentation, and Birgit Wild for both continous technical support and the right amount of sarcasm when needed. Especial thanks also go to Maria Mooshammer who knew all relevant literiture and every piece of data of our project by hard. 
+% For vital support with Pyr-GC/MS I want to thank especially clemens Schwarzinger and Andreas Blöchl who taught me my fist steps with the method and Instrumentation, and Birgit Wild for both continous technical support and the right amount of sarcasm when needed. Especial thanks also go to Maria Mooshammer who knew all relevant literature and every piece of data of our project by heart. 
 % Further thanks go to Florian Hofhansl, and Tina Kaiser for vital advice on R programming and statistic questions when needed most. 
 % Thanks to Jörg Schnecker, partner in crime on our new Pyroprobe instrument, for hundreds of small tricks for sample preparation. 
 % 
@@ -83,7 +83,7 @@ Betreuer: Ao. Univ.-Prof. Mag. Dr. Andreas Richter\\
 
 This work is composed of three major parts that serve different perposes and are aimed at different readers: 
 
-\paragraph{General introduction} gives a broad introduction to litter decomposition and explains its importance in biogeochemical carbon and nutrient cycles. Plant polymers present in beech litter briefly presented. Furthermore, models and concepts used to describe litter decomposition and stoichiometrical approaches to describe decomposition processes are briefly reviewed. This chapter aims to give non-experts an compact overview over the background of this work. Finally, the experiment, of which this work forms part, is presented. 
+\paragraph{General introduction} gives a broad introduction to litter decomposition and explains its importance in biogeochemical carbon and nutrient cycles. Plant polymers present in beech litter briefly presented. Furthermore, models and concepts used to describe litter decomposition and stoichiometrical approaches are briefly reviewed. This chapter aims to give non-experts an compact overview over the background of this work. Finally, the experiment, of which this work forms part, is presented. 
 
 \paragraph{Methodological comments} aims at future users of analytical pyrolysis shares experiences with this technique. It explaines the ratio behind choices taken in the implemention of our pyrolysis-GC/MS methods, points out alternatives, pitfalls encountered and possible further developments. It is not written not so much for professional analytical chemists as for biologists and other amateurs working with the method.
 
@@ -118,10 +118,10 @@ This work is composed of three major parts that serve different perposes and are
 % \input{conclusions.tex}
 %\includepdfset{pages=-,noautoscale}
 
-\chapter{Manuscript 1}
-\includepdf[scale=1.25]{sbb}
-\chapter{Manuscript 2}
-\includepdf[scale=1.5]{aap}
+\chapter{Manuscript}
+\includepdf[scale=1]{lk_dip_manuscript}
+%\chapter{Manuscript 2}
+%\includepdf[scale=1.5]{aap}
 
 
 

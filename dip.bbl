@@ -1,4 +1,4 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -93,6 +93,19 @@ J~Dyckmans, H~Flessa, K~Brinkmann, C~Mai, and A~Polle.
   \url{http://onlinelibrary.wiley.com/doi/10.1046/j.1365-3040.2002.00826.x/ful%
 l}.
 
+\bibitem[Fontaine et~al.(2011)Fontaine, Henault, Aamor, Bdioui, Bloor, Maire,
+  Mary, Revaillot, and Maron]{Fontaine2011}
+S.~Fontaine, C.~Henault, a.~Aamor, N.~Bdioui, J.M.G. Bloor, V.~Maire, B.~Mary,
+  S.~Revaillot, and P.a. Maron.
+\newblock {Fungi mediate long term sequestration of carbon and nitrogen in soil
+  through their priming effect}.
+\newblock \emph{Soil Biology and Biochemistry}, 43\penalty0 (1):\penalty0
+  86--96, January 2011.
+\newblock ISSN 00380717.
+\newblock \doi{10.1016/j.soilbio.2010.09.017}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0038071710003500}.
+
 \bibitem[Klotzb\"{u}cher et~al.(2011)Klotzb\"{u}cher, Kaiser, Guggenberger,
   Gatzek, and Kalbitz]{Klotzbucher2011}
 Thimo Klotzb\"{u}cher, Klaus Kaiser, Georg Guggenberger, Christiane Gatzek, and
@@ -134,7 +147,7 @@ Cindy~E. Prescott.
   Pontevedra-Pombal]{Schellekens2009}
 Judith Schellekens, Peter Buurman, and Xabier Pontevedra-Pombal.
 \newblock {Selecting parameters for the environmental interpretation of peat
-  molecular chemistry – A pyrolysis-GC/MS study}.
+  molecular chemistry - A pyrolysis-GC/MS study}.
 \newblock \emph{Organic Geochemistry}, 40\penalty0 (6):\penalty0 678--691, June
   2009.
 \newblock ISSN 01466380.
@@ -182,10 +195,10 @@ Le~Treut, R~Somerville, U~Cubasch, Y~Ding, C~Mauritzen, A~Mokssit, T~Peterson,
   93--127. Cambridge University Press, Cambridge, United Kingdom and New York,
   NY, USA, 2007.
 
-\bibitem[Wanek et~al.(2010)Wanek, Mooshammer, Bl\"{o}chl, Hanreich, and
-  Richter]{Wanek2010}
-Wolfgang Wanek, Maria Mooshammer, Andreas Bl\"{o}chl, Angelika Hanreich, and
-  Andreas Richter.
+\bibitem[Wanek et~al.(2010)Wanek, Mooshammer, Bl\"{o}chl, Hanreich, Keiblinger,
+  Zechmeister-Boltenstern, and Richter]{Wanek2010}
+Wolfgang Wanek, Maria Mooshammer, Andreas Bl\"{o}chl, Angelika Hanreich,
+  Katharina Keiblinger, Sophie Zechmeister-Boltenstern, and Andreas Richter.
 \newblock {Determination of gross rates of amino acid production and
   immobilization in decomposing leaf litter by a novel N-15 isotope pool
   dilution technique}.
